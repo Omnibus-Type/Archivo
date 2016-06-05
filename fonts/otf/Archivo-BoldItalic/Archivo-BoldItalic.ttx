@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ttFont sfntVersion="OTTO" ttLibVersion="3.0">
+  <GlyphOrder src="Archivo-BoldItalic.GlyphOrder.ttx"/>
+  <head src="Archivo-BoldItalic._h_e_a_d.ttx"/>
+  <hhea src="Archivo-BoldItalic._h_h_e_a.ttx"/>
+  <maxp src="Archivo-BoldItalic._m_a_x_p.ttx"/>
+  <OS_2 src="Archivo-BoldItalic.O_S_2f_2.ttx"/>
+  <name src="Archivo-BoldItalic._n_a_m_e.ttx"/>
+  <cmap src="Archivo-BoldItalic._c_m_a_p.ttx"/>
+  <post src="Archivo-BoldItalic._p_o_s_t.ttx"/>
+  <CFF src="Archivo-BoldItalic.C_F_F_.ttx"/>
+  <GDEF src="Archivo-BoldItalic.G_D_E_F_.ttx"/>
+  <GPOS src="Archivo-BoldItalic.G_P_O_S_.ttx"/>
+  <GSUB src="Archivo-BoldItalic.G_S_U_B_.ttx"/>
+  <hmtx src="Archivo-BoldItalic._h_m_t_x.ttx"/>
+</ttFont>
