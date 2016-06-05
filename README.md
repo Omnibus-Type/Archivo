@@ -14,7 +14,7 @@ Archivo is a grotesque font reminiscent of late nineteenth century. It was desig
 * SemiBold/SemiBold Italic
 * Bold/Bold Italic
 
-To contribute to the project contact [Omnibus Type](http://omnibus-type.com/).
+To contribute to the project contact [Omnibus-Type](http://omnibus-type.com/).
 
 ### Designers
 
