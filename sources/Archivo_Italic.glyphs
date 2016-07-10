@@ -1,7 +1,7 @@
 {
 .appVersion = "908";
 DisplayStrings = (
-c
+z
 );
 classes = (
 {
@@ -30980,13 +30980,13 @@ unicode = 0066;
 {
 color = 10;
 glyphname = g;
-lastChange = "2016-07-10 04:41:58 +0000";
+lastChange = "2016-07-10 05:40:02 +0000";
 layers = (
 {
 anchors = (
 {
 name = bottom;
-position = "{232, 0}";
+position = "{224, -148}";
 },
 {
 name = top;
@@ -41097,7 +41097,7 @@ unicode = 0213;
 {
 color = 10;
 glyphname = s;
-lastChange = "2016-07-10 04:41:58 +0000";
+lastChange = "2016-07-10 05:49:01 +0000";
 layers = (
 {
 anchors = (
@@ -41182,10 +41182,9 @@ nodes = (
 "353 465 OFFCURVE",
 "377 434 OFFCURVE",
 "377 398 CURVE SMOOTH",
-"377 393 OFFCURVE",
-"377 389 OFFCURVE",
-"376 384 CURVE SMOOTH",
-"374 375 LINE",
+"377 390 OFFCURVE",
+"376 383 OFFCURVE",
+"374 375 CURVE",
 "460 375 LINE",
 "463 381 OFFCURVE",
 "467 402 OFFCURVE",
@@ -41205,10 +41204,9 @@ nodes = (
 "140 60 OFFCURVE",
 "91 83 OFFCURVE",
 "91 137 CURVE SMOOTH",
-"91 143 OFFCURVE",
-"92 148 OFFCURVE",
-"93 154 CURVE SMOOTH",
-"95 164 LINE",
+"91 141 OFFCURVE",
+"92 153 OFFCURVE",
+"95 164 CURVE",
 "8 164 LINE",
 "8 164 OFFCURVE",
 "1 140 OFFCURVE",
@@ -41324,8 +41322,8 @@ nodes = (
 "193 94 OFFCURVE",
 "145 108 OFFCURVE",
 "145 152 CURVE SMOOTH",
-"145 158 OFFCURVE",
-"148 167 OFFCURVE",
+"145 155 OFFCURVE",
+"146 162 OFFCURVE",
 "148 167 CURVE",
 "15 167 LINE",
 "15 167 OFFCURVE",
@@ -42900,7 +42898,7 @@ unicode = 0259;
 {
 color = 10;
 glyphname = t;
-lastChange = "2016-07-10 04:41:58 +0000";
+lastChange = "2016-07-10 05:50:26 +0000";
 layers = (
 {
 anchors = (
@@ -42984,8 +42982,8 @@ nodes = (
 "54 526 LINE",
 "41 453 LINE",
 "105 453 LINE",
-"43 100 LINE SMOOTH",
-"42 92 OFFCURVE",
+"50 137 LINE SMOOTH",
+"45 110 OFFCURVE",
 "41 84 OFFCURVE",
 "41 72 CURVE SMOOTH",
 "41 27 OFFCURVE",
@@ -43062,10 +43060,11 @@ nodes = (
 "213 100 LINE SMOOTH",
 "189 100 OFFCURVE",
 "176 111 OFFCURVE",
-"176 132 CURVE SMOOTH",
-"176 135 OFFCURVE",
-"176 139 OFFCURVE",
-"225 414 CURVE",
+"176 129 CURVE SMOOTH",
+"176 137 OFFCURVE",
+"180 159 OFFCURVE",
+"182 170 CURVE SMOOTH",
+"225 414 LINE",
 "316 414 LINE",
 "336 526 LINE",
 "245 526 LINE",
@@ -43075,8 +43074,9 @@ nodes = (
 "45 526 LINE",
 "25 414 LINE",
 "88 414 LINE",
-"44 163 OFFCURVE",
-"35 119 OFFCURVE",
+"48 185 LINE SMOOTH",
+"38 127 OFFCURVE",
+"35 107 OFFCURVE",
 "35 93 CURVE SMOOTH",
 "35 37 OFFCURVE",
 "64 -12 OFFCURVE",
@@ -46799,7 +46799,7 @@ unicode = 1E81;
 {
 color = 10;
 glyphname = x;
-lastChange = "2016-07-10 04:41:58 +0000";
+lastChange = "2016-07-10 05:51:40 +0000";
 layers = (
 {
 anchors = (
@@ -46839,13 +46839,15 @@ paths = (
 closed = 1;
 nodes = (
 "57 0 LINE",
-"232 207 LINE",
+"229 206 LINE",
+"235 206 LINE",
 "338 0 LINE",
 "437 0 LINE",
 "293 271 LINE",
 "521 526 LINE",
 "415 526 LINE",
-"251 334 LINE",
+"254 335 LINE",
+"248 335 LINE",
 "153 526 LINE",
 "53 526 LINE",
 "191 270 LINE",
