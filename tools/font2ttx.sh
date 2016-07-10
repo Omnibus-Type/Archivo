@@ -24,10 +24,12 @@ font2ttx() {
 		exit 1
 	fi
 }
-# Go to the otf directory and convert the binary fonts to ttx XML
+# Go to the otf and ttf directories and convert the binary fonts to ttx XML
 for font in ../fonts/*.{o,t}tf ; do
 	echo "converting ${font##*/}"
-	font2ttx "$font"
-	rm "$font"
+	if [ -e "$font" ] ; then
+		font2ttx "$font"
+		rm "$font"
+	fi
 done
 exit 0
