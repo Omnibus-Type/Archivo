@@ -1,0 +1,2563 @@
+@charset 'UTF-8';
+	/* FontCSS Document */
+
+	/* get Fonts & Icon */
+
+	@font-face {
+		font-family: 'Archivo-Regular';
+		src: url(../fonts/Archivo-Regular.eot),
+			url(../fonts/Archivo-Regular.eot?#iefix) format('embedded-opentype'),
+			url(../fonts/Archivo-Regular.woff2) format('woff2'),
+			url(../fonts/Archivo-Regular.woff) format('woff'),
+			url(../fonts/Archivo-Regular.ttf) format('truetype');
+	}
+
+	/* Fonts & Icon Setup *//* global icon-setup for basic usage */
+
+	.icons {
+		font-family: 'Archivo-Regular',consolas, monaco, verdana;
+
+		font-size: 20px;	/* setup for global - optimized - icon-size */
+		font-style: normal;
+		font-weight: normal;
+		font-variant: normal;
+		text-transform: none;
+		line-height: 1;
+		vertical-align: 0px;
+		speak: none;
+
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+	}
+
+	/* method: data-icon */
+
+	[data-icon]:before {
+		content: attr(data-icon);
+	}
+
+	/* method: icon-classes */
+
+	.i-a:before {
+	content: '\0041';
+	}
+
+	.i-aacute:before {
+	content: '\00C1';
+	}
+
+	.i-abreve:before {
+	content: '\0102';
+	}
+
+	.i-abreveacute:before {
+	content: '\1EAE';
+	}
+
+	.i-abrevedotbelow:before {
+	content: '\1EB6';
+	}
+
+	.i-abrevegrave:before {
+	content: '\1EB0';
+	}
+
+	.i-abrevehookabove:before {
+	content: '\1EB2';
+	}
+
+	.i-abrevetilde:before {
+	content: '\1EB4';
+	}
+
+	.i-acaron:before {
+	content: '\01CD';
+	}
+
+	.i-acircumflex:before {
+	content: '\00C2';
+	}
+
+	.i-acircumflexacute:before {
+	content: '\1EA4';
+	}
+
+	.i-acircumflexdotbelow:before {
+	content: '\1EAC';
+	}
+
+	.i-acircumflexgrave:before {
+	content: '\1EA6';
+	}
+
+	.i-acircumflexhookabove:before {
+	content: '\1EA8';
+	}
+
+	.i-acircumflextilde:before {
+	content: '\1EAA';
+	}
+
+	.i-adblgrave:before {
+	content: '\0200';
+	}
+
+	.i-adieresis:before {
+	content: '\00C4';
+	}
+
+	.i-adotbelow:before {
+	content: '\1EA0';
+	}
+
+	.i-agrave:before {
+	content: '\00C0';
+	}
+
+	.i-ahookabove:before {
+	content: '\1EA2';
+	}
+
+	.i-ainvertedbreve:before {
+	content: '\0202';
+	}
+
+	.i-amacron:before {
+	content: '\0100';
+	}
+
+	.i-aogonek:before {
+	content: '\0104';
+	}
+
+	.i-aring:before {
+	content: '\00C5';
+	}
+
+	.i-aringacute:before {
+	content: '\01FA';
+	}
+
+	.i-atilde:before {
+	content: '\00C3';
+	}
+
+	.i-ae:before {
+	content: '\00C6';
+	}
+
+	.i-aeacute:before {
+	content: '\01FC';
+	}
+
+	.i-b:before {
+	content: '\0042';
+	}
+
+	.i-c:before {
+	content: '\0043';
+	}
+
+	.i-cacute:before {
+	content: '\0106';
+	}
+
+	.i-ccaron:before {
+	content: '\010C';
+	}
+
+	.i-ccedilla:before {
+	content: '\00C7';
+	}
+
+	.i-ccircumflex:before {
+	content: '\0108';
+	}
+
+	.i-cdotaccent:before {
+	content: '\010A';
+	}
+
+	.i-d:before {
+	content: '\0044';
+	}
+
+	.i-dz:before {
+	content: '\01F1';
+	}
+
+	.i-dzcaron:before {
+	content: '\01C4';
+	}
+
+	.i-eth:before {
+	content: '\00D0';
+	}
+
+	.i-dcaron:before {
+	content: '\010E';
+	}
+
+	.i-dcroat:before {
+	content: '\0110';
+	}
+
+	.i-ddotbelow:before {
+	content: '\1E0C';
+	}
+
+	.i-dz:before {
+	content: '\01F2';
+	}
+
+	.i-dzcaron:before {
+	content: '\01C5';
+	}
+
+	.i-e:before {
+	content: '\0045';
+	}
+
+	.i-eacute:before {
+	content: '\00C9';
+	}
+
+	.i-ebreve:before {
+	content: '\0114';
+	}
+
+	.i-ecaron:before {
+	content: '\011A';
+	}
+
+	.i-ecircumflex:before {
+	content: '\00CA';
+	}
+
+	.i-ecircumflexacute:before {
+	content: '\1EBE';
+	}
+
+	.i-ecircumflexdotbelow:before {
+	content: '\1EC6';
+	}
+
+	.i-ecircumflexgrave:before {
+	content: '\1EC0';
+	}
+
+	.i-ecircumflexhookabove:before {
+	content: '\1EC2';
+	}
+
+	.i-ecircumflextilde:before {
+	content: '\1EC4';
+	}
+
+	.i-edblgrave:before {
+	content: '\0204';
+	}
+
+	.i-edieresis:before {
+	content: '\00CB';
+	}
+
+	.i-edotaccent:before {
+	content: '\0116';
+	}
+
+	.i-edotbelow:before {
+	content: '\1EB8';
+	}
+
+	.i-egrave:before {
+	content: '\00C8';
+	}
+
+	.i-ehookabove:before {
+	content: '\1EBA';
+	}
+
+	.i-einvertedbreve:before {
+	content: '\0206';
+	}
+
+	.i-emacron:before {
+	content: '\0112';
+	}
+
+	.i-eogonek:before {
+	content: '\0118';
+	}
+
+	.i-etilde:before {
+	content: '\1EBC';
+	}
+
+	.i-f:before {
+	content: '\0046';
+	}
+
+	.i-g:before {
+	content: '\0047';
+	}
+
+	.i-gacute:before {
+	content: '\01F4';
+	}
+
+	.i-gbreve:before {
+	content: '\011E';
+	}
+
+	.i-gcaron:before {
+	content: '\01E6';
+	}
+
+	.i-gcircumflex:before {
+	content: '\011C';
+	}
+
+	.i-gcommaaccent:before {
+	content: '\0122';
+	}
+
+	.i-gdotaccent:before {
+	content: '\0120';
+	}
+
+	.i-h:before {
+	content: '\0048';
+	}
+
+	.i-hbar:before {
+	content: '\0126';
+	}
+
+	.i-hcircumflex:before {
+	content: '\0124';
+	}
+
+	.i-hdotbelow:before {
+	content: '\1E24';
+	}
+
+	.i-i:before {
+	content: '\0049';
+	}
+
+	.i-ij:before {
+	content: '\0132';
+	}
+
+	.i-iacute:before {
+	content: '\00CD';
+	}
+
+	.i-ibreve:before {
+	content: '\012C';
+	}
+
+	.i-icaron:before {
+	content: '\01CF';
+	}
+
+	.i-icircumflex:before {
+	content: '\00CE';
+	}
+
+	.i-idblgrave:before {
+	content: '\0208';
+	}
+
+	.i-idieresis:before {
+	content: '\00CF';
+	}
+
+	.i-idotaccent:before {
+	content: '\0130';
+	}
+
+	.i-idotbelow:before {
+	content: '\1ECA';
+	}
+
+	.i-igrave:before {
+	content: '\00CC';
+	}
+
+	.i-ihookabove:before {
+	content: '\1EC8';
+	}
+
+	.i-iinvertedbreve:before {
+	content: '\020A';
+	}
+
+	.i-imacron:before {
+	content: '\012A';
+	}
+
+	.i-iogonek:before {
+	content: '\012E';
+	}
+
+	.i-itilde:before {
+	content: '\0128';
+	}
+
+	.i-j:before {
+	content: '\004A';
+	}
+
+	.i-jcircumflex:before {
+	content: '\0134';
+	}
+
+	.i-k:before {
+	content: '\004B';
+	}
+
+	.i-kcommaaccent:before {
+	content: '\0136';
+	}
+
+	.i-l:before {
+	content: '\004C';
+	}
+
+	.i-lj:before {
+	content: '\01C7';
+	}
+
+	.i-lacute:before {
+	content: '\0139';
+	}
+
+	.i-lcaron:before {
+	content: '\013D';
+	}
+
+	.i-lcommaaccent:before {
+	content: '\013B';
+	}
+
+	.i-ldot:before {
+	content: '\013F';
+	}
+
+	.i-lj:before {
+	content: '\01C8';
+	}
+
+	.i-lslash:before {
+	content: '\0141';
+	}
+
+	.i-m:before {
+	content: '\004D';
+	}
+
+	.i-n:before {
+	content: '\004E';
+	}
+
+	.i-nj:before {
+	content: '\01CA';
+	}
+
+	.i-nacute:before {
+	content: '\0143';
+	}
+
+	.i-ncaron:before {
+	content: '\0147';
+	}
+
+	.i-ncommaaccent:before {
+	content: '\0145';
+	}
+
+	.i-ndotaccent:before {
+	content: '\1E44';
+	}
+
+	.i-eng:before {
+	content: '\014A';
+	}
+
+	.i-nhookleft:before {
+	content: '\019D';
+	}
+
+	.i-nj:before {
+	content: '\01CB';
+	}
+
+	.i-ntilde:before {
+	content: '\00D1';
+	}
+
+	.i-o:before {
+	content: '\004F';
+	}
+
+	.i-oacute:before {
+	content: '\00D3';
+	}
+
+	.i-obreve:before {
+	content: '\014E';
+	}
+
+	.i-ocaron:before {
+	content: '\01D1';
+	}
+
+	.i-ocircumflex:before {
+	content: '\00D4';
+	}
+
+	.i-ocircumflexacute:before {
+	content: '\1ED0';
+	}
+
+	.i-ocircumflexdotbelow:before {
+	content: '\1ED8';
+	}
+
+	.i-ocircumflexgrave:before {
+	content: '\1ED2';
+	}
+
+	.i-ocircumflexhookabove:before {
+	content: '\1ED4';
+	}
+
+	.i-ocircumflextilde:before {
+	content: '\1ED6';
+	}
+
+	.i-odblgrave:before {
+	content: '\020C';
+	}
+
+	.i-odieresis:before {
+	content: '\00D6';
+	}
+
+	.i-odotbelow:before {
+	content: '\1ECC';
+	}
+
+	.i-ograve:before {
+	content: '\00D2';
+	}
+
+	.i-ohookabove:before {
+	content: '\1ECE';
+	}
+
+	.i-ohorn:before {
+	content: '\01A0';
+	}
+
+	.i-ohornacute:before {
+	content: '\1EDA';
+	}
+
+	.i-ohorndotbelow:before {
+	content: '\1EE2';
+	}
+
+	.i-ohorngrave:before {
+	content: '\1EDC';
+	}
+
+	.i-ohornhookabove:before {
+	content: '\1EDE';
+	}
+
+	.i-ohorntilde:before {
+	content: '\1EE0';
+	}
+
+	.i-ohungarumlaut:before {
+	content: '\0150';
+	}
+
+	.i-oinvertedbreve:before {
+	content: '\020E';
+	}
+
+	.i-omacron:before {
+	content: '\014C';
+	}
+
+	.i-oogonek:before {
+	content: '\01EA';
+	}
+
+	.i-oslash:before {
+	content: '\00D8';
+	}
+
+	.i-oslashacute:before {
+	content: '\01FE';
+	}
+
+	.i-otilde:before {
+	content: '\00D5';
+	}
+
+	.i-oe:before {
+	content: '\0152';
+	}
+
+	.i-p:before {
+	content: '\0050';
+	}
+
+	.i-thorn:before {
+	content: '\00DE';
+	}
+
+	.i-q:before {
+	content: '\0051';
+	}
+
+	.i-r:before {
+	content: '\0052';
+	}
+
+	.i-racute:before {
+	content: '\0154';
+	}
+
+	.i-rcaron:before {
+	content: '\0158';
+	}
+
+	.i-rcommaaccent:before {
+	content: '\0156';
+	}
+
+	.i-rdblgrave:before {
+	content: '\0210';
+	}
+
+	.i-rdotbelow:before {
+	content: '\1E5A';
+	}
+
+	.i-rinvertedbreve:before {
+	content: '\0212';
+	}
+
+	.i-s:before {
+	content: '\0053';
+	}
+
+	.i-sacute:before {
+	content: '\015A';
+	}
+
+	.i-saltillo:before {
+	content: '\A78B';
+	}
+
+	.i-scaron:before {
+	content: '\0160';
+	}
+
+	.i-scedilla:before {
+	content: '\015E';
+	}
+
+	.i-scircumflex:before {
+	content: '\015C';
+	}
+
+	.i-scommaaccent:before {
+	content: '\0218';
+	}
+
+	.i-sdotbelow:before {
+	content: '\1E62';
+	}
+
+	.i-germandbls:before {
+	content: '\1E9E';
+	}
+
+	.i-schwa:before {
+	content: '\018F';
+	}
+
+	.i-t:before {
+	content: '\0054';
+	}
+
+	.i-tbar:before {
+	content: '\0166';
+	}
+
+	.i-tcaron:before {
+	content: '\0164';
+	}
+
+	.i-tcedilla:before {
+	content: '\0162';
+	}
+
+	.i-tcommaaccent:before {
+	content: '\021A';
+	}
+
+	.i-tdotbelow:before {
+	content: '\1E6C';
+	}
+
+	.i-u:before {
+	content: '\0055';
+	}
+
+	.i-uacute:before {
+	content: '\00DA';
+	}
+
+	.i-ubreve:before {
+	content: '\016C';
+	}
+
+	.i-ucaron:before {
+	content: '\01D3';
+	}
+
+	.i-ucircumflex:before {
+	content: '\00DB';
+	}
+
+	.i-udblgrave:before {
+	content: '\0214';
+	}
+
+	.i-udieresis:before {
+	content: '\00DC';
+	}
+
+	.i-udieresisacute:before {
+	content: '\01D7';
+	}
+
+	.i-udieresiscaron:before {
+	content: '\01D9';
+	}
+
+	.i-udieresisgrave:before {
+	content: '\01DB';
+	}
+
+	.i-udieresismacron:before {
+	content: '\01D5';
+	}
+
+	.i-udotbelow:before {
+	content: '\1EE4';
+	}
+
+	.i-ugrave:before {
+	content: '\00D9';
+	}
+
+	.i-uhookabove:before {
+	content: '\1EE6';
+	}
+
+	.i-uhorn:before {
+	content: '\01AF';
+	}
+
+	.i-uhornacute:before {
+	content: '\1EE8';
+	}
+
+	.i-uhorndotbelow:before {
+	content: '\1EF0';
+	}
+
+	.i-uhorngrave:before {
+	content: '\1EEA';
+	}
+
+	.i-uhornhookabove:before {
+	content: '\1EEC';
+	}
+
+	.i-uhorntilde:before {
+	content: '\1EEE';
+	}
+
+	.i-uhungarumlaut:before {
+	content: '\0170';
+	}
+
+	.i-uinvertedbreve:before {
+	content: '\0216';
+	}
+
+	.i-umacron:before {
+	content: '\016A';
+	}
+
+	.i-uogonek:before {
+	content: '\0172';
+	}
+
+	.i-uring:before {
+	content: '\016E';
+	}
+
+	.i-utilde:before {
+	content: '\0168';
+	}
+
+	.i-v:before {
+	content: '\0056';
+	}
+
+	.i-w:before {
+	content: '\0057';
+	}
+
+	.i-wacute:before {
+	content: '\1E82';
+	}
+
+	.i-wcircumflex:before {
+	content: '\0174';
+	}
+
+	.i-wdieresis:before {
+	content: '\1E84';
+	}
+
+	.i-wgrave:before {
+	content: '\1E80';
+	}
+
+	.i-x:before {
+	content: '\0058';
+	}
+
+	.i-y:before {
+	content: '\0059';
+	}
+
+	.i-yacute:before {
+	content: '\00DD';
+	}
+
+	.i-ycircumflex:before {
+	content: '\0176';
+	}
+
+	.i-ydieresis:before {
+	content: '\0178';
+	}
+
+	.i-ydotbelow:before {
+	content: '\1EF4';
+	}
+
+	.i-ygrave:before {
+	content: '\1EF2';
+	}
+
+	.i-yhookabove:before {
+	content: '\1EF6';
+	}
+
+	.i-ymacron:before {
+	content: '\0232';
+	}
+
+	.i-ytilde:before {
+	content: '\1EF8';
+	}
+
+	.i-z:before {
+	content: '\005A';
+	}
+
+	.i-zacute:before {
+	content: '\0179';
+	}
+
+	.i-zcaron:before {
+	content: '\017D';
+	}
+
+	.i-zdotaccent:before {
+	content: '\017B';
+	}
+
+	.i-zdotbelow:before {
+	content: '\1E92';
+	}
+
+	.i-iacute_j.loclnld:before {
+	content: '\None';
+	}
+
+	.i-g_tilde.loclgua:before {
+	content: '\None';
+	}
+
+	.i-yacute.loclgua:before {
+	content: '\None';
+	}
+
+	.i-ycircumflex.loclgua:before {
+	content: '\None';
+	}
+
+	.i-ydieresis.loclgua:before {
+	content: '\None';
+	}
+
+	.i-ygrave.loclgua:before {
+	content: '\None';
+	}
+
+	.i-ymacron.loclgua:before {
+	content: '\None';
+	}
+
+	.i-ytilde.loclgua:before {
+	content: '\None';
+	}
+
+	.i-cacute.loclplk:before {
+	content: '\None';
+	}
+
+	.i-nacute.loclplk:before {
+	content: '\None';
+	}
+
+	.i-oacute.loclplk:before {
+	content: '\None';
+	}
+
+	.i-sacute.loclplk:before {
+	content: '\None';
+	}
+
+	.i-zacute.loclplk:before {
+	content: '\None';
+	}
+
+	.i-a:before {
+	content: '\0061';
+	}
+
+	.i-aacute:before {
+	content: '\00E1';
+	}
+
+	.i-abreve:before {
+	content: '\0103';
+	}
+
+	.i-abreveacute:before {
+	content: '\1EAF';
+	}
+
+	.i-abrevedotbelow:before {
+	content: '\1EB7';
+	}
+
+	.i-abrevegrave:before {
+	content: '\1EB1';
+	}
+
+	.i-abrevehookabove:before {
+	content: '\1EB3';
+	}
+
+	.i-abrevetilde:before {
+	content: '\1EB5';
+	}
+
+	.i-acaron:before {
+	content: '\01CE';
+	}
+
+	.i-acircumflex:before {
+	content: '\00E2';
+	}
+
+	.i-acircumflexacute:before {
+	content: '\1EA5';
+	}
+
+	.i-acircumflexdotbelow:before {
+	content: '\1EAD';
+	}
+
+	.i-acircumflexgrave:before {
+	content: '\1EA7';
+	}
+
+	.i-acircumflexhookabove:before {
+	content: '\1EA9';
+	}
+
+	.i-acircumflextilde:before {
+	content: '\1EAB';
+	}
+
+	.i-adblgrave:before {
+	content: '\0201';
+	}
+
+	.i-adieresis:before {
+	content: '\00E4';
+	}
+
+	.i-adotbelow:before {
+	content: '\1EA1';
+	}
+
+	.i-agrave:before {
+	content: '\00E0';
+	}
+
+	.i-ahookabove:before {
+	content: '\1EA3';
+	}
+
+	.i-ainvertedbreve:before {
+	content: '\0203';
+	}
+
+	.i-amacron:before {
+	content: '\0101';
+	}
+
+	.i-aogonek:before {
+	content: '\0105';
+	}
+
+	.i-aring:before {
+	content: '\00E5';
+	}
+
+	.i-aringacute:before {
+	content: '\01FB';
+	}
+
+	.i-atilde:before {
+	content: '\00E3';
+	}
+
+	.i-ae:before {
+	content: '\00E6';
+	}
+
+	.i-aeacute:before {
+	content: '\01FD';
+	}
+
+	.i-b:before {
+	content: '\0062';
+	}
+
+	.i-c:before {
+	content: '\0063';
+	}
+
+	.i-cacute:before {
+	content: '\0107';
+	}
+
+	.i-ccaron:before {
+	content: '\010D';
+	}
+
+	.i-ccedilla:before {
+	content: '\00E7';
+	}
+
+	.i-ccircumflex:before {
+	content: '\0109';
+	}
+
+	.i-cdotaccent:before {
+	content: '\010B';
+	}
+
+	.i-d:before {
+	content: '\0064';
+	}
+
+	.i-eth:before {
+	content: '\00F0';
+	}
+
+	.i-dcaron:before {
+	content: '\010F';
+	}
+
+	.i-dcroat:before {
+	content: '\0111';
+	}
+
+	.i-ddotbelow:before {
+	content: '\1E0D';
+	}
+
+	.i-dz:before {
+	content: '\01F3';
+	}
+
+	.i-dzcaron:before {
+	content: '\01C6';
+	}
+
+	.i-e:before {
+	content: '\0065';
+	}
+
+	.i-eacute:before {
+	content: '\00E9';
+	}
+
+	.i-ebreve:before {
+	content: '\0115';
+	}
+
+	.i-ecaron:before {
+	content: '\011B';
+	}
+
+	.i-ecircumflex:before {
+	content: '\00EA';
+	}
+
+	.i-ecircumflexacute:before {
+	content: '\1EBF';
+	}
+
+	.i-ecircumflexdotbelow:before {
+	content: '\1EC7';
+	}
+
+	.i-ecircumflexgrave:before {
+	content: '\1EC1';
+	}
+
+	.i-ecircumflexhookabove:before {
+	content: '\1EC3';
+	}
+
+	.i-ecircumflextilde:before {
+	content: '\1EC5';
+	}
+
+	.i-edblgrave:before {
+	content: '\0205';
+	}
+
+	.i-edieresis:before {
+	content: '\00EB';
+	}
+
+	.i-edotaccent:before {
+	content: '\0117';
+	}
+
+	.i-edotbelow:before {
+	content: '\1EB9';
+	}
+
+	.i-egrave:before {
+	content: '\00E8';
+	}
+
+	.i-ehookabove:before {
+	content: '\1EBB';
+	}
+
+	.i-einvertedbreve:before {
+	content: '\0207';
+	}
+
+	.i-emacron:before {
+	content: '\0113';
+	}
+
+	.i-eogonek:before {
+	content: '\0119';
+	}
+
+	.i-etilde:before {
+	content: '\1EBD';
+	}
+
+	.i-f:before {
+	content: '\0066';
+	}
+
+	.i-g:before {
+	content: '\0067';
+	}
+
+	.i-gacute:before {
+	content: '\01F5';
+	}
+
+	.i-gbreve:before {
+	content: '\011F';
+	}
+
+	.i-gcaron:before {
+	content: '\01E7';
+	}
+
+	.i-gcircumflex:before {
+	content: '\011D';
+	}
+
+	.i-gcommaaccent:before {
+	content: '\0123';
+	}
+
+	.i-gdotaccent:before {
+	content: '\0121';
+	}
+
+	.i-h:before {
+	content: '\0068';
+	}
+
+	.i-hbar:before {
+	content: '\0127';
+	}
+
+	.i-hcircumflex:before {
+	content: '\0125';
+	}
+
+	.i-hdotbelow:before {
+	content: '\1E25';
+	}
+
+	.i-i:before {
+	content: '\0069';
+	}
+
+	.i-idotless:before {
+	content: '\0131';
+	}
+
+	.i-iacute:before {
+	content: '\00ED';
+	}
+
+	.i-ibreve:before {
+	content: '\012D';
+	}
+
+	.i-icaron:before {
+	content: '\01D0';
+	}
+
+	.i-icircumflex:before {
+	content: '\00EE';
+	}
+
+	.i-idblgrave:before {
+	content: '\0209';
+	}
+
+	.i-idieresis:before {
+	content: '\00EF';
+	}
+
+	.i-idotaccent:before {
+	content: '\None';
+	}
+
+	.i-idotbelow:before {
+	content: '\1ECB';
+	}
+
+	.i-igrave:before {
+	content: '\00EC';
+	}
+
+	.i-ihookabove:before {
+	content: '\1EC9';
+	}
+
+	.i-iinvertedbreve:before {
+	content: '\020B';
+	}
+
+	.i-ij:before {
+	content: '\0133';
+	}
+
+	.i-imacron:before {
+	content: '\012B';
+	}
+
+	.i-iogonek:before {
+	content: '\012F';
+	}
+
+	.i-itilde:before {
+	content: '\0129';
+	}
+
+	.i-j:before {
+	content: '\006A';
+	}
+
+	.i-jdotless:before {
+	content: '\0237';
+	}
+
+	.i-jcircumflex:before {
+	content: '\0135';
+	}
+
+	.i-k:before {
+	content: '\006B';
+	}
+
+	.i-kcommaaccent:before {
+	content: '\0137';
+	}
+
+	.i-kgreenlandic:before {
+	content: '\0138';
+	}
+
+	.i-l:before {
+	content: '\006C';
+	}
+
+	.i-lacute:before {
+	content: '\013A';
+	}
+
+	.i-lcaron:before {
+	content: '\013E';
+	}
+
+	.i-lcommaaccent:before {
+	content: '\013C';
+	}
+
+	.i-ldot:before {
+	content: '\0140';
+	}
+
+	.i-lj:before {
+	content: '\01C9';
+	}
+
+	.i-lslash:before {
+	content: '\0142';
+	}
+
+	.i-m:before {
+	content: '\006D';
+	}
+
+	.i-n:before {
+	content: '\006E';
+	}
+
+	.i-nacute:before {
+	content: '\0144';
+	}
+
+	.i-napostrophe:before {
+	content: '\0149';
+	}
+
+	.i-ncaron:before {
+	content: '\0148';
+	}
+
+	.i-ncommaaccent:before {
+	content: '\0146';
+	}
+
+	.i-ndotaccent:before {
+	content: '\1E45';
+	}
+
+	.i-eng:before {
+	content: '\014B';
+	}
+
+	.i-nhookleft:before {
+	content: '\0272';
+	}
+
+	.i-nj:before {
+	content: '\01CC';
+	}
+
+	.i-ntilde:before {
+	content: '\00F1';
+	}
+
+	.i-o:before {
+	content: '\006F';
+	}
+
+	.i-oacute:before {
+	content: '\00F3';
+	}
+
+	.i-obreve:before {
+	content: '\014F';
+	}
+
+	.i-ocaron:before {
+	content: '\01D2';
+	}
+
+	.i-ocircumflex:before {
+	content: '\00F4';
+	}
+
+	.i-ocircumflexacute:before {
+	content: '\1ED1';
+	}
+
+	.i-ocircumflexdotbelow:before {
+	content: '\1ED9';
+	}
+
+	.i-ocircumflexgrave:before {
+	content: '\1ED3';
+	}
+
+	.i-ocircumflexhookabove:before {
+	content: '\1ED5';
+	}
+
+	.i-ocircumflextilde:before {
+	content: '\1ED7';
+	}
+
+	.i-odblgrave:before {
+	content: '\020D';
+	}
+
+	.i-odieresis:before {
+	content: '\00F6';
+	}
+
+	.i-odotbelow:before {
+	content: '\1ECD';
+	}
+
+	.i-ograve:before {
+	content: '\00F2';
+	}
+
+	.i-ohookabove:before {
+	content: '\1ECF';
+	}
+
+	.i-ohorn:before {
+	content: '\01A1';
+	}
+
+	.i-ohornacute:before {
+	content: '\1EDB';
+	}
+
+	.i-ohorndotbelow:before {
+	content: '\1EE3';
+	}
+
+	.i-ohorngrave:before {
+	content: '\1EDD';
+	}
+
+	.i-ohornhookabove:before {
+	content: '\1EDF';
+	}
+
+	.i-ohorntilde:before {
+	content: '\1EE1';
+	}
+
+	.i-ohungarumlaut:before {
+	content: '\0151';
+	}
+
+	.i-oinvertedbreve:before {
+	content: '\020F';
+	}
+
+	.i-omacron:before {
+	content: '\014D';
+	}
+
+	.i-oogonek:before {
+	content: '\01EB';
+	}
+
+	.i-oslash:before {
+	content: '\00F8';
+	}
+
+	.i-oslashacute:before {
+	content: '\01FF';
+	}
+
+	.i-otilde:before {
+	content: '\00F5';
+	}
+
+	.i-oe:before {
+	content: '\0153';
+	}
+
+	.i-p:before {
+	content: '\0070';
+	}
+
+	.i-thorn:before {
+	content: '\00FE';
+	}
+
+	.i-q:before {
+	content: '\0071';
+	}
+
+	.i-r:before {
+	content: '\0072';
+	}
+
+	.i-racute:before {
+	content: '\0155';
+	}
+
+	.i-rcaron:before {
+	content: '\0159';
+	}
+
+	.i-rcommaaccent:before {
+	content: '\0157';
+	}
+
+	.i-rdblgrave:before {
+	content: '\0211';
+	}
+
+	.i-rdotbelow:before {
+	content: '\1E5B';
+	}
+
+	.i-rinvertedbreve:before {
+	content: '\0213';
+	}
+
+	.i-s:before {
+	content: '\0073';
+	}
+
+	.i-sacute:before {
+	content: '\015B';
+	}
+
+	.i-saltillo:before {
+	content: '\A78C';
+	}
+
+	.i-scaron:before {
+	content: '\0161';
+	}
+
+	.i-scedilla:before {
+	content: '\015F';
+	}
+
+	.i-scircumflex:before {
+	content: '\015D';
+	}
+
+	.i-scommaaccent:before {
+	content: '\0219';
+	}
+
+	.i-sdotbelow:before {
+	content: '\1E63';
+	}
+
+	.i-germandbls:before {
+	content: '\00DF';
+	}
+
+	.i-longs:before {
+	content: '\017F';
+	}
+
+	.i-schwa:before {
+	content: '\0259';
+	}
+
+	.i-t:before {
+	content: '\0074';
+	}
+
+	.i-tbar:before {
+	content: '\0167';
+	}
+
+	.i-tcaron:before {
+	content: '\0165';
+	}
+
+	.i-tcedilla:before {
+	content: '\0163';
+	}
+
+	.i-tcommaaccent:before {
+	content: '\021B';
+	}
+
+	.i-tdotbelow:before {
+	content: '\1E6D';
+	}
+
+	.i-u:before {
+	content: '\0075';
+	}
+
+	.i-uacute:before {
+	content: '\00FA';
+	}
+
+	.i-ubreve:before {
+	content: '\016D';
+	}
+
+	.i-ucaron:before {
+	content: '\01D4';
+	}
+
+	.i-ucircumflex:before {
+	content: '\00FB';
+	}
+
+	.i-udblgrave:before {
+	content: '\0215';
+	}
+
+	.i-udieresis:before {
+	content: '\00FC';
+	}
+
+	.i-udieresisacute:before {
+	content: '\01D8';
+	}
+
+	.i-udieresiscaron:before {
+	content: '\01DA';
+	}
+
+	.i-udieresisgrave:before {
+	content: '\01DC';
+	}
+
+	.i-udieresismacron:before {
+	content: '\01D6';
+	}
+
+	.i-udotbelow:before {
+	content: '\1EE5';
+	}
+
+	.i-ugrave:before {
+	content: '\00F9';
+	}
+
+	.i-uhookabove:before {
+	content: '\1EE7';
+	}
+
+	.i-uhorn:before {
+	content: '\01B0';
+	}
+
+	.i-uhornacute:before {
+	content: '\1EE9';
+	}
+
+	.i-uhorndotbelow:before {
+	content: '\1EF1';
+	}
+
+	.i-uhorngrave:before {
+	content: '\1EEB';
+	}
+
+	.i-uhornhookabove:before {
+	content: '\1EED';
+	}
+
+	.i-uhorntilde:before {
+	content: '\1EEF';
+	}
+
+	.i-uhungarumlaut:before {
+	content: '\0171';
+	}
+
+	.i-uinvertedbreve:before {
+	content: '\0217';
+	}
+
+	.i-umacron:before {
+	content: '\016B';
+	}
+
+	.i-uogonek:before {
+	content: '\0173';
+	}
+
+	.i-uring:before {
+	content: '\016F';
+	}
+
+	.i-utilde:before {
+	content: '\0169';
+	}
+
+	.i-v:before {
+	content: '\0076';
+	}
+
+	.i-w:before {
+	content: '\0077';
+	}
+
+	.i-wacute:before {
+	content: '\1E83';
+	}
+
+	.i-wcircumflex:before {
+	content: '\0175';
+	}
+
+	.i-wdieresis:before {
+	content: '\1E85';
+	}
+
+	.i-wgrave:before {
+	content: '\1E81';
+	}
+
+	.i-x:before {
+	content: '\0078';
+	}
+
+	.i-y:before {
+	content: '\0079';
+	}
+
+	.i-yacute:before {
+	content: '\00FD';
+	}
+
+	.i-ycircumflex:before {
+	content: '\0177';
+	}
+
+	.i-ydieresis:before {
+	content: '\00FF';
+	}
+
+	.i-ydotbelow:before {
+	content: '\1EF5';
+	}
+
+	.i-ygrave:before {
+	content: '\1EF3';
+	}
+
+	.i-yhookabove:before {
+	content: '\1EF7';
+	}
+
+	.i-ymacron:before {
+	content: '\0233';
+	}
+
+	.i-ytilde:before {
+	content: '\1EF9';
+	}
+
+	.i-z:before {
+	content: '\007A';
+	}
+
+	.i-zacute:before {
+	content: '\017A';
+	}
+
+	.i-zcaron:before {
+	content: '\017E';
+	}
+
+	.i-zdotaccent:before {
+	content: '\017C';
+	}
+
+	.i-zdotbelow:before {
+	content: '\1E93';
+	}
+
+	.i-iacute_j.loclnld:before {
+	content: '\None';
+	}
+
+	.i-g_tilde.loclgua:before {
+	content: '\None';
+	}
+
+	.i-yacute.loclgua:before {
+	content: '\None';
+	}
+
+	.i-ycircumflex.loclgua:before {
+	content: '\None';
+	}
+
+	.i-ydieresis.loclgua:before {
+	content: '\None';
+	}
+
+	.i-ygrave.loclgua:before {
+	content: '\None';
+	}
+
+	.i-ymacron.loclgua:before {
+	content: '\None';
+	}
+
+	.i-ytilde.loclgua:before {
+	content: '\None';
+	}
+
+	.i-cacute.loclplk:before {
+	content: '\None';
+	}
+
+	.i-nacute.loclplk:before {
+	content: '\None';
+	}
+
+	.i-oacute.loclplk:before {
+	content: '\None';
+	}
+
+	.i-sacute.loclplk:before {
+	content: '\None';
+	}
+
+	.i-zacute.loclplk:before {
+	content: '\None';
+	}
+
+	.i-f_f:before {
+	content: '\None';
+	}
+
+	.i-fi:before {
+	content: '\FB01';
+	}
+
+	.i-fl:before {
+	content: '\FB02';
+	}
+
+	.i-ordfeminine:before {
+	content: '\00AA';
+	}
+
+	.i-ordmasculine:before {
+	content: '\00BA';
+	}
+
+	.i-nmod:before {
+	content: '\207F';
+	}
+
+	.i-delta:before {
+	content: '\0394';
+	}
+
+	.i-omega:before {
+	content: '\03A9';
+	}
+
+	.i-mu:before {
+	content: '\03BC';
+	}
+
+	.i-pi:before {
+	content: '\03C0';
+	}
+
+	.i-zero:before {
+	content: '\0030';
+	}
+
+	.i-one:before {
+	content: '\0031';
+	}
+
+	.i-two:before {
+	content: '\0032';
+	}
+
+	.i-three:before {
+	content: '\0033';
+	}
+
+	.i-four:before {
+	content: '\0034';
+	}
+
+	.i-five:before {
+	content: '\0035';
+	}
+
+	.i-six:before {
+	content: '\0036';
+	}
+
+	.i-seven:before {
+	content: '\0037';
+	}
+
+	.i-eight:before {
+	content: '\0038';
+	}
+
+	.i-nine:before {
+	content: '\0039';
+	}
+
+	.i-onesuperior:before {
+	content: '\00B9';
+	}
+
+	.i-twosuperior:before {
+	content: '\00B2';
+	}
+
+	.i-threesuperior:before {
+	content: '\00B3';
+	}
+
+	.i-fraction:before {
+	content: '\2044';
+	}
+
+	.i-onehalf:before {
+	content: '\00BD';
+	}
+
+	.i-onethird:before {
+	content: '\2153';
+	}
+
+	.i-twothirds:before {
+	content: '\2154';
+	}
+
+	.i-onequarter:before {
+	content: '\00BC';
+	}
+
+	.i-threequarters:before {
+	content: '\00BE';
+	}
+
+	.i-oneeighth:before {
+	content: '\215B';
+	}
+
+	.i-threeeighths:before {
+	content: '\215C';
+	}
+
+	.i-fiveeighths:before {
+	content: '\215D';
+	}
+
+	.i-seveneighths:before {
+	content: '\215E';
+	}
+
+	.i-asterisk:before {
+	content: '\002A';
+	}
+
+	.i-backslash:before {
+	content: '\005C';
+	}
+
+	.i-periodcentered:before {
+	content: '\00B7';
+	}
+
+	.i-bullet:before {
+	content: '\2022';
+	}
+
+	.i-colon:before {
+	content: '\003A';
+	}
+
+	.i-comma:before {
+	content: '\002C';
+	}
+
+	.i-ellipsis:before {
+	content: '\2026';
+	}
+
+	.i-exclam:before {
+	content: '\0021';
+	}
+
+	.i-exclamdouble:before {
+	content: '\203C';
+	}
+
+	.i-exclamdown:before {
+	content: '\00A1';
+	}
+
+	.i-numbersign:before {
+	content: '\0023';
+	}
+
+	.i-overline:before {
+	content: '\203E';
+	}
+
+	.i-period:before {
+	content: '\002E';
+	}
+
+	.i-question:before {
+	content: '\003F';
+	}
+
+	.i-questiondown:before {
+	content: '\00BF';
+	}
+
+	.i-quotedbl:before {
+	content: '\0022';
+	}
+
+	.i-quotesingle:before {
+	content: '\0027';
+	}
+
+	.i-semicolon:before {
+	content: '\003B';
+	}
+
+	.i-slash:before {
+	content: '\002F';
+	}
+
+	.i-underscore:before {
+	content: '\005F';
+	}
+
+	.i-underscoredbl:before {
+	content: '\2017';
+	}
+
+	.i-braceleft:before {
+	content: '\007B';
+	}
+
+	.i-braceright:before {
+	content: '\007D';
+	}
+
+	.i-bracketleft:before {
+	content: '\005B';
+	}
+
+	.i-bracketright:before {
+	content: '\005D';
+	}
+
+	.i-parenleft:before {
+	content: '\0028';
+	}
+
+	.i-parenright:before {
+	content: '\0029';
+	}
+
+	.i-emdash:before {
+	content: '\2014';
+	}
+
+	.i-endash:before {
+	content: '\2013';
+	}
+
+	.i-horizontalbar:before {
+	content: '\2015';
+	}
+
+	.i-hyphen:before {
+	content: '\002D';
+	}
+
+	.i-softhyphen:before {
+	content: '\00AD';
+	}
+
+	.i-guillemetleft:before {
+	content: '\00AB';
+	}
+
+	.i-guillemetright:before {
+	content: '\00BB';
+	}
+
+	.i-guilsinglleft:before {
+	content: '\2039';
+	}
+
+	.i-guilsinglright:before {
+	content: '\203A';
+	}
+
+	.i-quotedblbase:before {
+	content: '\201E';
+	}
+
+	.i-quotedblleft:before {
+	content: '\201C';
+	}
+
+	.i-quotedblright:before {
+	content: '\201D';
+	}
+
+	.i-quoteleft:before {
+	content: '\2018';
+	}
+
+	.i-quotereversed:before {
+	content: '\201B';
+	}
+
+	.i-quoteright:before {
+	content: '\2019';
+	}
+
+	.i-quotesinglbase:before {
+	content: '\201A';
+	}
+
+	.i-cent:before {
+	content: '\00A2';
+	}
+
+	.i-currency:before {
+	content: '\00A4';
+	}
+
+	.i-dollar:before {
+	content: '\0024';
+	}
+
+	.i-euro:before {
+	content: '\20AC';
+	}
+
+	.i-florin:before {
+	content: '\0192';
+	}
+
+	.i-franc:before {
+	content: '\20A3';
+	}
+
+	.i-guarani:before {
+	content: '\20B2';
+	}
+
+	.i-lira:before {
+	content: '\20A4';
+	}
+
+	.i-peseta:before {
+	content: '\20A7';
+	}
+
+	.i-sterling:before {
+	content: '\00A3';
+	}
+
+	.i-yen:before {
+	content: '\00A5';
+	}
+
+	.i-bulletoperator:before {
+	content: '\2219';
+	}
+
+	.i-divisionslash:before {
+	content: '\2215';
+	}
+
+	.i-equivalence:before {
+	content: '\2261';
+	}
+
+	.i-integralbt:before {
+	content: '\2321';
+	}
+
+	.i-integraltp:before {
+	content: '\2320';
+	}
+
+	.i-logicalnotreversed:before {
+	content: '\2310';
+	}
+
+	.i-plus:before {
+	content: '\002B';
+	}
+
+	.i-minus:before {
+	content: '\2212';
+	}
+
+	.i-multiply:before {
+	content: '\00D7';
+	}
+
+	.i-divide:before {
+	content: '\00F7';
+	}
+
+	.i-equal:before {
+	content: '\003D';
+	}
+
+	.i-notequal:before {
+	content: '\2260';
+	}
+
+	.i-greater:before {
+	content: '\003E';
+	}
+
+	.i-less:before {
+	content: '\003C';
+	}
+
+	.i-greaterequal:before {
+	content: '\2265';
+	}
+
+	.i-lessequal:before {
+	content: '\2264';
+	}
+
+	.i-plusminus:before {
+	content: '\00B1';
+	}
+
+	.i-approxequal:before {
+	content: '\2248';
+	}
+
+	.i-asciitilde:before {
+	content: '\007E';
+	}
+
+	.i-logicalnot:before {
+	content: '\00AC';
+	}
+
+	.i-infinity:before {
+	content: '\221E';
+	}
+
+	.i-intersection:before {
+	content: '\2229';
+	}
+
+	.i-integral:before {
+	content: '\222B';
+	}
+
+	.i-ohm:before {
+	content: '\2126';
+	}
+
+	.i-increment:before {
+	content: '\2206';
+	}
+
+	.i-product:before {
+	content: '\220F';
+	}
+
+	.i-summation:before {
+	content: '\2211';
+	}
+
+	.i-radical:before {
+	content: '\221A';
+	}
+
+	.i-micro:before {
+	content: '\00B5';
+	}
+
+	.i-partialdiff:before {
+	content: '\2202';
+	}
+
+	.i-orthogonal:before {
+	content: '\221F';
+	}
+
+	.i-percent:before {
+	content: '\0025';
+	}
+
+	.i-perthousand:before {
+	content: '\2030';
+	}
+
+	.i-uparrow:before {
+	content: '\2191';
+	}
+
+	.i-rightarrow:before {
+	content: '\2192';
+	}
+
+	.i-downarrow:before {
+	content: '\2193';
+	}
+
+	.i-leftarrow:before {
+	content: '\2190';
+	}
+
+	.i-leftrightarrow:before {
+	content: '\2194';
+	}
+
+	.i-updownarrow:before {
+	content: '\2195';
+	}
+
+	.i-updownbasearrow:before {
+	content: '\21A8';
+	}
+
+	.i-lozenge:before {
+	content: '\25CA';
+	}
+
+	.i-at:before {
+	content: '\0040';
+	}
+
+	.i-ampersand:before {
+	content: '\0026';
+	}
+
+	.i-paragraph:before {
+	content: '\00B6';
+	}
+
+	.i-section:before {
+	content: '\00A7';
+	}
+
+	.i-copyright:before {
+	content: '\00A9';
+	}
+
+	.i-registered:before {
+	content: '\00AE';
+	}
+
+	.i-trademark:before {
+	content: '\2122';
+	}
+
+	.i-careof:before {
+	content: '\2105';
+	}
+
+	.i-degree:before {
+	content: '\00B0';
+	}
+
+	.i-bar:before {
+	content: '\007C';
+	}
+
+	.i-brokenbar:before {
+	content: '\00A6';
+	}
+
+	.i-litersign:before {
+	content: '\2113';
+	}
+
+	.i-dagger:before {
+	content: '\2020';
+	}
+
+	.i-daggerdbl:before {
+	content: '\2021';
+	}
+
+	.i-estimated:before {
+	content: '\212E';
+	}
+
+	.i-numero:before {
+	content: '\2116';
+	}
+
+	.i-asciicircum:before {
+	content: '\005E';
+	}
+
+	.i-house:before {
+	content: '\2302';
+	}
+
+	.i-minute:before {
+	content: '\2032';
+	}
+
+	.i-second:before {
+	content: '\2033';
+	}
+
+	.i-hookabovecomb:before {
+	content: '\0309';
+	}
+
+	.i-dblgravecomb:before {
+	content: '\030F';
+	}
+
+	.i-breveinvertedcomb:before {
+	content: '\0311';
+	}
+
+	.i-horncomb:before {
+	content: '\031B';
+	}
+
+	.i-dotbelowcomb:before {
+	content: '\0323';
+	}
+
+	.i-commaaccent:before {
+	content: '\0326';
+	}
+
+	.i-ogonekcomb:before {
+	content: '\0328';
+	}
+
+	.i-apostrophemod:before {
+	content: '\02BC';
+	}
+
+	.i-firsttonechinese:before {
+	content: '\02C9';
+	}
+
+	.i-acute:before {
+	content: '\00B4';
+	}
+
+	.i-breve:before {
+	content: '\02D8';
+	}
+
+	.i-caron:before {
+	content: '\02C7';
+	}
+
+	.i-cedilla:before {
+	content: '\00B8';
+	}
+
+	.i-circumflex:before {
+	content: '\02C6';
+	}
+
+	.i-dieresis:before {
+	content: '\00A8';
+	}
+
+	.i-dotaccent:before {
+	content: '\02D9';
+	}
+
+	.i-grave:before {
+	content: '\0060';
+	}
+
+	.i-hungarumlaut:before {
+	content: '\02DD';
+	}
+
+	.i-macron:before {
+	content: '\00AF';
+	}
+
+	.i-ogonek:before {
+	content: '\02DB';
+	}
+
+	.i-ring:before {
+	content: '\02DA';
+	}
+
+	.i-tilde:before {
+	content: '\02DC';
+	}

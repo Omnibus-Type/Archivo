@@ -4,93 +4,98 @@
   <prep>
     <assembly>
       SVTCA[0]	/* SetFPVectorToAxis */
-      PUSH[ ]	/* 3 values pushed */
-      0 5 1
       MPPEM[ ]	/* MeasurePixelPerEm */
-      WS[ ]	/* WriteStore */
-      WS[ ]	/* WriteStore */
-      PUSH[ ]	/* 2 values pushed */
-      61 0
-      RS[ ]	/* ReadStore */
       PUSH[ ]	/* 1 value pushed */
-      8
-      LT[ ]	/* LessThan */
-      JROF[ ]	/* JumpRelativeOnFalse */
-      PUSH[ ]	/* 4 values pushed */
-      7 2 2 0
-      RS[ ]	/* ReadStore */
-      RCVT[ ]	/* ReadCVT */
+      200
+      GT[ ]	/* GreaterThan */
+      IF[ ]	/* If */
+      PUSH[ ]	/* 2 values pushed */
+      1 1
+      INSTCTRL[ ]	/* SetInstrExecControl */
+      EIF[ ]	/* EndIf */
+      PUSH[ ]	/* 3 values pushed */
+      1 2048 2048
+      MUL[ ]	/* Multiply */
+      WCVTF[ ]	/* WriteCVTInFUnits */
+      PUSH[ ]	/* 2 values pushed */
+      0 7
       WS[ ]	/* WriteStore */
-      RS[ ]	/* ReadStore */
+      PUSH[ ]	/* 4 values pushed */
+      48 28 2 0
+      LOOPCALL[ ]	/* LoopAndCallFunction */
+      PUSH[ ]	/* 2 values pushed */
+      0 7
+      WS[ ]	/* WriteStore */
+      PUSH[ ]	/* 6 values pushed */
+      35 8 15 8 2 8
+      LOOPCALL[ ]	/* LoopAndCallFunction */
+      PUSH[ ]	/* 2 values pushed */
+      0 7
+      WS[ ]	/* WriteStore */
+      PUSH[ ]	/* 6 values pushed */
+      45 6 25 6 2 8
+      LOOPCALL[ ]	/* LoopAndCallFunction */
+      PUSH[ ]	/* 2 values pushed */
+      0 9
+      WS[ ]	/* WriteStore */
+      PUSH[ ]	/* 4 values pushed */
+      2304 1024 2 9
+      LOOPCALL[ ]	/* LoopAndCallFunction */
+      PUSH[ ]	/* 2 values pushed */
+      0 11
+      WS[ ]	/* WriteStore */
+      PUSH[ ]	/* 4 values pushed */
+      64 64 2 9
+      LOOPCALL[ ]	/* LoopAndCallFunction */
+      PUSH[ ]	/* 2 values pushed */
+      3 100
+      WCVTP[ ]	/* WriteCVTInPixels */
+      PUSH[ ]	/* 2 values pushed */
+      36 1
+      GETINFO[ ]	/* GetInfo */
+      LTEQ[ ]	/* LessThenOrEqual */
+      IF[ ]	/* If */
       PUSH[ ]	/* 1 value pushed */
       64
-      LT[ ]	/* LessThan */
-      JROF[ ]	/* JumpRelativeOnFalse */
-      PUSH[ ]	/* 3 values pushed */
-      25 2 64
-      WS[ ]	/* WriteStore */
-      JMPR[ ]	/* Jump */
+      GETINFO[ ]	/* GetInfo */
+      IF[ ]	/* If */
       PUSH[ ]	/* 2 values pushed */
-      9 2
-      RS[ ]	/* ReadStore */
-      PUSH[ ]	/* 1 value pushed */
-      93
-      LT[ ]	/* LessThan */
-      JROF[ ]	/* JumpRelativeOnFalse */
-      PUSH[ ]	/* 3 values pushed */
-      9 2 2
-      RS[ ]	/* ReadStore */
-      ROUND[01]	/* Round */
-      WS[ ]	/* WriteStore */
-      JMPR[ ]	/* Jump */
-      PUSH[ ]	/* 3 values pushed */
-      2 10 2
-      RS[ ]	/* ReadStore */
-      ADD[ ]	/* Add */
-      ROUND[01]	/* Round */
-      WS[ ]	/* WriteStore */
-      PUSH[ ]	/* 5 values pushed */
-      -67 0 1 0 0
-      RS[ ]	/* ReadStore */
-      PUSH[ ]	/* 1 value pushed */
-      2
-      RS[ ]	/* ReadStore */
+      3 0
       WCVTP[ ]	/* WriteCVTInPixels */
-      RS[ ]	/* ReadStore */
-      ADD[ ]	/* Add */
-      WS[ ]	/* WriteStore */
-      JMPR[ ]	/* Jump */
-      PUSH[ ]	/* 3 values pushed */
-      0 0 64
-      SMD[ ]	/* SetMinimumDistance */
-      WS[ ]	/* WriteStore */
       PUSH[ ]	/* 2 values pushed */
-      28 0
-      RS[ ]	/* ReadStore */
+      38 1
+      GETINFO[ ]	/* GetInfo */
+      LTEQ[ ]	/* LessThenOrEqual */
+      IF[ ]	/* If */
+      PUSH[ ]	/* 3 values pushed */
+      2176 1 1088
+      GETINFO[ ]	/* GetInfo */
+      MUL[ ]	/* Multiply */
+      EQ[ ]	/* Equal */
+      IF[ ]	/* If */
+      PUSH[ ]	/* 2 values pushed */
+      3 100
+      WCVTP[ ]	/* WriteCVTInPixels */
+      EIF[ ]	/* EndIf */
+      EIF[ ]	/* EndIf */
+      EIF[ ]	/* EndIf */
+      EIF[ ]	/* EndIf */
+      PUSH[ ]	/* 6 values pushed */
+      37 8 17 8 2 12
+      LOOPCALL[ ]	/* LoopAndCallFunction */
       PUSH[ ]	/* 1 value pushed */
-      7
-      LT[ ]	/* LessThan */
-      JROF[ ]	/* JumpRelativeOnFalse */
-      PUSH[ ]	/* 9 values pushed */
-      -34 0 1 0 0 4 3 3 0
-      RS[ ]	/* ReadStore */
-      RCVT[ ]	/* ReadCVT */
-      WS[ ]	/* WriteStore */
-      RS[ ]	/* ReadStore */
-      ROUND[01]	/* Round */
-      WS[ ]	/* WriteStore */
-      RS[ ]	/* ReadStore */
+      511
+      SCANCTRL[ ]	/* ScanConversionControl */
       PUSH[ ]	/* 1 value pushed */
       4
-      RS[ ]	/* ReadStore */
+      SCANTYPE[ ]	/* ScanType */
+      PUSH[ ]	/* 2 values pushed */
+      2 0
       WCVTP[ ]	/* WriteCVTInPixels */
-      RS[ ]	/* ReadStore */
-      ADD[ ]	/* Add */
-      WS[ ]	/* WriteStore */
-      JMPR[ ]	/* Jump */
-      PUSH[ ]	/* 1 value pushed */
-      11520
-      SCVTCI[ ]	/* SetCVTCutIn */
+      PUSH[ ]	/* 4 values pushed */
+      5 100 6 0
+      WCVTP[ ]	/* WriteCVTInPixels */
+      WCVTP[ ]	/* WriteCVTInPixels */
     </assembly>
   </prep>
 

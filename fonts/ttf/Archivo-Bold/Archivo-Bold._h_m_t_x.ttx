@@ -3,6 +3,7 @@
 
   <hmtx>
     <mtx name=".notdef" width="501" lsb="0"/>
+    <mtx name=".ttfautohint" width="333" lsb="0"/>
     <mtx name="A" width="722" lsb="2"/>
     <mtx name="AE" width="1000" lsb="-5"/>
     <mtx name="AEacute" width="1000" lsb="-5"/>
@@ -27,7 +28,6 @@
     <mtx name="D" width="722" lsb="67"/>
     <mtx name="Dcaron" width="722" lsb="67"/>
     <mtx name="Dcroat" width="722" lsb="4"/>
-    <mtx name="Delta" width="719" lsb="1"/>
     <mtx name="E" width="667" lsb="67"/>
     <mtx name="Eacute" width="667" lsb="67"/>
     <mtx name="Ebreve" width="667" lsb="67"/>
@@ -62,7 +62,7 @@
     <mtx name="Idotaccent" width="278" lsb="67"/>
     <mtx name="Igrave" width="278" lsb="-22"/>
     <mtx name="Imacron" width="278" lsb="-14"/>
-    <mtx name="Iogonek" width="278" lsb="56"/>
+    <mtx name="Iogonek" width="278" lsb="35"/>
     <mtx name="Itilde" width="278" lsb="-29"/>
     <mtx name="J" width="556" lsb="25"/>
     <mtx name="Jcircumflex" width="556" lsb="25"/>
@@ -93,7 +93,6 @@
     <mtx name="Ohorn" width="778" lsb="42"/>
     <mtx name="Ohungarumlaut" width="778" lsb="42"/>
     <mtx name="Omacron" width="778" lsb="42"/>
-    <mtx name="Omega" width="802" lsb="33"/>
     <mtx name="Oslash" width="778" lsb="42"/>
     <mtx name="Oslashacute" width="778" lsb="42"/>
     <mtx name="Otilde" width="778" lsb="42"/>
@@ -211,7 +210,7 @@
     <mtx name="divide" width="549" lsb="39"/>
     <mtx name="dollar" width="556" lsb="40"/>
     <mtx name="dotaccent" width="333" lsb="100"/>
-    <mtx name="dotbelowcomb" width="333" lsb="-233"/>
+    <mtx name="dotbelowcomb" width="0" lsb="-233"/>
     <mtx name="dotlessi" width="278" lsb="71"/>
     <mtx name="e" width="556" lsb="36"/>
     <mtx name="eacute" width="556" lsb="36"/>
@@ -263,7 +262,7 @@
     <mtx name="h" width="611" lsb="71"/>
     <mtx name="hbar" width="611" lsb="13"/>
     <mtx name="hcircumflex" width="611" lsb="-27"/>
-    <mtx name="hookabovecomb" width="333" lsb="-267"/>
+    <mtx name="hookabovecomb" width="0" lsb="-267"/>
     <mtx name="house" width="604" lsb="77"/>
     <mtx name="hungarumlaut" width="333" lsb="7"/>
     <mtx name="hyphen" width="333" lsb="46"/>
@@ -282,7 +281,7 @@
     <mtx name="integralbt" width="604" lsb="177"/>
     <mtx name="integraltp" width="604" lsb="239"/>
     <mtx name="intersection" width="722" lsb="94"/>
-    <mtx name="iogonek" width="278" lsb="55"/>
+    <mtx name="iogonek" width="278" lsb="21"/>
     <mtx name="itilde" width="278" lsb="-29"/>
     <mtx name="j" width="278" lsb="-24"/>
     <mtx name="jcircumflex" width="278" lsb="-27"/>
@@ -305,7 +304,6 @@
     <mtx name="macron" width="333" lsb="14"/>
     <mtx name="minus" width="584" lsb="56"/>
     <mtx name="minute" width="240" lsb="51"/>
-    <mtx name="mu" width="576" lsb="52"/>
     <mtx name="multiply" width="584" lsb="75"/>
     <mtx name="n" width="611" lsb="71"/>
     <mtx name="nacute" width="611" lsb="71"/>
@@ -489,10 +487,14 @@
     <mtx name="uni0272" width="611" lsb="-24"/>
     <mtx name="uni02BC" width="280" lsb="71"/>
     <mtx name="uni02C9" width="333" lsb="14"/>
-    <mtx name="uni030F" width="333" lsb="-326"/>
-    <mtx name="uni0311" width="333" lsb="-328"/>
-    <mtx name="uni031B" width="278" lsb="-231"/>
-    <mtx name="uni0326" width="333" lsb="-236"/>
+    <mtx name="uni030F" width="0" lsb="-326"/>
+    <mtx name="uni0311" width="0" lsb="-328"/>
+    <mtx name="uni031B" width="0" lsb="-231"/>
+    <mtx name="uni0326" width="0" lsb="-236"/>
+    <mtx name="uni0328" width="0" lsb="-260"/>
+    <mtx name="uni0394" width="719" lsb="1"/>
+    <mtx name="uni03A9" width="802" lsb="33"/>
+    <mtx name="uni03BC" width="576" lsb="52"/>
     <mtx name="uni1E0C" width="722" lsb="67"/>
     <mtx name="uni1E0D" width="611" lsb="37"/>
     <mtx name="uni1E24" width="722" lsb="67"/>

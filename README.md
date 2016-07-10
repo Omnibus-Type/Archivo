@@ -49,6 +49,11 @@ This information should be distributed along with the Archivo fonts and any deri
 
 *To contribute to the project contact Omnibus-Type at omnibus.type@gmail.com*
 
+**2016 July 10 (v1.001) Medium and Semibold - Nicolás Silva Schwarzenberg**
+
+- Made master compatibles
+- New weights by interpolation (Medium and Semibold)
+
 **2016 June 4 (v1.000) Initial Commit - Nicolás Silva Schwarzenberg**
 
 - Initial Commit

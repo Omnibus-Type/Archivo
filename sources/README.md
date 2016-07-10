@@ -22,6 +22,10 @@ Licensed under the [*SIL Open Font License, 1.1*](http://scripts.sil.org/OFL); y
 
 This file provides detailed information on the Archivo font sources.  
 
+**2016 July 10 (v1.001) Medium and Semibold - Nicolás Silva Schwarzenberg**
+
+- Made master compatibles
+- New weights by interpolation (Medium and Semibold)
 
 **2016 June 4 (v1,000) Initial Commit - Nicolás Silva Schwarzenberg**
 

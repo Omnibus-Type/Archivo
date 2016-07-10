@@ -28,7 +28,6 @@
       <ClassDef glyph="D" class="1"/>
       <ClassDef glyph="Dcaron" class="1"/>
       <ClassDef glyph="Dcroat" class="1"/>
-      <ClassDef glyph="Delta" class="1"/>
       <ClassDef glyph="E" class="1"/>
       <ClassDef glyph="Eacute" class="1"/>
       <ClassDef glyph="Ebreve" class="1"/>
@@ -41,9 +40,10 @@
       <ClassDef glyph="Eng" class="1"/>
       <ClassDef glyph="Eogonek" class="1"/>
       <ClassDef glyph="Eth" class="1"/>
+      <ClassDef glyph="Euro" class="1"/>
       <ClassDef glyph="F" class="1"/>
       <ClassDef glyph="G" class="1"/>
-      <ClassDef glyph="G_tilde.loclGUA" class="2"/>
+      <ClassDef glyph="G_tilde.loclGUA" class="1"/>
       <ClassDef glyph="Gbreve" class="1"/>
       <ClassDef glyph="Gcaron" class="1"/>
       <ClassDef glyph="Gcircumflex" class="1"/>
@@ -92,7 +92,6 @@
       <ClassDef glyph="Ohorn" class="1"/>
       <ClassDef glyph="Ohungarumlaut" class="1"/>
       <ClassDef glyph="Omacron" class="1"/>
-      <ClassDef glyph="Omega" class="1"/>
       <ClassDef glyph="Oslash" class="1"/>
       <ClassDef glyph="Oslashacute" class="1"/>
       <ClassDef glyph="Otilde" class="1"/>
@@ -156,11 +155,25 @@
       <ClassDef glyph="aeacute" class="1"/>
       <ClassDef glyph="agrave" class="1"/>
       <ClassDef glyph="amacron" class="1"/>
+      <ClassDef glyph="ampersand" class="1"/>
       <ClassDef glyph="aogonek" class="1"/>
+      <ClassDef glyph="approxequal" class="1"/>
       <ClassDef glyph="aring" class="1"/>
       <ClassDef glyph="aringacute" class="1"/>
+      <ClassDef glyph="arrowboth" class="1"/>
+      <ClassDef glyph="arrowdown" class="1"/>
+      <ClassDef glyph="arrowleft" class="1"/>
+      <ClassDef glyph="arrowright" class="1"/>
+      <ClassDef glyph="arrowup" class="1"/>
+      <ClassDef glyph="arrowupdn" class="1"/>
+      <ClassDef glyph="arrowupdnbse" class="1"/>
+      <ClassDef glyph="asciicircum" class="1"/>
+      <ClassDef glyph="asciitilde" class="1"/>
+      <ClassDef glyph="at" class="1"/>
       <ClassDef glyph="atilde" class="1"/>
       <ClassDef glyph="b" class="1"/>
+      <ClassDef glyph="bar" class="1"/>
+      <ClassDef glyph="brokenbar" class="1"/>
       <ClassDef glyph="c" class="1"/>
       <ClassDef glyph="cacute" class="1"/>
       <ClassDef glyph="cacute.loclPLK" class="1"/>
@@ -168,9 +181,17 @@
       <ClassDef glyph="ccedilla" class="1"/>
       <ClassDef glyph="ccircumflex" class="1"/>
       <ClassDef glyph="cdotaccent" class="1"/>
+      <ClassDef glyph="cent" class="1"/>
+      <ClassDef glyph="copyright" class="1"/>
+      <ClassDef glyph="currency" class="1"/>
       <ClassDef glyph="d" class="1"/>
+      <ClassDef glyph="dagger" class="1"/>
+      <ClassDef glyph="daggerdbl" class="1"/>
       <ClassDef glyph="dcaron" class="1"/>
       <ClassDef glyph="dcroat" class="1"/>
+      <ClassDef glyph="degree" class="1"/>
+      <ClassDef glyph="divide" class="1"/>
+      <ClassDef glyph="dollar" class="1"/>
       <ClassDef glyph="dotbelowcomb" class="3"/>
       <ClassDef glyph="dotlessi" class="1"/>
       <ClassDef glyph="e" class="1"/>
@@ -184,23 +205,31 @@
       <ClassDef glyph="emacron" class="1"/>
       <ClassDef glyph="eng" class="1"/>
       <ClassDef glyph="eogonek" class="1"/>
+      <ClassDef glyph="equal" class="1"/>
+      <ClassDef glyph="equivalence" class="1"/>
+      <ClassDef glyph="estimated" class="1"/>
       <ClassDef glyph="eth" class="1"/>
       <ClassDef glyph="f" class="1"/>
       <ClassDef glyph="f_f" class="2"/>
       <ClassDef glyph="fi" class="2"/>
       <ClassDef glyph="fl" class="2"/>
+      <ClassDef glyph="florin" class="1"/>
+      <ClassDef glyph="franc" class="1"/>
       <ClassDef glyph="g" class="1"/>
-      <ClassDef glyph="g_tilde.loclGUA" class="2"/>
+      <ClassDef glyph="g_tilde.loclGUA" class="1"/>
       <ClassDef glyph="gbreve" class="1"/>
       <ClassDef glyph="gcaron" class="1"/>
       <ClassDef glyph="gcircumflex" class="1"/>
       <ClassDef glyph="gcommaaccent" class="1"/>
       <ClassDef glyph="gdotaccent" class="1"/>
       <ClassDef glyph="germandbls" class="1"/>
+      <ClassDef glyph="greater" class="1"/>
+      <ClassDef glyph="greaterequal" class="1"/>
       <ClassDef glyph="h" class="1"/>
       <ClassDef glyph="hbar" class="1"/>
       <ClassDef glyph="hcircumflex" class="1"/>
       <ClassDef glyph="hookabovecomb" class="3"/>
+      <ClassDef glyph="house" class="1"/>
       <ClassDef glyph="i" class="1"/>
       <ClassDef glyph="i.loclTRK" class="1"/>
       <ClassDef glyph="iacute" class="1"/>
@@ -211,6 +240,11 @@
       <ClassDef glyph="igrave" class="1"/>
       <ClassDef glyph="ij" class="1"/>
       <ClassDef glyph="imacron" class="1"/>
+      <ClassDef glyph="infinity" class="1"/>
+      <ClassDef glyph="integral" class="1"/>
+      <ClassDef glyph="integralbt" class="1"/>
+      <ClassDef glyph="integraltp" class="1"/>
+      <ClassDef glyph="intersection" class="1"/>
       <ClassDef glyph="iogonek" class="1"/>
       <ClassDef glyph="itilde" class="1"/>
       <ClassDef glyph="j" class="1"/>
@@ -223,16 +257,24 @@
       <ClassDef glyph="lcaron" class="1"/>
       <ClassDef glyph="lcommaaccent" class="1"/>
       <ClassDef glyph="ldot" class="1"/>
+      <ClassDef glyph="less" class="1"/>
+      <ClassDef glyph="lessequal" class="1"/>
+      <ClassDef glyph="lira" class="1"/>
+      <ClassDef glyph="logicalnot" class="1"/>
       <ClassDef glyph="longs" class="1"/>
+      <ClassDef glyph="lozenge" class="1"/>
       <ClassDef glyph="lslash" class="1"/>
       <ClassDef glyph="m" class="1"/>
-      <ClassDef glyph="mu" class="1"/>
+      <ClassDef glyph="minus" class="1"/>
+      <ClassDef glyph="minute" class="1"/>
+      <ClassDef glyph="multiply" class="1"/>
       <ClassDef glyph="n" class="1"/>
       <ClassDef glyph="nacute" class="1"/>
       <ClassDef glyph="nacute.loclPLK" class="1"/>
       <ClassDef glyph="napostrophe" class="1"/>
       <ClassDef glyph="ncaron" class="1"/>
       <ClassDef glyph="ncommaaccent" class="1"/>
+      <ClassDef glyph="notequal" class="1"/>
       <ClassDef glyph="ntilde" class="1"/>
       <ClassDef glyph="o" class="1"/>
       <ClassDef glyph="oacute" class="1"/>
@@ -247,16 +289,28 @@
       <ClassDef glyph="omacron" class="1"/>
       <ClassDef glyph="ordfeminine" class="1"/>
       <ClassDef glyph="ordmasculine" class="1"/>
+      <ClassDef glyph="orthogonal" class="1"/>
       <ClassDef glyph="oslash" class="1"/>
       <ClassDef glyph="oslashacute" class="1"/>
       <ClassDef glyph="otilde" class="1"/>
       <ClassDef glyph="p" class="1"/>
+      <ClassDef glyph="paragraph" class="1"/>
+      <ClassDef glyph="partialdiff" class="1"/>
+      <ClassDef glyph="percent" class="1"/>
+      <ClassDef glyph="perthousand" class="1"/>
+      <ClassDef glyph="peseta" class="1"/>
       <ClassDef glyph="pi" class="1"/>
+      <ClassDef glyph="plus" class="1"/>
+      <ClassDef glyph="plusminus" class="1"/>
+      <ClassDef glyph="product" class="1"/>
       <ClassDef glyph="q" class="1"/>
       <ClassDef glyph="r" class="1"/>
       <ClassDef glyph="racute" class="1"/>
+      <ClassDef glyph="radical" class="1"/>
       <ClassDef glyph="rcaron" class="1"/>
       <ClassDef glyph="rcommaaccent" class="1"/>
+      <ClassDef glyph="registered" class="1"/>
+      <ClassDef glyph="revlogicalnot" class="1"/>
       <ClassDef glyph="s" class="1"/>
       <ClassDef glyph="sacute" class="1"/>
       <ClassDef glyph="sacute.loclPLK" class="1"/>
@@ -264,10 +318,15 @@
       <ClassDef glyph="scedilla" class="1"/>
       <ClassDef glyph="scircumflex" class="1"/>
       <ClassDef glyph="scommaaccent" class="1"/>
+      <ClassDef glyph="second" class="1"/>
+      <ClassDef glyph="section" class="1"/>
+      <ClassDef glyph="sterling" class="1"/>
+      <ClassDef glyph="summation" class="1"/>
       <ClassDef glyph="t" class="1"/>
       <ClassDef glyph="tbar" class="1"/>
       <ClassDef glyph="tcaron" class="1"/>
       <ClassDef glyph="thorn" class="1"/>
+      <ClassDef glyph="trademark" class="1"/>
       <ClassDef glyph="u" class="1"/>
       <ClassDef glyph="uacute" class="1"/>
       <ClassDef glyph="ubreve" class="1"/>
@@ -277,6 +336,7 @@
       <ClassDef glyph="uhorn" class="1"/>
       <ClassDef glyph="uhungarumlaut" class="1"/>
       <ClassDef glyph="umacron" class="1"/>
+      <ClassDef glyph="uni00B5" class="1"/>
       <ClassDef glyph="uni0162" class="1"/>
       <ClassDef glyph="uni0163" class="1"/>
       <ClassDef glyph="uni018F" class="1"/>
@@ -346,11 +406,14 @@
       <ClassDef glyph="uni0237" class="1"/>
       <ClassDef glyph="uni0259" class="1"/>
       <ClassDef glyph="uni0272" class="1"/>
-      <ClassDef glyph="uni02C9" class="3"/>
       <ClassDef glyph="uni030F" class="3"/>
       <ClassDef glyph="uni0311" class="3"/>
       <ClassDef glyph="uni031B" class="3"/>
       <ClassDef glyph="uni0326" class="3"/>
+      <ClassDef glyph="uni0328" class="3"/>
+      <ClassDef glyph="uni0394" class="1"/>
+      <ClassDef glyph="uni03A9" class="1"/>
+      <ClassDef glyph="uni03BC" class="1"/>
       <ClassDef glyph="uni1E0C" class="1"/>
       <ClassDef glyph="uni1E0D" class="1"/>
       <ClassDef glyph="uni1E24" class="1"/>
@@ -457,6 +520,14 @@
       <ClassDef glyph="uni1EF9" class="1"/>
       <ClassDef glyph="uni1EF9.loclGUA" class="1"/>
       <ClassDef glyph="uni207F" class="1"/>
+      <ClassDef glyph="uni20B2" class="1"/>
+      <ClassDef glyph="uni2105" class="1"/>
+      <ClassDef glyph="uni2113" class="1"/>
+      <ClassDef glyph="uni2116" class="1"/>
+      <ClassDef glyph="uni2126" class="1"/>
+      <ClassDef glyph="uni2206" class="1"/>
+      <ClassDef glyph="uni2215" class="1"/>
+      <ClassDef glyph="uni2219" class="1"/>
       <ClassDef glyph="uniA78B" class="1"/>
       <ClassDef glyph="uniA78C" class="1"/>
       <ClassDef glyph="uogonek" class="1"/>
@@ -477,6 +548,7 @@
       <ClassDef glyph="ycircumflex.loclGUA" class="1"/>
       <ClassDef glyph="ydieresis" class="1"/>
       <ClassDef glyph="ydieresis.loclGUA" class="1"/>
+      <ClassDef glyph="yen" class="1"/>
       <ClassDef glyph="ygrave" class="1"/>
       <ClassDef glyph="ygrave.loclGUA" class="1"/>
       <ClassDef glyph="z" class="1"/>

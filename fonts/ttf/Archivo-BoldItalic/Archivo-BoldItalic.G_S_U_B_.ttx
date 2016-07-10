@@ -721,11 +721,9 @@
         <SingleSubst index="0">
           <Substitution in="A" out="ordfeminine"/>
           <Substitution in="Cacute" out="Cacute.loclPLK"/>
-          <Substitution in="Delta" out="uni2206"/>
           <Substitution in="Nacute" out="Nacute.loclPLK"/>
           <Substitution in="O" out="ordmasculine"/>
           <Substitution in="Oacute" out="Oacute.loclPLK"/>
-          <Substitution in="Omega" out="uni2126"/>
           <Substitution in="Sacute" out="Sacute.loclPLK"/>
           <Substitution in="Scedilla" out="Scommaaccent"/>
           <Substitution in="Y" out="Y.loclGUA"/>
@@ -738,7 +736,6 @@
           <Substitution in="acute" out="acute.loclPLK"/>
           <Substitution in="cacute" out="cacute.loclPLK"/>
           <Substitution in="j" out="uni0237"/>
-          <Substitution in="mu" out="uni00B5"/>
           <Substitution in="nacute" out="nacute.loclPLK"/>
           <Substitution in="o" out="ordmasculine"/>
           <Substitution in="oacute" out="oacute.loclPLK"/>
@@ -751,6 +748,9 @@
           <Substitution in="uni0163" out="uni021B"/>
           <Substitution in="uni0232" out="uni0232.loclGUA"/>
           <Substitution in="uni0233" out="uni0233.loclGUA"/>
+          <Substitution in="uni0394" out="uni2206"/>
+          <Substitution in="uni03A9" out="uni2126"/>
+          <Substitution in="uni03BC" out="uni00B5"/>
           <Substitution in="uni1EF8" out="uni1EF8.loclGUA"/>
           <Substitution in="uni1EF9" out="uni1EF9.loclGUA"/>
           <Substitution in="y" out="y.loclGUA"/>
@@ -785,9 +785,9 @@
           </InputCoverage>
           <!-- LookAheadGlyphCount=1 -->
           <LookAheadCoverage index="0">
-            <Glyph value="uni0311"/>
-            <Glyph value="uni030F"/>
             <Glyph value="hookabovecomb"/>
+            <Glyph value="uni030F"/>
+            <Glyph value="uni0311"/>
           </LookAheadCoverage>
           <!-- SubstCount=1 -->
           <SubstLookupRecord index="0">
@@ -804,14 +804,14 @@
           </InputCoverage>
           <!-- LookAheadGlyphCount=2 -->
           <LookAheadCoverage index="0">
-            <Glyph value="uni0326"/>
-            <Glyph value="dotbelowcomb"/>
             <Glyph value="uni031B"/>
+            <Glyph value="dotbelowcomb"/>
+            <Glyph value="uni0326"/>
           </LookAheadCoverage>
           <LookAheadCoverage index="1">
-            <Glyph value="uni0311"/>
-            <Glyph value="uni030F"/>
             <Glyph value="hookabovecomb"/>
+            <Glyph value="uni030F"/>
+            <Glyph value="uni0311"/>
           </LookAheadCoverage>
           <!-- SubstCount=1 -->
           <SubstLookupRecord index="0">
@@ -982,9 +982,9 @@
         <LookupFlag value="0"/>
         <!-- SubTableCount=1 -->
         <SingleSubst index="0">
-          <Substitution in="Delta" out="uni2206"/>
-          <Substitution in="Omega" out="uni2126"/>
-          <Substitution in="mu" out="uni00B5"/>
+          <Substitution in="uni0394" out="uni2206"/>
+          <Substitution in="uni03A9" out="uni2126"/>
+          <Substitution in="uni03BC" out="uni00B5"/>
         </SingleSubst>
       </Lookup>
       <Lookup index="15">

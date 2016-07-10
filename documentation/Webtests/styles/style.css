@@ -1,0 +1,125 @@
+@charset 'UTF-8';
+	/* CSS Document */
+
+	body {
+		margin: 0;
+		font-family: "Helvetica Neue", Helvetica, sans-serif;
+	}
+
+	.foreground {
+		-webkit-font-smoothing: antialiased;
+		width: 100%;
+		color: #888;
+		box-shadow: 0 1px 0 rgba(255, 255, 255, 0.7) inset, 0 0 2px 0 rgba(0, 0, 0, 0.4);
+		background-color: rgba(242, 242, 242, 0.95);
+		-webkit-box-sizing: border-box;
+		box-sizing: border-box;
+		position: fixed;
+		line-height: inherit;
+		margin: 0;
+		overflow-x: hidden;
+		padding: 5px 12px 5px 12px;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		border: none;
+		z-index: 10;
+	}
+
+		.text {
+			font-size: 0.9em;
+			color: #aaa;
+			-webkit-font-smoothing: antialiased;
+			-moz-osx-font-smoothing: grayscale;
+			word-wrap: break-word;
+			text-decoration: none;
+			text-align: center;
+			font-weight: bold;
+		}
+
+		.btn_wrap {
+			margin-top: 0px;
+			margin-bottom: 0px;
+			overflow: hidden;
+			float:right;
+		}
+
+		.btn {
+			background-color: #fff;
+			width: 27px;
+			margin-right: 2px;
+			padding-bottom: 1.5px;
+			padding-left: 7px;
+			padding-right: 7px;
+			-webkit-box-sizing: border-box;
+			box-sizing: border-box;
+			border: 1px solid;
+			border-radius: 20px;
+			float: left;
+		}
+
+		.btn:hover {
+			background-color: #ddd !important;
+		}
+
+		.btn a {
+			color: #888;
+		}
+
+	.header {
+		font-size: 12px;
+	}
+	
+	.footer {
+		font-size: 12px;
+		bottom: 0;
+		padding-top: 0px;
+		padding-bottom: 5px;
+	}
+	
+	#wrapper {
+		padding-bottom: 40px;
+		top: 40px;
+		left: 4px;
+		position: absolute;
+		width: 100%;
+		margin-left: 10px;
+	}
+
+	/* Glyphtable Styles */
+
+	.icon-panel {
+		border: 1px solid #fff;
+		float: left;
+		min-width: 50px;
+		max-width: 150px;
+		width: 100%;
+		color: #000;
+		background-color: #fafafa;
+		white-space: nowrap;
+	}
+
+	.icon-box { 
+		padding-top: 10px;
+		padding-right: 10px;
+		padding-bottom: 5px;
+		padding-left: 8px;
+		margin: 0px;
+		/*font-size: 50px;*/ /* specific icon-setup only for the icon-view in this table */
+		text-align: center;
+		border-bottom: #eee;
+		border-bottom-style: dotted;
+		border-bottom-width: thin;
+	}
+
+	.description_box {
+		float: left;
+		padding: 0.5em 1em;
+		font-size: 10px;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+		color: #999;
+	}
+
+	strong {
+		color: #999;
+	}

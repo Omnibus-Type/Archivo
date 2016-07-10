@@ -2,7 +2,7 @@
 <ttFont ttLibVersion="3.0">
 
   <gasp>
-    <gaspRange rangeMaxPPEM="65535" rangeGaspBehavior="31"/>
+    <gaspRange rangeMaxPPEM="65535" rangeGaspBehavior="15"/>
   </gasp>
 
 </ttFont>

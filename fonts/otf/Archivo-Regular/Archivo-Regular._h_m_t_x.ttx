@@ -28,7 +28,6 @@
     <mtx name="D" width="722" lsb="79"/>
     <mtx name="Dcaron" width="722" lsb="79"/>
     <mtx name="Dcroat" width="722" lsb="5"/>
-    <mtx name="Delta" width="667" lsb="7"/>
     <mtx name="E" width="667" lsb="79"/>
     <mtx name="Eacute" width="667" lsb="79"/>
     <mtx name="Ebreve" width="667" lsb="79"/>
@@ -63,7 +62,7 @@
     <mtx name="Idotaccent" width="278" lsb="92"/>
     <mtx name="Igrave" width="278" lsb="-7"/>
     <mtx name="Imacron" width="278" lsb="-14"/>
-    <mtx name="Iogonek" width="278" lsb="49"/>
+    <mtx name="Iogonek" width="278" lsb="41"/>
     <mtx name="Itilde" width="278" lsb="-25"/>
     <mtx name="J" width="500" lsb="29"/>
     <mtx name="Jcircumflex" width="500" lsb="29"/>
@@ -94,7 +93,6 @@
     <mtx name="Ohorn" width="778" lsb="47"/>
     <mtx name="Ohungarumlaut" width="778" lsb="47"/>
     <mtx name="Omacron" width="778" lsb="47"/>
-    <mtx name="Omega" width="748" lsb="37"/>
     <mtx name="Oslash" width="778" lsb="47"/>
     <mtx name="Oslashacute" width="778" lsb="47"/>
     <mtx name="Otilde" width="778" lsb="47"/>
@@ -283,7 +281,7 @@
     <mtx name="integralbt" width="604" lsb="187"/>
     <mtx name="integraltp" width="604" lsb="259"/>
     <mtx name="intersection" width="719" lsb="94"/>
-    <mtx name="iogonek" width="222" lsb="24"/>
+    <mtx name="iogonek" width="278" lsb="37"/>
     <mtx name="itilde" width="278" lsb="-24"/>
     <mtx name="j" width="222" lsb="-24"/>
     <mtx name="jcircumflex" width="222" lsb="-36"/>
@@ -306,7 +304,6 @@
     <mtx name="macron" width="333" lsb="14"/>
     <mtx name="minus" width="584" lsb="56"/>
     <mtx name="minute" width="187" lsb="49"/>
-    <mtx name="mu" width="576" lsb="77"/>
     <mtx name="multiply" width="584" lsb="81"/>
     <mtx name="n" width="556" lsb="67"/>
     <mtx name="nacute" width="556" lsb="67"/>
@@ -493,6 +490,10 @@
     <mtx name="uni0311" width="0" lsb="-312"/>
     <mtx name="uni031B" width="0" lsb="-294"/>
     <mtx name="uni0326" width="0" lsb="-155"/>
+    <mtx name="uni0328" width="0" lsb="-252"/>
+    <mtx name="uni0394" width="667" lsb="7"/>
+    <mtx name="uni03A9" width="748" lsb="37"/>
+    <mtx name="uni03BC" width="576" lsb="77"/>
     <mtx name="uni1E0C" width="722" lsb="79"/>
     <mtx name="uni1E0D" width="556" lsb="35"/>
     <mtx name="uni1E24" width="722" lsb="79"/>

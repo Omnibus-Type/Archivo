@@ -420,9 +420,10 @@
       <map code="0x31b" name="uni031B"/><!-- COMBINING HORN -->
       <map code="0x323" name="dotbelowcomb"/><!-- COMBINING DOT BELOW -->
       <map code="0x326" name="uni0326"/><!-- COMBINING COMMA BELOW -->
-      <map code="0x394" name="Delta"/><!-- GREEK CAPITAL LETTER DELTA -->
-      <map code="0x3a9" name="Omega"/><!-- GREEK CAPITAL LETTER OMEGA -->
-      <map code="0x3bc" name="mu"/><!-- GREEK SMALL LETTER MU -->
+      <map code="0x328" name="uni0328"/><!-- COMBINING OGONEK -->
+      <map code="0x394" name="uni0394"/><!-- GREEK CAPITAL LETTER DELTA -->
+      <map code="0x3a9" name="uni03A9"/><!-- GREEK CAPITAL LETTER OMEGA -->
+      <map code="0x3bc" name="uni03BC"/><!-- GREEK SMALL LETTER MU -->
       <map code="0x3c0" name="pi"/><!-- GREEK SMALL LETTER PI -->
       <map code="0x1e0c" name="uni1E0C"/><!-- LATIN CAPITAL LETTER D WITH DOT BELOW -->
       <map code="0x1e0d" name="uni1E0D"/><!-- LATIN SMALL LETTER D WITH DOT BELOW -->
@@ -791,7 +792,7 @@
       <map code="0xba" name="integral"/>
       <map code="0xbb" name="ordfeminine"/>
       <map code="0xbc" name="ordmasculine"/>
-      <map code="0xbd" name="Omega"/>
+      <map code="0xbd" name="uni03A9"/>
       <map code="0xbe" name="ae"/>
       <map code="0xbf" name="oslash"/>
       <map code="0xc0" name="questiondown"/>
@@ -1276,9 +1277,10 @@
       <map code="0x31b" name="uni031B"/><!-- COMBINING HORN -->
       <map code="0x323" name="dotbelowcomb"/><!-- COMBINING DOT BELOW -->
       <map code="0x326" name="uni0326"/><!-- COMBINING COMMA BELOW -->
-      <map code="0x394" name="Delta"/><!-- GREEK CAPITAL LETTER DELTA -->
-      <map code="0x3a9" name="Omega"/><!-- GREEK CAPITAL LETTER OMEGA -->
-      <map code="0x3bc" name="mu"/><!-- GREEK SMALL LETTER MU -->
+      <map code="0x328" name="uni0328"/><!-- COMBINING OGONEK -->
+      <map code="0x394" name="uni0394"/><!-- GREEK CAPITAL LETTER DELTA -->
+      <map code="0x3a9" name="uni03A9"/><!-- GREEK CAPITAL LETTER OMEGA -->
+      <map code="0x3bc" name="uni03BC"/><!-- GREEK SMALL LETTER MU -->
       <map code="0x3c0" name="pi"/><!-- GREEK SMALL LETTER PI -->
       <map code="0x1e0c" name="uni1E0C"/><!-- LATIN CAPITAL LETTER D WITH DOT BELOW -->
       <map code="0x1e0d" name="uni1E0D"/><!-- LATIN SMALL LETTER D WITH DOT BELOW -->

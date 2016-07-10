@@ -1,0 +1,3983 @@
+<!DOCTYPE html>
+	<html xmlns='http://www.w3.org/1999/xhtml'> 
+		<head profile='http://www.w3.org/2005/10/profile'>
+
+			<title>Archivo - Glyphtable</title>
+			<meta http-equiv='Content-Type' content='text/html'>
+			<link rel='stylesheet' media='screen' href='styles/fonts.css'>
+			<link rel='stylesheet' media='screen' href='styles/style.css'>
+
+
+			<script type="text/javascript">
+
+//  dw_event.js version date Oct 2009
+//  basic event handling file from dyn-web.com
+
+var dw_Event = {
+  
+	add: function(obj, etype, fp, cap) {
+		cap = cap || false;
+		if (obj.addEventListener) obj.addEventListener(etype, fp, cap);
+		else if (obj.attachEvent) obj.attachEvent("on" + etype, fp);
+	}, 
+
+	remove: function(obj, etype, fp, cap) {
+		cap = cap || false;
+		if (obj.removeEventListener) obj.removeEventListener(etype, fp, cap);
+		else if (obj.detachEvent) obj.detachEvent("on" + etype, fp);
+	}, 
+	
+	DOMit: function(e) { 
+		e = e? e: window.event; // e IS passed when using attachEvent though ...
+		if (!e.target) e.target = e.srcElement;
+		if (!e.preventDefault) e.preventDefault = function () { e.returnValue = false; return false; }
+		if (!e.stopPropagation) e.stopPropagation = function () { e.cancelBubble = true; }
+		return e;
+	},
+	
+	getTarget: function(e) {
+		e = dw_Event.DOMit(e); var tgt = e.target; 
+		if (tgt.nodeType != 1) tgt = tgt.parentNode; // safari...
+		return tgt;
+	}
+	
+}
+
+
+
+/*********************************************************************************
+  dw_cookies.js - cookie functions for dyn-web.com
+  version date: Nov 2009
+**********************************************************************************/
+
+var dw_Cookie = {
+
+	set: function(name, value, days, path, domain, secure) {
+		var date, expires;
+		if (typeof days == "number") {
+			date = new Date();
+			date.setTime( date.getTime() + (days*24*60*60*1000) );
+			expires = date.toGMTString();
+		}
+		document.cookie = name + "=" + encodeURI(value) +
+			((expires) ? "; expires=" + expires : "") +
+			((path) ? "; path=" + path : "") +
+			((domain) ? "; domain=" + domain : "") +
+			((secure) ? "; secure" : "");
+	},
+	
+	get: function(name) {
+		var c, cookies = document.cookie.split( /;\s/g );
+		for (var i=0; cookies[i]; i++) {
+			c = cookies[i];
+			if ( c.indexOf(name + '=') === 0 ) {
+				return decodeURI( c.slice(name.length + 1, c.length) );
+			}
+		}
+		return null;
+	},
+	
+	del: function(name, path, domain) {
+		if ( dw_Cookie.get(name) ) {
+			document.cookie = name + "=" +
+				((path) ? "; path=" + path : "") +
+				((domain) ? "; domain=" + domain : "") +
+				"; expires=Thu, 01-Jan-70 00:00:01 GMT";
+		}
+	}
+}
+
+
+
+/*************************************************************************
+  This code is from Dynamic Web Coding at dyn-web.com
+  Copyright 2004-10 by Sharon Paine 
+  See Terms of Use at www.dyn-web.com/business/terms.php
+  regarding conditions under which you may use this code.
+  This notice must be retained in the code as is!
+*************************************************************************/
+
+/*  dw_sizerdx.js version date: April 2010
+	requires dw_cookies.js (Nov 2009 version) and dw_event.js 
+*/
+
+var dw_fontSizerDX = {
+	sizeUnit: "px",
+	defaultSize: 12,
+	maxSize: 26,
+	minSize: 9,
+	sizerDivId: 'sizer', // div id for sizer controls
+	queryName: "dw_fsz", // name to check query string for when passing size in URL
+	cookieLifetime: 180, // how long to keep cookie
+	
+	adjustList: [],  // set method populates
+
+	setDefaults: function(unit, dflt, mn, mx, sels) {
+		this.sizeUnit = unit; this.defaultSize = dflt;
+		this.maxSize = mx;	this.minSize = mn;
+		if (sels) this.set(dflt, mn, mx, sels);
+	},
+
+	set: function (dflt, mn, mx, sels) { 
+		var ln = this.adjustList.length;		
+		for (var i=0; sels[i]; i++) {
+			this.adjustList[ln+i] = [];
+			this.adjustList[ln+i]["sel"]  = sels[i];
+			this.adjustList[ln+i]["dflt"] = dflt;
+			this.adjustList[ln+i]["min"]   = mn || this.minSize;
+			this.adjustList[ln+i]["max"]   = mx || this.maxSize;
+			// hold ratio of this selector's default size to this.defaultSize for calcs in adjust fn 
+			this.adjustList[ln+i]["ratio"] = this.adjustList[ln+i]["dflt"] / this.defaultSize;
+		}
+	},
+
+	addHandlers: function () {
+		var sizerEl = document.getElementById( dw_fontSizerDX.sizerDivId );
+		if ( !dw_fontSizerDX.sizeIncrement ) { dw_fontSizerDX.getSizeIncrement(); }
+		var links = sizerEl.getElementsByTagName('a');
+		for (var i=0; links[i]; i++) {
+			if ( dw_Util.hasClass( links[i], 'increase') ) {
+				links[i].onclick = function () { dw_fontSizerDX.adjust( dw_fontSizerDX.sizeIncrement ); return false }
+			} else if ( dw_Util.hasClass( links[i], 'decrease') ) {
+				links[i].onclick = function () { dw_fontSizerDX.adjust( -dw_fontSizerDX.sizeIncrement ); return false }
+			} else if ( dw_Util.hasClass( links[i], 'reset')  ) {
+				links[i].onclick = function () { dw_fontSizerDX.reset(); return false }
+			}
+		}
+		if (sizerEl) sizerEl.style.display = "block";
+	},
+
+	getSizeIncrement: function () {
+		var val = 2;
+		switch ( dw_fontSizerDX.sizeUnit ) {
+			case 'px' : val = 5; break;
+			case 'em' : val = .5; break;
+			case '%' : val = 5; break;
+		}
+		dw_fontSizerDX.sizeIncrement = val;
+	},
+	
+	init: function() {
+		if ( !document.getElementById || !document.getElementsByTagName || !document.createElement ) return;
+		var _this = dw_fontSizerDX;
+		if ( !_this.doControlsSetup ) {
+			_this.addHandlers();
+		} else {
+			_this.setupControls();
+		}
+		var size;
+		// check query string and cookie for fontSize
+		// check size (in case default unit changed or size passed in url out of range)
+		size = dw_Util.getValueFromQueryString( _this.queryName );
+		if ( isNaN( parseFloat(size) ) || size > _this.maxSize || size < _this.minSize ) {
+			size = dw_Cookie.get("fontSize");
+			if ( isNaN( parseFloat(size) ) || size > _this.maxSize || size < _this.minSize ) {
+				size = _this.defaultSize;
+			}
+		} 
+		// if neither set nor setDefaults populates adjustList, apply sizes to body and td's
+		if (_this.adjustList.length == 0) _this.set(  _this.defaultSize, _this.minSize, _this.maxSize, ['body', 'td'] ); 
+		_this.curSize = _this.defaultSize;  // create curSize property to use in calculations 
+		if ( size != _this.defaultSize ) _this.adjust( size - _this.defaultSize );
+	},
+
+	adjust: function(n) {
+		if ( !this.curSize ) return; 
+		var alist, size, list, i, j;
+		// check against max/minSize
+		if ( n > 0 ) {
+			if ( this.curSize + n > this.maxSize ) n = this.maxSize - this.curSize;
+		} else if ( n < 0 ) {
+			if ( this.curSize + n < this.minSize ) n = this.minSize - this.curSize;
+		}
+		if ( n == 0 ) return;
+		this.curSize += n;
+		// loop through adjustList, calculating size, checking max/min
+		alist = this.adjustList;
+		for (i=0; alist[i]; i++) {
+			size = this.curSize * alist[i]['ratio']; // maintain proportion 
+			size = Math.max(alist[i]['min'], size); size = Math.min(alist[i]['max'], size);
+			list = dw_Util.getElementsBySelector( alist[i]['sel'] );
+			for (j=0; list[j]; j++) { list[j].style.fontSize = size + this.sizeUnit; }
+		}
+		dw_Cookie.set( "fontSize", this.curSize, this.cookieLifetime, "/" );
+	},
+
+	reset: function() {
+		if ( !this.curSize ) return; 
+		var alist = this.adjustList, list, i, j;
+		for (i=0; alist[i]; i++) {
+			list = dw_Util.getElementsBySelector( alist[i]['sel'] );
+			for (j=0; list[j]; j++) { 
+				// Reset adjustList elements to their default sizes
+				//list[j].style.fontSize = alist[i]['dflt'] + this.sizeUnit;
+				list[j].style.fontSize = '';  // restores original font size (unless set inline!)
+			} 
+		}
+		this.curSize = this.defaultSize;
+		dw_Cookie.del("fontSize", "/");
+	}
+
+};
+
+/////////////////////////////////////////////////////////////////////
+
+var dw_Util; 
+if (!dw_Util) dw_Util = {};
+
+// removes space characters from start and end of string
+dw_Util.trimString = function (str) {
+	var re = /^\s+|\s+$/g;
+	return str.replace(re, "");
+}
+
+// removes extra space characters
+dw_Util.normalizeString = function (str) {
+	var re = /\s\s+/g;
+	return dw_Util.trimString(str).replace(re, " ");
+}
+
+dw_Util.hasClass = function (el, cl) {
+	var re = new RegExp("\\b" + cl + "\\b", "i");
+	if ( re.test( el.className ) ) {
+		return true;
+	}
+	return false;
+}
+
+// what className attached to what element type in what container element (default: document)
+dw_Util.getElementsByClassName = function (sClass, sTag, oCont) {
+	var result = [], list, i;
+	var re = new RegExp("\\b" + sClass + "\\b", "i");
+	oCont = oCont? oCont: document;
+	if ( document.getElementsByTagName ) {
+		if ( !sTag || sTag == "*" ) { // for ie5
+			list = oCont.all? oCont.all: oCont.getElementsByTagName("*");
+		} else {
+			list = oCont.getElementsByTagName(sTag);
+		}
+		for (i=0; list[i]; i++) 
+			if ( re.test( list[i].className ) ) result.push( list[i] );
+	}
+	return result;
+}
+
+// resource: simon.incutio.com/archive/2003/03/25/getElementsBySelector
+dw_Util.getElementsBySelector = function (selector) {
+	if (!document.getElementsByTagName) return [];
+	var nodeList = [document], tokens, bits, list, col, els, i, j, k;
+	selector = dw_Util.normalizeString(selector);
+	tokens = selector.split(' ');
+	for (i=0; tokens[i]; i++) {
+		if ( tokens[i].indexOf('#') != -1 ) {  // id
+			bits = tokens[i].split('#'); 
+			var el = document.getElementById( bits[1] );
+			if (!el) return []; 
+			if ( bits[0] ) {  // check tag
+				if ( el.tagName.toLowerCase() != bits[0].toLowerCase() ) return [];
+			}
+			for (j=0; nodeList[j]; j++) {  // check containment
+				if ( nodeList[j] == document || dw_Util.contained(el, nodeList[j]) ) 
+					nodeList = [el];
+				else return [];
+			}
+		} else if ( tokens[i].indexOf('.') != -1 ) {  // class
+			bits = tokens[i].split('.'); col = [];
+			for (j=0; nodeList[j]; j++) {
+				els = dw_Util.getElementsByClassName( bits[1], bits[0], nodeList[j] );
+				for (k=0; els[k]; k++) { col[col.length] = els[k]; }
+			}
+			nodeList = [];
+			for (j=0; col[j]; j++) { nodeList.push(col[j]); }
+		} else {  // element 
+			els = []; 
+			for (j = 0; nodeList[j]; j++) {
+				list = nodeList[j].getElementsByTagName(tokens[i]);
+				for (k = 0; list[k]; k++) { els.push(list[k]); }
+			}
+			nodeList = els;
+		}
+	}
+	return nodeList;
+}
+
+// obj: link or window.location
+dw_Util.getValueFromQueryString = function (name, obj) {
+	obj = obj? obj: window.location; 
+	if (obj.search && obj.search.indexOf(name != -1) ) {
+		var pairs = obj.search.slice(1).split("&"); // name/value pairs
+		var set;
+		for (var i=0; pairs[i]; i++) {
+			set = pairs[i].split("="); // Check each pair for match on name 
+			if ( set[0] == name && set[1] ) {
+				return set[1];
+			}
+		}
+	}
+	return '';
+}
+
+// returns true of oNode is contained by oCont (container)
+dw_Util.contained = function (oNode, oCont) {
+	if (!oNode) return null; // in case alt-tab away while hovering (prevent error)
+	while ( (oNode = oNode.parentNode) ) if ( oNode == oCont ) return true;
+	return false;
+}
+
+				// setDefaults arguments: size unit, default size, minimum, maximum
+				// optional array of elements or selectors to apply these defaults to
+
+				dw_fontSizerDX.setDefaults("px", 20, 6, 150, ['div#main p.article'] );
+
+				// set arguments: default size, minimum, maximum
+				// array of elements or selectors to apply these settings to
+				dw_fontSizerDX.set(20, 6, 150, ['div#main h2'] );
+
+				dw_Event.add( window, 'load', dw_fontSizerDX.init );
+
+			</script>
+
+		</head>
+
+		<body>
+
+		<div class='header foreground'>
+			<strong>Archivo - glyphtable</strong> &mdash; glyphs 602 &mdash; date 07-10-2016
+			<span id='sizer' class='btn_wrap'>
+				<a class='increase text btn' href='#' title='Increase text size'>+</a>
+				<a class='decrease text btn' href='#' title='Decrease text size'>
+				&ndash;</a>
+				<a class='reset text btn' href='#' title='Restore default font-sizes'>R</a>
+			</span>
+			
+		</div>
+
+		<div class='footer foreground'>
+			<span class='icons' data-icon='&#65;'>
+			</span>
+			<span> icon-size at 20px to text-size at 12px &mdash; set in fonts.css
+			</span>
+		</div>
+
+		<div id='wrapper'>
+
+			<div id='main'>
+
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#65;'></p>
+					<div class='description_box'>
+					<strong>A</strong><br>&amp;#65; &mdash; i-a</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#193;'></p>
+					<div class='description_box'>
+					<strong>Aacute</strong><br>&amp;#193; &mdash; i-aacute</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#258;'></p>
+					<div class='description_box'>
+					<strong>Abreve</strong><br>&amp;#258; &mdash; i-abreve</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#7854;'></p>
+					<div class='description_box'>
+					<strong>Abreveacute</strong><br>&amp;#7854; &mdash; i-abreveacute</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#7862;'></p>
+					<div class='description_box'>
+					<strong>Abrevedotbelow</strong><br>&amp;#7862; &mdash; i-abrevedotbelow</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#7856;'></p>
+					<div class='description_box'>
+					<strong>Abrevegrave</strong><br>&amp;#7856; &mdash; i-abrevegrave</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#7858;'></p>
+					<div class='description_box'>
+					<strong>Abrevehookabove</strong><br>&amp;#7858; &mdash; i-abrevehookabove</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#7860;'></p>
+					<div class='description_box'>
+					<strong>Abrevetilde</strong><br>&amp;#7860; &mdash; i-abrevetilde</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#461;'></p>
+					<div class='description_box'>
+					<strong>Acaron</strong><br>&amp;#461; &mdash; i-acaron</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#194;'></p>
+					<div class='description_box'>
+					<strong>Acircumflex</strong><br>&amp;#194; &mdash; i-acircumflex</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#7844;'></p>
+					<div class='description_box'>
+					<strong>Acircumflexacute</strong><br>&amp;#7844; &mdash; i-acircumflexacute</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#7852;'></p>
+					<div class='description_box'>
+					<strong>Acircumflexdotbelow</strong><br>&amp;#7852; &mdash; i-acircumflexdotbelow</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#7846;'></p>
+					<div class='description_box'>
+					<strong>Acircumflexgrave</strong><br>&amp;#7846; &mdash; i-acircumflexgrave</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#7848;'></p>
+					<div class='description_box'>
+					<strong>Acircumflexhookabove</strong><br>&amp;#7848; &mdash; i-acircumflexhookabove</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#7850;'></p>
+					<div class='description_box'>
+					<strong>Acircumflextilde</strong><br>&amp;#7850; &mdash; i-acircumflextilde</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#512;'></p>
+					<div class='description_box'>
+					<strong>Adblgrave</strong><br>&amp;#512; &mdash; i-adblgrave</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#196;'></p>
+					<div class='description_box'>
+					<strong>Adieresis</strong><br>&amp;#196; &mdash; i-adieresis</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#7840;'></p>
+					<div class='description_box'>
+					<strong>Adotbelow</strong><br>&amp;#7840; &mdash; i-adotbelow</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#192;'></p>
+					<div class='description_box'>
+					<strong>Agrave</strong><br>&amp;#192; &mdash; i-agrave</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#7842;'></p>
+					<div class='description_box'>
+					<strong>Ahookabove</strong><br>&amp;#7842; &mdash; i-ahookabove</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#514;'></p>
+					<div class='description_box'>
+					<strong>Ainvertedbreve</strong><br>&amp;#514; &mdash; i-ainvertedbreve</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#256;'></p>
+					<div class='description_box'>
+					<strong>Amacron</strong><br>&amp;#256; &mdash; i-amacron</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#260;'></p>
+					<div class='description_box'>
+					<strong>Aogonek</strong><br>&amp;#260; &mdash; i-aogonek</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#197;'></p>
+					<div class='description_box'>
+					<strong>Aring</strong><br>&amp;#197; &mdash; i-aring</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#506;'></p>
+					<div class='description_box'>
+					<strong>Aringacute</strong><br>&amp;#506; &mdash; i-aringacute</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#195;'></p>
+					<div class='description_box'>
+					<strong>Atilde</strong><br>&amp;#195; &mdash; i-atilde</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#198;'></p>
+					<div class='description_box'>
+					<strong>AE</strong><br>&amp;#198; &mdash; i-ae</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#508;'></p>
+					<div class='description_box'>
+					<strong>AEacute</strong><br>&amp;#508; &mdash; i-aeacute</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#66;'></p>
+					<div class='description_box'>
+					<strong>B</strong><br>&amp;#66; &mdash; i-b</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#67;'></p>
+					<div class='description_box'>
+					<strong>C</strong><br>&amp;#67; &mdash; i-c</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#262;'></p>
+					<div class='description_box'>
+					<strong>Cacute</strong><br>&amp;#262; &mdash; i-cacute</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#268;'></p>
+					<div class='description_box'>
+					<strong>Ccaron</strong><br>&amp;#268; &mdash; i-ccaron</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#199;'></p>
+					<div class='description_box'>
+					<strong>Ccedilla</strong><br>&amp;#199; &mdash; i-ccedilla</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#264;'></p>
+					<div class='description_box'>
+					<strong>Ccircumflex</strong><br>&amp;#264; &mdash; i-ccircumflex</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#266;'></p>
+					<div class='description_box'>
+					<strong>Cdotaccent</strong><br>&amp;#266; &mdash; i-cdotaccent</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#68;'></p>
+					<div class='description_box'>
+					<strong>D</strong><br>&amp;#68; &mdash; i-d</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#497;'></p>
+					<div class='description_box'>
+					<strong>DZ</strong><br>&amp;#497; &mdash; i-dz</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#452;'></p>
+					<div class='description_box'>
+					<strong>DZcaron</strong><br>&amp;#452; &mdash; i-dzcaron</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#208;'></p>
+					<div class='description_box'>
+					<strong>Eth</strong><br>&amp;#208; &mdash; i-eth</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#270;'></p>
+					<div class='description_box'>
+					<strong>Dcaron</strong><br>&amp;#270; &mdash; i-dcaron</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#272;'></p>
+					<div class='description_box'>
+					<strong>Dcroat</strong><br>&amp;#272; &mdash; i-dcroat</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#7692;'></p>
+					<div class='description_box'>
+					<strong>Ddotbelow</strong><br>&amp;#7692; &mdash; i-ddotbelow</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#498;'></p>
+					<div class='description_box'>
+					<strong>Dz</strong><br>&amp;#498; &mdash; i-dz</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#453;'></p>
+					<div class='description_box'>
+					<strong>Dzcaron</strong><br>&amp;#453; &mdash; i-dzcaron</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#69;'></p>
+					<div class='description_box'>
+					<strong>E</strong><br>&amp;#69; &mdash; i-e</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#201;'></p>
+					<div class='description_box'>
+					<strong>Eacute</strong><br>&amp;#201; &mdash; i-eacute</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#276;'></p>
+					<div class='description_box'>
+					<strong>Ebreve</strong><br>&amp;#276; &mdash; i-ebreve</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#282;'></p>
+					<div class='description_box'>
+					<strong>Ecaron</strong><br>&amp;#282; &mdash; i-ecaron</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#202;'></p>
+					<div class='description_box'>
+					<strong>Ecircumflex</strong><br>&amp;#202; &mdash; i-ecircumflex</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#7870;'></p>
+					<div class='description_box'>
+					<strong>Ecircumflexacute</strong><br>&amp;#7870; &mdash; i-ecircumflexacute</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#7878;'></p>
+					<div class='description_box'>
+					<strong>Ecircumflexdotbelow</strong><br>&amp;#7878; &mdash; i-ecircumflexdotbelow</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#7872;'></p>
+					<div class='description_box'>
+					<strong>Ecircumflexgrave</strong><br>&amp;#7872; &mdash; i-ecircumflexgrave</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#7874;'></p>
+					<div class='description_box'>
+					<strong>Ecircumflexhookabove</strong><br>&amp;#7874; &mdash; i-ecircumflexhookabove</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#7876;'></p>
+					<div class='description_box'>
+					<strong>Ecircumflextilde</strong><br>&amp;#7876; &mdash; i-ecircumflextilde</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#516;'></p>
+					<div class='description_box'>
+					<strong>Edblgrave</strong><br>&amp;#516; &mdash; i-edblgrave</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#203;'></p>
+					<div class='description_box'>
+					<strong>Edieresis</strong><br>&amp;#203; &mdash; i-edieresis</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#278;'></p>
+					<div class='description_box'>
+					<strong>Edotaccent</strong><br>&amp;#278; &mdash; i-edotaccent</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#7864;'></p>
+					<div class='description_box'>
+					<strong>Edotbelow</strong><br>&amp;#7864; &mdash; i-edotbelow</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#200;'></p>
+					<div class='description_box'>
+					<strong>Egrave</strong><br>&amp;#200; &mdash; i-egrave</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#7866;'></p>
+					<div class='description_box'>
+					<strong>Ehookabove</strong><br>&amp;#7866; &mdash; i-ehookabove</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#518;'></p>
+					<div class='description_box'>
+					<strong>Einvertedbreve</strong><br>&amp;#518; &mdash; i-einvertedbreve</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#274;'></p>
+					<div class='description_box'>
+					<strong>Emacron</strong><br>&amp;#274; &mdash; i-emacron</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#280;'></p>
+					<div class='description_box'>
+					<strong>Eogonek</strong><br>&amp;#280; &mdash; i-eogonek</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#7868;'></p>
+					<div class='description_box'>
+					<strong>Etilde</strong><br>&amp;#7868; &mdash; i-etilde</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#70;'></p>
+					<div class='description_box'>
+					<strong>F</strong><br>&amp;#70; &mdash; i-f</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#71;'></p>
+					<div class='description_box'>
+					<strong>G</strong><br>&amp;#71; &mdash; i-g</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#500;'></p>
+					<div class='description_box'>
+					<strong>Gacute</strong><br>&amp;#500; &mdash; i-gacute</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#286;'></p>
+					<div class='description_box'>
+					<strong>Gbreve</strong><br>&amp;#286; &mdash; i-gbreve</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#486;'></p>
+					<div class='description_box'>
+					<strong>Gcaron</strong><br>&amp;#486; &mdash; i-gcaron</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#284;'></p>
+					<div class='description_box'>
+					<strong>Gcircumflex</strong><br>&amp;#284; &mdash; i-gcircumflex</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#290;'></p>
+					<div class='description_box'>
+					<strong>Gcommaaccent</strong><br>&amp;#290; &mdash; i-gcommaaccent</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#288;'></p>
+					<div class='description_box'>
+					<strong>Gdotaccent</strong><br>&amp;#288; &mdash; i-gdotaccent</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#72;'></p>
+					<div class='description_box'>
+					<strong>H</strong><br>&amp;#72; &mdash; i-h</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#294;'></p>
+					<div class='description_box'>
+					<strong>Hbar</strong><br>&amp;#294; &mdash; i-hbar</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#292;'></p>
+					<div class='description_box'>
+					<strong>Hcircumflex</strong><br>&amp;#292; &mdash; i-hcircumflex</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#7716;'></p>
+					<div class='description_box'>
+					<strong>Hdotbelow</strong><br>&amp;#7716; &mdash; i-hdotbelow</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#73;'></p>
+					<div class='description_box'>
+					<strong>I</strong><br>&amp;#73; &mdash; i-i</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#306;'></p>
+					<div class='description_box'>
+					<strong>IJ</strong><br>&amp;#306; &mdash; i-ij</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#205;'></p>
+					<div class='description_box'>
+					<strong>Iacute</strong><br>&amp;#205; &mdash; i-iacute</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#300;'></p>
+					<div class='description_box'>
+					<strong>Ibreve</strong><br>&amp;#300; &mdash; i-ibreve</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#463;'></p>
+					<div class='description_box'>
+					<strong>Icaron</strong><br>&amp;#463; &mdash; i-icaron</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#206;'></p>
+					<div class='description_box'>
+					<strong>Icircumflex</strong><br>&amp;#206; &mdash; i-icircumflex</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#520;'></p>
+					<div class='description_box'>
+					<strong>Idblgrave</strong><br>&amp;#520; &mdash; i-idblgrave</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#207;'></p>
+					<div class='description_box'>
+					<strong>Idieresis</strong><br>&amp;#207; &mdash; i-idieresis</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#304;'></p>
+					<div class='description_box'>
+					<strong>Idotaccent</strong><br>&amp;#304; &mdash; i-idotaccent</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#7882;'></p>
+					<div class='description_box'>
+					<strong>Idotbelow</strong><br>&amp;#7882; &mdash; i-idotbelow</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#204;'></p>
+					<div class='description_box'>
+					<strong>Igrave</strong><br>&amp;#204; &mdash; i-igrave</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#7880;'></p>
+					<div class='description_box'>
+					<strong>Ihookabove</strong><br>&amp;#7880; &mdash; i-ihookabove</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#522;'></p>
+					<div class='description_box'>
+					<strong>Iinvertedbreve</strong><br>&amp;#522; &mdash; i-iinvertedbreve</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#298;'></p>
+					<div class='description_box'>
+					<strong>Imacron</strong><br>&amp;#298; &mdash; i-imacron</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#302;'></p>
+					<div class='description_box'>
+					<strong>Iogonek</strong><br>&amp;#302; &mdash; i-iogonek</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#296;'></p>
+					<div class='description_box'>
+					<strong>Itilde</strong><br>&amp;#296; &mdash; i-itilde</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#74;'></p>
+					<div class='description_box'>
+					<strong>J</strong><br>&amp;#74; &mdash; i-j</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#308;'></p>
+					<div class='description_box'>
+					<strong>Jcircumflex</strong><br>&amp;#308; &mdash; i-jcircumflex</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#75;'></p>
+					<div class='description_box'>
+					<strong>K</strong><br>&amp;#75; &mdash; i-k</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#310;'></p>
+					<div class='description_box'>
+					<strong>Kcommaaccent</strong><br>&amp;#310; &mdash; i-kcommaaccent</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#76;'></p>
+					<div class='description_box'>
+					<strong>L</strong><br>&amp;#76; &mdash; i-l</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#455;'></p>
+					<div class='description_box'>
+					<strong>LJ</strong><br>&amp;#455; &mdash; i-lj</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#313;'></p>
+					<div class='description_box'>
+					<strong>Lacute</strong><br>&amp;#313; &mdash; i-lacute</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#317;'></p>
+					<div class='description_box'>
+					<strong>Lcaron</strong><br>&amp;#317; &mdash; i-lcaron</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#315;'></p>
+					<div class='description_box'>
+					<strong>Lcommaaccent</strong><br>&amp;#315; &mdash; i-lcommaaccent</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#319;'></p>
+					<div class='description_box'>
+					<strong>Ldot</strong><br>&amp;#319; &mdash; i-ldot</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#456;'></p>
+					<div class='description_box'>
+					<strong>Lj</strong><br>&amp;#456; &mdash; i-lj</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#321;'></p>
+					<div class='description_box'>
+					<strong>Lslash</strong><br>&amp;#321; &mdash; i-lslash</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#77;'></p>
+					<div class='description_box'>
+					<strong>M</strong><br>&amp;#77; &mdash; i-m</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#78;'></p>
+					<div class='description_box'>
+					<strong>N</strong><br>&amp;#78; &mdash; i-n</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#458;'></p>
+					<div class='description_box'>
+					<strong>NJ</strong><br>&amp;#458; &mdash; i-nj</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#323;'></p>
+					<div class='description_box'>
+					<strong>Nacute</strong><br>&amp;#323; &mdash; i-nacute</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#327;'></p>
+					<div class='description_box'>
+					<strong>Ncaron</strong><br>&amp;#327; &mdash; i-ncaron</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#325;'></p>
+					<div class='description_box'>
+					<strong>Ncommaaccent</strong><br>&amp;#325; &mdash; i-ncommaaccent</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#7748;'></p>
+					<div class='description_box'>
+					<strong>Ndotaccent</strong><br>&amp;#7748; &mdash; i-ndotaccent</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#330;'></p>
+					<div class='description_box'>
+					<strong>Eng</strong><br>&amp;#330; &mdash; i-eng</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#413;'></p>
+					<div class='description_box'>
+					<strong>Nhookleft</strong><br>&amp;#413; &mdash; i-nhookleft</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#459;'></p>
+					<div class='description_box'>
+					<strong>Nj</strong><br>&amp;#459; &mdash; i-nj</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#209;'></p>
+					<div class='description_box'>
+					<strong>Ntilde</strong><br>&amp;#209; &mdash; i-ntilde</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#79;'></p>
+					<div class='description_box'>
+					<strong>O</strong><br>&amp;#79; &mdash; i-o</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#211;'></p>
+					<div class='description_box'>
+					<strong>Oacute</strong><br>&amp;#211; &mdash; i-oacute</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#334;'></p>
+					<div class='description_box'>
+					<strong>Obreve</strong><br>&amp;#334; &mdash; i-obreve</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#465;'></p>
+					<div class='description_box'>
+					<strong>Ocaron</strong><br>&amp;#465; &mdash; i-ocaron</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#212;'></p>
+					<div class='description_box'>
+					<strong>Ocircumflex</strong><br>&amp;#212; &mdash; i-ocircumflex</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#7888;'></p>
+					<div class='description_box'>
+					<strong>Ocircumflexacute</strong><br>&amp;#7888; &mdash; i-ocircumflexacute</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#7896;'></p>
+					<div class='description_box'>
+					<strong>Ocircumflexdotbelow</strong><br>&amp;#7896; &mdash; i-ocircumflexdotbelow</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#7890;'></p>
+					<div class='description_box'>
+					<strong>Ocircumflexgrave</strong><br>&amp;#7890; &mdash; i-ocircumflexgrave</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#7892;'></p>
+					<div class='description_box'>
+					<strong>Ocircumflexhookabove</strong><br>&amp;#7892; &mdash; i-ocircumflexhookabove</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#7894;'></p>
+					<div class='description_box'>
+					<strong>Ocircumflextilde</strong><br>&amp;#7894; &mdash; i-ocircumflextilde</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#524;'></p>
+					<div class='description_box'>
+					<strong>Odblgrave</strong><br>&amp;#524; &mdash; i-odblgrave</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#214;'></p>
+					<div class='description_box'>
+					<strong>Odieresis</strong><br>&amp;#214; &mdash; i-odieresis</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#7884;'></p>
+					<div class='description_box'>
+					<strong>Odotbelow</strong><br>&amp;#7884; &mdash; i-odotbelow</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#210;'></p>
+					<div class='description_box'>
+					<strong>Ograve</strong><br>&amp;#210; &mdash; i-ograve</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#7886;'></p>
+					<div class='description_box'>
+					<strong>Ohookabove</strong><br>&amp;#7886; &mdash; i-ohookabove</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#416;'></p>
+					<div class='description_box'>
+					<strong>Ohorn</strong><br>&amp;#416; &mdash; i-ohorn</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#7898;'></p>
+					<div class='description_box'>
+					<strong>Ohornacute</strong><br>&amp;#7898; &mdash; i-ohornacute</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#7906;'></p>
+					<div class='description_box'>
+					<strong>Ohorndotbelow</strong><br>&amp;#7906; &mdash; i-ohorndotbelow</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#7900;'></p>
+					<div class='description_box'>
+					<strong>Ohorngrave</strong><br>&amp;#7900; &mdash; i-ohorngrave</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#7902;'></p>
+					<div class='description_box'>
+					<strong>Ohornhookabove</strong><br>&amp;#7902; &mdash; i-ohornhookabove</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#7904;'></p>
+					<div class='description_box'>
+					<strong>Ohorntilde</strong><br>&amp;#7904; &mdash; i-ohorntilde</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#336;'></p>
+					<div class='description_box'>
+					<strong>Ohungarumlaut</strong><br>&amp;#336; &mdash; i-ohungarumlaut</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#526;'></p>
+					<div class='description_box'>
+					<strong>Oinvertedbreve</strong><br>&amp;#526; &mdash; i-oinvertedbreve</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#332;'></p>
+					<div class='description_box'>
+					<strong>Omacron</strong><br>&amp;#332; &mdash; i-omacron</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#490;'></p>
+					<div class='description_box'>
+					<strong>Oogonek</strong><br>&amp;#490; &mdash; i-oogonek</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#216;'></p>
+					<div class='description_box'>
+					<strong>Oslash</strong><br>&amp;#216; &mdash; i-oslash</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#510;'></p>
+					<div class='description_box'>
+					<strong>Oslashacute</strong><br>&amp;#510; &mdash; i-oslashacute</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#213;'></p>
+					<div class='description_box'>
+					<strong>Otilde</strong><br>&amp;#213; &mdash; i-otilde</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#338;'></p>
+					<div class='description_box'>
+					<strong>OE</strong><br>&amp;#338; &mdash; i-oe</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#80;'></p>
+					<div class='description_box'>
+					<strong>P</strong><br>&amp;#80; &mdash; i-p</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#222;'></p>
+					<div class='description_box'>
+					<strong>Thorn</strong><br>&amp;#222; &mdash; i-thorn</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#81;'></p>
+					<div class='description_box'>
+					<strong>Q</strong><br>&amp;#81; &mdash; i-q</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#82;'></p>
+					<div class='description_box'>
+					<strong>R</strong><br>&amp;#82; &mdash; i-r</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#340;'></p>
+					<div class='description_box'>
+					<strong>Racute</strong><br>&amp;#340; &mdash; i-racute</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#344;'></p>
+					<div class='description_box'>
+					<strong>Rcaron</strong><br>&amp;#344; &mdash; i-rcaron</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#342;'></p>
+					<div class='description_box'>
+					<strong>Rcommaaccent</strong><br>&amp;#342; &mdash; i-rcommaaccent</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#528;'></p>
+					<div class='description_box'>
+					<strong>Rdblgrave</strong><br>&amp;#528; &mdash; i-rdblgrave</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#7770;'></p>
+					<div class='description_box'>
+					<strong>Rdotbelow</strong><br>&amp;#7770; &mdash; i-rdotbelow</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#530;'></p>
+					<div class='description_box'>
+					<strong>Rinvertedbreve</strong><br>&amp;#530; &mdash; i-rinvertedbreve</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#83;'></p>
+					<div class='description_box'>
+					<strong>S</strong><br>&amp;#83; &mdash; i-s</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#346;'></p>
+					<div class='description_box'>
+					<strong>Sacute</strong><br>&amp;#346; &mdash; i-sacute</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#42891;'></p>
+					<div class='description_box'>
+					<strong>Saltillo</strong><br>&amp;#42891; &mdash; i-saltillo</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#352;'></p>
+					<div class='description_box'>
+					<strong>Scaron</strong><br>&amp;#352; &mdash; i-scaron</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#350;'></p>
+					<div class='description_box'>
+					<strong>Scedilla</strong><br>&amp;#350; &mdash; i-scedilla</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#348;'></p>
+					<div class='description_box'>
+					<strong>Scircumflex</strong><br>&amp;#348; &mdash; i-scircumflex</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#536;'></p>
+					<div class='description_box'>
+					<strong>Scommaaccent</strong><br>&amp;#536; &mdash; i-scommaaccent</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#7778;'></p>
+					<div class='description_box'>
+					<strong>Sdotbelow</strong><br>&amp;#7778; &mdash; i-sdotbelow</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#7838;'></p>
+					<div class='description_box'>
+					<strong>Germandbls</strong><br>&amp;#7838; &mdash; i-germandbls</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#399;'></p>
+					<div class='description_box'>
+					<strong>Schwa</strong><br>&amp;#399; &mdash; i-schwa</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#84;'></p>
+					<div class='description_box'>
+					<strong>T</strong><br>&amp;#84; &mdash; i-t</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#358;'></p>
+					<div class='description_box'>
+					<strong>Tbar</strong><br>&amp;#358; &mdash; i-tbar</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#356;'></p>
+					<div class='description_box'>
+					<strong>Tcaron</strong><br>&amp;#356; &mdash; i-tcaron</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#354;'></p>
+					<div class='description_box'>
+					<strong>Tcedilla</strong><br>&amp;#354; &mdash; i-tcedilla</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#538;'></p>
+					<div class='description_box'>
+					<strong>Tcommaaccent</strong><br>&amp;#538; &mdash; i-tcommaaccent</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#7788;'></p>
+					<div class='description_box'>
+					<strong>Tdotbelow</strong><br>&amp;#7788; &mdash; i-tdotbelow</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#85;'></p>
+					<div class='description_box'>
+					<strong>U</strong><br>&amp;#85; &mdash; i-u</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#218;'></p>
+					<div class='description_box'>
+					<strong>Uacute</strong><br>&amp;#218; &mdash; i-uacute</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#364;'></p>
+					<div class='description_box'>
+					<strong>Ubreve</strong><br>&amp;#364; &mdash; i-ubreve</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#467;'></p>
+					<div class='description_box'>
+					<strong>Ucaron</strong><br>&amp;#467; &mdash; i-ucaron</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#219;'></p>
+					<div class='description_box'>
+					<strong>Ucircumflex</strong><br>&amp;#219; &mdash; i-ucircumflex</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#532;'></p>
+					<div class='description_box'>
+					<strong>Udblgrave</strong><br>&amp;#532; &mdash; i-udblgrave</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#220;'></p>
+					<div class='description_box'>
+					<strong>Udieresis</strong><br>&amp;#220; &mdash; i-udieresis</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#471;'></p>
+					<div class='description_box'>
+					<strong>Udieresisacute</strong><br>&amp;#471; &mdash; i-udieresisacute</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#473;'></p>
+					<div class='description_box'>
+					<strong>Udieresiscaron</strong><br>&amp;#473; &mdash; i-udieresiscaron</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#475;'></p>
+					<div class='description_box'>
+					<strong>Udieresisgrave</strong><br>&amp;#475; &mdash; i-udieresisgrave</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#469;'></p>
+					<div class='description_box'>
+					<strong>Udieresismacron</strong><br>&amp;#469; &mdash; i-udieresismacron</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#7908;'></p>
+					<div class='description_box'>
+					<strong>Udotbelow</strong><br>&amp;#7908; &mdash; i-udotbelow</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#217;'></p>
+					<div class='description_box'>
+					<strong>Ugrave</strong><br>&amp;#217; &mdash; i-ugrave</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#7910;'></p>
+					<div class='description_box'>
+					<strong>Uhookabove</strong><br>&amp;#7910; &mdash; i-uhookabove</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#431;'></p>
+					<div class='description_box'>
+					<strong>Uhorn</strong><br>&amp;#431; &mdash; i-uhorn</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#7912;'></p>
+					<div class='description_box'>
+					<strong>Uhornacute</strong><br>&amp;#7912; &mdash; i-uhornacute</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#7920;'></p>
+					<div class='description_box'>
+					<strong>Uhorndotbelow</strong><br>&amp;#7920; &mdash; i-uhorndotbelow</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#7914;'></p>
+					<div class='description_box'>
+					<strong>Uhorngrave</strong><br>&amp;#7914; &mdash; i-uhorngrave</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#7916;'></p>
+					<div class='description_box'>
+					<strong>Uhornhookabove</strong><br>&amp;#7916; &mdash; i-uhornhookabove</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#7918;'></p>
+					<div class='description_box'>
+					<strong>Uhorntilde</strong><br>&amp;#7918; &mdash; i-uhorntilde</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#368;'></p>
+					<div class='description_box'>
+					<strong>Uhungarumlaut</strong><br>&amp;#368; &mdash; i-uhungarumlaut</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#534;'></p>
+					<div class='description_box'>
+					<strong>Uinvertedbreve</strong><br>&amp;#534; &mdash; i-uinvertedbreve</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#362;'></p>
+					<div class='description_box'>
+					<strong>Umacron</strong><br>&amp;#362; &mdash; i-umacron</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#370;'></p>
+					<div class='description_box'>
+					<strong>Uogonek</strong><br>&amp;#370; &mdash; i-uogonek</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#366;'></p>
+					<div class='description_box'>
+					<strong>Uring</strong><br>&amp;#366; &mdash; i-uring</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#360;'></p>
+					<div class='description_box'>
+					<strong>Utilde</strong><br>&amp;#360; &mdash; i-utilde</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#86;'></p>
+					<div class='description_box'>
+					<strong>V</strong><br>&amp;#86; &mdash; i-v</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#87;'></p>
+					<div class='description_box'>
+					<strong>W</strong><br>&amp;#87; &mdash; i-w</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#7810;'></p>
+					<div class='description_box'>
+					<strong>Wacute</strong><br>&amp;#7810; &mdash; i-wacute</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#372;'></p>
+					<div class='description_box'>
+					<strong>Wcircumflex</strong><br>&amp;#372; &mdash; i-wcircumflex</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#7812;'></p>
+					<div class='description_box'>
+					<strong>Wdieresis</strong><br>&amp;#7812; &mdash; i-wdieresis</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#7808;'></p>
+					<div class='description_box'>
+					<strong>Wgrave</strong><br>&amp;#7808; &mdash; i-wgrave</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#88;'></p>
+					<div class='description_box'>
+					<strong>X</strong><br>&amp;#88; &mdash; i-x</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#89;'></p>
+					<div class='description_box'>
+					<strong>Y</strong><br>&amp;#89; &mdash; i-y</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#221;'></p>
+					<div class='description_box'>
+					<strong>Yacute</strong><br>&amp;#221; &mdash; i-yacute</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#374;'></p>
+					<div class='description_box'>
+					<strong>Ycircumflex</strong><br>&amp;#374; &mdash; i-ycircumflex</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#376;'></p>
+					<div class='description_box'>
+					<strong>Ydieresis</strong><br>&amp;#376; &mdash; i-ydieresis</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#7924;'></p>
+					<div class='description_box'>
+					<strong>Ydotbelow</strong><br>&amp;#7924; &mdash; i-ydotbelow</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#7922;'></p>
+					<div class='description_box'>
+					<strong>Ygrave</strong><br>&amp;#7922; &mdash; i-ygrave</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#7926;'></p>
+					<div class='description_box'>
+					<strong>Yhookabove</strong><br>&amp;#7926; &mdash; i-yhookabove</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#562;'></p>
+					<div class='description_box'>
+					<strong>Ymacron</strong><br>&amp;#562; &mdash; i-ymacron</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#7928;'></p>
+					<div class='description_box'>
+					<strong>Ytilde</strong><br>&amp;#7928; &mdash; i-ytilde</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#90;'></p>
+					<div class='description_box'>
+					<strong>Z</strong><br>&amp;#90; &mdash; i-z</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#377;'></p>
+					<div class='description_box'>
+					<strong>Zacute</strong><br>&amp;#377; &mdash; i-zacute</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#381;'></p>
+					<div class='description_box'>
+					<strong>Zcaron</strong><br>&amp;#381; &mdash; i-zcaron</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#379;'></p>
+					<div class='description_box'>
+					<strong>Zdotaccent</strong><br>&amp;#379; &mdash; i-zdotaccent</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#7826;'></p>
+					<div class='description_box'>
+					<strong>Zdotbelow</strong><br>&amp;#7826; &mdash; i-zdotbelow</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#97;'></p>
+					<div class='description_box'>
+					<strong>a</strong><br>&amp;#97; &mdash; i-a</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#225;'></p>
+					<div class='description_box'>
+					<strong>aacute</strong><br>&amp;#225; &mdash; i-aacute</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#259;'></p>
+					<div class='description_box'>
+					<strong>abreve</strong><br>&amp;#259; &mdash; i-abreve</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#7855;'></p>
+					<div class='description_box'>
+					<strong>abreveacute</strong><br>&amp;#7855; &mdash; i-abreveacute</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#7863;'></p>
+					<div class='description_box'>
+					<strong>abrevedotbelow</strong><br>&amp;#7863; &mdash; i-abrevedotbelow</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#7857;'></p>
+					<div class='description_box'>
+					<strong>abrevegrave</strong><br>&amp;#7857; &mdash; i-abrevegrave</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#7859;'></p>
+					<div class='description_box'>
+					<strong>abrevehookabove</strong><br>&amp;#7859; &mdash; i-abrevehookabove</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#7861;'></p>
+					<div class='description_box'>
+					<strong>abrevetilde</strong><br>&amp;#7861; &mdash; i-abrevetilde</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#462;'></p>
+					<div class='description_box'>
+					<strong>acaron</strong><br>&amp;#462; &mdash; i-acaron</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#226;'></p>
+					<div class='description_box'>
+					<strong>acircumflex</strong><br>&amp;#226; &mdash; i-acircumflex</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#7845;'></p>
+					<div class='description_box'>
+					<strong>acircumflexacute</strong><br>&amp;#7845; &mdash; i-acircumflexacute</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#7853;'></p>
+					<div class='description_box'>
+					<strong>acircumflexdotbelow</strong><br>&amp;#7853; &mdash; i-acircumflexdotbelow</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#7847;'></p>
+					<div class='description_box'>
+					<strong>acircumflexgrave</strong><br>&amp;#7847; &mdash; i-acircumflexgrave</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#7849;'></p>
+					<div class='description_box'>
+					<strong>acircumflexhookabove</strong><br>&amp;#7849; &mdash; i-acircumflexhookabove</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#7851;'></p>
+					<div class='description_box'>
+					<strong>acircumflextilde</strong><br>&amp;#7851; &mdash; i-acircumflextilde</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#513;'></p>
+					<div class='description_box'>
+					<strong>adblgrave</strong><br>&amp;#513; &mdash; i-adblgrave</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#228;'></p>
+					<div class='description_box'>
+					<strong>adieresis</strong><br>&amp;#228; &mdash; i-adieresis</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#7841;'></p>
+					<div class='description_box'>
+					<strong>adotbelow</strong><br>&amp;#7841; &mdash; i-adotbelow</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#224;'></p>
+					<div class='description_box'>
+					<strong>agrave</strong><br>&amp;#224; &mdash; i-agrave</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#7843;'></p>
+					<div class='description_box'>
+					<strong>ahookabove</strong><br>&amp;#7843; &mdash; i-ahookabove</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#515;'></p>
+					<div class='description_box'>
+					<strong>ainvertedbreve</strong><br>&amp;#515; &mdash; i-ainvertedbreve</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#257;'></p>
+					<div class='description_box'>
+					<strong>amacron</strong><br>&amp;#257; &mdash; i-amacron</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#261;'></p>
+					<div class='description_box'>
+					<strong>aogonek</strong><br>&amp;#261; &mdash; i-aogonek</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#229;'></p>
+					<div class='description_box'>
+					<strong>aring</strong><br>&amp;#229; &mdash; i-aring</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#507;'></p>
+					<div class='description_box'>
+					<strong>aringacute</strong><br>&amp;#507; &mdash; i-aringacute</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#227;'></p>
+					<div class='description_box'>
+					<strong>atilde</strong><br>&amp;#227; &mdash; i-atilde</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#230;'></p>
+					<div class='description_box'>
+					<strong>ae</strong><br>&amp;#230; &mdash; i-ae</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#509;'></p>
+					<div class='description_box'>
+					<strong>aeacute</strong><br>&amp;#509; &mdash; i-aeacute</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#98;'></p>
+					<div class='description_box'>
+					<strong>b</strong><br>&amp;#98; &mdash; i-b</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#99;'></p>
+					<div class='description_box'>
+					<strong>c</strong><br>&amp;#99; &mdash; i-c</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#263;'></p>
+					<div class='description_box'>
+					<strong>cacute</strong><br>&amp;#263; &mdash; i-cacute</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#269;'></p>
+					<div class='description_box'>
+					<strong>ccaron</strong><br>&amp;#269; &mdash; i-ccaron</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#231;'></p>
+					<div class='description_box'>
+					<strong>ccedilla</strong><br>&amp;#231; &mdash; i-ccedilla</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#265;'></p>
+					<div class='description_box'>
+					<strong>ccircumflex</strong><br>&amp;#265; &mdash; i-ccircumflex</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#267;'></p>
+					<div class='description_box'>
+					<strong>cdotaccent</strong><br>&amp;#267; &mdash; i-cdotaccent</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#100;'></p>
+					<div class='description_box'>
+					<strong>d</strong><br>&amp;#100; &mdash; i-d</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#240;'></p>
+					<div class='description_box'>
+					<strong>eth</strong><br>&amp;#240; &mdash; i-eth</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#271;'></p>
+					<div class='description_box'>
+					<strong>dcaron</strong><br>&amp;#271; &mdash; i-dcaron</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#273;'></p>
+					<div class='description_box'>
+					<strong>dcroat</strong><br>&amp;#273; &mdash; i-dcroat</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#7693;'></p>
+					<div class='description_box'>
+					<strong>ddotbelow</strong><br>&amp;#7693; &mdash; i-ddotbelow</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#499;'></p>
+					<div class='description_box'>
+					<strong>dz</strong><br>&amp;#499; &mdash; i-dz</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#454;'></p>
+					<div class='description_box'>
+					<strong>dzcaron</strong><br>&amp;#454; &mdash; i-dzcaron</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#101;'></p>
+					<div class='description_box'>
+					<strong>e</strong><br>&amp;#101; &mdash; i-e</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#233;'></p>
+					<div class='description_box'>
+					<strong>eacute</strong><br>&amp;#233; &mdash; i-eacute</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#277;'></p>
+					<div class='description_box'>
+					<strong>ebreve</strong><br>&amp;#277; &mdash; i-ebreve</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#283;'></p>
+					<div class='description_box'>
+					<strong>ecaron</strong><br>&amp;#283; &mdash; i-ecaron</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#234;'></p>
+					<div class='description_box'>
+					<strong>ecircumflex</strong><br>&amp;#234; &mdash; i-ecircumflex</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#7871;'></p>
+					<div class='description_box'>
+					<strong>ecircumflexacute</strong><br>&amp;#7871; &mdash; i-ecircumflexacute</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#7879;'></p>
+					<div class='description_box'>
+					<strong>ecircumflexdotbelow</strong><br>&amp;#7879; &mdash; i-ecircumflexdotbelow</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#7873;'></p>
+					<div class='description_box'>
+					<strong>ecircumflexgrave</strong><br>&amp;#7873; &mdash; i-ecircumflexgrave</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#7875;'></p>
+					<div class='description_box'>
+					<strong>ecircumflexhookabove</strong><br>&amp;#7875; &mdash; i-ecircumflexhookabove</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#7877;'></p>
+					<div class='description_box'>
+					<strong>ecircumflextilde</strong><br>&amp;#7877; &mdash; i-ecircumflextilde</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#517;'></p>
+					<div class='description_box'>
+					<strong>edblgrave</strong><br>&amp;#517; &mdash; i-edblgrave</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#235;'></p>
+					<div class='description_box'>
+					<strong>edieresis</strong><br>&amp;#235; &mdash; i-edieresis</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#279;'></p>
+					<div class='description_box'>
+					<strong>edotaccent</strong><br>&amp;#279; &mdash; i-edotaccent</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#7865;'></p>
+					<div class='description_box'>
+					<strong>edotbelow</strong><br>&amp;#7865; &mdash; i-edotbelow</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#232;'></p>
+					<div class='description_box'>
+					<strong>egrave</strong><br>&amp;#232; &mdash; i-egrave</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#7867;'></p>
+					<div class='description_box'>
+					<strong>ehookabove</strong><br>&amp;#7867; &mdash; i-ehookabove</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#519;'></p>
+					<div class='description_box'>
+					<strong>einvertedbreve</strong><br>&amp;#519; &mdash; i-einvertedbreve</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#275;'></p>
+					<div class='description_box'>
+					<strong>emacron</strong><br>&amp;#275; &mdash; i-emacron</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#281;'></p>
+					<div class='description_box'>
+					<strong>eogonek</strong><br>&amp;#281; &mdash; i-eogonek</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#7869;'></p>
+					<div class='description_box'>
+					<strong>etilde</strong><br>&amp;#7869; &mdash; i-etilde</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#102;'></p>
+					<div class='description_box'>
+					<strong>f</strong><br>&amp;#102; &mdash; i-f</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#103;'></p>
+					<div class='description_box'>
+					<strong>g</strong><br>&amp;#103; &mdash; i-g</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#501;'></p>
+					<div class='description_box'>
+					<strong>gacute</strong><br>&amp;#501; &mdash; i-gacute</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#287;'></p>
+					<div class='description_box'>
+					<strong>gbreve</strong><br>&amp;#287; &mdash; i-gbreve</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#487;'></p>
+					<div class='description_box'>
+					<strong>gcaron</strong><br>&amp;#487; &mdash; i-gcaron</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#285;'></p>
+					<div class='description_box'>
+					<strong>gcircumflex</strong><br>&amp;#285; &mdash; i-gcircumflex</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#291;'></p>
+					<div class='description_box'>
+					<strong>gcommaaccent</strong><br>&amp;#291; &mdash; i-gcommaaccent</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#289;'></p>
+					<div class='description_box'>
+					<strong>gdotaccent</strong><br>&amp;#289; &mdash; i-gdotaccent</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#104;'></p>
+					<div class='description_box'>
+					<strong>h</strong><br>&amp;#104; &mdash; i-h</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#295;'></p>
+					<div class='description_box'>
+					<strong>hbar</strong><br>&amp;#295; &mdash; i-hbar</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#293;'></p>
+					<div class='description_box'>
+					<strong>hcircumflex</strong><br>&amp;#293; &mdash; i-hcircumflex</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#7717;'></p>
+					<div class='description_box'>
+					<strong>hdotbelow</strong><br>&amp;#7717; &mdash; i-hdotbelow</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#105;'></p>
+					<div class='description_box'>
+					<strong>i</strong><br>&amp;#105; &mdash; i-i</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#305;'></p>
+					<div class='description_box'>
+					<strong>idotless</strong><br>&amp;#305; &mdash; i-idotless</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#237;'></p>
+					<div class='description_box'>
+					<strong>iacute</strong><br>&amp;#237; &mdash; i-iacute</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#301;'></p>
+					<div class='description_box'>
+					<strong>ibreve</strong><br>&amp;#301; &mdash; i-ibreve</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#464;'></p>
+					<div class='description_box'>
+					<strong>icaron</strong><br>&amp;#464; &mdash; i-icaron</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#238;'></p>
+					<div class='description_box'>
+					<strong>icircumflex</strong><br>&amp;#238; &mdash; i-icircumflex</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#521;'></p>
+					<div class='description_box'>
+					<strong>idblgrave</strong><br>&amp;#521; &mdash; i-idblgrave</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#239;'></p>
+					<div class='description_box'>
+					<strong>idieresis</strong><br>&amp;#239; &mdash; i-idieresis</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#7883;'></p>
+					<div class='description_box'>
+					<strong>idotbelow</strong><br>&amp;#7883; &mdash; i-idotbelow</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#236;'></p>
+					<div class='description_box'>
+					<strong>igrave</strong><br>&amp;#236; &mdash; i-igrave</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#7881;'></p>
+					<div class='description_box'>
+					<strong>ihookabove</strong><br>&amp;#7881; &mdash; i-ihookabove</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#523;'></p>
+					<div class='description_box'>
+					<strong>iinvertedbreve</strong><br>&amp;#523; &mdash; i-iinvertedbreve</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#307;'></p>
+					<div class='description_box'>
+					<strong>ij</strong><br>&amp;#307; &mdash; i-ij</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#299;'></p>
+					<div class='description_box'>
+					<strong>imacron</strong><br>&amp;#299; &mdash; i-imacron</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#303;'></p>
+					<div class='description_box'>
+					<strong>iogonek</strong><br>&amp;#303; &mdash; i-iogonek</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#297;'></p>
+					<div class='description_box'>
+					<strong>itilde</strong><br>&amp;#297; &mdash; i-itilde</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#106;'></p>
+					<div class='description_box'>
+					<strong>j</strong><br>&amp;#106; &mdash; i-j</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#567;'></p>
+					<div class='description_box'>
+					<strong>jdotless</strong><br>&amp;#567; &mdash; i-jdotless</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#309;'></p>
+					<div class='description_box'>
+					<strong>jcircumflex</strong><br>&amp;#309; &mdash; i-jcircumflex</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#107;'></p>
+					<div class='description_box'>
+					<strong>k</strong><br>&amp;#107; &mdash; i-k</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#311;'></p>
+					<div class='description_box'>
+					<strong>kcommaaccent</strong><br>&amp;#311; &mdash; i-kcommaaccent</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#312;'></p>
+					<div class='description_box'>
+					<strong>kgreenlandic</strong><br>&amp;#312; &mdash; i-kgreenlandic</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#108;'></p>
+					<div class='description_box'>
+					<strong>l</strong><br>&amp;#108; &mdash; i-l</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#314;'></p>
+					<div class='description_box'>
+					<strong>lacute</strong><br>&amp;#314; &mdash; i-lacute</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#318;'></p>
+					<div class='description_box'>
+					<strong>lcaron</strong><br>&amp;#318; &mdash; i-lcaron</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#316;'></p>
+					<div class='description_box'>
+					<strong>lcommaaccent</strong><br>&amp;#316; &mdash; i-lcommaaccent</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#320;'></p>
+					<div class='description_box'>
+					<strong>ldot</strong><br>&amp;#320; &mdash; i-ldot</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#457;'></p>
+					<div class='description_box'>
+					<strong>lj</strong><br>&amp;#457; &mdash; i-lj</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#322;'></p>
+					<div class='description_box'>
+					<strong>lslash</strong><br>&amp;#322; &mdash; i-lslash</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#109;'></p>
+					<div class='description_box'>
+					<strong>m</strong><br>&amp;#109; &mdash; i-m</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#110;'></p>
+					<div class='description_box'>
+					<strong>n</strong><br>&amp;#110; &mdash; i-n</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#324;'></p>
+					<div class='description_box'>
+					<strong>nacute</strong><br>&amp;#324; &mdash; i-nacute</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#329;'></p>
+					<div class='description_box'>
+					<strong>napostrophe</strong><br>&amp;#329; &mdash; i-napostrophe</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#328;'></p>
+					<div class='description_box'>
+					<strong>ncaron</strong><br>&amp;#328; &mdash; i-ncaron</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#326;'></p>
+					<div class='description_box'>
+					<strong>ncommaaccent</strong><br>&amp;#326; &mdash; i-ncommaaccent</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#7749;'></p>
+					<div class='description_box'>
+					<strong>ndotaccent</strong><br>&amp;#7749; &mdash; i-ndotaccent</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#331;'></p>
+					<div class='description_box'>
+					<strong>eng</strong><br>&amp;#331; &mdash; i-eng</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#626;'></p>
+					<div class='description_box'>
+					<strong>nhookleft</strong><br>&amp;#626; &mdash; i-nhookleft</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#460;'></p>
+					<div class='description_box'>
+					<strong>nj</strong><br>&amp;#460; &mdash; i-nj</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#241;'></p>
+					<div class='description_box'>
+					<strong>ntilde</strong><br>&amp;#241; &mdash; i-ntilde</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#111;'></p>
+					<div class='description_box'>
+					<strong>o</strong><br>&amp;#111; &mdash; i-o</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#243;'></p>
+					<div class='description_box'>
+					<strong>oacute</strong><br>&amp;#243; &mdash; i-oacute</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#335;'></p>
+					<div class='description_box'>
+					<strong>obreve</strong><br>&amp;#335; &mdash; i-obreve</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#466;'></p>
+					<div class='description_box'>
+					<strong>ocaron</strong><br>&amp;#466; &mdash; i-ocaron</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#244;'></p>
+					<div class='description_box'>
+					<strong>ocircumflex</strong><br>&amp;#244; &mdash; i-ocircumflex</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#7889;'></p>
+					<div class='description_box'>
+					<strong>ocircumflexacute</strong><br>&amp;#7889; &mdash; i-ocircumflexacute</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#7897;'></p>
+					<div class='description_box'>
+					<strong>ocircumflexdotbelow</strong><br>&amp;#7897; &mdash; i-ocircumflexdotbelow</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#7891;'></p>
+					<div class='description_box'>
+					<strong>ocircumflexgrave</strong><br>&amp;#7891; &mdash; i-ocircumflexgrave</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#7893;'></p>
+					<div class='description_box'>
+					<strong>ocircumflexhookabove</strong><br>&amp;#7893; &mdash; i-ocircumflexhookabove</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#7895;'></p>
+					<div class='description_box'>
+					<strong>ocircumflextilde</strong><br>&amp;#7895; &mdash; i-ocircumflextilde</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#525;'></p>
+					<div class='description_box'>
+					<strong>odblgrave</strong><br>&amp;#525; &mdash; i-odblgrave</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#246;'></p>
+					<div class='description_box'>
+					<strong>odieresis</strong><br>&amp;#246; &mdash; i-odieresis</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#7885;'></p>
+					<div class='description_box'>
+					<strong>odotbelow</strong><br>&amp;#7885; &mdash; i-odotbelow</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#242;'></p>
+					<div class='description_box'>
+					<strong>ograve</strong><br>&amp;#242; &mdash; i-ograve</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#7887;'></p>
+					<div class='description_box'>
+					<strong>ohookabove</strong><br>&amp;#7887; &mdash; i-ohookabove</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#417;'></p>
+					<div class='description_box'>
+					<strong>ohorn</strong><br>&amp;#417; &mdash; i-ohorn</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#7899;'></p>
+					<div class='description_box'>
+					<strong>ohornacute</strong><br>&amp;#7899; &mdash; i-ohornacute</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#7907;'></p>
+					<div class='description_box'>
+					<strong>ohorndotbelow</strong><br>&amp;#7907; &mdash; i-ohorndotbelow</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#7901;'></p>
+					<div class='description_box'>
+					<strong>ohorngrave</strong><br>&amp;#7901; &mdash; i-ohorngrave</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#7903;'></p>
+					<div class='description_box'>
+					<strong>ohornhookabove</strong><br>&amp;#7903; &mdash; i-ohornhookabove</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#7905;'></p>
+					<div class='description_box'>
+					<strong>ohorntilde</strong><br>&amp;#7905; &mdash; i-ohorntilde</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#337;'></p>
+					<div class='description_box'>
+					<strong>ohungarumlaut</strong><br>&amp;#337; &mdash; i-ohungarumlaut</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#527;'></p>
+					<div class='description_box'>
+					<strong>oinvertedbreve</strong><br>&amp;#527; &mdash; i-oinvertedbreve</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#333;'></p>
+					<div class='description_box'>
+					<strong>omacron</strong><br>&amp;#333; &mdash; i-omacron</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#491;'></p>
+					<div class='description_box'>
+					<strong>oogonek</strong><br>&amp;#491; &mdash; i-oogonek</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#248;'></p>
+					<div class='description_box'>
+					<strong>oslash</strong><br>&amp;#248; &mdash; i-oslash</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#511;'></p>
+					<div class='description_box'>
+					<strong>oslashacute</strong><br>&amp;#511; &mdash; i-oslashacute</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#245;'></p>
+					<div class='description_box'>
+					<strong>otilde</strong><br>&amp;#245; &mdash; i-otilde</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#339;'></p>
+					<div class='description_box'>
+					<strong>oe</strong><br>&amp;#339; &mdash; i-oe</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#112;'></p>
+					<div class='description_box'>
+					<strong>p</strong><br>&amp;#112; &mdash; i-p</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#254;'></p>
+					<div class='description_box'>
+					<strong>thorn</strong><br>&amp;#254; &mdash; i-thorn</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#113;'></p>
+					<div class='description_box'>
+					<strong>q</strong><br>&amp;#113; &mdash; i-q</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#114;'></p>
+					<div class='description_box'>
+					<strong>r</strong><br>&amp;#114; &mdash; i-r</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#341;'></p>
+					<div class='description_box'>
+					<strong>racute</strong><br>&amp;#341; &mdash; i-racute</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#345;'></p>
+					<div class='description_box'>
+					<strong>rcaron</strong><br>&amp;#345; &mdash; i-rcaron</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#343;'></p>
+					<div class='description_box'>
+					<strong>rcommaaccent</strong><br>&amp;#343; &mdash; i-rcommaaccent</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#529;'></p>
+					<div class='description_box'>
+					<strong>rdblgrave</strong><br>&amp;#529; &mdash; i-rdblgrave</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#7771;'></p>
+					<div class='description_box'>
+					<strong>rdotbelow</strong><br>&amp;#7771; &mdash; i-rdotbelow</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#531;'></p>
+					<div class='description_box'>
+					<strong>rinvertedbreve</strong><br>&amp;#531; &mdash; i-rinvertedbreve</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#115;'></p>
+					<div class='description_box'>
+					<strong>s</strong><br>&amp;#115; &mdash; i-s</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#347;'></p>
+					<div class='description_box'>
+					<strong>sacute</strong><br>&amp;#347; &mdash; i-sacute</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#42892;'></p>
+					<div class='description_box'>
+					<strong>saltillo</strong><br>&amp;#42892; &mdash; i-saltillo</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#353;'></p>
+					<div class='description_box'>
+					<strong>scaron</strong><br>&amp;#353; &mdash; i-scaron</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#351;'></p>
+					<div class='description_box'>
+					<strong>scedilla</strong><br>&amp;#351; &mdash; i-scedilla</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#349;'></p>
+					<div class='description_box'>
+					<strong>scircumflex</strong><br>&amp;#349; &mdash; i-scircumflex</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#537;'></p>
+					<div class='description_box'>
+					<strong>scommaaccent</strong><br>&amp;#537; &mdash; i-scommaaccent</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#7779;'></p>
+					<div class='description_box'>
+					<strong>sdotbelow</strong><br>&amp;#7779; &mdash; i-sdotbelow</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#223;'></p>
+					<div class='description_box'>
+					<strong>germandbls</strong><br>&amp;#223; &mdash; i-germandbls</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#383;'></p>
+					<div class='description_box'>
+					<strong>longs</strong><br>&amp;#383; &mdash; i-longs</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#601;'></p>
+					<div class='description_box'>
+					<strong>schwa</strong><br>&amp;#601; &mdash; i-schwa</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#116;'></p>
+					<div class='description_box'>
+					<strong>t</strong><br>&amp;#116; &mdash; i-t</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#359;'></p>
+					<div class='description_box'>
+					<strong>tbar</strong><br>&amp;#359; &mdash; i-tbar</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#357;'></p>
+					<div class='description_box'>
+					<strong>tcaron</strong><br>&amp;#357; &mdash; i-tcaron</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#355;'></p>
+					<div class='description_box'>
+					<strong>tcedilla</strong><br>&amp;#355; &mdash; i-tcedilla</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#539;'></p>
+					<div class='description_box'>
+					<strong>tcommaaccent</strong><br>&amp;#539; &mdash; i-tcommaaccent</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#7789;'></p>
+					<div class='description_box'>
+					<strong>tdotbelow</strong><br>&amp;#7789; &mdash; i-tdotbelow</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#117;'></p>
+					<div class='description_box'>
+					<strong>u</strong><br>&amp;#117; &mdash; i-u</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#250;'></p>
+					<div class='description_box'>
+					<strong>uacute</strong><br>&amp;#250; &mdash; i-uacute</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#365;'></p>
+					<div class='description_box'>
+					<strong>ubreve</strong><br>&amp;#365; &mdash; i-ubreve</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#468;'></p>
+					<div class='description_box'>
+					<strong>ucaron</strong><br>&amp;#468; &mdash; i-ucaron</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#251;'></p>
+					<div class='description_box'>
+					<strong>ucircumflex</strong><br>&amp;#251; &mdash; i-ucircumflex</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#533;'></p>
+					<div class='description_box'>
+					<strong>udblgrave</strong><br>&amp;#533; &mdash; i-udblgrave</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#252;'></p>
+					<div class='description_box'>
+					<strong>udieresis</strong><br>&amp;#252; &mdash; i-udieresis</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#472;'></p>
+					<div class='description_box'>
+					<strong>udieresisacute</strong><br>&amp;#472; &mdash; i-udieresisacute</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#474;'></p>
+					<div class='description_box'>
+					<strong>udieresiscaron</strong><br>&amp;#474; &mdash; i-udieresiscaron</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#476;'></p>
+					<div class='description_box'>
+					<strong>udieresisgrave</strong><br>&amp;#476; &mdash; i-udieresisgrave</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#470;'></p>
+					<div class='description_box'>
+					<strong>udieresismacron</strong><br>&amp;#470; &mdash; i-udieresismacron</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#7909;'></p>
+					<div class='description_box'>
+					<strong>udotbelow</strong><br>&amp;#7909; &mdash; i-udotbelow</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#249;'></p>
+					<div class='description_box'>
+					<strong>ugrave</strong><br>&amp;#249; &mdash; i-ugrave</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#7911;'></p>
+					<div class='description_box'>
+					<strong>uhookabove</strong><br>&amp;#7911; &mdash; i-uhookabove</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#432;'></p>
+					<div class='description_box'>
+					<strong>uhorn</strong><br>&amp;#432; &mdash; i-uhorn</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#7913;'></p>
+					<div class='description_box'>
+					<strong>uhornacute</strong><br>&amp;#7913; &mdash; i-uhornacute</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#7921;'></p>
+					<div class='description_box'>
+					<strong>uhorndotbelow</strong><br>&amp;#7921; &mdash; i-uhorndotbelow</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#7915;'></p>
+					<div class='description_box'>
+					<strong>uhorngrave</strong><br>&amp;#7915; &mdash; i-uhorngrave</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#7917;'></p>
+					<div class='description_box'>
+					<strong>uhornhookabove</strong><br>&amp;#7917; &mdash; i-uhornhookabove</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#7919;'></p>
+					<div class='description_box'>
+					<strong>uhorntilde</strong><br>&amp;#7919; &mdash; i-uhorntilde</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#369;'></p>
+					<div class='description_box'>
+					<strong>uhungarumlaut</strong><br>&amp;#369; &mdash; i-uhungarumlaut</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#535;'></p>
+					<div class='description_box'>
+					<strong>uinvertedbreve</strong><br>&amp;#535; &mdash; i-uinvertedbreve</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#363;'></p>
+					<div class='description_box'>
+					<strong>umacron</strong><br>&amp;#363; &mdash; i-umacron</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#371;'></p>
+					<div class='description_box'>
+					<strong>uogonek</strong><br>&amp;#371; &mdash; i-uogonek</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#367;'></p>
+					<div class='description_box'>
+					<strong>uring</strong><br>&amp;#367; &mdash; i-uring</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#361;'></p>
+					<div class='description_box'>
+					<strong>utilde</strong><br>&amp;#361; &mdash; i-utilde</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#118;'></p>
+					<div class='description_box'>
+					<strong>v</strong><br>&amp;#118; &mdash; i-v</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#119;'></p>
+					<div class='description_box'>
+					<strong>w</strong><br>&amp;#119; &mdash; i-w</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#7811;'></p>
+					<div class='description_box'>
+					<strong>wacute</strong><br>&amp;#7811; &mdash; i-wacute</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#373;'></p>
+					<div class='description_box'>
+					<strong>wcircumflex</strong><br>&amp;#373; &mdash; i-wcircumflex</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#7813;'></p>
+					<div class='description_box'>
+					<strong>wdieresis</strong><br>&amp;#7813; &mdash; i-wdieresis</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#7809;'></p>
+					<div class='description_box'>
+					<strong>wgrave</strong><br>&amp;#7809; &mdash; i-wgrave</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#120;'></p>
+					<div class='description_box'>
+					<strong>x</strong><br>&amp;#120; &mdash; i-x</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#121;'></p>
+					<div class='description_box'>
+					<strong>y</strong><br>&amp;#121; &mdash; i-y</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#253;'></p>
+					<div class='description_box'>
+					<strong>yacute</strong><br>&amp;#253; &mdash; i-yacute</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#375;'></p>
+					<div class='description_box'>
+					<strong>ycircumflex</strong><br>&amp;#375; &mdash; i-ycircumflex</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#255;'></p>
+					<div class='description_box'>
+					<strong>ydieresis</strong><br>&amp;#255; &mdash; i-ydieresis</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#7925;'></p>
+					<div class='description_box'>
+					<strong>ydotbelow</strong><br>&amp;#7925; &mdash; i-ydotbelow</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#7923;'></p>
+					<div class='description_box'>
+					<strong>ygrave</strong><br>&amp;#7923; &mdash; i-ygrave</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#7927;'></p>
+					<div class='description_box'>
+					<strong>yhookabove</strong><br>&amp;#7927; &mdash; i-yhookabove</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#563;'></p>
+					<div class='description_box'>
+					<strong>ymacron</strong><br>&amp;#563; &mdash; i-ymacron</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#7929;'></p>
+					<div class='description_box'>
+					<strong>ytilde</strong><br>&amp;#7929; &mdash; i-ytilde</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#122;'></p>
+					<div class='description_box'>
+					<strong>z</strong><br>&amp;#122; &mdash; i-z</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#378;'></p>
+					<div class='description_box'>
+					<strong>zacute</strong><br>&amp;#378; &mdash; i-zacute</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#382;'></p>
+					<div class='description_box'>
+					<strong>zcaron</strong><br>&amp;#382; &mdash; i-zcaron</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#380;'></p>
+					<div class='description_box'>
+					<strong>zdotaccent</strong><br>&amp;#380; &mdash; i-zdotaccent</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#7827;'></p>
+					<div class='description_box'>
+					<strong>zdotbelow</strong><br>&amp;#7827; &mdash; i-zdotbelow</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#64257;'></p>
+					<div class='description_box'>
+					<strong>fi</strong><br>&amp;#64257; &mdash; i-fi</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#64258;'></p>
+					<div class='description_box'>
+					<strong>fl</strong><br>&amp;#64258; &mdash; i-fl</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#170;'></p>
+					<div class='description_box'>
+					<strong>ordfeminine</strong><br>&amp;#170; &mdash; i-ordfeminine</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#186;'></p>
+					<div class='description_box'>
+					<strong>ordmasculine</strong><br>&amp;#186; &mdash; i-ordmasculine</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#8319;'></p>
+					<div class='description_box'>
+					<strong>nmod</strong><br>&amp;#8319; &mdash; i-nmod</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#916;'></p>
+					<div class='description_box'>
+					<strong>Delta</strong><br>&amp;#916; &mdash; i-delta</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#937;'></p>
+					<div class='description_box'>
+					<strong>Omega</strong><br>&amp;#937; &mdash; i-omega</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#956;'></p>
+					<div class='description_box'>
+					<strong>mu</strong><br>&amp;#956; &mdash; i-mu</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#960;'></p>
+					<div class='description_box'>
+					<strong>pi</strong><br>&amp;#960; &mdash; i-pi</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#48;'></p>
+					<div class='description_box'>
+					<strong>zero</strong><br>&amp;#48; &mdash; i-zero</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#49;'></p>
+					<div class='description_box'>
+					<strong>one</strong><br>&amp;#49; &mdash; i-one</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#50;'></p>
+					<div class='description_box'>
+					<strong>two</strong><br>&amp;#50; &mdash; i-two</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#51;'></p>
+					<div class='description_box'>
+					<strong>three</strong><br>&amp;#51; &mdash; i-three</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#52;'></p>
+					<div class='description_box'>
+					<strong>four</strong><br>&amp;#52; &mdash; i-four</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#53;'></p>
+					<div class='description_box'>
+					<strong>five</strong><br>&amp;#53; &mdash; i-five</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#54;'></p>
+					<div class='description_box'>
+					<strong>six</strong><br>&amp;#54; &mdash; i-six</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#55;'></p>
+					<div class='description_box'>
+					<strong>seven</strong><br>&amp;#55; &mdash; i-seven</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#56;'></p>
+					<div class='description_box'>
+					<strong>eight</strong><br>&amp;#56; &mdash; i-eight</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#57;'></p>
+					<div class='description_box'>
+					<strong>nine</strong><br>&amp;#57; &mdash; i-nine</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#185;'></p>
+					<div class='description_box'>
+					<strong>onesuperior</strong><br>&amp;#185; &mdash; i-onesuperior</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#178;'></p>
+					<div class='description_box'>
+					<strong>twosuperior</strong><br>&amp;#178; &mdash; i-twosuperior</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#179;'></p>
+					<div class='description_box'>
+					<strong>threesuperior</strong><br>&amp;#179; &mdash; i-threesuperior</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#8260;'></p>
+					<div class='description_box'>
+					<strong>fraction</strong><br>&amp;#8260; &mdash; i-fraction</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#189;'></p>
+					<div class='description_box'>
+					<strong>onehalf</strong><br>&amp;#189; &mdash; i-onehalf</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#8531;'></p>
+					<div class='description_box'>
+					<strong>onethird</strong><br>&amp;#8531; &mdash; i-onethird</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#8532;'></p>
+					<div class='description_box'>
+					<strong>twothirds</strong><br>&amp;#8532; &mdash; i-twothirds</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#188;'></p>
+					<div class='description_box'>
+					<strong>onequarter</strong><br>&amp;#188; &mdash; i-onequarter</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#190;'></p>
+					<div class='description_box'>
+					<strong>threequarters</strong><br>&amp;#190; &mdash; i-threequarters</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#8539;'></p>
+					<div class='description_box'>
+					<strong>oneeighth</strong><br>&amp;#8539; &mdash; i-oneeighth</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#8540;'></p>
+					<div class='description_box'>
+					<strong>threeeighths</strong><br>&amp;#8540; &mdash; i-threeeighths</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#8541;'></p>
+					<div class='description_box'>
+					<strong>fiveeighths</strong><br>&amp;#8541; &mdash; i-fiveeighths</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#8542;'></p>
+					<div class='description_box'>
+					<strong>seveneighths</strong><br>&amp;#8542; &mdash; i-seveneighths</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#42;'></p>
+					<div class='description_box'>
+					<strong>asterisk</strong><br>&amp;#42; &mdash; i-asterisk</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#92;'></p>
+					<div class='description_box'>
+					<strong>backslash</strong><br>&amp;#92; &mdash; i-backslash</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#183;'></p>
+					<div class='description_box'>
+					<strong>periodcentered</strong><br>&amp;#183; &mdash; i-periodcentered</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#8226;'></p>
+					<div class='description_box'>
+					<strong>bullet</strong><br>&amp;#8226; &mdash; i-bullet</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#58;'></p>
+					<div class='description_box'>
+					<strong>colon</strong><br>&amp;#58; &mdash; i-colon</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#44;'></p>
+					<div class='description_box'>
+					<strong>comma</strong><br>&amp;#44; &mdash; i-comma</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#8230;'></p>
+					<div class='description_box'>
+					<strong>ellipsis</strong><br>&amp;#8230; &mdash; i-ellipsis</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#33;'></p>
+					<div class='description_box'>
+					<strong>exclam</strong><br>&amp;#33; &mdash; i-exclam</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#8252;'></p>
+					<div class='description_box'>
+					<strong>exclamdouble</strong><br>&amp;#8252; &mdash; i-exclamdouble</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#161;'></p>
+					<div class='description_box'>
+					<strong>exclamdown</strong><br>&amp;#161; &mdash; i-exclamdown</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#35;'></p>
+					<div class='description_box'>
+					<strong>numbersign</strong><br>&amp;#35; &mdash; i-numbersign</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#8254;'></p>
+					<div class='description_box'>
+					<strong>overline</strong><br>&amp;#8254; &mdash; i-overline</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#46;'></p>
+					<div class='description_box'>
+					<strong>period</strong><br>&amp;#46; &mdash; i-period</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#63;'></p>
+					<div class='description_box'>
+					<strong>question</strong><br>&amp;#63; &mdash; i-question</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#191;'></p>
+					<div class='description_box'>
+					<strong>questiondown</strong><br>&amp;#191; &mdash; i-questiondown</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#34;'></p>
+					<div class='description_box'>
+					<strong>quotedbl</strong><br>&amp;#34; &mdash; i-quotedbl</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#39;'></p>
+					<div class='description_box'>
+					<strong>quotesingle</strong><br>&amp;#39; &mdash; i-quotesingle</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#59;'></p>
+					<div class='description_box'>
+					<strong>semicolon</strong><br>&amp;#59; &mdash; i-semicolon</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#47;'></p>
+					<div class='description_box'>
+					<strong>slash</strong><br>&amp;#47; &mdash; i-slash</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#95;'></p>
+					<div class='description_box'>
+					<strong>underscore</strong><br>&amp;#95; &mdash; i-underscore</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#8215;'></p>
+					<div class='description_box'>
+					<strong>underscoredbl</strong><br>&amp;#8215; &mdash; i-underscoredbl</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#123;'></p>
+					<div class='description_box'>
+					<strong>braceleft</strong><br>&amp;#123; &mdash; i-braceleft</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#125;'></p>
+					<div class='description_box'>
+					<strong>braceright</strong><br>&amp;#125; &mdash; i-braceright</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#91;'></p>
+					<div class='description_box'>
+					<strong>bracketleft</strong><br>&amp;#91; &mdash; i-bracketleft</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#93;'></p>
+					<div class='description_box'>
+					<strong>bracketright</strong><br>&amp;#93; &mdash; i-bracketright</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#40;'></p>
+					<div class='description_box'>
+					<strong>parenleft</strong><br>&amp;#40; &mdash; i-parenleft</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#41;'></p>
+					<div class='description_box'>
+					<strong>parenright</strong><br>&amp;#41; &mdash; i-parenright</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#8212;'></p>
+					<div class='description_box'>
+					<strong>emdash</strong><br>&amp;#8212; &mdash; i-emdash</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#8211;'></p>
+					<div class='description_box'>
+					<strong>endash</strong><br>&amp;#8211; &mdash; i-endash</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#8213;'></p>
+					<div class='description_box'>
+					<strong>horizontalbar</strong><br>&amp;#8213; &mdash; i-horizontalbar</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#45;'></p>
+					<div class='description_box'>
+					<strong>hyphen</strong><br>&amp;#45; &mdash; i-hyphen</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#171;'></p>
+					<div class='description_box'>
+					<strong>guillemetleft</strong><br>&amp;#171; &mdash; i-guillemetleft</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#187;'></p>
+					<div class='description_box'>
+					<strong>guillemetright</strong><br>&amp;#187; &mdash; i-guillemetright</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#8249;'></p>
+					<div class='description_box'>
+					<strong>guilsinglleft</strong><br>&amp;#8249; &mdash; i-guilsinglleft</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#8250;'></p>
+					<div class='description_box'>
+					<strong>guilsinglright</strong><br>&amp;#8250; &mdash; i-guilsinglright</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#8222;'></p>
+					<div class='description_box'>
+					<strong>quotedblbase</strong><br>&amp;#8222; &mdash; i-quotedblbase</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#8220;'></p>
+					<div class='description_box'>
+					<strong>quotedblleft</strong><br>&amp;#8220; &mdash; i-quotedblleft</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#8221;'></p>
+					<div class='description_box'>
+					<strong>quotedblright</strong><br>&amp;#8221; &mdash; i-quotedblright</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#8216;'></p>
+					<div class='description_box'>
+					<strong>quoteleft</strong><br>&amp;#8216; &mdash; i-quoteleft</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#8219;'></p>
+					<div class='description_box'>
+					<strong>quotereversed</strong><br>&amp;#8219; &mdash; i-quotereversed</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#8217;'></p>
+					<div class='description_box'>
+					<strong>quoteright</strong><br>&amp;#8217; &mdash; i-quoteright</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#8218;'></p>
+					<div class='description_box'>
+					<strong>quotesinglbase</strong><br>&amp;#8218; &mdash; i-quotesinglbase</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#162;'></p>
+					<div class='description_box'>
+					<strong>cent</strong><br>&amp;#162; &mdash; i-cent</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#164;'></p>
+					<div class='description_box'>
+					<strong>currency</strong><br>&amp;#164; &mdash; i-currency</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#36;'></p>
+					<div class='description_box'>
+					<strong>dollar</strong><br>&amp;#36; &mdash; i-dollar</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#8364;'></p>
+					<div class='description_box'>
+					<strong>euro</strong><br>&amp;#8364; &mdash; i-euro</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#402;'></p>
+					<div class='description_box'>
+					<strong>florin</strong><br>&amp;#402; &mdash; i-florin</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#8355;'></p>
+					<div class='description_box'>
+					<strong>franc</strong><br>&amp;#8355; &mdash; i-franc</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#8370;'></p>
+					<div class='description_box'>
+					<strong>guarani</strong><br>&amp;#8370; &mdash; i-guarani</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#8356;'></p>
+					<div class='description_box'>
+					<strong>lira</strong><br>&amp;#8356; &mdash; i-lira</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#8359;'></p>
+					<div class='description_box'>
+					<strong>peseta</strong><br>&amp;#8359; &mdash; i-peseta</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#163;'></p>
+					<div class='description_box'>
+					<strong>sterling</strong><br>&amp;#163; &mdash; i-sterling</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#165;'></p>
+					<div class='description_box'>
+					<strong>yen</strong><br>&amp;#165; &mdash; i-yen</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#8729;'></p>
+					<div class='description_box'>
+					<strong>bulletoperator</strong><br>&amp;#8729; &mdash; i-bulletoperator</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#8725;'></p>
+					<div class='description_box'>
+					<strong>divisionslash</strong><br>&amp;#8725; &mdash; i-divisionslash</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#8801;'></p>
+					<div class='description_box'>
+					<strong>equivalence</strong><br>&amp;#8801; &mdash; i-equivalence</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#8993;'></p>
+					<div class='description_box'>
+					<strong>integralbt</strong><br>&amp;#8993; &mdash; i-integralbt</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#8992;'></p>
+					<div class='description_box'>
+					<strong>integraltp</strong><br>&amp;#8992; &mdash; i-integraltp</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#8976;'></p>
+					<div class='description_box'>
+					<strong>logicalnotReversed</strong><br>&amp;#8976; &mdash; i-logicalnotreversed</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#43;'></p>
+					<div class='description_box'>
+					<strong>plus</strong><br>&amp;#43; &mdash; i-plus</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#8722;'></p>
+					<div class='description_box'>
+					<strong>minus</strong><br>&amp;#8722; &mdash; i-minus</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#215;'></p>
+					<div class='description_box'>
+					<strong>multiply</strong><br>&amp;#215; &mdash; i-multiply</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#247;'></p>
+					<div class='description_box'>
+					<strong>divide</strong><br>&amp;#247; &mdash; i-divide</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#61;'></p>
+					<div class='description_box'>
+					<strong>equal</strong><br>&amp;#61; &mdash; i-equal</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#8800;'></p>
+					<div class='description_box'>
+					<strong>notequal</strong><br>&amp;#8800; &mdash; i-notequal</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#62;'></p>
+					<div class='description_box'>
+					<strong>greater</strong><br>&amp;#62; &mdash; i-greater</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#60;'></p>
+					<div class='description_box'>
+					<strong>less</strong><br>&amp;#60; &mdash; i-less</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#8805;'></p>
+					<div class='description_box'>
+					<strong>greaterequal</strong><br>&amp;#8805; &mdash; i-greaterequal</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#8804;'></p>
+					<div class='description_box'>
+					<strong>lessequal</strong><br>&amp;#8804; &mdash; i-lessequal</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#177;'></p>
+					<div class='description_box'>
+					<strong>plusminus</strong><br>&amp;#177; &mdash; i-plusminus</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#8776;'></p>
+					<div class='description_box'>
+					<strong>approxequal</strong><br>&amp;#8776; &mdash; i-approxequal</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#126;'></p>
+					<div class='description_box'>
+					<strong>asciitilde</strong><br>&amp;#126; &mdash; i-asciitilde</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#172;'></p>
+					<div class='description_box'>
+					<strong>logicalnot</strong><br>&amp;#172; &mdash; i-logicalnot</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#8734;'></p>
+					<div class='description_box'>
+					<strong>infinity</strong><br>&amp;#8734; &mdash; i-infinity</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#8745;'></p>
+					<div class='description_box'>
+					<strong>intersection</strong><br>&amp;#8745; &mdash; i-intersection</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#8747;'></p>
+					<div class='description_box'>
+					<strong>integral</strong><br>&amp;#8747; &mdash; i-integral</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#8486;'></p>
+					<div class='description_box'>
+					<strong>Ohm</strong><br>&amp;#8486; &mdash; i-ohm</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#8710;'></p>
+					<div class='description_box'>
+					<strong>increment</strong><br>&amp;#8710; &mdash; i-increment</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#8719;'></p>
+					<div class='description_box'>
+					<strong>product</strong><br>&amp;#8719; &mdash; i-product</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#8721;'></p>
+					<div class='description_box'>
+					<strong>summation</strong><br>&amp;#8721; &mdash; i-summation</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#8730;'></p>
+					<div class='description_box'>
+					<strong>radical</strong><br>&amp;#8730; &mdash; i-radical</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#181;'></p>
+					<div class='description_box'>
+					<strong>micro</strong><br>&amp;#181; &mdash; i-micro</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#8706;'></p>
+					<div class='description_box'>
+					<strong>partialdiff</strong><br>&amp;#8706; &mdash; i-partialdiff</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#8735;'></p>
+					<div class='description_box'>
+					<strong>orthogonal</strong><br>&amp;#8735; &mdash; i-orthogonal</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#37;'></p>
+					<div class='description_box'>
+					<strong>percent</strong><br>&amp;#37; &mdash; i-percent</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#8240;'></p>
+					<div class='description_box'>
+					<strong>perthousand</strong><br>&amp;#8240; &mdash; i-perthousand</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#8593;'></p>
+					<div class='description_box'>
+					<strong>upArrow</strong><br>&amp;#8593; &mdash; i-uparrow</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#8594;'></p>
+					<div class='description_box'>
+					<strong>rightArrow</strong><br>&amp;#8594; &mdash; i-rightarrow</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#8595;'></p>
+					<div class='description_box'>
+					<strong>downArrow</strong><br>&amp;#8595; &mdash; i-downarrow</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#8592;'></p>
+					<div class='description_box'>
+					<strong>leftArrow</strong><br>&amp;#8592; &mdash; i-leftarrow</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#8596;'></p>
+					<div class='description_box'>
+					<strong>leftRightArrow</strong><br>&amp;#8596; &mdash; i-leftrightarrow</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#8597;'></p>
+					<div class='description_box'>
+					<strong>upDownArrow</strong><br>&amp;#8597; &mdash; i-updownarrow</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#8616;'></p>
+					<div class='description_box'>
+					<strong>upDownbaseArrow</strong><br>&amp;#8616; &mdash; i-updownbasearrow</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#9674;'></p>
+					<div class='description_box'>
+					<strong>lozenge</strong><br>&amp;#9674; &mdash; i-lozenge</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#64;'></p>
+					<div class='description_box'>
+					<strong>at</strong><br>&amp;#64; &mdash; i-at</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#38;'></p>
+					<div class='description_box'>
+					<strong>ampersand</strong><br>&amp;#38; &mdash; i-ampersand</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#182;'></p>
+					<div class='description_box'>
+					<strong>paragraph</strong><br>&amp;#182; &mdash; i-paragraph</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#167;'></p>
+					<div class='description_box'>
+					<strong>section</strong><br>&amp;#167; &mdash; i-section</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#169;'></p>
+					<div class='description_box'>
+					<strong>copyright</strong><br>&amp;#169; &mdash; i-copyright</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#174;'></p>
+					<div class='description_box'>
+					<strong>registered</strong><br>&amp;#174; &mdash; i-registered</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#8482;'></p>
+					<div class='description_box'>
+					<strong>trademark</strong><br>&amp;#8482; &mdash; i-trademark</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#8453;'></p>
+					<div class='description_box'>
+					<strong>careof</strong><br>&amp;#8453; &mdash; i-careof</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#176;'></p>
+					<div class='description_box'>
+					<strong>degree</strong><br>&amp;#176; &mdash; i-degree</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#124;'></p>
+					<div class='description_box'>
+					<strong>bar</strong><br>&amp;#124; &mdash; i-bar</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#166;'></p>
+					<div class='description_box'>
+					<strong>brokenbar</strong><br>&amp;#166; &mdash; i-brokenbar</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#8467;'></p>
+					<div class='description_box'>
+					<strong>literSign</strong><br>&amp;#8467; &mdash; i-litersign</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#8224;'></p>
+					<div class='description_box'>
+					<strong>dagger</strong><br>&amp;#8224; &mdash; i-dagger</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#8225;'></p>
+					<div class='description_box'>
+					<strong>daggerdbl</strong><br>&amp;#8225; &mdash; i-daggerdbl</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#8494;'></p>
+					<div class='description_box'>
+					<strong>estimated</strong><br>&amp;#8494; &mdash; i-estimated</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#8470;'></p>
+					<div class='description_box'>
+					<strong>numero</strong><br>&amp;#8470; &mdash; i-numero</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#94;'></p>
+					<div class='description_box'>
+					<strong>asciicircum</strong><br>&amp;#94; &mdash; i-asciicircum</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#8962;'></p>
+					<div class='description_box'>
+					<strong>house</strong><br>&amp;#8962; &mdash; i-house</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#8242;'></p>
+					<div class='description_box'>
+					<strong>minute</strong><br>&amp;#8242; &mdash; i-minute</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#8243;'></p>
+					<div class='description_box'>
+					<strong>second</strong><br>&amp;#8243; &mdash; i-second</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#777;'></p>
+					<div class='description_box'>
+					<strong>hookabovecomb</strong><br>&amp;#777; &mdash; i-hookabovecomb</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#783;'></p>
+					<div class='description_box'>
+					<strong>dblgravecomb</strong><br>&amp;#783; &mdash; i-dblgravecomb</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#785;'></p>
+					<div class='description_box'>
+					<strong>breveinvertedcomb</strong><br>&amp;#785; &mdash; i-breveinvertedcomb</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#795;'></p>
+					<div class='description_box'>
+					<strong>horncomb</strong><br>&amp;#795; &mdash; i-horncomb</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#803;'></p>
+					<div class='description_box'>
+					<strong>dotbelowcomb</strong><br>&amp;#803; &mdash; i-dotbelowcomb</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#806;'></p>
+					<div class='description_box'>
+					<strong>commaaccent</strong><br>&amp;#806; &mdash; i-commaaccent</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#808;'></p>
+					<div class='description_box'>
+					<strong>ogonekcomb</strong><br>&amp;#808; &mdash; i-ogonekcomb</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#700;'></p>
+					<div class='description_box'>
+					<strong>apostrophemod</strong><br>&amp;#700; &mdash; i-apostrophemod</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#713;'></p>
+					<div class='description_box'>
+					<strong>firsttonechinese</strong><br>&amp;#713; &mdash; i-firsttonechinese</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#180;'></p>
+					<div class='description_box'>
+					<strong>acute</strong><br>&amp;#180; &mdash; i-acute</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#728;'></p>
+					<div class='description_box'>
+					<strong>breve</strong><br>&amp;#728; &mdash; i-breve</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#711;'></p>
+					<div class='description_box'>
+					<strong>caron</strong><br>&amp;#711; &mdash; i-caron</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#184;'></p>
+					<div class='description_box'>
+					<strong>cedilla</strong><br>&amp;#184; &mdash; i-cedilla</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#710;'></p>
+					<div class='description_box'>
+					<strong>circumflex</strong><br>&amp;#710; &mdash; i-circumflex</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#168;'></p>
+					<div class='description_box'>
+					<strong>dieresis</strong><br>&amp;#168; &mdash; i-dieresis</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#729;'></p>
+					<div class='description_box'>
+					<strong>dotaccent</strong><br>&amp;#729; &mdash; i-dotaccent</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#96;'></p>
+					<div class='description_box'>
+					<strong>grave</strong><br>&amp;#96; &mdash; i-grave</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#733;'></p>
+					<div class='description_box'>
+					<strong>hungarumlaut</strong><br>&amp;#733; &mdash; i-hungarumlaut</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#175;'></p>
+					<div class='description_box'>
+					<strong>macron</strong><br>&amp;#175; &mdash; i-macron</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#731;'></p>
+					<div class='description_box'>
+					<strong>ogonek</strong><br>&amp;#731; &mdash; i-ogonek</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#730;'></p>
+					<div class='description_box'>
+					<strong>ring</strong><br>&amp;#730; &mdash; i-ring</div>
+				</div>
+
+				<div class='icon-panel'>
+					<p class='icon-box icons article' data-icon='&#732;'></p>
+					<div class='description_box'>
+					<strong>tilde</strong><br>&amp;#732; &mdash; i-tilde</div>
+				</div>
+
+
+			</div>
+		</div>
+		</body>
+	</html>
