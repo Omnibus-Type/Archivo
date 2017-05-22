@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ttFont ttLibVersion="3.0">
+<ttFont ttLibVersion="3.4">
 
   <CFF>
+    <major value="1"/>
+    <minor value="0"/>
     <CFFFont name="Archivo-Bold">
       <version value="001.002"/>
-      <Notice value="Copyright \(c\) 2014-2017, Omnibus-Type \(www.omnibus-type.com omnibus.type@gmail.com\)"/>
+      <Notice value="Copyright 2017 The Archivo Project Authors \(https://github.com/Omnibus-Type/Archivo\)"/>
       <FullName value="Archivo Bold"/>
       <Weight value="Bold"/>
       <isFixedPitch value="0"/>
@@ -20,8 +22,6 @@
       <Private>
         <BlueValues value="-13 0 526 539 686 699 723 736"/>
         <OtherBlues value="-186 -173"/>
-        <FamilyBlues value="-13 0 526 539 686 699 723 736"/>
-        <FamilyOtherBlues value="-186 -173"/>
         <BlueScale value="0.037"/>
         <BlueShift value="7"/>
         <BlueFuzz value="0"/>
@@ -1665,7 +1665,7 @@
           endchar
         </CharString>
         <CharString name="CR">
-          -683 endchar
+          -405 endchar
         </CharString>
         <CharString name="Cacute">
           39 34 callgsubr

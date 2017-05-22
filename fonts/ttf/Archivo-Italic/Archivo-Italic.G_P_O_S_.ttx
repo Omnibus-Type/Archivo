@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ttFont ttLibVersion="3.0">
+<ttFont ttLibVersion="3.4">
 
   <GPOS>
-    <Version value="1.0"/>
+    <Version value="0x00010000"/>
     <ScriptList>
       <!-- ScriptCount=3 -->
       <ScriptRecord index="0">
@@ -445,7 +445,7 @@
         <LookupFlag value="0"/>
         <!-- SubTableCount=1 -->
         <SinglePos index="0" Format="1">
-          <Coverage>
+          <Coverage Format="2">
             <Glyph value="A"/>
             <Glyph value="Aacute"/>
             <Glyph value="Abreve"/>
@@ -688,7 +688,7 @@
         <LookupFlag value="8"/>
         <!-- SubTableCount=1 -->
         <PairPos index="0" Format="1">
-          <Coverage>
+          <Coverage Format="1">
             <Glyph value="quoteright"/>
           </Coverage>
           <ValueFormat1 value="4"/>
@@ -708,7 +708,7 @@
         <LookupFlag value="8"/>
         <!-- SubTableCount=4 -->
         <PairPos index="0" Format="1">
-          <Coverage>
+          <Coverage Format="2">
             <Glyph value="A"/>
             <Glyph value="Aacute"/>
             <Glyph value="Abreve"/>
@@ -2403,7 +2403,7 @@
           </PairSet>
         </PairPos>
         <PairPos index="1" Format="2">
-          <Coverage>
+          <Coverage Format="2">
             <Glyph value="A"/>
             <Glyph value="Aacute"/>
             <Glyph value="Abreve"/>
@@ -2465,7 +2465,7 @@
           </Coverage>
           <ValueFormat1 value="4"/>
           <ValueFormat2 value="0"/>
-          <ClassDef1>
+          <ClassDef1 Format="2">
             <ClassDef glyph="F" class="6"/>
             <ClassDef glyph="L" class="1"/>
             <ClassDef glyph="Lacute" class="1"/>
@@ -2499,7 +2499,7 @@
             <ClassDef glyph="uni1EF6" class="5"/>
             <ClassDef glyph="uni1EF8" class="5"/>
           </ClassDef1>
-          <ClassDef2>
+          <ClassDef2 Format="2">
             <ClassDef glyph="A" class="19"/>
             <ClassDef glyph="Aacute" class="19"/>
             <ClassDef glyph="Abreve" class="19"/>
@@ -3150,7 +3150,7 @@
           </Class1Record>
         </PairPos>
         <PairPos index="2" Format="2">
-          <Coverage>
+          <Coverage Format="2">
             <Glyph value="f"/>
             <Glyph value="r"/>
             <Glyph value="racute"/>
@@ -3177,7 +3177,7 @@
           </Coverage>
           <ValueFormat1 value="4"/>
           <ValueFormat2 value="0"/>
-          <ClassDef1>
+          <ClassDef1 Format="2">
             <ClassDef glyph="r" class="1"/>
             <ClassDef glyph="racute" class="1"/>
             <ClassDef glyph="rcaron" class="1"/>
@@ -3200,7 +3200,7 @@
             <ClassDef glyph="ydieresis" class="3"/>
             <ClassDef glyph="ygrave" class="3"/>
           </ClassDef1>
-          <ClassDef2>
+          <ClassDef2 Format="2">
             <ClassDef glyph="comma" class="2"/>
             <ClassDef glyph="period" class="3"/>
             <ClassDef glyph="quoteright" class="1"/>
@@ -3265,14 +3265,14 @@
           </Class1Record>
         </PairPos>
         <PairPos index="3" Format="2">
-          <Coverage>
+          <Coverage Format="1">
             <Glyph value="space"/>
           </Coverage>
           <ValueFormat1 value="4"/>
           <ValueFormat2 value="0"/>
-          <ClassDef1>
+          <ClassDef1 Format="2">
           </ClassDef1>
-          <ClassDef2>
+          <ClassDef2 Format="2">
             <ClassDef glyph="A" class="1"/>
             <ClassDef glyph="Aacute" class="1"/>
             <ClassDef glyph="Abreve" class="1"/>
@@ -3337,7 +3337,7 @@
         <LookupFlag value="0"/>
         <!-- SubTableCount=1 -->
         <MarkBasePos index="0" Format="1">
-          <MarkCoverage>
+          <MarkCoverage Format="2">
             <Glyph value="hookabovecomb"/>
             <Glyph value="uni030F"/>
             <Glyph value="uni0311"/>
@@ -3346,7 +3346,7 @@
             <Glyph value="uni0326"/>
             <Glyph value="uni0328"/>
           </MarkCoverage>
-          <BaseCoverage>
+          <BaseCoverage Format="2">
             <Glyph value="A"/>
             <Glyph value="Aacute"/>
             <Glyph value="Abreve"/>
@@ -3911,8 +3911,8 @@
                 <YCoordinate value="10"/>
               </BaseAnchor>
               <BaseAnchor index="2" Format="1">
-                <XCoordinate value="0"/>
-                <YCoordinate value="0"/>
+                <XCoordinate value="421"/>
+                <YCoordinate value="831"/>
               </BaseAnchor>
               <BaseAnchor index="3" Format="1">
                 <XCoordinate value="426"/>
@@ -4037,8 +4037,8 @@
                 <YCoordinate value="10"/>
               </BaseAnchor>
               <BaseAnchor index="2" Format="1">
-                <XCoordinate value="0"/>
-                <YCoordinate value="0"/>
+                <XCoordinate value="434"/>
+                <YCoordinate value="831"/>
               </BaseAnchor>
               <BaseAnchor index="3" Format="1">
                 <XCoordinate value="561"/>
@@ -4145,8 +4145,8 @@
                 <YCoordinate value="10"/>
               </BaseAnchor>
               <BaseAnchor index="2" Format="1">
-                <XCoordinate value="0"/>
-                <YCoordinate value="0"/>
+                <XCoordinate value="409"/>
+                <YCoordinate value="671"/>
               </BaseAnchor>
               <BaseAnchor index="3" Format="1">
                 <XCoordinate value="0"/>
@@ -4541,8 +4541,8 @@
                 <YCoordinate value="0"/>
               </BaseAnchor>
               <BaseAnchor index="2" Format="1">
-                <XCoordinate value="0"/>
-                <YCoordinate value="0"/>
+                <XCoordinate value="379"/>
+                <YCoordinate value="671"/>
               </BaseAnchor>
               <BaseAnchor index="3" Format="1">
                 <XCoordinate value="0"/>
@@ -4703,8 +4703,8 @@
                 <YCoordinate value="10"/>
               </BaseAnchor>
               <BaseAnchor index="2" Format="1">
-                <XCoordinate value="0"/>
-                <YCoordinate value="0"/>
+                <XCoordinate value="434"/>
+                <YCoordinate value="831"/>
               </BaseAnchor>
               <BaseAnchor index="3" Format="1">
                 <XCoordinate value="561"/>
@@ -4829,8 +4829,8 @@
                 <YCoordinate value="10"/>
               </BaseAnchor>
               <BaseAnchor index="2" Format="1">
-                <XCoordinate value="0"/>
-                <YCoordinate value="0"/>
+                <XCoordinate value="409"/>
+                <YCoordinate value="671"/>
               </BaseAnchor>
               <BaseAnchor index="3" Format="1">
                 <XCoordinate value="0"/>
@@ -5297,8 +5297,8 @@
                 <YCoordinate value="0"/>
               </BaseAnchor>
               <BaseAnchor index="2" Format="1">
-                <XCoordinate value="0"/>
-                <YCoordinate value="0"/>
+                <XCoordinate value="197"/>
+                <YCoordinate value="671"/>
               </BaseAnchor>
               <BaseAnchor index="3" Format="1">
                 <XCoordinate value="0"/>
@@ -5909,8 +5909,8 @@
                 <YCoordinate value="10"/>
               </BaseAnchor>
               <BaseAnchor index="2" Format="1">
-                <XCoordinate value="0"/>
-                <YCoordinate value="0"/>
+                <XCoordinate value="459"/>
+                <YCoordinate value="831"/>
               </BaseAnchor>
               <BaseAnchor index="3" Format="1">
                 <XCoordinate value="586"/>
@@ -6017,8 +6017,8 @@
                 <YCoordinate value="10"/>
               </BaseAnchor>
               <BaseAnchor index="2" Format="1">
-                <XCoordinate value="0"/>
-                <YCoordinate value="0"/>
+                <XCoordinate value="434"/>
+                <YCoordinate value="671"/>
               </BaseAnchor>
               <BaseAnchor index="3" Format="1">
                 <XCoordinate value="783"/>
@@ -6107,8 +6107,8 @@
                 <YCoordinate value="10"/>
               </BaseAnchor>
               <BaseAnchor index="2" Format="1">
-                <XCoordinate value="0"/>
-                <YCoordinate value="0"/>
+                <XCoordinate value="434"/>
+                <YCoordinate value="671"/>
               </BaseAnchor>
               <BaseAnchor index="3" Format="1">
                 <XCoordinate value="954"/>
@@ -6575,8 +6575,8 @@
                 <YCoordinate value="0"/>
               </BaseAnchor>
               <BaseAnchor index="2" Format="1">
-                <XCoordinate value="0"/>
-                <YCoordinate value="0"/>
+                <XCoordinate value="379"/>
+                <YCoordinate value="671"/>
               </BaseAnchor>
               <BaseAnchor index="3" Format="1">
                 <XCoordinate value="0"/>
@@ -6665,8 +6665,8 @@
                 <YCoordinate value="0"/>
               </BaseAnchor>
               <BaseAnchor index="2" Format="1">
-                <XCoordinate value="0"/>
-                <YCoordinate value="0"/>
+                <XCoordinate value="361"/>
+                <YCoordinate value="671"/>
               </BaseAnchor>
               <BaseAnchor index="3" Format="1">
                 <XCoordinate value="0"/>
@@ -6881,8 +6881,8 @@
                 <YCoordinate value="10"/>
               </BaseAnchor>
               <BaseAnchor index="2" Format="1">
-                <XCoordinate value="0"/>
-                <YCoordinate value="0"/>
+                <XCoordinate value="419"/>
+                <YCoordinate value="671"/>
               </BaseAnchor>
               <BaseAnchor index="3" Format="1">
                 <XCoordinate value="787"/>
@@ -6971,8 +6971,8 @@
                 <YCoordinate value="10"/>
               </BaseAnchor>
               <BaseAnchor index="2" Format="1">
-                <XCoordinate value="0"/>
-                <YCoordinate value="0"/>
+                <XCoordinate value="419"/>
+                <YCoordinate value="671"/>
               </BaseAnchor>
               <BaseAnchor index="3" Format="1">
                 <XCoordinate value="958"/>
@@ -7331,8 +7331,8 @@
                 <YCoordinate value="0"/>
               </BaseAnchor>
               <BaseAnchor index="2" Format="1">
-                <XCoordinate value="0"/>
-                <YCoordinate value="0"/>
+                <XCoordinate value="389"/>
+                <YCoordinate value="671"/>
               </BaseAnchor>
               <BaseAnchor index="3" Format="1">
                 <XCoordinate value="0"/>
@@ -7493,8 +7493,8 @@
                 <YCoordinate value="0"/>
               </BaseAnchor>
               <BaseAnchor index="2" Format="1">
-                <XCoordinate value="0"/>
-                <YCoordinate value="0"/>
+                <XCoordinate value="381"/>
+                <YCoordinate value="671"/>
               </BaseAnchor>
               <BaseAnchor index="3" Format="1">
                 <XCoordinate value="0"/>
@@ -7835,8 +7835,8 @@
                 <YCoordinate value="10"/>
               </BaseAnchor>
               <BaseAnchor index="2" Format="1">
-                <XCoordinate value="0"/>
-                <YCoordinate value="0"/>
+                <XCoordinate value="317"/>
+                <YCoordinate value="686"/>
               </BaseAnchor>
               <BaseAnchor index="3" Format="1">
                 <XCoordinate value="322"/>
@@ -7961,8 +7961,8 @@
                 <YCoordinate value="10"/>
               </BaseAnchor>
               <BaseAnchor index="2" Format="1">
-                <XCoordinate value="0"/>
-                <YCoordinate value="0"/>
+                <XCoordinate value="330"/>
+                <YCoordinate value="686"/>
               </BaseAnchor>
               <BaseAnchor index="3" Format="1">
                 <XCoordinate value="457"/>
@@ -8069,8 +8069,8 @@
                 <YCoordinate value="10"/>
               </BaseAnchor>
               <BaseAnchor index="2" Format="1">
-                <XCoordinate value="0"/>
-                <YCoordinate value="0"/>
+                <XCoordinate value="305"/>
+                <YCoordinate value="526"/>
               </BaseAnchor>
               <BaseAnchor index="3" Format="1">
                 <XCoordinate value="0"/>
@@ -8411,8 +8411,8 @@
                 <YCoordinate value="0"/>
               </BaseAnchor>
               <BaseAnchor index="2" Format="1">
-                <XCoordinate value="0"/>
-                <YCoordinate value="0"/>
+                <XCoordinate value="267"/>
+                <YCoordinate value="526"/>
               </BaseAnchor>
               <BaseAnchor index="3" Format="1">
                 <XCoordinate value="582"/>
@@ -8573,8 +8573,8 @@
                 <YCoordinate value="10"/>
               </BaseAnchor>
               <BaseAnchor index="2" Format="1">
-                <XCoordinate value="0"/>
-                <YCoordinate value="0"/>
+                <XCoordinate value="329"/>
+                <YCoordinate value="686"/>
               </BaseAnchor>
               <BaseAnchor index="3" Format="1">
                 <XCoordinate value="456"/>
@@ -8699,8 +8699,8 @@
                 <YCoordinate value="10"/>
               </BaseAnchor>
               <BaseAnchor index="2" Format="1">
-                <XCoordinate value="0"/>
-                <YCoordinate value="0"/>
+                <XCoordinate value="304"/>
+                <YCoordinate value="526"/>
               </BaseAnchor>
               <BaseAnchor index="3" Format="1">
                 <XCoordinate value="0"/>
@@ -9617,8 +9617,8 @@
                 <YCoordinate value="10"/>
               </BaseAnchor>
               <BaseAnchor index="2" Format="1">
-                <XCoordinate value="0"/>
-                <YCoordinate value="0"/>
+                <XCoordinate value="327"/>
+                <YCoordinate value="686"/>
               </BaseAnchor>
               <BaseAnchor index="3" Format="1">
                 <XCoordinate value="454"/>
@@ -9725,8 +9725,8 @@
                 <YCoordinate value="10"/>
               </BaseAnchor>
               <BaseAnchor index="2" Format="1">
-                <XCoordinate value="0"/>
-                <YCoordinate value="0"/>
+                <XCoordinate value="302"/>
+                <YCoordinate value="526"/>
               </BaseAnchor>
               <BaseAnchor index="3" Format="1">
                 <XCoordinate value="587"/>
@@ -9815,8 +9815,8 @@
                 <YCoordinate value="10"/>
               </BaseAnchor>
               <BaseAnchor index="2" Format="1">
-                <XCoordinate value="0"/>
-                <YCoordinate value="0"/>
+                <XCoordinate value="302"/>
+                <YCoordinate value="526"/>
               </BaseAnchor>
               <BaseAnchor index="3" Format="1">
                 <XCoordinate value="758"/>
@@ -10157,8 +10157,8 @@
                 <YCoordinate value="0"/>
               </BaseAnchor>
               <BaseAnchor index="2" Format="1">
-                <XCoordinate value="0"/>
-                <YCoordinate value="0"/>
+                <XCoordinate value="213"/>
+                <YCoordinate value="526"/>
               </BaseAnchor>
               <BaseAnchor index="3" Format="1">
                 <XCoordinate value="0"/>
@@ -10301,8 +10301,8 @@
                 <YCoordinate value="0"/>
               </BaseAnchor>
               <BaseAnchor index="2" Format="1">
-                <XCoordinate value="0"/>
-                <YCoordinate value="0"/>
+                <XCoordinate value="296"/>
+                <YCoordinate value="526"/>
               </BaseAnchor>
               <BaseAnchor index="3" Format="1">
                 <XCoordinate value="0"/>
@@ -10409,8 +10409,8 @@
                 <YCoordinate value="0"/>
               </BaseAnchor>
               <BaseAnchor index="2" Format="1">
-                <XCoordinate value="0"/>
-                <YCoordinate value="0"/>
+                <XCoordinate value="162"/>
+                <YCoordinate value="526"/>
               </BaseAnchor>
               <BaseAnchor index="3" Format="1">
                 <XCoordinate value="304"/>
@@ -10625,8 +10625,8 @@
                 <YCoordinate value="10"/>
               </BaseAnchor>
               <BaseAnchor index="2" Format="1">
-                <XCoordinate value="0"/>
-                <YCoordinate value="0"/>
+                <XCoordinate value="315"/>
+                <YCoordinate value="526"/>
               </BaseAnchor>
               <BaseAnchor index="3" Format="1">
                 <XCoordinate value="614"/>
@@ -10715,8 +10715,8 @@
                 <YCoordinate value="10"/>
               </BaseAnchor>
               <BaseAnchor index="2" Format="1">
-                <XCoordinate value="0"/>
-                <YCoordinate value="0"/>
+                <XCoordinate value="315"/>
+                <YCoordinate value="526"/>
               </BaseAnchor>
               <BaseAnchor index="3" Format="1">
                 <XCoordinate value="785"/>
@@ -11075,8 +11075,8 @@
                 <YCoordinate value="0"/>
               </BaseAnchor>
               <BaseAnchor index="2" Format="1">
-                <XCoordinate value="0"/>
-                <YCoordinate value="0"/>
+                <XCoordinate value="286"/>
+                <YCoordinate value="526"/>
               </BaseAnchor>
               <BaseAnchor index="3" Format="1">
                 <XCoordinate value="0"/>
@@ -11237,8 +11237,8 @@
                 <YCoordinate value="0"/>
               </BaseAnchor>
               <BaseAnchor index="2" Format="1">
-                <XCoordinate value="0"/>
-                <YCoordinate value="0"/>
+                <XCoordinate value="296"/>
+                <YCoordinate value="526"/>
               </BaseAnchor>
               <BaseAnchor index="3" Format="1">
                 <XCoordinate value="0"/>
@@ -11505,11 +11505,11 @@
         <LookupFlag value="256"/>
         <!-- SubTableCount=1 -->
         <MarkMarkPos index="0" Format="1">
-          <Mark1Coverage>
+          <Mark1Coverage Format="1">
             <Glyph value="dotbelowcomb"/>
             <Glyph value="uni0326"/>
           </Mark1Coverage>
-          <Mark2Coverage>
+          <Mark2Coverage Format="1">
             <Glyph value="dotbelowcomb"/>
             <Glyph value="uni0326"/>
           </Mark2Coverage>
@@ -11553,12 +11553,12 @@
         <LookupFlag value="512"/>
         <!-- SubTableCount=1 -->
         <MarkMarkPos index="0" Format="1">
-          <Mark1Coverage>
+          <Mark1Coverage Format="2">
             <Glyph value="hookabovecomb"/>
             <Glyph value="uni030F"/>
             <Glyph value="uni0311"/>
           </Mark1Coverage>
-          <Mark2Coverage>
+          <Mark2Coverage Format="1">
             <Glyph value="hookabovecomb"/>
             <Glyph value="uni030F"/>
             <Glyph value="uni0311"/>
@@ -11693,10 +11693,10 @@
         <LookupFlag value="768"/>
         <!-- SubTableCount=1 -->
         <MarkMarkPos index="0" Format="1">
-          <Mark1Coverage>
+          <Mark1Coverage Format="1">
             <Glyph value="uni031B"/>
           </Mark1Coverage>
-          <Mark2Coverage>
+          <Mark2Coverage Format="1">
             <Glyph value="uni031B"/>
             <Glyph value="breve"/>
             <Glyph value="circumflex"/>
