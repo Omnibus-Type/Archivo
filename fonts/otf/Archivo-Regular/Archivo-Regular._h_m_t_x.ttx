@@ -159,6 +159,7 @@
     <mtx name="agrave" width="556" lsb="36"/>
     <mtx name="amacron" width="556" lsb="36"/>
     <mtx name="ampersand" width="667" lsb="43"/>
+    <mtx name="ampersand.alt" width="667" lsb="45"/>
     <mtx name="aogonek" width="556" lsb="36"/>
     <mtx name="approxequal" width="549" lsb="38"/>
     <mtx name="aring" width="556" lsb="36"/>

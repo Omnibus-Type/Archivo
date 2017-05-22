@@ -22,6 +22,10 @@ Licensed under the [*SIL Open Font License, 1.1*](http://scripts.sil.org/OFL); y
 
 This file provides detailed information on the Archivo font sources.  
 
+**2017 May 21 (v1.002) Alternative ampersand - Nicolás Silva Schwarzenberg**
+
+- Added alternative ampersand
+
 **2016 July 10 (v1.001) Medium and Semibold - Nicolás Silva Schwarzenberg**
 
 - Made master compatibles

@@ -686,6 +686,34 @@
       <Lookup index="1">
         <!-- LookupType=2 -->
         <LookupFlag value="8"/>
+        <!-- SubTableCount=1 -->
+        <PairPos index="0" Format="1">
+          <Coverage>
+            <Glyph value="quoteright"/>
+            <Glyph value="space"/>
+          </Coverage>
+          <ValueFormat1 value="4"/>
+          <ValueFormat2 value="0"/>
+          <!-- PairSetCount=2 -->
+          <PairSet index="0">
+            <!-- PairValueCount=1 -->
+            <PairValueRecord index="0">
+              <SecondGlyph value="space"/>
+              <Value1 XAdvance="-55"/>
+            </PairValueRecord>
+          </PairSet>
+          <PairSet index="1">
+            <!-- PairValueCount=1 -->
+            <PairValueRecord index="0">
+              <SecondGlyph value="uni2206"/>
+              <Value1 XAdvance="-37"/>
+            </PairValueRecord>
+          </PairSet>
+        </PairPos>
+      </Lookup>
+      <Lookup index="2">
+        <!-- LookupType=2 -->
+        <LookupFlag value="8"/>
         <!-- SubTableCount=4 -->
         <PairPos index="0" Format="1">
           <Coverage>
@@ -4305,34 +4333,6 @@
               <Value1 XAdvance="-18"/>
             </Class2Record>
           </Class1Record>
-        </PairPos>
-      </Lookup>
-      <Lookup index="2">
-        <!-- LookupType=2 -->
-        <LookupFlag value="8"/>
-        <!-- SubTableCount=1 -->
-        <PairPos index="0" Format="1">
-          <Coverage>
-            <Glyph value="quoteright"/>
-            <Glyph value="space"/>
-          </Coverage>
-          <ValueFormat1 value="4"/>
-          <ValueFormat2 value="0"/>
-          <!-- PairSetCount=2 -->
-          <PairSet index="0">
-            <!-- PairValueCount=1 -->
-            <PairValueRecord index="0">
-              <SecondGlyph value="space"/>
-              <Value1 XAdvance="-55"/>
-            </PairValueRecord>
-          </PairSet>
-          <PairSet index="1">
-            <!-- PairValueCount=1 -->
-            <PairValueRecord index="0">
-              <SecondGlyph value="uni2206"/>
-              <Value1 XAdvance="-37"/>
-            </PairValueRecord>
-          </PairSet>
         </PairPos>
       </Lookup>
       <Lookup index="3">

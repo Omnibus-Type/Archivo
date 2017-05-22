@@ -49,6 +49,10 @@ This information should be distributed along with the Archivo fonts and any deri
 
 *To contribute to the project contact Omnibus-Type at omnibus.type@gmail.com*
 
+**2017 May 21 (v1.002) Alternative ampersand - Nicolás Silva Schwarzenberg**
+
+- Added alternative ampersand
+
 **2016 July 10 (v1.001) Medium and Semibold - Nicolás Silva Schwarzenberg**
 
 - Made master compatibles

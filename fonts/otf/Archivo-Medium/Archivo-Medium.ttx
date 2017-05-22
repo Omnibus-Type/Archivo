@@ -12,5 +12,6 @@
   <GDEF src="Archivo-Medium.G_D_E_F_.ttx"/>
   <GPOS src="Archivo-Medium.G_P_O_S_.ttx"/>
   <GSUB src="Archivo-Medium.G_S_U_B_.ttx"/>
+  <STAT src="Archivo-Medium.S_T_A_T_.ttx"/>
   <hmtx src="Archivo-Medium._h_m_t_x.ttx"/>
 </ttFont>

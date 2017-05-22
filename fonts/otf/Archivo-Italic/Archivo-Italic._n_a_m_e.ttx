@@ -3,7 +3,7 @@
 
   <name>
     <namerecord nameID="0" platformID="1" platEncID="0" langID="0x0" unicode="True">
-      Copyright (c) 2014-2016, Omnibus-Type (www.omnibus-type.com omnibus.type@gmail.com)
+      Copyright (c) 2014-2017, Omnibus-Type (www.omnibus-type.com omnibus.type@gmail.com)
     </namerecord>
     <namerecord nameID="1" platformID="1" platEncID="0" langID="0x0" unicode="True">
       Archivo
@@ -12,13 +12,13 @@
       Italic
     </namerecord>
     <namerecord nameID="3" platformID="1" platEncID="0" langID="0x0" unicode="True">
-      1.001;UKWN;Archivo-Italic
+      1.002;UKWN;Archivo-Italic
     </namerecord>
     <namerecord nameID="4" platformID="1" platEncID="0" langID="0x0" unicode="True">
       Archivo Italic
     </namerecord>
     <namerecord nameID="5" platformID="1" platEncID="0" langID="0x0" unicode="True">
-      Version 1.001;PS 001.001;hotconv 1.0.88;makeotf.lib2.5.64775
+      Version 1.002;PS 001.002;hotconv 1.0.88;makeotf.lib2.5.64775
     </namerecord>
     <namerecord nameID="6" platformID="1" platEncID="0" langID="0x0" unicode="True">
       Archivo-Italic
@@ -43,7 +43,7 @@ Version 1.1.This license is available with a FAQ at: http://scripts.sil.org/OFL
       http://scripts.sil.org/OFL
     </namerecord>
     <namerecord nameID="0" platformID="3" platEncID="1" langID="0x409">
-      Copyright (c) 2014-2016, Omnibus-Type (www.omnibus-type.com omnibus.type@gmail.com)
+      Copyright (c) 2014-2017, Omnibus-Type (www.omnibus-type.com omnibus.type@gmail.com)
     </namerecord>
     <namerecord nameID="1" platformID="3" platEncID="1" langID="0x409">
       Archivo
@@ -52,13 +52,13 @@ Version 1.1.This license is available with a FAQ at: http://scripts.sil.org/OFL
       Italic
     </namerecord>
     <namerecord nameID="3" platformID="3" platEncID="1" langID="0x409">
-      1.001;UKWN;Archivo-Italic
+      1.002;UKWN;Archivo-Italic
     </namerecord>
     <namerecord nameID="4" platformID="3" platEncID="1" langID="0x409">
       Archivo Italic
     </namerecord>
     <namerecord nameID="5" platformID="3" platEncID="1" langID="0x409">
-      Version 1.001;PS 001.001;hotconv 1.0.88;makeotf.lib2.5.64775
+      Version 1.002;PS 001.002;hotconv 1.0.88;makeotf.lib2.5.64775
     </namerecord>
     <namerecord nameID="6" platformID="3" platEncID="1" langID="0x409">
       Archivo-Italic
@@ -81,6 +81,9 @@ Version 1.1.This license is available with a FAQ at: http://scripts.sil.org/OFL
     </namerecord>
     <namerecord nameID="14" platformID="3" platEncID="1" langID="0x409">
       http://scripts.sil.org/OFL
+    </namerecord>
+    <namerecord nameID="256" platformID="3" platEncID="1" langID="0x409">
+      Italic
     </namerecord>
   </name>
 

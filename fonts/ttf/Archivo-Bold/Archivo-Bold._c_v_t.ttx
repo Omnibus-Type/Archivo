@@ -15,46 +15,57 @@
     <cv index="10" value="0"/>
     <cv index="11" value="0"/>
     <cv index="12" value="0"/>
-    <cv index="13" value="141"/>
-    <cv index="14" value="141"/>
-    <cv index="15" value="112"/>
-    <cv index="16" value="112"/>
-    <cv index="17" value="686"/>
-    <cv index="18" value="0"/>
-    <cv index="19" value="723"/>
-    <cv index="20" value="526"/>
+    <cv index="13" value="0"/>
+    <cv index="14" value="0"/>
+    <cv index="15" value="0"/>
+    <cv index="16" value="141"/>
+    <cv index="17" value="141"/>
+    <cv index="18" value="112"/>
+    <cv index="19" value="112"/>
+    <cv index="20" value="686"/>
     <cv index="21" value="0"/>
-    <cv index="22" value="-173"/>
-    <cv index="23" value="1035"/>
-    <cv index="24" value="-250"/>
-    <cv index="25" value="698"/>
-    <cv index="26" value="-12"/>
-    <cv index="27" value="731"/>
-    <cv index="28" value="538"/>
+    <cv index="22" value="723"/>
+    <cv index="23" value="526"/>
+    <cv index="24" value="0"/>
+    <cv index="25" value="-173"/>
+    <cv index="26" value="1035"/>
+    <cv index="27" value="-250"/>
+    <cv index="28" value="698"/>
     <cv index="29" value="-12"/>
-    <cv index="30" value="-182"/>
-    <cv index="31" value="1035"/>
-    <cv index="32" value="-250"/>
-    <cv index="33" value="141"/>
-    <cv index="34" value="141"/>
-    <cv index="35" value="112"/>
-    <cv index="36" value="112"/>
-    <cv index="37" value="686"/>
-    <cv index="38" value="329"/>
-    <cv index="39" value="723"/>
-    <cv index="40" value="526"/>
-    <cv index="41" value="0"/>
-    <cv index="42" value="-173"/>
-    <cv index="43" value="1035"/>
-    <cv index="44" value="-250"/>
-    <cv index="45" value="698"/>
-    <cv index="46" value="-12"/>
-    <cv index="47" value="731"/>
-    <cv index="48" value="538"/>
+    <cv index="30" value="731"/>
+    <cv index="31" value="538"/>
+    <cv index="32" value="-12"/>
+    <cv index="33" value="-182"/>
+    <cv index="34" value="1035"/>
+    <cv index="35" value="-250"/>
+    <cv index="36" value="141"/>
+    <cv index="37" value="141"/>
+    <cv index="38" value="112"/>
+    <cv index="39" value="112"/>
+    <cv index="40" value="686"/>
+    <cv index="41" value="329"/>
+    <cv index="42" value="723"/>
+    <cv index="43" value="526"/>
+    <cv index="44" value="0"/>
+    <cv index="45" value="-173"/>
+    <cv index="46" value="1035"/>
+    <cv index="47" value="-250"/>
+    <cv index="48" value="698"/>
     <cv index="49" value="-12"/>
-    <cv index="50" value="-182"/>
-    <cv index="51" value="1035"/>
-    <cv index="52" value="-250"/>
+    <cv index="50" value="731"/>
+    <cv index="51" value="538"/>
+    <cv index="52" value="-12"/>
+    <cv index="53" value="-182"/>
+    <cv index="54" value="1035"/>
+    <cv index="55" value="-250"/>
+    <cv index="56" value="24"/>
+    <cv index="57" value="24"/>
+    <cv index="58" value="24"/>
+    <cv index="59" value="24"/>
+    <cv index="60" value="1035"/>
+    <cv index="61" value="-250"/>
+    <cv index="62" value="1035"/>
+    <cv index="63" value="-250"/>
   </cvt>
 
 </ttFont>

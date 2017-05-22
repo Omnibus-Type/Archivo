@@ -20,32 +20,32 @@
       PUSH[ ]	/* 2 values pushed */
       0 7
       WS[ ]	/* WriteStore */
-      PUSH[ ]	/* 4 values pushed */
-      48 28 2 0
+      PUSH[ ]	/* 5 values pushed */
+      0 51 31 3 0
       LOOPCALL[ ]	/* LoopAndCallFunction */
       PUSH[ ]	/* 2 values pushed */
       0 7
       WS[ ]	/* WriteStore */
-      PUSH[ ]	/* 6 values pushed */
-      35 8 15 8 2 8
+      PUSH[ ]	/* 8 values pushed */
+      58 2 38 8 18 8 3 8
       LOOPCALL[ ]	/* LoopAndCallFunction */
       PUSH[ ]	/* 2 values pushed */
       0 7
       WS[ ]	/* WriteStore */
-      PUSH[ ]	/* 6 values pushed */
-      45 6 25 6 2 8
+      PUSH[ ]	/* 8 values pushed */
+      62 0 48 6 28 6 3 8
       LOOPCALL[ ]	/* LoopAndCallFunction */
       PUSH[ ]	/* 2 values pushed */
-      0 9
+      0 10
       WS[ ]	/* WriteStore */
-      PUSH[ ]	/* 4 values pushed */
-      2304 1024 2 9
+      PUSH[ ]	/* 5 values pushed */
+      3776 2496 1216 3 9
       LOOPCALL[ ]	/* LoopAndCallFunction */
       PUSH[ ]	/* 2 values pushed */
-      0 11
+      0 13
       WS[ ]	/* WriteStore */
-      PUSH[ ]	/* 4 values pushed */
-      64 64 2 9
+      PUSH[ ]	/* 5 values pushed */
+      64 64 64 3 9
       LOOPCALL[ ]	/* LoopAndCallFunction */
       PUSH[ ]	/* 2 values pushed */
       3 100
@@ -80,8 +80,8 @@
       EIF[ ]	/* EndIf */
       EIF[ ]	/* EndIf */
       EIF[ ]	/* EndIf */
-      PUSH[ ]	/* 6 values pushed */
-      37 8 17 8 2 12
+      PUSH[ ]	/* 8 values pushed */
+      60 2 40 8 20 8 3 12
       LOOPCALL[ ]	/* LoopAndCallFunction */
       PUSH[ ]	/* 1 value pushed */
       511

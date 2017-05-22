@@ -18,5 +18,6 @@
   <GDEF src="Archivo-Italic.G_D_E_F_.ttx"/>
   <GPOS src="Archivo-Italic.G_P_O_S_.ttx"/>
   <GSUB src="Archivo-Italic.G_S_U_B_.ttx"/>
+  <STAT src="Archivo-Italic.S_T_A_T_.ttx"/>
   <DSIG src="Archivo-Italic.D_S_I_G_.ttx"/>
 </ttFont>

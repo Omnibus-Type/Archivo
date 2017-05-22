@@ -229,6 +229,7 @@
       <psName name="emacron"/>
       <psName name="eogonek"/>
       <psName name="uni1EBD"/>
+      <psName name="uni0259"/>
       <psName name="uni01F5"/>
       <psName name="gcaron"/>
       <psName name="gcircumflex"/>
@@ -298,7 +299,6 @@
       <psName name="scommaaccent"/>
       <psName name="uni1E63"/>
       <psName name="longs"/>
-      <psName name="uni0259"/>
       <psName name="tbar"/>
       <psName name="tcaron"/>
       <psName name="uni0163"/>
@@ -402,6 +402,7 @@
       <psName name="house"/>
       <psName name="minute"/>
       <psName name="second"/>
+      <psName name="ampersand.alt"/>
       <psName name="hookabovecomb"/>
       <psName name="uni030F"/>
       <psName name="uni0311"/>
