@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ttFont ttLibVersion="3.0">
+<ttFont ttLibVersion="3.4">
 
   <head>
     <!-- Most of this table will be recalculated by the compiler -->
     <tableVersion value="1.0"/>
     <fontRevision value="1.002"/>
-    <checkSumAdjustment value="0x8c42e833"/>
+    <checkSumAdjustment value="0x2fb976a6"/>
     <magicNumber value="0x5f0f3cf5"/>
     <flags value="00000000 00000111"/>
     <unitsPerEm value="1000"/>
     <created value="Mon May 22 03:40:16 2017"/>
-    <modified value="Mon May 22 03:49:28 2017"/>
+    <modified value="Mon May 22 14:43:46 2017"/>
     <xMin value="-616"/>
     <yMin value="-250"/>
     <xMax value="1362"/>

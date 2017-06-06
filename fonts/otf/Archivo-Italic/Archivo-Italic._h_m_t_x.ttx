@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ttFont ttLibVersion="3.0">
+<ttFont ttLibVersion="3.4">
 
   <hmtx>
     <mtx name=".notdef" width="501" lsb="0"/>
@@ -18,7 +18,7 @@
     <mtx name="Atilde" width="667" lsb="-41"/>
     <mtx name="B" width="667" lsb="18"/>
     <mtx name="C" width="722" lsb="37"/>
-    <mtx name="CR" width="0" lsb="0"/>
+    <mtx name="CR" width="278" lsb="0"/>
     <mtx name="Cacute" width="722" lsb="37"/>
     <mtx name="Cacute.loclPLK" width="722" lsb="37"/>
     <mtx name="Ccaron" width="722" lsb="37"/>

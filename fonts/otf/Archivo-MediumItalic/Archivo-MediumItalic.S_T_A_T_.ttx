@@ -1,13 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ttFont ttLibVersion="3.0">
+<ttFont ttLibVersion="3.4">
 
-  <STAT raw="True">
-    <hexdata>
-      00010000 00080002 00000012 00020000
-      00227767 68740100 00006974 616c0100
-      00010004 00100001 00000002 01000001
-      00000001 00010000 010001f4 0000
-    </hexdata>
+  <STAT>
+    <Version value="0x00010000"/>
+    <DesignAxisRecordSize value="8"/>
+    <!-- DesignAxisCount=2 -->
+    <DesignAxisRecord>
+      <Axis index="0">
+        <AxisTag value="wght"/>
+        <AxisNameID value="256"/>
+        <AxisOrdering value="0"/>
+      </Axis>
+      <Axis index="1">
+        <AxisTag value="ital"/>
+        <AxisNameID value="256"/>
+        <AxisOrdering value="1"/>
+      </Axis>
+    </DesignAxisRecord>
+    <!-- AxisValueCount=2 -->
+    <AxisValueArray>
+      <AxisValue index="0" Format="1">
+        <AxisIndex value="0"/>
+        <Flags value="2"/>
+        <ValueNameID value="256"/>  <!-- MediumItalic -->
+        <Value value="1.0"/>
+      </AxisValue>
+      <AxisValue index="1" Format="1">
+        <AxisIndex value="1"/>
+        <Flags value="0"/>
+        <ValueNameID value="256"/>  <!-- MediumItalic -->
+        <Value value="500.0"/>
+      </AxisValue>
+    </AxisValueArray>
   </STAT>
 
 </ttFont>

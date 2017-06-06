@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ttFont ttLibVersion="3.0">
+<ttFont ttLibVersion="3.4">
 
   <GSUB>
-    <Version value="1.0"/>
+    <Version value="0x00010000"/>
     <ScriptList>
       <!-- ScriptCount=3 -->
       <ScriptRecord index="0">
@@ -798,7 +798,7 @@
         <!-- LookupType=1 -->
         <LookupFlag value="0"/>
         <!-- SubTableCount=1 -->
-        <SingleSubst index="0">
+        <SingleSubst index="0" Format="2">
           <Substitution in="A" out="ordfeminine"/>
           <Substitution in="Cacute" out="Cacute.loclPLK"/>
           <Substitution in="Nacute" out="Nacute.loclPLK"/>
@@ -845,7 +845,7 @@
         <!-- LookupType=3 -->
         <LookupFlag value="0"/>
         <!-- SubTableCount=1 -->
-        <AlternateSubst index="0">
+        <AlternateSubst index="0" Format="1">
           <AlternateSet glyph="i">
             <Alternate glyph="dotlessi"/>
             <Alternate glyph="i.loclTRK"/>
@@ -859,12 +859,12 @@
         <ChainContextSubst index="0" Format="3">
           <!-- BacktrackGlyphCount=0 -->
           <!-- InputGlyphCount=1 -->
-          <InputCoverage index="0">
+          <InputCoverage index="0" Format="1">
             <Glyph value="i"/>
             <Glyph value="j"/>
           </InputCoverage>
           <!-- LookAheadGlyphCount=1 -->
-          <LookAheadCoverage index="0">
+          <LookAheadCoverage index="0" Format="2">
             <Glyph value="hookabovecomb"/>
             <Glyph value="uni030F"/>
             <Glyph value="uni0311"/>
@@ -878,17 +878,17 @@
         <ChainContextSubst index="1" Format="3">
           <!-- BacktrackGlyphCount=0 -->
           <!-- InputGlyphCount=1 -->
-          <InputCoverage index="0">
+          <InputCoverage index="0" Format="1">
             <Glyph value="i"/>
             <Glyph value="j"/>
           </InputCoverage>
           <!-- LookAheadGlyphCount=2 -->
-          <LookAheadCoverage index="0">
+          <LookAheadCoverage index="0" Format="2">
             <Glyph value="uni031B"/>
             <Glyph value="dotbelowcomb"/>
             <Glyph value="uni0326"/>
           </LookAheadCoverage>
-          <LookAheadCoverage index="1">
+          <LookAheadCoverage index="1" Format="2">
             <Glyph value="hookabovecomb"/>
             <Glyph value="uni030F"/>
             <Glyph value="uni0311"/>
@@ -904,7 +904,7 @@
         <!-- LookupType=1 -->
         <LookupFlag value="0"/>
         <!-- SubTableCount=1 -->
-        <SingleSubst index="0">
+        <SingleSubst index="0" Format="1">
           <Substitution in="i" out="i.loclTRK"/>
         </SingleSubst>
       </Lookup>
@@ -912,7 +912,7 @@
         <!-- LookupType=1 -->
         <LookupFlag value="0"/>
         <!-- SubTableCount=1 -->
-        <SingleSubst index="0">
+        <SingleSubst index="0" Format="2">
           <Substitution in="Y" out="Y.loclGUA"/>
           <Substitution in="Yacute" out="Yacute.loclGUA"/>
           <Substitution in="Ycircumflex" out="Ycircumflex.loclGUA"/>
@@ -933,7 +933,7 @@
         <!-- LookupType=4 -->
         <LookupFlag value="0"/>
         <!-- SubTableCount=1 -->
-        <LigatureSubst index="0">
+        <LigatureSubst index="0" Format="1">
           <LigatureSet glyph="Iacute">
             <Ligature components="J" glyph="Iacute_J.loclNLD"/>
           </LigatureSet>
@@ -949,14 +949,14 @@
         <ChainContextSubst index="0" Format="3">
           <!-- BacktrackGlyphCount=0 -->
           <!-- InputGlyphCount=2 -->
-          <InputCoverage index="0">
+          <InputCoverage index="0" Format="1">
             <Glyph value="l"/>
           </InputCoverage>
-          <InputCoverage index="1">
+          <InputCoverage index="1" Format="1">
             <Glyph value="periodcentered"/>
           </InputCoverage>
           <!-- LookAheadGlyphCount=1 -->
-          <LookAheadCoverage index="0">
+          <LookAheadCoverage index="0" Format="1">
             <Glyph value="l"/>
           </LookAheadCoverage>
           <!-- SubstCount=1 -->
@@ -968,14 +968,14 @@
         <ChainContextSubst index="1" Format="3">
           <!-- BacktrackGlyphCount=0 -->
           <!-- InputGlyphCount=2 -->
-          <InputCoverage index="0">
+          <InputCoverage index="0" Format="1">
             <Glyph value="L"/>
           </InputCoverage>
-          <InputCoverage index="1">
+          <InputCoverage index="1" Format="1">
             <Glyph value="periodcentered"/>
           </InputCoverage>
           <!-- LookAheadGlyphCount=1 -->
-          <LookAheadCoverage index="0">
+          <LookAheadCoverage index="0" Format="1">
             <Glyph value="L"/>
           </LookAheadCoverage>
           <!-- SubstCount=1 -->
@@ -989,7 +989,7 @@
         <!-- LookupType=1 -->
         <LookupFlag value="0"/>
         <!-- SubTableCount=1 -->
-        <SingleSubst index="0">
+        <SingleSubst index="0" Format="2">
           <Substitution in="Scedilla" out="Scommaaccent"/>
           <Substitution in="scedilla" out="scommaaccent"/>
           <Substitution in="uni0162" out="uni021A"/>
@@ -1000,7 +1000,7 @@
         <!-- LookupType=1 -->
         <LookupFlag value="0"/>
         <!-- SubTableCount=1 -->
-        <SingleSubst index="0">
+        <SingleSubst index="0" Format="2">
           <Substitution in="Scedilla" out="Scommaaccent"/>
           <Substitution in="scedilla" out="scommaaccent"/>
           <Substitution in="uni0162" out="uni021A"/>
@@ -1011,7 +1011,7 @@
         <!-- LookupType=1 -->
         <LookupFlag value="0"/>
         <!-- SubTableCount=1 -->
-        <SingleSubst index="0">
+        <SingleSubst index="0" Format="2">
           <Substitution in="Cacute" out="Cacute.loclPLK"/>
           <Substitution in="Nacute" out="Nacute.loclPLK"/>
           <Substitution in="Oacute" out="Oacute.loclPLK"/>
@@ -1029,7 +1029,7 @@
         <!-- LookupType=1 -->
         <LookupFlag value="0"/>
         <!-- SubTableCount=1 -->
-        <SingleSubst index="0">
+        <SingleSubst index="0" Format="1">
           <Substitution in="i" out="i.loclTRK"/>
         </SingleSubst>
       </Lookup>
@@ -1037,7 +1037,7 @@
         <!-- LookupType=1 -->
         <LookupFlag value="0"/>
         <!-- SubTableCount=1 -->
-        <SingleSubst index="0">
+        <SingleSubst index="0" Format="1">
           <Substitution in="i" out="i.loclTRK"/>
         </SingleSubst>
       </Lookup>
@@ -1045,7 +1045,7 @@
         <!-- LookupType=1 -->
         <LookupFlag value="0"/>
         <!-- SubTableCount=1 -->
-        <SingleSubst index="0">
+        <SingleSubst index="0" Format="1">
           <Substitution in="i" out="i.loclTRK"/>
         </SingleSubst>
       </Lookup>
@@ -1053,7 +1053,7 @@
         <!-- LookupType=1 -->
         <LookupFlag value="0"/>
         <!-- SubTableCount=1 -->
-        <SingleSubst index="0">
+        <SingleSubst index="0" Format="1">
           <Substitution in="i" out="i.loclTRK"/>
         </SingleSubst>
       </Lookup>
@@ -1061,7 +1061,7 @@
         <!-- LookupType=1 -->
         <LookupFlag value="0"/>
         <!-- SubTableCount=1 -->
-        <SingleSubst index="0">
+        <SingleSubst index="0" Format="2">
           <Substitution in="uni0394" out="uni2206"/>
           <Substitution in="uni03A9" out="uni2126"/>
           <Substitution in="uni03BC" out="uni00B5"/>
@@ -1071,7 +1071,7 @@
         <!-- LookupType=1 -->
         <LookupFlag value="0"/>
         <!-- SubTableCount=1 -->
-        <SingleSubst index="0">
+        <SingleSubst index="0" Format="1">
           <Substitution in="one" out="uni00B9"/>
           <Substitution in="three" out="uni00B3"/>
           <Substitution in="two" out="uni00B2"/>
@@ -1081,7 +1081,7 @@
         <!-- LookupType=4 -->
         <LookupFlag value="0"/>
         <!-- SubTableCount=1 -->
-        <LigatureSubst index="0">
+        <LigatureSubst index="0" Format="1">
           <LigatureSet glyph="five">
             <Ligature components="slash,eight" glyph="fiveeighths"/>
           </LigatureSet>
@@ -1109,7 +1109,7 @@
         <!-- SubTableCount=2 -->
         <ChainContextSubst index="0" Format="3">
           <!-- BacktrackGlyphCount=1 -->
-          <BacktrackCoverage index="0">
+          <BacktrackCoverage index="0" Format="2">
             <Glyph value="zero"/>
             <Glyph value="one"/>
             <Glyph value="two"/>
@@ -1122,7 +1122,7 @@
             <Glyph value="nine"/>
           </BacktrackCoverage>
           <!-- InputGlyphCount=1 -->
-          <InputCoverage index="0">
+          <InputCoverage index="0" Format="1">
             <Glyph value="A"/>
             <Glyph value="a"/>
           </InputCoverage>
@@ -1135,7 +1135,7 @@
         </ChainContextSubst>
         <ChainContextSubst index="1" Format="3">
           <!-- BacktrackGlyphCount=1 -->
-          <BacktrackCoverage index="0">
+          <BacktrackCoverage index="0" Format="2">
             <Glyph value="zero"/>
             <Glyph value="one"/>
             <Glyph value="two"/>
@@ -1148,7 +1148,7 @@
             <Glyph value="nine"/>
           </BacktrackCoverage>
           <!-- InputGlyphCount=1 -->
-          <InputCoverage index="0">
+          <InputCoverage index="0" Format="1">
             <Glyph value="O"/>
             <Glyph value="o"/>
           </InputCoverage>
@@ -1164,7 +1164,7 @@
         <!-- LookupType=4 -->
         <LookupFlag value="0"/>
         <!-- SubTableCount=1 -->
-        <LigatureSubst index="0">
+        <LigatureSubst index="0" Format="1">
           <LigatureSet glyph="N">
             <Ligature components="o,period" glyph="uni2116"/>
           </LigatureSet>
@@ -1174,7 +1174,7 @@
         <!-- LookupType=4 -->
         <LookupFlag value="0"/>
         <!-- SubTableCount=1 -->
-        <LigatureSubst index="0">
+        <LigatureSubst index="0" Format="1">
           <LigatureSet glyph="f">
             <Ligature components="f" glyph="f_f"/>
             <Ligature components="i" glyph="fi"/>
@@ -1186,7 +1186,7 @@
         <!-- LookupType=1 -->
         <LookupFlag value="0"/>
         <!-- SubTableCount=1 -->
-        <SingleSubst index="0">
+        <SingleSubst index="0" Format="1">
           <Substitution in="ampersand" out="ampersand.alt"/>
         </SingleSubst>
       </Lookup>
@@ -1194,7 +1194,7 @@
         <!-- LookupType=1 -->
         <LookupFlag value="0"/>
         <!-- SubTableCount=1 -->
-        <SingleSubst index="0">
+        <SingleSubst index="0" Format="1">
           <Substitution in="i" out="dotlessi"/>
           <Substitution in="j" out="uni0237"/>
         </SingleSubst>
@@ -1203,7 +1203,7 @@
         <!-- LookupType=4 -->
         <LookupFlag value="0"/>
         <!-- SubTableCount=1 -->
-        <LigatureSubst index="0">
+        <LigatureSubst index="0" Format="1">
           <LigatureSet glyph="L">
             <Ligature components="periodcentered" glyph="Ldot"/>
           </LigatureSet>
@@ -1216,7 +1216,7 @@
         <!-- LookupType=1 -->
         <LookupFlag value="0"/>
         <!-- SubTableCount=1 -->
-        <SingleSubst index="0">
+        <SingleSubst index="0" Format="2">
           <Substitution in="A" out="ordfeminine"/>
           <Substitution in="O" out="ordmasculine"/>
           <Substitution in="a" out="ordfeminine"/>

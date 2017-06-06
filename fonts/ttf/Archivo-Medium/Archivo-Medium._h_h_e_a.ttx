@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ttFont ttLibVersion="3.0">
+<ttFont ttLibVersion="3.4">
 
   <hhea>
-    <tableVersion value="1.0"/>
+    <tableVersion value="0x00010000"/>
     <ascent value="905"/>
     <descent value="-212"/>
     <lineGap value="33"/>
