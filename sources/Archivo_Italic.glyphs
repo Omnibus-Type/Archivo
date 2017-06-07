@@ -1,5 +1,5 @@
 {
-.appVersion = "1021";
+.appVersion = "1029";
 classes = (
 {
 automatic = 1;
@@ -73936,7 +73936,7 @@ UUID0 = 0.69388;
 };
 isItalic = 1;
 linkStyle = Medium;
-name = MediumItalic;
+name = "Medium Italic";
 weightClass = Medium;
 },
 {
@@ -73972,7 +73972,7 @@ UUID0 = 0.34694;
 };
 isItalic = 1;
 linkStyle = SemiBold;
-name = SemiBoldItalic;
+name = "SemiBold Italic";
 weightClass = SemiBold;
 },
 {
