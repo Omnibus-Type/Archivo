@@ -9,13 +9,13 @@
       Archivo
     </namerecord>
     <namerecord nameID="2" platformID="1" platEncID="0" langID="0x0" unicode="True">
-      MediumItalic
+      Medium Italic
     </namerecord>
     <namerecord nameID="3" platformID="1" platEncID="0" langID="0x0" unicode="True">
-      1.002;UKWN;Archivo-MediumItalic
+      1.002;OMNI;Archivo-MediumItalic
     </namerecord>
     <namerecord nameID="4" platformID="1" platEncID="0" langID="0x0" unicode="True">
-      Archivo MediumItalic
+      Archivo Medium Italic
     </namerecord>
     <namerecord nameID="5" platformID="1" platEncID="0" langID="0x0" unicode="True">
       Version 1.002
@@ -54,10 +54,10 @@
       Italic
     </namerecord>
     <namerecord nameID="3" platformID="3" platEncID="1" langID="0x409">
-      1.002;UKWN;Archivo-MediumItalic
+      1.002;OMNI;Archivo-MediumItalic
     </namerecord>
     <namerecord nameID="4" platformID="3" platEncID="1" langID="0x409">
-      Archivo MediumItalic
+      Archivo Medium Italic
     </namerecord>
     <namerecord nameID="5" platformID="3" platEncID="1" langID="0x409">
       Version 1.002
@@ -90,10 +90,7 @@
       Archivo
     </namerecord>
     <namerecord nameID="17" platformID="3" platEncID="1" langID="0x409">
-      MediumItalic
-    </namerecord>
-    <namerecord nameID="256" platformID="3" platEncID="1" langID="0x409">
-      MediumItalic
+      Medium Italic
     </namerecord>
   </name>
 

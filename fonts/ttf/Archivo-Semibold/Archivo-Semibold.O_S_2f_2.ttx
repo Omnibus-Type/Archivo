@@ -4,7 +4,7 @@
   <OS_2>
     <!-- The fields 'usFirstCharIndex' and 'usLastCharIndex'
          will be recalculated by the compiler -->
-    <version value="3"/>
+    <version value="4"/>
     <xAvgCharWidth value="595"/>
     <usWeightClass value="600"/>
     <usWidthClass value="5"/>
@@ -36,15 +36,15 @@
     <ulUnicodeRange2 value="00000000 00000000 00000000 00000000"/>
     <ulUnicodeRange3 value="00000000 00000000 00000000 00000000"/>
     <ulUnicodeRange4 value="00000000 00000000 00000000 00000000"/>
-    <achVendID value="UKWN"/>
-    <fsSelection value="00000000 01000000"/>
+    <achVendID value="OMNI"/>
+    <fsSelection value="00000000 11000000"/>
     <usFirstCharIndex value="0"/>
     <usLastCharIndex value="64258"/>
     <sTypoAscender value="728"/>
     <sTypoDescender value="-210"/>
     <sTypoLineGap value="150"/>
     <usWinAscent value="1035"/>
-    <usWinDescent value="250"/>
+    <usWinDescent value="312"/>
     <ulCodePageRange1 value="00100000 00000000 00000001 10010011"/>
     <ulCodePageRange2 value="00000000 00000000 00000000 00000000"/>
     <sxHeight value="526"/>
