@@ -37,6 +37,10 @@ value = 1;
 {
 name = openTypeOS2VendorID;
 value = OMNI;
+},
+{
+name = "Use Typo Metrics";
+value = 1;
 }
 );
 date = "2017-05-22 03:40:16 +0000";
@@ -232,7 +236,7 @@ value = 1035;
 },
 {
 name = winDescent;
-value = 250;
+value = 312;
 },
 {
 name = hheaAscender;
@@ -295,7 +299,7 @@ value = 1035;
 },
 {
 name = winDescent;
-value = 250;
+value = 312;
 },
 {
 name = hheaAscender;
