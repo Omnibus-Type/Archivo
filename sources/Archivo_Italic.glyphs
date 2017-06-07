@@ -33,6 +33,10 @@ value = 1;
 {
 name = "Use Line Breaks";
 value = 1;
+},
+{
+name = openTypeOS2VendorID;
+value = OMNI;
 }
 );
 date = "2017-05-22 03:40:16 +0000";
