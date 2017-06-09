@@ -12,7 +12,7 @@
       SemiBold
     </namerecord>
     <namerecord nameID="3" platformID="1" platEncID="0" langID="0x0" unicode="True">
-      1.002;UKWN;Archivo-SemiBold
+      1.002;OMNI;Archivo-SemiBold
     </namerecord>
     <namerecord nameID="4" platformID="1" platEncID="0" langID="0x0" unicode="True">
       Archivo SemiBold
@@ -54,7 +54,7 @@
       Regular
     </namerecord>
     <namerecord nameID="3" platformID="3" platEncID="1" langID="0x409">
-      1.002;UKWN;Archivo-SemiBold
+      1.002;OMNI;Archivo-SemiBold
     </namerecord>
     <namerecord nameID="4" platformID="3" platEncID="1" langID="0x409">
       Archivo SemiBold
@@ -90,9 +90,6 @@
       Archivo
     </namerecord>
     <namerecord nameID="17" platformID="3" platEncID="1" langID="0x409">
-      SemiBold
-    </namerecord>
-    <namerecord nameID="256" platformID="3" platEncID="1" langID="0x409">
       SemiBold
     </namerecord>
   </name>

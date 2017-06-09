@@ -18,6 +18,5 @@
   <GDEF src="Archivo-BoldItalic.G_D_E_F_.ttx"/>
   <GPOS src="Archivo-BoldItalic.G_P_O_S_.ttx"/>
   <GSUB src="Archivo-BoldItalic.G_S_U_B_.ttx"/>
-  <STAT src="Archivo-BoldItalic.S_T_A_T_.ttx"/>
   <DSIG src="Archivo-BoldItalic.D_S_I_G_.ttx"/>
 </ttFont>

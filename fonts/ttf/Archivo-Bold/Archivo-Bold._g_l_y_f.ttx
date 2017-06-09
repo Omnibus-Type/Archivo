@@ -1116,23 +1116,23 @@
           5 1 1 6 38 1 8 9 2 74
           MPPEM[ ]	/* MeasurePixelPerEm */
           PUSHB[ ]	/* 1 value pushed */
+          14
+          LT[ ]	/* LessThan */
+          IF[ ]	/* If */
+          NPUSHB[ ]	/* 52 values pushed */
+          0 4 5 0 5 4 0 126 0 10 8 8 10 111 0 0 0 7 6 0 7 101 0 9 0
+          8 10 9 8 101 0 5 5 3 95 0 3 3 28 75 0 6 6 1 95 2 1 1 1 21
+          1 76
+          ELSE[ ]	/* Else */
+          MPPEM[ ]	/* MeasurePixelPerEm */
+          PUSHB[ ]	/* 1 value pushed */
           20
           LT[ ]	/* LessThan */
           IF[ ]	/* If */
           NPUSHB[ ]	/* 51 values pushed */
-          0 4 5 0 5 4 0 126 0 0 0 7 6 0 7 101 0 9 0 8 10 9 8 101 0
-          5 5 3 95 0 3 3 28 75 0 6 6 1 95 2 1 1 1 21 75 0 10 10 27 10
+          0 4 5 0 5 4 0 126 0 10 8 10 132 0 0 0 7 6 0 7 101 0 9 0 8
+          10 9 8 101 0 5 5 3 95 0 3 3 28 75 0 6 6 1 95 2 1 1 1 21 1
           76
-          ELSE[ ]	/* Else */
-          MPPEM[ ]	/* MeasurePixelPerEm */
-          PUSHB[ ]	/* 1 value pushed */
-          25
-          LT[ ]	/* LessThan */
-          IF[ ]	/* If */
-          NPUSHB[ ]	/* 55 values pushed */
-          0 4 5 0 5 4 0 126 0 0 0 7 6 0 7 101 0 9 0 8 10 9 8 101 0
-          5 5 3 95 0 3 3 28 75 0 1 1 21 75 0 6 6 2 95 0 2 2 29 75 0
-          10 10 27 10 76
           ELSE[ ]	/* Else */
           NPUSHB[ ]	/* 55 values pushed */
           0 4 5 0 5 4 0 126 0 10 8 10 132 0 0 0 7 6 0 7 101 0 9 0 8
@@ -1554,12 +1554,12 @@
           10 9 6 3 4 2 0 17 1 4 5 2 74
           MPPEM[ ]	/* MeasurePixelPerEm */
           PUSHB[ ]	/* 1 value pushed */
-          25
+          14
           LT[ ]	/* LessThan */
           IF[ ]	/* If */
-          NPUSHB[ ]	/* 26 values pushed */
-          0 5 0 4 6 5 4 101 1 1 0 0 20 75 3 1 2 2 21 75 0 6 6 27 6
-          76
+          NPUSHB[ ]	/* 27 values pushed */
+          0 6 4 4 6 111 0 5 0 4 6 5 4 101 1 1 0 0 20 75 3 1 2 2 21
+          2 76
           ELSE[ ]	/* Else */
           NPUSHB[ ]	/* 26 values pushed */
           0 6 4 6 132 0 5 0 4 6 5 4 101 1 1 0 0 20 75 3 1 2 2 21 2
@@ -1648,12 +1648,12 @@
           11 1 3 4 1 74
           MPPEM[ ]	/* MeasurePixelPerEm */
           PUSHB[ ]	/* 1 value pushed */
-          25
+          14
           LT[ ]	/* LessThan */
           IF[ ]	/* If */
-          NPUSHB[ ]	/* 29 values pushed */
-          0 4 0 3 5 4 3 101 0 0 0 20 75 0 1 1 2 94 0 2 2 21 75 0 5
-          5 27 5 76
+          NPUSHB[ ]	/* 30 values pushed */
+          0 5 3 3 5 111 0 4 0 3 5 4 3 101 0 0 0 20 75 0 1 1 2 94 0
+          2 2 21 2 76
           ELSE[ ]	/* Else */
           NPUSHB[ ]	/* 29 values pushed */
           0 5 3 5 132 0 4 0 3 5 4 3 101 0 0 0 20 75 0 1 1 2 94 0 2
@@ -1824,12 +1824,12 @@
           29 1 4 5 1 74
           MPPEM[ ]	/* MeasurePixelPerEm */
           PUSHB[ ]	/* 1 value pushed */
-          25
+          14
           LT[ ]	/* LessThan */
           IF[ ]	/* If */
-          NPUSHB[ ]	/* 26 values pushed */
-          0 5 0 4 6 5 4 101 1 1 0 0 20 75 3 1 2 2 21 75 0 6 6 27 6
-          76
+          NPUSHB[ ]	/* 27 values pushed */
+          0 6 4 4 6 111 0 5 0 4 6 5 4 101 1 1 0 0 20 75 3 1 2 2 21
+          2 76
           ELSE[ ]	/* Else */
           NPUSHB[ ]	/* 26 values pushed */
           0 6 4 6 132 0 5 0 4 6 5 4 101 1 1 0 0 20 75 3 1 2 2 21 2
@@ -2371,12 +2371,12 @@
           7 1 2 4 27 1 6 7 2 74
           MPPEM[ ]	/* MeasurePixelPerEm */
           PUSHB[ ]	/* 1 value pushed */
-          25
+          14
           LT[ ]	/* LessThan */
           IF[ ]	/* If */
-          NPUSHB[ ]	/* 39 values pushed */
-          9 1 4 0 2 1 4 2 101 0 7 0 6 8 7 6 101 0 5 5 0 93 0 0 0
-          20 75 3 1 1 1 21 75 0 8 8 27 8 76
+          NPUSHB[ ]	/* 40 values pushed */
+          0 8 6 6 8 111 9 1 4 0 2 1 4 2 101 0 7 0 6 8 7 6 101 0 5
+          5 0 93 0 0 0 20 75 3 1 1 1 21 1 76
           ELSE[ ]	/* Else */
           NPUSHB[ ]	/* 39 values pushed */
           0 8 6 8 132 9 1 4 0 2 1 4 2 101 0 7 0 6 8 7 6 101 0 5 5
@@ -2611,12 +2611,13 @@
           52 1 6 7 1 74
           MPPEM[ ]	/* MeasurePixelPerEm */
           PUSHB[ ]	/* 1 value pushed */
-          25
+          14
           LT[ ]	/* LessThan */
           IF[ ]	/* If */
-          NPUSHB[ ]	/* 50 values pushed */
-          0 3 4 0 4 3 0 126 0 0 1 4 0 1 124 0 7 0 6 8 7 6 101 0 4
-          4 2 95 0 2 2 28 75 0 1 1 5 95 9 1 5 5 29 75 0 8 8 27 8 76
+          NPUSHB[ ]	/* 51 values pushed */
+          0 3 4 0 4 3 0 126 0 0 1 4 0 1 124 0 8 6 6 8 111 0 7 0 6
+          8 7 6 101 0 4 4 2 95 0 2 2 28 75 0 1 1 5 95 9 1 5 5 29 5
+          76
           ELSE[ ]	/* Else */
           NPUSHB[ ]	/* 50 values pushed */
           0 3 4 0 4 3 0 126 0 0 1 4 0 1 124 0 8 6 8 132 0 7 0 6 8
@@ -4383,22 +4384,9 @@
         <pt x="66" y="-233" on="1"/>
       </contour>
       <instructions><assembly>
-          NPUSHB[ ]	/* 17 values pushed */
-          13 12 11 10 9 8 5 4 3 2 1 0 12 1 0 1 74
-          MPPEM[ ]	/* MeasurePixelPerEm */
-          PUSHB[ ]	/* 1 value pushed */
-          29
-          LT[ ]	/* LessThan */
-          IF[ ]	/* If */
-          NPUSHB[ ]	/* 21 values pushed */
-          0 0 1 0 131 0 1 2 1 131 0 2 2 3 93 0 3 3 61 3 76
-          ELSE[ ]	/* Else */
-          NPUSHB[ ]	/* 26 values pushed */
-          0 0 1 0 131 0 1 2 1 131 0 2 3 3 2 85 0 2 2 3 93 0 3 2 3
-          77
-          EIF[ ]	/* EndIf */
-          PUSHB[ ]	/* 7 values pushed */
-          17 17 23 22 4 9 24
+          NPUSHB[ ]	/* 50 values pushed */
+          13 12 11 10 9 8 5 4 3 2 1 0 12 1 0 1 74 0 0 1 0 131 0 1 2
+          1 131 0 2 3 3 2 85 0 2 2 3 93 0 3 2 3 77 17 17 23 22 4 9 24
           CALL[ ]	/* CallFunction */
         </assembly></instructions>
     </TTGlyph>
@@ -8477,8 +8465,9 @@
         <pt x="177" y="-250" on="1"/>
       </contour>
       <instructions><assembly>
-          NPUSHB[ ]	/* 22 values pushed */
-          0 1 0 1 131 0 0 0 2 95 0 2 2 61 2 76 20 18 16 3 9 23
+          NPUSHB[ ]	/* 27 values pushed */
+          0 1 0 1 131 0 0 2 2 0 87 0 0 0 2 95 0 2 0 2 79 20 18 16 3
+          9 23
           CALL[ ]	/* CallFunction */
         </assembly></instructions>
     </TTGlyph>
@@ -8497,8 +8486,9 @@
         <pt x="253" y="-250" on="1"/>
       </contour>
       <instructions><assembly>
-          NPUSHB[ ]	/* 20 values pushed */
-          0 0 0 1 2 0 1 103 0 2 2 61 2 76 18 17 19 3 9 23
+          NPUSHB[ ]	/* 27 values pushed */
+          0 2 1 2 132 0 0 1 1 0 87 0 0 0 1 95 0 1 0 1 79 18 17 19 3
+          9 23
           CALL[ ]	/* CallFunction */
         </assembly></instructions>
     </TTGlyph>
@@ -8712,12 +8702,12 @@
           10 9 6 3 4 2 1 17 1 4 5 2 74
           MPPEM[ ]	/* MeasurePixelPerEm */
           PUSHB[ ]	/* 1 value pushed */
-          25
+          14
           LT[ ]	/* LessThan */
           IF[ ]	/* If */
-          NPUSHB[ ]	/* 30 values pushed */
-          0 5 0 4 6 5 4 101 0 0 0 22 75 0 1 1 23 75 3 1 2 2 21 75 0
-          6 6 27 6 76
+          NPUSHB[ ]	/* 31 values pushed */
+          0 6 4 4 6 111 0 5 0 4 6 5 4 101 0 0 0 22 75 0 1 1 23 75 3
+          1 2 2 21 2 76
           ELSE[ ]	/* Else */
           NPUSHB[ ]	/* 30 values pushed */
           0 6 4 6 132 0 5 0 4 6 5 4 101 0 0 0 22 75 0 1 1 23 75 3 1
@@ -8825,11 +8815,11 @@
           9 1 2 3 1 74
           MPPEM[ ]	/* MeasurePixelPerEm */
           PUSHB[ ]	/* 1 value pushed */
-          25
+          14
           LT[ ]	/* LessThan */
           IF[ ]	/* If */
-          NPUSHB[ ]	/* 24 values pushed */
-          0 3 0 2 4 3 2 101 0 0 0 22 75 0 1 1 21 75 0 4 4 27 4 76
+          NPUSHB[ ]	/* 25 values pushed */
+          0 4 2 2 4 111 0 3 0 2 4 3 2 101 0 0 0 22 75 0 1 1 21 1 76
           ELSE[ ]	/* Else */
           NPUSHB[ ]	/* 24 values pushed */
           0 4 2 4 132 0 3 0 2 4 3 2 101 0 0 0 22 75 0 1 1 21 1 76
@@ -9351,21 +9341,21 @@
           3 1 3 0 25 1 5 6 2 74
           MPPEM[ ]	/* MeasurePixelPerEm */
           PUSHB[ ]	/* 1 value pushed */
+          14
+          LT[ ]	/* LessThan */
+          IF[ ]	/* If */
+          NPUSHB[ ]	/* 32 values pushed */
+          0 7 5 5 7 111 0 6 0 5 7 6 5 101 0 3 3 0 95 1 1 0 0 23 75
+          4 1 2 2 21 2 76
+          ELSE[ ]	/* Else */
+          MPPEM[ ]	/* MeasurePixelPerEm */
+          PUSHB[ ]	/* 1 value pushed */
           20
           LT[ ]	/* LessThan */
           IF[ ]	/* If */
           NPUSHB[ ]	/* 31 values pushed */
-          0 6 0 5 7 6 5 101 0 3 3 0 95 1 1 0 0 23 75 4 1 2 2 21 75
-          0 7 7 27 7 76
-          ELSE[ ]	/* Else */
-          MPPEM[ ]	/* MeasurePixelPerEm */
-          PUSHB[ ]	/* 1 value pushed */
-          25
-          LT[ ]	/* LessThan */
-          IF[ ]	/* If */
-          NPUSHB[ ]	/* 35 values pushed */
-          0 6 0 5 7 6 5 101 0 0 0 23 75 0 3 3 1 95 0 1 1 31 75 4 1
-          2 2 21 75 0 7 7 27 7 76
+          0 7 5 7 132 0 6 0 5 7 6 5 101 0 3 3 0 95 1 1 0 0 23 75 4
+          1 2 2 21 2 76
           ELSE[ ]	/* Else */
           NPUSHB[ ]	/* 35 values pushed */
           0 7 5 7 132 0 6 0 5 7 6 5 101 0 0 0 23 75 0 3 3 1 95 0 1
@@ -11792,21 +11782,21 @@
           3 1 2 0 22 1 4 5 2 74
           MPPEM[ ]	/* MeasurePixelPerEm */
           PUSHB[ ]	/* 1 value pushed */
+          14
+          LT[ ]	/* LessThan */
+          IF[ ]	/* If */
+          NPUSHB[ ]	/* 31 values pushed */
+          0 6 4 4 6 111 0 5 0 4 6 5 4 101 0 2 2 0 95 1 1 0 0 23 75
+          0 3 3 21 3 76
+          ELSE[ ]	/* Else */
+          MPPEM[ ]	/* MeasurePixelPerEm */
+          PUSHB[ ]	/* 1 value pushed */
           20
           LT[ ]	/* LessThan */
           IF[ ]	/* If */
           NPUSHB[ ]	/* 30 values pushed */
-          0 5 0 4 6 5 4 101 0 2 2 0 95 1 1 0 0 23 75 0 3 3 21 75 0
-          6 6 27 6 76
-          ELSE[ ]	/* Else */
-          MPPEM[ ]	/* MeasurePixelPerEm */
-          PUSHB[ ]	/* 1 value pushed */
-          25
-          LT[ ]	/* LessThan */
-          IF[ ]	/* If */
-          NPUSHB[ ]	/* 34 values pushed */
-          0 5 0 4 6 5 4 101 0 0 0 23 75 0 2 2 1 95 0 1 1 31 75 0 3
-          3 21 75 0 6 6 27 6 76
+          0 6 4 6 132 0 5 0 4 6 5 4 101 0 2 2 0 95 1 1 0 0 23 75 0
+          3 3 21 3 76
           ELSE[ ]	/* Else */
           NPUSHB[ ]	/* 34 values pushed */
           0 6 4 6 132 0 5 0 4 6 5 4 101 0 0 0 23 75 0 2 2 1 95 0 1
@@ -12290,12 +12280,21 @@
           3 1 1 0 48 1 6 7 2 74
           MPPEM[ ]	/* MeasurePixelPerEm */
           PUSHB[ ]	/* 1 value pushed */
+          14
+          LT[ ]	/* LessThan */
+          IF[ ]	/* If */
+          NPUSHB[ ]	/* 49 values pushed */
+          0 3 4 0 4 3 112 0 0 1 1 0 110 0 8 6 6 8 111 0 7 0 6 8 7
+          6 101 0 4 4 2 95 0 2 2 31 75 0 1 1 5 96 9 1 5 5 29 5 76
+          ELSE[ ]	/* Else */
+          MPPEM[ ]	/* MeasurePixelPerEm */
+          PUSHB[ ]	/* 1 value pushed */
           18
           LT[ ]	/* LessThan */
           IF[ ]	/* If */
           NPUSHB[ ]	/* 48 values pushed */
-          0 3 4 0 4 3 112 0 0 1 1 0 110 0 7 0 6 8 7 6 101 0 4 4 2
-          95 0 2 2 31 75 0 1 1 5 96 9 1 5 5 29 75 0 8 8 27 8 76
+          0 3 4 0 4 3 112 0 0 1 1 0 110 0 8 6 8 132 0 7 0 6 8 7 6
+          101 0 4 4 2 95 0 2 2 31 75 0 1 1 5 96 9 1 5 5 29 5 76
           ELSE[ ]	/* Else */
           MPPEM[ ]	/* MeasurePixelPerEm */
           PUSHB[ ]	/* 1 value pushed */
@@ -12303,17 +12302,8 @@
           LT[ ]	/* LessThan */
           IF[ ]	/* If */
           NPUSHB[ ]	/* 49 values pushed */
-          0 3 4 0 4 3 112 0 0 1 4 0 1 124 0 7 0 6 8 7 6 101 0 4 4
-          2 95 0 2 2 31 75 0 1 1 5 96 9 1 5 5 29 75 0 8 8 27 8 76
-          ELSE[ ]	/* Else */
-          MPPEM[ ]	/* MeasurePixelPerEm */
-          PUSHB[ ]	/* 1 value pushed */
-          25
-          LT[ ]	/* LessThan */
-          IF[ ]	/* If */
-          NPUSHB[ ]	/* 50 values pushed */
-          0 3 4 0 4 3 0 126 0 0 1 4 0 1 124 0 7 0 6 8 7 6 101 0 4
-          4 2 95 0 2 2 31 75 0 1 1 5 96 9 1 5 5 29 75 0 8 8 27 8 76
+          0 3 4 0 4 3 112 0 0 1 4 0 1 124 0 8 6 8 132 0 7 0 6 8 7
+          6 101 0 4 4 2 95 0 2 2 31 75 0 1 1 5 96 9 1 5 5 29 5 76
           ELSE[ ]	/* Else */
           NPUSHB[ ]	/* 50 values pushed */
           0 3 4 0 4 3 0 126 0 0 1 4 0 1 124 0 8 6 8 132 0 7 0 6 8
@@ -15445,12 +15435,12 @@
           13 1 4 5 1 74
           MPPEM[ ]	/* MeasurePixelPerEm */
           PUSHB[ ]	/* 1 value pushed */
-          25
+          14
           LT[ ]	/* LessThan */
           IF[ ]	/* If */
-          NPUSHB[ ]	/* 30 values pushed */
-          0 5 0 4 6 5 4 101 2 1 0 0 1 93 0 1 1 20 75 0 3 3 21 75 0
-          6 6 27 6 76
+          NPUSHB[ ]	/* 31 values pushed */
+          0 6 4 4 6 111 0 5 0 4 6 5 4 101 2 1 0 0 1 93 0 1 1 20 75
+          0 3 3 21 3 76
           ELSE[ ]	/* Else */
           NPUSHB[ ]	/* 30 values pushed */
           0 6 4 6 132 0 5 0 4 6 5 4 101 2 1 0 0 1 93 0 1 1 20 75 0
@@ -15471,12 +15461,12 @@
           18 1 6 5 26 1 7 8 2 74
           MPPEM[ ]	/* MeasurePixelPerEm */
           PUSHB[ ]	/* 1 value pushed */
-          25
+          14
           LT[ ]	/* LessThan */
           IF[ ]	/* If */
-          NPUSHB[ ]	/* 42 values pushed */
-          0 8 0 7 9 8 7 101 0 2 2 20 75 4 1 0 0 1 93 3 1 1 1 23 75
-          0 5 5 6 96 10 1 6 6 29 75 0 9 9 27 9 76
+          NPUSHB[ ]	/* 43 values pushed */
+          0 9 7 7 9 111 0 8 0 7 9 8 7 101 0 2 2 20 75 4 1 0 0 1 93
+          3 1 1 1 23 75 0 5 5 6 96 10 1 6 6 29 6 76
           ELSE[ ]	/* Else */
           MPPEM[ ]	/* MeasurePixelPerEm */
           PUSHB[ ]	/* 1 value pushed */

@@ -12,6 +12,5 @@
   <GDEF src="Archivo-SemiBold.G_D_E_F_.ttx"/>
   <GPOS src="Archivo-SemiBold.G_P_O_S_.ttx"/>
   <GSUB src="Archivo-SemiBold.G_S_U_B_.ttx"/>
-  <STAT src="Archivo-SemiBold.S_T_A_T_.ttx"/>
   <hmtx src="Archivo-SemiBold._h_m_t_x.ttx"/>
 </ttFont>

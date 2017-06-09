@@ -1,5 +1,5 @@
 {
-.appVersion = "1021";
+.appVersion = "1029";
 classes = (
 {
 automatic = 1;
@@ -32,6 +32,14 @@ value = 1;
 },
 {
 name = "Use Line Breaks";
+value = 1;
+},
+{
+name = openTypeOS2VendorID;
+value = OMNI;
+},
+{
+name = "Use Typo Metrics";
 value = 1;
 }
 );
@@ -228,7 +236,7 @@ value = 1035;
 },
 {
 name = winDescent;
-value = 250;
+value = 312;
 },
 {
 name = hheaAscender;
@@ -291,7 +299,7 @@ value = 1035;
 },
 {
 name = winDescent;
-value = 250;
+value = 312;
 },
 {
 name = hheaAscender;

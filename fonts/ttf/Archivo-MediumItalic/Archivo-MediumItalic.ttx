@@ -18,6 +18,5 @@
   <GDEF src="Archivo-MediumItalic.G_D_E_F_.ttx"/>
   <GPOS src="Archivo-MediumItalic.G_P_O_S_.ttx"/>
   <GSUB src="Archivo-MediumItalic.G_S_U_B_.ttx"/>
-  <STAT src="Archivo-MediumItalic.S_T_A_T_.ttx"/>
   <DSIG src="Archivo-MediumItalic.D_S_I_G_.ttx"/>
 </ttFont>
