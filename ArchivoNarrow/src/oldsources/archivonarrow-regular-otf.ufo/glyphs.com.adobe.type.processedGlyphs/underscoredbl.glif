@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph format="1" name="underscoredbl">
+  <advance width="500" />
+  <unicode hex="2017" />
+  <outline>
+    <contour>
+      <point name="hintSet0000" type="line" x="478" y="-71" />
+      <point type="line" x="23" y="-71" />
+      <point type="line" x="23" y="-124" />
+      <point type="line" x="478" y="-124" />
+    </contour>
+    <contour>
+      <point type="line" x="478" y="-164" />
+      <point type="line" x="23" y="-164" />
+      <point type="line" x="23" y="-217" />
+      <point type="line" x="478" y="-217" />
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.adobe.type.autohint</key>
+      <data>
+        <hintSetList id="500478-71l23-71l23-124l478-124l478-164l23-164l23-217l478-217l">
+          <hintset pointTag="hintSet0000">
+            <hstem pos="-217" width="53" />
+            <hstem pos="-124" width="53" />
+            <vstem pos="23" width="455" />
+          </hintset>
+        </hintSetList>
+      </data>
+    </dict>
+  </lib>
+</glyph>

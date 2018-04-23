@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph format="1" name="zcaron">
+  <advance width="410" />
+  <unicode hex="017E" />
+  <outline>
+    <contour>
+      <point name="hintSet0000" type="line" x="370" y="526" />
+      <point type="line" x="42" y="526" />
+      <point type="line" x="42" y="453" />
+      <point type="line" x="257" y="453" />
+      <point type="line" x="26" y="39" />
+      <point type="line" x="26" y="0" />
+      <point type="line" x="383" y="0" />
+      <point type="line" x="383" y="73" />
+      <point type="line" x="138" y="73" />
+      <point type="line" x="370" y="488" />
+    </contour>
+    <contour>
+      <point type="line" x="330" y="723" />
+      <point type="line" x="250" y="723" />
+      <point type="line" x="205" y="644" />
+      <point type="line" x="161" y="723" />
+      <point type="line" x="81" y="723" />
+      <point type="line" x="166" y="588" />
+      <point type="line" x="244" y="588" />
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.adobe.type.autohint</key>
+      <data>
+        <hintSetList id="410370526l42526l42453l257453l2639l260l3830l38373l13873l370488l330723l250723l205644l161723l81723l166588l244588l">
+          <hintset pointTag="hintSet0000">
+            <hstem pos="0" width="73" />
+            <hstem pos="453" width="73" />
+            <hstem pos="588" width="135" />
+            <vstem pos="26" width="357" />
+          </hintset>
+        </hintSetList>
+      </data>
+    </dict>
+  </lib>
+</glyph>

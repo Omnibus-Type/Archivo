@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph format="1" name="F">
+  <advance width="501" />
+  <unicode hex="0046" />
+  <outline>
+    <contour>
+      <point name="hintSet0000" type="line" x="158" y="0" />
+      <point type="line" x="158" y="304" />
+      <point type="line" x="430" y="304" />
+      <point type="line" x="430" y="384" />
+      <point type="line" x="158" y="384" />
+      <point type="line" x="158" y="606" />
+      <point type="line" x="466" y="606" />
+      <point type="line" x="466" y="686" />
+      <point type="line" x="70" y="686" />
+      <point type="line" x="70" y="0" />
+    </contour>
+  </outline>
+  <lib>
+  <dict>
+  <key>com.typemytype.robofont.mark</key>
+      <array>
+    <real>0.656</real>
+        <real>1</real>
+        <real>0.6</real>
+        <real>1</real>
+      </array>
+      <key>com.adobe.type.autohint</key>
+      <data>
+        <hintSetList id="5011580l158304l430304l430384l158384l158606l466606l466686l70686l700l">
+          <hintset pointTag="hintSet0000">
+            <hstem pos="21" width="-21" />
+            <hstem pos="304" width="80" />
+            <hstem pos="606" width="80" />
+            <vstem pos="70" width="88" />
+          </hintset>
+        </hintSetList>
+      </data>
+    </dict>
+  </lib>
+</glyph>

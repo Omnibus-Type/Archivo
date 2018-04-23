@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph format="1" name="arrowupdn">
+  <advance width="500" />
+  <unicode hex="2195" />
+  <outline>
+    <contour>
+      <point name="hintSet0000" type="line" x="260" y="711" />
+      <point type="line" x="239" y="711" />
+      <point type="line" x="76" y="514" />
+      <point type="line" x="76" y="472" />
+      <point type="line" x="213" y="525" />
+      <point type="line" x="213" y="-25" />
+      <point type="line" x="76" y="33" />
+      <point type="line" x="76" y="-9" />
+      <point type="line" x="239" y="-206" />
+      <point type="line" x="260" y="-206" />
+      <point type="line" x="423" y="-9" />
+      <point type="line" x="423" y="33" />
+      <point type="line" x="286" y="-25" />
+      <point type="line" x="286" y="525" />
+      <point type="line" x="423" y="472" />
+      <point type="line" x="423" y="514" />
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.adobe.type.autohint</key>
+      <data>
+        <hintSetList id="500260711l239711l76514l76472l213525l213-25l7633l76-9l239-206l260-206l423-9l42333l286-25l286525l423472l423514l">
+          <hintset pointTag="hintSet0000">
+            <hstem pos="-206" width="917" />
+            <vstem pos="213" width="73" />
+          </hintset>
+        </hintSetList>
+      </data>
+    </dict>
+  </lib>
+</glyph>

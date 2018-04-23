@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph format="1" name="Imacron">
+  <advance width="228" />
+  <unicode hex="012A" />
+  <outline>
+    <contour>
+      <point name="hintSet0000" type="line" x="178" y="686" />
+      <point type="line" x="50" y="686" />
+      <point type="line" x="50" y="0" />
+      <point type="line" x="178" y="0" />
+    </contour>
+    <contour>
+      <point type="line" x="242" y="846" />
+      <point type="line" x="-14" y="846" />
+      <point type="line" x="-14" y="759" />
+      <point type="line" x="242" y="759" />
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.adobe.type.autohint</key>
+      <data>
+        <hintSetList id="228178686l50686l500l1780l242846l-14846l-14759l242759l">
+          <hintset pointTag="hintSet0000">
+            <hstem pos="21" width="-21" />
+            <hstem pos="686" width="-20" />
+            <hstem pos="759" width="87" />
+            <vstem pos="50" width="128" />
+          </hintset>
+        </hintSetList>
+      </data>
+    </dict>
+  </lib>
+</glyph>

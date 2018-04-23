@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph format="1" name="intersection">
+  <advance width="722" />
+  <unicode hex="2229" />
+  <outline>
+    <contour>
+      <point name="hintSet0000" type="curve" x="359" y="686" />
+      <point x="204" y="686" />
+      <point x="79" y="568" />
+      <point type="curve" x="79" y="410" />
+      <point type="line" x="79" y="0" />
+      <point type="line" x="199" y="0" />
+      <point type="line" x="199" y="410" />
+      <point x="199" y="510" />
+      <point x="271" y="579" />
+      <point type="curve" x="360" y="579" />
+      <point x="449" y="579" />
+      <point x="521" y="510" />
+      <point type="curve" x="521" y="410" />
+      <point type="line" x="521" y="0" />
+      <point type="line" x="641" y="0" />
+      <point type="line" x="639" y="410" />
+      <point x="638" y="568" />
+      <point x="515" y="686" />
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.adobe.type.autohint</key>
+      <data>
+        <hintSetList id="722359686c204686o79568o79410c790l1990l199410l199510o271579o360579c449579o521510o521410c5210l6410l639410l638568o515686o">
+          <hintset pointTag="hintSet0000">
+            <hstem pos="21" width="-21" />
+            <hstem pos="579" width="107" />
+            <vstem pos="79" width="120" />
+            <vstem pos="521" width="119" />
+          </hintset>
+        </hintSetList>
+      </data>
+    </dict>
+  </lib>
+</glyph>

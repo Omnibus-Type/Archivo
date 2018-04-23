@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph format="1" name="integralbt">
+  <advance width="604" />
+  <unicode hex="2321" />
+  <outline>
+    <contour>
+      <point name="hintSet0000" type="line" x="257" y="859" />
+      <point x="265" y="378" />
+      <point x="274" y="-144" />
+      <point type="curve" x="274" y="-144" />
+      <point x="274" y="-187" />
+      <point x="236" y="-201" />
+      <point type="curve" x="187" y="-201" />
+      <point type="line" x="187" y="-250" />
+      <point x="273" y="-250" />
+      <point x="345" y="-232" />
+      <point type="curve" x="345" y="-138" />
+      <point x="345" y="-58" />
+      <point x="338" y="419" />
+      <point type="curve" x="331" y="859" />
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.adobe.type.autohint</key>
+      <data>
+        <hintSetList id="604257859l265378o274-144o274-144c274-187o236-201o187-201c187-250l273-250o345-232o345-138c345-58o338419o331859c">
+          <hintset pointTag="hintSet0000">
+            <hstem pos="-250" width="49" />
+            <vstem pos="274" width="71" />
+          </hintset>
+        </hintSetList>
+      </data>
+    </dict>
+  </lib>
+</glyph>

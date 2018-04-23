@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph format="1" name="guillemotleft">
+  <advance width="456" />
+  <unicode hex="00AB" />
+  <outline>
+    <contour>
+      <point name="hintSet0000" type="line" x="417" y="526" />
+      <point type="line" x="347" y="526" />
+      <point type="line" x="205" y="326" />
+      <point type="line" x="347" y="126" />
+      <point type="line" x="417" y="126" />
+      <point type="line" x="305" y="326" />
+    </contour>
+    <contour>
+      <point type="line" x="266" y="526" />
+      <point type="line" x="195" y="526" />
+      <point type="line" x="54" y="326" />
+      <point type="line" x="195" y="126" />
+      <point type="line" x="266" y="126" />
+      <point type="line" x="153" y="326" />
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.adobe.type.autohint</key>
+      <data>
+        <hintSetList id="456417526l347526l205326l347126l417126l305326l266526l195526l54326l195126l266126l153326l">
+          <hintset pointTag="hintSet0000">
+            <hstem pos="526" width="-20" />
+            <vstem pos="54" width="363" />
+          </hintset>
+        </hintSetList>
+      </data>
+    </dict>
+  </lib>
+</glyph>

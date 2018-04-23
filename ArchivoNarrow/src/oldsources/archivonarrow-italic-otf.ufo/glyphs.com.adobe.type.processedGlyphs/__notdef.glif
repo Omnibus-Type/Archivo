@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph format="1" name=".notdef">
+  <advance width="228" />
+  <outline>
+    <contour>
+      <point name="hintSet0000" type="line" x="549" y="700" />
+      <point type="line" x="49" y="700" />
+      <point type="line" x="-49" y="0" />
+      <point type="line" x="450" y="0" />
+    </contour>
+    <contour>
+      <point type="line" x="243" y="305" />
+      <point type="line" x="377" y="50" />
+      <point type="line" x="37" y="50" />
+    </contour>
+    <contour>
+      <point type="line" x="85" y="605" />
+      <point type="line" x="220" y="350" />
+      <point type="line" x="14" y="95" />
+    </contour>
+    <contour>
+      <point type="line" x="485" y="605" />
+      <point type="line" x="414" y="95" />
+      <point type="line" x="280" y="350" />
+    </contour>
+    <contour>
+      <point type="line" x="462" y="650" />
+      <point type="line" x="256" y="395" />
+      <point type="line" x="122" y="650" />
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.adobe.type.autohint</key>
+      <data>
+        <hintSetList id="228549700l49700l-490l4500l243305l37750l3750l85605l220350l1495l485605l41495l280350l462650l256395l122650l">
+          <hintset pointTag="hintSet0000">
+            <hstem pos="0" width="50" />
+            <hstem pos="650" width="50" />
+            <vstem pos="-49" width="598" />
+          </hintset>
+        </hintSetList>
+      </data>
+    </dict>
+  </lib>
+</glyph>

@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph format="1" name="house">
+  <advance width="600" />
+  <unicode hex="2302" />
+  <outline>
+    <contour>
+      <point name="hintSet0000" type="line" x="300" y="563" />
+      <point type="line" x="75" y="310" />
+      <point type="line" x="75" y="0" />
+      <point type="line" x="525" y="0" />
+      <point type="line" x="525" y="310" />
+    </contour>
+    <contour>
+      <point type="line" x="300" y="428" />
+      <point type="line" x="433" y="277" />
+      <point type="line" x="433" y="89" />
+      <point type="line" x="167" y="89" />
+      <point type="line" x="167" y="277" />
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.adobe.type.autohint</key>
+      <data>
+        <hintSetList id="600300563l75310l750l5250l525310l300428l433277l43389l16789l167277l">
+          <hintset pointTag="hintSet0000">
+            <hstem pos="0" width="89" />
+            <vstem pos="75" width="92" />
+            <vstem pos="433" width="92" />
+          </hintset>
+        </hintSetList>
+      </data>
+    </dict>
+  </lib>
+</glyph>

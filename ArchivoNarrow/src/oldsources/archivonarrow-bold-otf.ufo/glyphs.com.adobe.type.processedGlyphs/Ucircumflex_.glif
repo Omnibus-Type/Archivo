@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph format="1" name="Ucircumflex">
+  <advance width="592" />
+  <unicode hex="00DB" />
+  <outline>
+    <contour>
+      <point name="hintSet0000" type="line" x="346" y="883" />
+      <point type="line" x="248" y="883" />
+      <point type="line" x="162" y="748" />
+      <point type="line" x="251" y="748" />
+      <point type="line" x="296" y="817" />
+      <point type="line" x="341" y="748" />
+      <point type="line" x="431" y="748" />
+    </contour>
+    <contour>
+      <point type="line" x="61" y="215" />
+      <point x="61" y="66" />
+      <point x="149" y="-12" />
+      <point type="curve" x="296" y="-12" />
+      <point x="443" y="-12" />
+      <point x="532" y="66" />
+      <point type="curve" x="532" y="215" />
+      <point type="line" x="532" y="686" />
+      <point type="line" x="404" y="686" />
+      <point type="line" x="404" y="219" />
+      <point x="404" y="140" />
+      <point x="364" y="98" />
+      <point type="curve" x="296" y="98" />
+      <point x="228" y="98" />
+      <point x="189" y="140" />
+      <point type="curve" x="189" y="219" />
+      <point type="line" x="189" y="686" />
+      <point type="line" x="61" y="686" />
+    </contour>
+  </outline>
+  <lib>
+  <dict>
+  <key>com.typemytype.robofont.mark</key>
+      <array>
+    <real>0.656</real>
+        <real>1</real>
+        <real>0.6</real>
+        <real>1</real>
+      </array>
+      <key>com.adobe.type.autohint</key>
+      <data>
+        <hintSetList id="0652be831044447dac24045f6f43f4b891b95b634b3b45aa09d7a57a9aa9a076d7c9bd123d890db51bc689a3fc6d1a37988c7bc8c6c6280af8a7844fdeacc198">
+          <hintset pointTag="hintSet0000">
+            <hstem pos="-12" width="110" />
+            <hstem pos="686" width="-20" />
+            <hstem pos="748" width="135" />
+            <vstem pos="61" width="128" />
+            <vstem pos="404" width="128" />
+          </hintset>
+        </hintSetList>
+      </data>
+    </dict>
+  </lib>
+</glyph>

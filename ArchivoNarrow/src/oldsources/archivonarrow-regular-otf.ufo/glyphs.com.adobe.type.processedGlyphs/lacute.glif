@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph format="1" name="lacute">
+  <advance width="182" />
+  <unicode hex="013A" />
+  <outline>
+    <contour>
+      <point name="hintSet0000" type="line" x="132" y="0" />
+      <point type="line" x="132" y="723" />
+      <point type="line" x="50" y="723" />
+      <point type="line" x="50" y="0" />
+    </contour>
+    <contour>
+      <point name="hintSet0004" type="line" x="208" y="880" />
+      <point type="line" x="208" y="883" />
+      <point type="line" x="118" y="883" />
+      <point type="line" x="32" y="751" />
+      <point type="line" x="101" y="751" />
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.adobe.type.autohint</key>
+      <data>
+        <hintSetList id="1821320l132723l50723l500l208880l208883l118883l32751l101751l">
+          <hintset pointTag="hintSet0000">
+            <hstem pos="21" width="-21" />
+            <hstem pos="723" width="-20" />
+            <vstem pos="50" width="82" />
+          </hintset>
+          <hintset pointTag="hintSet0004">
+            <hstem pos="21" width="-21" />
+            <hstem pos="723" width="-20" />
+            <hstem pos="751" width="132" />
+            <vstem pos="50" width="82" />
+          </hintset>
+        </hintSetList>
+      </data>
+    </dict>
+  </lib>
+</glyph>

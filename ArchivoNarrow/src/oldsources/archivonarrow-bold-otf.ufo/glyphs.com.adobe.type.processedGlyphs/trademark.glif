@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph format="1" name="trademark">
+  <advance width="820" />
+  <unicode hex="2122" />
+  <outline>
+    <contour>
+      <point name="hintSet0000" type="line" x="730" y="686" />
+      <point type="line" x="626" y="686" />
+      <point type="line" x="563" y="403" />
+      <point type="line" x="559" y="403" />
+      <point type="line" x="496" y="686" />
+      <point type="line" x="385" y="686" />
+      <point type="line" x="385" y="282" />
+      <point type="line" x="451" y="282" />
+      <point type="line" x="451" y="575" />
+      <point type="line" x="456" y="575" />
+      <point type="line" x="521" y="282" />
+      <point type="line" x="588" y="282" />
+      <point type="line" x="654" y="575" />
+      <point type="line" x="658" y="575" />
+      <point type="line" x="658" y="282" />
+      <point type="line" x="730" y="282" />
+    </contour>
+    <contour>
+      <point type="line" x="353" y="686" />
+      <point type="line" x="77" y="686" />
+      <point type="line" x="77" y="619" />
+      <point type="line" x="177" y="619" />
+      <point type="line" x="177" y="282" />
+      <point type="line" x="252" y="282" />
+      <point type="line" x="252" y="619" />
+      <point type="line" x="353" y="619" />
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.adobe.type.autohint</key>
+      <data>
+        <hintSetList id="87a2cb8a6036d9c3c4e9db66870ac4ecd55770475b1ee469d79919baeb5ccf04c2a67b590064aaa3f58e27a24803cb3355b9e1dbe96827b332b486b058e8466b">
+          <hintset pointTag="hintSet0000">
+            <hstem pos="282" width="121" />
+            <hstem pos="619" width="67" />
+            <vstem pos="177" width="75" />
+            <vstem pos="385" width="66" />
+            <vstem pos="658" width="72" />
+          </hintset>
+        </hintSetList>
+      </data>
+    </dict>
+  </lib>
+</glyph>

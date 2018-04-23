@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph format="1" name="idieresis">
+  <advance width="228" />
+  <unicode hex="00EF" />
+  <outline>
+    <contour>
+      <point name="hintSet0000" type="line" x="174" y="526" />
+      <point type="line" x="54" y="526" />
+      <point type="line" x="54" y="0" />
+      <point type="line" x="174" y="0" />
+    </contour>
+    <contour>
+      <point name="hintSet0004" type="line" x="77" y="723" />
+      <point type="line" x="-23" y="723" />
+      <point type="line" x="-23" y="614" />
+      <point type="line" x="77" y="614" />
+    </contour>
+    <contour>
+      <point type="line" x="252" y="723" />
+      <point type="line" x="152" y="723" />
+      <point type="line" x="152" y="614" />
+      <point type="line" x="252" y="614" />
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.adobe.type.autohint</key>
+      <data>
+        <hintSetList id="228174526l54526l540l1740l77723l-23723l-23614l77614l252723l152723l152614l252614l">
+          <hintset pointTag="hintSet0000">
+            <hstem pos="21" width="-21" />
+            <hstem pos="526" width="-20" />
+            <hstem pos="614" width="109" />
+            <vstem pos="54" width="120" />
+          </hintset>
+          <hintset pointTag="hintSet0004">
+            <hstem pos="21" width="-21" />
+            <hstem pos="526" width="-20" />
+            <hstem pos="614" width="109" />
+            <vstem pos="-23" width="100" />
+            <vstem pos="152" width="100" />
+          </hintset>
+        </hintSetList>
+      </data>
+    </dict>
+  </lib>
+</glyph>

@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph format="1" name="revlogicalnot">
+  <advance width="479" />
+  <unicode hex="2310" />
+  <outline>
+    <contour>
+      <point name="hintSet0000" type="line" x="53" y="463" />
+      <point type="line" x="14" y="187" />
+      <point type="line" x="118" y="187" />
+      <point type="line" x="141" y="350" />
+      <point type="line" x="453" y="350" />
+      <point type="line" x="469" y="463" />
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.adobe.type.autohint</key>
+      <data>
+        <hintSetList id="47953463l14187l118187l141350l453350l469463l">
+          <hintset pointTag="hintSet0000">
+            <hstem pos="350" width="113" />
+            <vstem pos="14" width="455" />
+          </hintset>
+        </hintSetList>
+      </data>
+    </dict>
+  </lib>
+</glyph>

@@ -1,0 +1,64 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph format="1" name="Ncaron">
+  <advance width="592" />
+  <unicode hex="0147" />
+  <outline>
+    <contour>
+      <point name="hintSet0000" type="line" x="251" y="883" />
+      <point type="line" x="318" y="748" />
+      <point type="line" x="416" y="748" />
+      <point type="line" x="520" y="883" />
+      <point type="line" x="426" y="883" />
+      <point type="line" x="376" y="814" />
+      <point type="line" x="341" y="883" />
+    </contour>
+    <contour>
+      <point type="line" x="495" y="0" />
+      <point type="line" x="591" y="686" />
+      <point type="line" x="478" y="686" />
+      <point type="line" x="425" y="304" />
+      <point x="423" y="293" />
+      <point x="418" y="247" />
+      <point type="curve" x="418" y="247" />
+      <point type="line" x="415" y="244" />
+      <point x="415" y="244" />
+      <point x="400" y="291" />
+      <point type="curve" x="393" y="308" />
+      <point type="line" x="236" y="686" />
+      <point type="line" x="124" y="686" />
+      <point type="line" x="28" y="0" />
+      <point type="line" x="140" y="0" />
+      <point type="line" x="193" y="382" />
+      <point x="196" y="400" />
+      <point x="199" y="439" />
+      <point type="curve" x="199" y="439" />
+      <point type="line" x="203" y="442" />
+      <point x="203" y="442" />
+      <point x="219" y="392" />
+      <point type="curve" x="225" y="378" />
+      <point type="line" x="382" y="0" />
+    </contour>
+  </outline>
+  <lib>
+  <dict>
+  <key>com.typemytype.robofont.mark</key>
+      <array>
+    <real>0.656</real>
+        <real>1</real>
+        <real>0.6</real>
+        <real>1</real>
+      </array>
+      <key>com.adobe.type.autohint</key>
+      <data>
+        <hintSetList id="c38721c9e037db8581c1138c9b57c080040d653fac4d1ec548ed941addf6d6d16e8a12b973bb614afa933aa39d3e41a886c6e8934c3533c4563b4685b92366fd">
+          <hintset pointTag="hintSet0000">
+            <hstem pos="21" width="-21" />
+            <hstem pos="686" width="-20" />
+            <hstem pos="748" width="135" />
+            <vstem pos="28" width="563" />
+          </hintset>
+        </hintSetList>
+      </data>
+    </dict>
+  </lib>
+</glyph>

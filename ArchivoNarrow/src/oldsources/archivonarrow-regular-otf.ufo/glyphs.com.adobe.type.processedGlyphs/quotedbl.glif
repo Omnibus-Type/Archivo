@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph format="1" name="quotedbl">
+  <advance width="291" />
+  <unicode hex="0022" />
+  <outline>
+    <contour>
+      <point name="hintSet0000" type="line" x="119" y="686" />
+      <point type="line" x="37" y="686" />
+      <point type="line" x="37" y="539" />
+      <point name="hintSet0003" x="45" y="494" />
+      <point x="51" y="451" />
+      <point type="curve" x="59" y="407" />
+      <point type="line" x="98" y="407" />
+      <point type="line" x="119" y="539" />
+    </contour>
+    <contour>
+      <point type="line" x="252" y="686" />
+      <point type="line" x="170" y="686" />
+      <point type="line" x="170" y="539" />
+      <point type="line" x="191" y="407" />
+      <point type="line" x="230" y="407" />
+      <point type="line" x="252" y="539" />
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.adobe.type.autohint</key>
+      <data>
+        <hintSetList id="291119686l37686l37539l45494o51451o59407c98407l119539l252686l170686l170539l191407l230407l252539l">
+          <hintset pointTag="hintSet0000">
+            <hstem pos="686" width="-20" />
+            <vstem pos="37" width="82" />
+            <vstem pos="170" width="82" />
+          </hintset>
+          <hintset pointTag="hintSet0003">
+            <hstem pos="407" width="279" />
+            <vstem pos="37" width="82" />
+            <vstem pos="170" width="82" />
+          </hintset>
+        </hintSetList>
+      </data>
+    </dict>
+  </lib>
+</glyph>

@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph format="1" name="daggerdbl">
+  <advance width="456" />
+  <unicode hex="2021" />
+  <outline>
+    <contour>
+      <point name="hintSet0000" type="line" x="8" y="109" />
+      <point type="line" x="-7" y="-4" />
+      <point type="line" x="159" y="13" />
+      <point type="line" x="116" y="-173" />
+      <point type="line" x="224" y="-173" />
+      <point type="line" x="233" y="13" />
+      <point type="line" x="397" y="-4" />
+      <point type="line" x="413" y="109" />
+      <point type="line" x="244" y="91" />
+      <point type="line" x="285" y="260" />
+      <point type="line" x="291" y="425" />
+      <point type="line" x="455" y="407" />
+      <point type="line" x="471" y="520" />
+      <point type="line" x="302" y="503" />
+      <point type="line" x="345" y="686" />
+      <point type="line" x="237" y="686" />
+      <point type="line" x="228" y="503" />
+      <point type="line" x="66" y="520" />
+      <point type="line" x="50" y="407" />
+      <point type="line" x="217" y="425" />
+      <point type="line" x="177" y="260" />
+      <point type="line" x="170" y="91" />
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.adobe.type.autohint</key>
+      <data>
+        <hintSetList id="5273d23ec772a850630527eca600ea6ea5eb649c44a94cd30415f0809b76691f13ddd3f9f811d082d444ba1fcdff1139ba35eaf019a80adda20b19fda581652a">
+          <hintset pointTag="hintSet0000">
+            <hstem pos="-152" width="-21" />
+            <hstem pos="17" width="-21" />
+            <hstem pos="686" width="-20" />
+            <vstem pos="173.5" width="114.5" />
+          </hintset>
+        </hintSetList>
+      </data>
+    </dict>
+  </lib>
+</glyph>

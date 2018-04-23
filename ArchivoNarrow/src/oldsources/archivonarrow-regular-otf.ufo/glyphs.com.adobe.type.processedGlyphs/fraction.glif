@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph format="1" name="fraction">
+  <advance width="137" />
+  <unicode hex="2044" />
+  <outline>
+    <contour>
+      <point name="hintSet0000" type="line" x="304" y="698" />
+      <point type="line" x="242" y="698" />
+      <point type="line" x="-174" y="-12" />
+      <point type="line" x="-111" y="-12" />
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.adobe.type.autohint</key>
+      <data>
+        <hintSetList id="137304698l242698l-174-12l-111-12l">
+          <hintset pointTag="hintSet0000">
+            <hstem pos="9" width="-21" />
+            <hstem pos="698" width="-20" />
+            <vstem pos="-174" width="478" />
+          </hintset>
+        </hintSetList>
+      </data>
+    </dict>
+  </lib>
+</glyph>

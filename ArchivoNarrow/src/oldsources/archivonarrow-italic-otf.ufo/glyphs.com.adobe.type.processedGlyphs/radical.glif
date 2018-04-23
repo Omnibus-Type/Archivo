@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph format="1" name="radical">
+  <advance width="549" />
+  <unicode hex="221A" />
+  <outline>
+    <contour>
+      <point name="hintSet0000" type="line" x="618" y="857" />
+      <point type="line" x="547" y="857" />
+      <point type="line" x="285" y="-30" />
+      <point x="283" y="-6" />
+      <point x="279" y="31" />
+      <point type="curve" x="275" y="44" />
+      <point type="line" x="197" y="391" />
+      <point type="line" x="25" y="323" />
+      <point type="line" x="37" y="263" />
+      <point type="line" x="118" y="293" />
+      <point x="153" y="146" />
+      <point x="189" y="-1" />
+      <point type="curve" x="225" y="-148" />
+      <point type="line" x="315" y="-148" />
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.adobe.type.autohint</key>
+      <data>
+        <hintSetList id="549618857l547857l285-30l283-6o27931o27544c197391l25323l37263l118293l153146o189-1o225-148c315-148l">
+          <hintset pointTag="hintSet0000">
+            <hstem pos="-148" width="1005" />
+            <vstem pos="25" width="593" />
+          </hintset>
+        </hintSetList>
+      </data>
+    </dict>
+  </lib>
+</glyph>

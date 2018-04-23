@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph format="1" name="Lcommaaccent">
+  <advance width="456" />
+  <unicode hex="013B" />
+  <outline>
+    <contour>
+      <point name="hintSet0000" type="line" x="271" y="-60" />
+      <point type="line" x="186" y="-60" />
+      <point type="line" x="186" y="-151" />
+      <point type="line" x="220" y="-151" />
+      <point type="line" x="197" y="-222" />
+      <point type="line" x="242" y="-222" />
+      <point type="line" x="271" y="-144" />
+    </contour>
+    <contour>
+      <point type="line" x="438" y="0" />
+      <point type="line" x="438" y="80" />
+      <point name="hintSet0009" type="line" x="158" y="80" />
+      <point type="line" x="158" y="686" />
+      <point type="line" x="70" y="686" />
+      <point type="line" x="70" y="0" />
+    </contour>
+  </outline>
+  <lib>
+  <dict>
+  <key>com.typemytype.robofont.mark</key>
+      <array>
+    <real>0.656</real>
+        <real>1</real>
+        <real>0.6</real>
+        <real>1</real>
+      </array>
+      <key>com.adobe.type.autohint</key>
+      <data>
+        <hintSetList id="456271-60l186-60l186-151l220-151l197-222l242-222l271-144l4380l43880l15880l158686l70686l700l">
+          <hintset pointTag="hintSet0000">
+            <hstem pos="-151" width="91" />
+            <hstem pos="0" width="80" />
+            <hstem pos="686" width="-20" />
+            <vstem pos="70" width="88" />
+            <vstem pos="186" width="85" />
+          </hintset>
+          <hintset pointTag="hintSet0009">
+            <hstem pos="-151" width="91" />
+            <hstem pos="0" width="80" />
+            <hstem pos="686" width="-20" />
+            <vstem pos="70" width="88" />
+          </hintset>
+        </hintSetList>
+      </data>
+    </dict>
+  </lib>
+</glyph>

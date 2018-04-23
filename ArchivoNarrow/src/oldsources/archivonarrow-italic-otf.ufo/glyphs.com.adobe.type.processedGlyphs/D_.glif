@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph format="1" name="D">
+  <advance width="592" />
+  <unicode hex="0044" />
+  <outline>
+    <contour>
+      <point name="hintSet0000" type="line" x="265" y="0" />
+      <point x="484" y="0" />
+      <point x="563" y="251" />
+      <point type="curve" x="563" y="429" />
+      <point x="563" y="600" />
+      <point x="479" y="686" />
+      <point type="curve" x="334" y="686" />
+      <point type="line" x="131" y="686" />
+      <point type="line" x="34" y="0" />
+    </contour>
+    <contour>
+      <point type="line" x="324" y="606" />
+      <point x="417" y="606" />
+      <point x="472" y="548" />
+      <point type="curve" x="472" y="428" />
+      <point x="472" y="288" />
+      <point x="427" y="80" />
+      <point type="curve" x="255" y="80" />
+      <point type="line" x="134" y="80" />
+      <point type="line" x="207" y="606" />
+    </contour>
+  </outline>
+  <lib>
+  <dict>
+  <key>com.typemytype.robofont.mark</key>
+      <array>
+    <real>0.656</real>
+        <real>1</real>
+        <real>0.6</real>
+        <real>1</real>
+      </array>
+      <key>com.adobe.type.autohint</key>
+      <data>
+        <hintSetList id="5922650l4840o563251o563429c563600o479686o334686c131686l340l324606l417606o472548o472428c472288o42780o25580c13480l207606l">
+          <hintset pointTag="hintSet0000">
+            <hstem pos="0" width="80" />
+            <hstem pos="606" width="80" />
+            <vstem pos="472" width="91" />
+          </hintset>
+        </hintSetList>
+      </data>
+    </dict>
+  </lib>
+</glyph>

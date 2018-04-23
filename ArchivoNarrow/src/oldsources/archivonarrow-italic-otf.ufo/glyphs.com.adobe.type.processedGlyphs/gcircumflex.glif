@@ -1,0 +1,112 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph format="1" name="gcircumflex">
+  <advance width="456" />
+  <unicode hex="011D" />
+  <outline>
+    <contour>
+      <point name="hintSet0000" type="line" x="327" y="723" />
+      <point type="line" x="249" y="723" />
+      <point type="line" x="144" y="588" />
+      <point type="line" x="227" y="588" />
+      <point name="hintSet0004" type="line" x="283" y="667" />
+      <point name="hintSet0005" type="line" x="316" y="588" />
+      <point type="line" x="393" y="588" />
+    </contour>
+    <contour>
+      <point type="curve" x="250" y="465" />
+      <point x="299" y="465" />
+      <point x="323" y="427" />
+      <point type="curve" x="324" y="352" />
+      <point x="324" y="278" />
+      <point x="295" y="81" />
+      <point type="curve" x="197" y="81" />
+      <point x="148" y="81" />
+      <point x="121" y="113" />
+      <point type="curve" x="121" y="182" />
+      <point x="121" y="265" />
+      <point x="141" y="465" />
+    </contour>
+    <contour>
+      <point type="line" x="282" y="25" />
+      <point name="hintSet0013" x="267" y="-67" />
+      <point x="233" y="-110" />
+      <point type="curve" x="168" y="-110" />
+      <point x="115" y="-110" />
+      <point x="89" y="-81" />
+      <point type="curve" x="89" y="-24" />
+      <point type="line" x="7" y="-24" />
+      <point x="7" y="-108" />
+      <point x="57" y="-182" />
+      <point type="curve" x="165" y="-182" />
+      <point x="278" y="-182" />
+      <point x="344" y="-115" />
+      <point type="curve" x="367" y="49" />
+      <point type="line" x="434" y="526" />
+      <point type="line" x="369" y="526" />
+      <point name="hintSet0020" type="line" x="352" y="453" />
+      <point x="331" y="518" />
+      <point x="289" y="538" />
+      <point type="curve" x="239" y="538" />
+      <point x="141" y="538" />
+      <point x="37" y="430" />
+      <point type="curve" x="37" y="190" />
+      <point x="37" y="101" />
+      <point x="72" y="8" />
+      <point type="curve" x="171" y="8" />
+      <point x="220" y="8" />
+      <point x="257" y="34" />
+      <point type="curve" x="293" y="91" />
+    </contour>
+  </outline>
+  <lib>
+  <dict>
+  <key>com.typemytype.robofont.mark</key>
+      <array>
+    <real>0.656</real>
+        <real>1</real>
+        <real>0.6</real>
+        <real>1</real>
+      </array>
+      <key>com.adobe.type.autohint</key>
+      <data>
+        <hintSetList id="2452aa768bcbfcbf769f28ea63ff665cf647a5be73da950090ff86506cac24bae2f16f9c6ce586caa90e39417c3f1e7ef16ae1fde43470345a16d04d60e4ddde">
+          <hintset pointTag="hintSet0000">
+            <hstem pos="-182" width="72" />
+            <hstem pos="8" width="73" />
+            <hstem pos="465" width="73" />
+            <hstem pos="588" width="135" />
+            <vstem pos="37" width="84" />
+          </hintset>
+          <hintset pointTag="hintSet0004">
+            <hstem pos="-182" width="72" />
+            <hstem pos="8" width="73" />
+            <hstem pos="465" width="73" />
+            <hstem pos="667" width="56" />
+            <vstem pos="37" width="84" />
+          </hintset>
+          <hintset pointTag="hintSet0005">
+            <hstem pos="-182" width="72" />
+            <hstem pos="8" width="73" />
+            <hstem pos="465" width="73" />
+            <hstem pos="588" width="135" />
+            <vstem pos="37" width="84" />
+          </hintset>
+          <hintset pointTag="hintSet0013">
+            <hstem pos="-182" width="72" />
+            <hstem pos="8" width="73" />
+            <hstem pos="526" width="-20" />
+            <hstem pos="588" width="135" />
+            <vstem pos="7" width="82" />
+          </hintset>
+          <hintset pointTag="hintSet0020">
+            <hstem pos="-182" width="72" />
+            <hstem pos="8" width="73" />
+            <hstem pos="465" width="73" />
+            <hstem pos="588" width="135" />
+            <vstem pos="37" width="84" />
+          </hintset>
+        </hintSetList>
+      </data>
+    </dict>
+  </lib>
+</glyph>

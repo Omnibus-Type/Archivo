@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph format="1" name="dieresis">
+  <advance width="273" />
+  <unicode hex="00A8" />
+  <outline>
+    <contour>
+      <point name="hintSet0000" type="line" x="274" y="723" />
+      <point type="line" x="174" y="723" />
+      <point type="line" x="174" y="614" />
+      <point type="line" x="274" y="614" />
+    </contour>
+    <contour>
+      <point type="line" x="99" y="723" />
+      <point type="line" x="-1" y="723" />
+      <point type="line" x="-1" y="614" />
+      <point type="line" x="99" y="614" />
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.adobe.type.autohint</key>
+      <data>
+        <hintSetList id="273274723l174723l174614l274614l99723l-1723l-1614l99614l">
+          <hintset pointTag="hintSet0000">
+            <hstem pos="614" width="109" />
+            <vstem pos="-1" width="100" />
+            <vstem pos="174" width="100" />
+          </hintset>
+        </hintSetList>
+      </data>
+    </dict>
+  </lib>
+</glyph>

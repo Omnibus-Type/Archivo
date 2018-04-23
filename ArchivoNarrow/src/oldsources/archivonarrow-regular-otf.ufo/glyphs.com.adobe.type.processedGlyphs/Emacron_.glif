@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph format="1" name="Emacron">
+  <advance width="547" />
+  <unicode hex="0112" />
+  <outline>
+    <contour>
+      <point name="hintSet0000" type="line" x="399" y="831" />
+      <point type="line" x="148" y="831" />
+      <point type="line" x="148" y="759" />
+      <point type="line" x="399" y="759" />
+    </contour>
+    <contour>
+      <point type="line" x="499" y="0" />
+      <point type="line" x="499" y="80" />
+      <point name="hintSet0006" type="line" x="158" y="80" />
+      <point type="line" x="158" y="311" />
+      <point type="line" x="449" y="311" />
+      <point type="line" x="449" y="391" />
+      <point type="line" x="158" y="391" />
+      <point type="line" x="158" y="606" />
+      <point type="line" x="493" y="606" />
+      <point type="line" x="493" y="686" />
+      <point type="line" x="70" y="686" />
+      <point type="line" x="70" y="0" />
+    </contour>
+  </outline>
+  <lib>
+  <dict>
+  <key>com.typemytype.robofont.mark</key>
+      <array>
+    <real>0.656</real>
+        <real>1</real>
+        <real>0.6</real>
+        <real>1</real>
+      </array>
+      <key>com.adobe.type.autohint</key>
+      <data>
+        <hintSetList id="547399831l148831l148759l399759l4990l49980l15880l158311l449311l449391l158391l158606l493606l493686l70686l700l">
+          <hintset pointTag="hintSet0000">
+            <hstem pos="0" width="80" />
+            <hstem pos="311" width="80" />
+            <hstem pos="606" width="80" />
+            <hstem pos="759" width="72" />
+            <vstem pos="148" width="251" />
+          </hintset>
+          <hintset pointTag="hintSet0006">
+            <hstem pos="0" width="80" />
+            <hstem pos="311" width="80" />
+            <hstem pos="606" width="80" />
+            <hstem pos="759" width="72" />
+            <vstem pos="70" width="88" />
+          </hintset>
+        </hintSetList>
+      </data>
+    </dict>
+  </lib>
+</glyph>

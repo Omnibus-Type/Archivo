@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph format="1" name="Zdotaccent">
+  <advance width="501" />
+  <unicode hex="017B" />
+  <outline>
+    <contour>
+      <point name="hintSet0000" type="line" x="383" y="883" />
+      <point type="line" x="296" y="883" />
+      <point type="line" x="283" y="788" />
+      <point type="line" x="370" y="788" />
+    </contour>
+    <contour>
+      <point type="line" x="439" y="0" />
+      <point type="line" x="451" y="80" />
+      <point type="line" x="121" y="80" />
+      <point type="line" x="523" y="648" />
+      <point type="line" x="526" y="686" />
+      <point type="line" x="98" y="686" />
+      <point type="line" x="86" y="606" />
+      <point type="line" x="388" y="606" />
+      <point type="line" x="-13" y="38" />
+      <point type="line" x="-16" y="0" />
+    </contour>
+  </outline>
+  <lib>
+  <dict>
+  <key>com.typemytype.robofont.mark</key>
+      <array>
+    <real>0.656</real>
+        <real>1</real>
+        <real>0.6</real>
+        <real>1</real>
+      </array>
+      <key>com.adobe.type.autohint</key>
+      <data>
+        <hintSetList id="501383883l296883l283788l370788l4390l45180l12180l523648l526686l98686l86606l388606l-1338l-160l">
+          <hintset pointTag="hintSet0000">
+            <hstem pos="0" width="80" />
+            <hstem pos="606" width="80" />
+            <hstem pos="788" width="95" />
+            <vstem pos="-16" width="542" />
+          </hintset>
+        </hintSetList>
+      </data>
+    </dict>
+  </lib>
+</glyph>

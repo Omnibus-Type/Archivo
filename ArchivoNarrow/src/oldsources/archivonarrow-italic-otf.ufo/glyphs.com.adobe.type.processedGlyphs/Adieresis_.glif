@@ -1,0 +1,64 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph format="1" name="Adieresis">
+  <advance width="547" />
+  <unicode hex="00C4" />
+  <outline>
+    <contour>
+      <point name="hintSet0000" type="line" x="483" y="883" />
+      <point type="line" x="396" y="883" />
+      <point type="line" x="383" y="788" />
+      <point type="line" x="470" y="788" />
+    </contour>
+    <contour>
+      <point type="line" x="333" y="883" />
+      <point type="line" x="247" y="883" />
+      <point type="line" x="233" y="788" />
+      <point type="line" x="320" y="788" />
+    </contour>
+    <contour>
+      <point type="line" x="421" y="0" />
+      <point type="line" x="512" y="0" />
+      <point type="line" x="391" y="686" />
+      <point type="line" x="278" y="686" />
+      <point type="line" x="-36" y="0" />
+      <point type="line" x="51" y="0" />
+      <point type="line" x="120" y="153" />
+      <point type="line" x="395" y="153" />
+    </contour>
+    <contour>
+      <point type="line" x="294" y="538" />
+      <point x="304" y="560" />
+      <point x="322" y="614" />
+      <point type="curve" x="322" y="614" />
+      <point type="line" x="326" y="614" />
+      <point x="326" y="614" />
+      <point x="327" y="561" />
+      <point type="curve" x="331" y="538" />
+      <point type="line" x="382" y="233" />
+      <point type="line" x="156" y="233" />
+    </contour>
+  </outline>
+  <lib>
+  <dict>
+  <key>com.typemytype.robofont.mark</key>
+      <array>
+    <real>0.656</real>
+        <real>1</real>
+        <real>0.6</real>
+        <real>1</real>
+      </array>
+      <key>com.adobe.type.autohint</key>
+      <data>
+        <hintSetList id="e1cdeea71874e05f96fbb73fe9e5ec3fae060a49f817778ecd949900632198eb2c1cc2ac11c84070c7a5686dbf32a1f1ec6a788a273afd8874326a7175ecf629">
+          <hintset pointTag="hintSet0000">
+            <hstem pos="21" width="-21" />
+            <hstem pos="153" width="80" />
+            <hstem pos="614" width="72" />
+            <hstem pos="788" width="95" />
+            <vstem pos="-36" width="548" />
+          </hintset>
+        </hintSetList>
+      </data>
+    </dict>
+  </lib>
+</glyph>

@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph format="1" name="Udieresis">
+  <advance width="592" />
+  <unicode hex="00DC" />
+  <outline>
+    <contour>
+      <point name="hintSet0000" type="line" x="579" y="686" />
+      <point type="line" x="491" y="686" />
+      <point type="line" x="425" y="218" />
+      <point x="411" y="121" />
+      <point x="352" y="69" />
+      <point type="curve" x="266" y="69" />
+      <point x="190" y="69" />
+      <point x="146" y="109" />
+      <point type="curve" x="146" y="185" />
+      <point x="146" y="207" />
+      <point x="215" y="686" />
+      <point type="curve" x="215" y="686" />
+      <point type="line" x="127" y="686" />
+      <point x="127" y="686" />
+      <point x="57" y="219" />
+      <point type="curve" x="57" y="173" />
+      <point x="57" y="52" />
+      <point x="133" y="-12" />
+      <point type="curve" x="264" y="-12" />
+      <point x="401" y="-12" />
+      <point x="491" y="69" />
+      <point type="curve" x="513" y="223" />
+    </contour>
+    <contour>
+      <point type="line" x="500" y="883" />
+      <point type="line" x="414" y="883" />
+      <point type="line" x="400" y="788" />
+      <point type="line" x="487" y="788" />
+    </contour>
+    <contour>
+      <point type="line" x="351" y="883" />
+      <point type="line" x="264" y="883" />
+      <point type="line" x="250" y="788" />
+      <point type="line" x="337" y="788" />
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.adobe.type.autohint</key>
+      <data>
+        <hintSetList id="38c60d89149c6e77cee5d6c82d8063376078f199388c038f3c97b7530f56c6ae58fd0983e9cbb5d091acdcc9ae9643953ce70a6a9db1d2e70ea10f826d724e54">
+          <hintset pointTag="hintSet0000">
+            <hstem pos="-12" width="81" />
+            <hstem pos="686" width="-20" />
+            <hstem pos="788" width="95" />
+            <vstem pos="57" width="89" />
+          </hintset>
+        </hintSetList>
+      </data>
+    </dict>
+  </lib>
+</glyph>

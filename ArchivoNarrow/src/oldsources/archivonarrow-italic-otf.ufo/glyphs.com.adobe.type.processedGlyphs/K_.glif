@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph format="1" name="K">
+  <advance width="547" />
+  <unicode hex="004B" />
+  <outline>
+    <contour>
+      <point name="hintSet0000" type="line" x="219" y="686" />
+      <point type="line" x="131" y="686" />
+      <point type="line" x="34" y="0" />
+      <point type="line" x="122" y="0" />
+      <point type="line" x="152" y="213" />
+      <point type="line" x="279" y="335" />
+      <point type="line" x="401" y="0" />
+      <point type="line" x="499" y="0" />
+      <point type="line" x="344" y="409" />
+      <point type="line" x="589" y="686" />
+      <point type="line" x="484" y="686" />
+      <point type="line" x="168" y="329" />
+    </contour>
+  </outline>
+  <lib>
+  <dict>
+  <key>com.typemytype.robofont.mark</key>
+      <array>
+    <real>0.656</real>
+        <real>1</real>
+        <real>0.6</real>
+        <real>1</real>
+      </array>
+      <key>com.adobe.type.autohint</key>
+      <data>
+        <hintSetList id="547219686l131686l340l1220l152213l279335l4010l4990l344409l589686l484686l168329l">
+          <hintset pointTag="hintSet0000">
+            <hstem pos="21" width="-21" />
+            <hstem pos="686" width="-20" />
+            <vstem pos="34" width="555" />
+          </hintset>
+        </hintSetList>
+      </data>
+    </dict>
+  </lib>
+</glyph>

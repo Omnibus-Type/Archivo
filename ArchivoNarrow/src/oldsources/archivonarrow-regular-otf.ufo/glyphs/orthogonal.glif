@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="orthogonal" format="1">
+  <advance width="979"/>
+  <unicode hex="221F"/>
+  <outline>
+    <contour>
+      <point x="251" y="625" type="line"/>
+      <point x="177" y="625" type="line"/>
+      <point x="177" y="0" type="line"/>
+      <point x="802" y="0" type="line"/>
+      <point x="802" y="66" type="line"/>
+      <point x="251" y="66" type="line"/>
+    </contour>
+  </outline>
+</glyph>

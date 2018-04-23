@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph format="1" name="lcaron">
+  <advance width="325" />
+  <unicode hex="013E" />
+  <outline>
+    <contour>
+      <point name="hintSet0000" type="line" x="122" y="723" />
+      <point type="line" x="22" y="0" />
+      <point type="line" x="141" y="0" />
+      <point type="line" x="241" y="723" />
+    </contour>
+    <contour>
+      <point name="hintSet0004" type="line" x="321" y="549" />
+      <point type="line" x="248" y="393" />
+      <point type="line" x="320" y="393" />
+      <point type="line" x="410" y="561" />
+      <point type="line" x="427" y="686" />
+      <point type="line" x="289" y="686" />
+      <point type="line" x="270" y="549" />
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.adobe.type.autohint</key>
+      <data>
+        <hintSetList id="325122723l220l1410l241723l321549l248393l320393l410561l427686l289686l270549l">
+          <hintset pointTag="hintSet0000">
+            <hstem pos="21" width="-21" />
+            <hstem pos="549" width="174" />
+            <vstem pos="22" width="405" />
+          </hintset>
+          <hintset pointTag="hintSet0004">
+            <hstem pos="21" width="-21" />
+            <hstem pos="549" width="137" />
+            <vstem pos="22" width="405" />
+          </hintset>
+        </hintSetList>
+      </data>
+    </dict>
+  </lib>
+</glyph>

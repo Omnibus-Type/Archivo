@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph format="1" name="icircumflex">
+  <advance width="228" />
+  <unicode hex="00EE" />
+  <outline>
+    <contour>
+      <point name="hintSet0000" type="line" x="174" y="526" />
+      <point type="line" x="54" y="526" />
+      <point type="line" x="54" y="0" />
+      <point type="line" x="174" y="0" />
+    </contour>
+    <contour>
+      <point type="line" x="164" y="723" />
+      <point type="line" x="66" y="723" />
+      <point type="line" x="-21" y="588" />
+      <point type="line" x="70" y="588" />
+      <point name="hintSet0008" type="line" x="115" y="657" />
+      <point name="hintSet0009" type="line" x="159" y="588" />
+      <point type="line" x="249" y="588" />
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.adobe.type.autohint</key>
+      <data>
+        <hintSetList id="228174526l54526l540l1740l164723l66723l-21588l70588l115657l159588l249588l">
+          <hintset pointTag="hintSet0000">
+            <hstem pos="21" width="-21" />
+            <hstem pos="526" width="-20" />
+            <hstem pos="588" width="135" />
+            <vstem pos="54" width="120" />
+          </hintset>
+          <hintset pointTag="hintSet0008">
+            <hstem pos="21" width="-21" />
+            <hstem pos="526" width="-20" />
+            <hstem pos="657" width="66" />
+            <vstem pos="54" width="120" />
+          </hintset>
+          <hintset pointTag="hintSet0009">
+            <hstem pos="21" width="-21" />
+            <hstem pos="526" width="-20" />
+            <hstem pos="588" width="135" />
+            <vstem pos="54" width="120" />
+          </hintset>
+        </hintSetList>
+      </data>
+    </dict>
+  </lib>
+</glyph>

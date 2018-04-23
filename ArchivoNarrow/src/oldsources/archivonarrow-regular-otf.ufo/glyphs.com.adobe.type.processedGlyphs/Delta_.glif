@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph format="1" name="Delta">
+  <advance width="559" />
+  <unicode hex="2206" />
+  <outline>
+    <contour>
+      <point name="hintSet0000" type="line" x="16" y="0" />
+      <point type="line" x="548" y="0" />
+      <point type="line" x="548" y="38" />
+      <point type="line" x="338" y="686" />
+      <point type="line" x="225" y="686" />
+      <point type="line" x="16" y="38" />
+    </contour>
+    <contour>
+      <point type="line" x="277" y="589" />
+      <point type="line" x="281" y="589" />
+      <point type="line" x="436" y="84" />
+      <point type="line" x="117" y="84" />
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.adobe.type.autohint</key>
+      <data>
+        <hintSetList id="559160l5480l54838l338686l225686l1638l277589l281589l43684l11784l">
+          <hintset pointTag="hintSet0000">
+            <hstem pos="0" width="84" />
+            <hstem pos="589" width="97" />
+            <vstem pos="16" width="532" />
+          </hintset>
+        </hintSetList>
+      </data>
+    </dict>
+  </lib>
+</glyph>

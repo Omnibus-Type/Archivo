@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph format="1" name="twosuperior">
+  <advance width="273" />
+  <unicode hex="00B2" />
+  <outline>
+    <contour>
+      <point name="hintSet0000" type="line" x="23" y="320" />
+      <point type="line" x="260" y="320" />
+      <point type="line" x="271" y="394" />
+      <point type="line" x="135" y="394" />
+      <point x="201" y="474" />
+      <point x="303" y="540" />
+      <point type="curve" x="303" y="648" />
+      <point x="303" y="709" />
+      <point x="259" y="734" />
+      <point type="curve" x="200" y="734" />
+      <point x="112" y="734" />
+      <point x="66" y="660" />
+      <point type="curve" x="66" y="581" />
+      <point type="line" x="145" y="581" />
+      <point x="153" y="639" />
+      <point x="168" y="664" />
+      <point type="curve" x="192" y="664" />
+      <point x="213" y="664" />
+      <point x="219" y="649" />
+      <point type="curve" x="219" y="634" />
+      <point x="219" y="531" />
+      <point x="44" y="470" />
+      <point type="curve" x="26" y="338" />
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.adobe.type.autohint</key>
+      <data>
+        <hintSetList id="c36302a8c8b89d27374ccaa64b9d709dc3ecb1eb42a51eb516a1a03194c136e2f21bec06c2e1d0b0be8e686aa6362615d5bb90250454ca59ada034325b364dd8">
+          <hintset pointTag="hintSet0000">
+            <hstem pos="320" width="74" />
+            <hstem pos="664" width="70" />
+            <vstem pos="66" width="79" />
+            <vstem pos="219" width="84" />
+          </hintset>
+        </hintSetList>
+      </data>
+    </dict>
+  </lib>
+</glyph>

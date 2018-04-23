@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph format="1" name="dagger">
+  <advance width="456" />
+  <unicode hex="2020" />
+  <outline>
+    <contour>
+      <point name="hintSet0000" type="line" x="213" y="425" />
+      <point type="line" x="109" y="-173" />
+      <point type="line" x="223" y="-173" />
+      <point type="line" x="287" y="425" />
+      <point type="line" x="451" y="407" />
+      <point type="line" x="467" y="520" />
+      <point type="line" x="298" y="503" />
+      <point type="line" x="341" y="686" />
+      <point type="line" x="233" y="686" />
+      <point type="line" x="224" y="503" />
+      <point type="line" x="62" y="520" />
+      <point type="line" x="46" y="407" />
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.adobe.type.autohint</key>
+      <data>
+        <hintSetList id="456213425l109-173l223-173l287425l451407l467520l298503l341686l233686l224503l62520l46407l">
+          <hintset pointTag="hintSet0000">
+            <hstem pos="-152" width="-21" />
+            <hstem pos="686" width="-20" />
+            <vstem pos="46" width="421" />
+          </hintset>
+        </hintSetList>
+      </data>
+    </dict>
+  </lib>
+</glyph>

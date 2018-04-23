@@ -1,0 +1,73 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph format="1" name="AE">
+  <advance width="820" />
+  <unicode hex="00C6" />
+  <outline>
+    <contour>
+      <point name="hintSet0000" type="line" x="777" y="0" />
+      <point type="line" x="777" y="114" />
+      <point type="line" x="550" y="114" />
+      <point type="line" x="506" y="294" />
+      <point type="line" x="727" y="294" />
+      <point type="line" x="727" y="408" />
+      <point type="line" x="478" y="408" />
+      <point type="line" x="438" y="572" />
+      <point type="line" x="771" y="572" />
+      <point type="line" x="771" y="686" />
+      <point type="line" x="255" y="686" />
+      <point type="line" x="-8" y="0" />
+      <point type="line" x="111" y="0" />
+      <point name="hintSet0013" type="line" x="161" y="135" />
+      <point type="line" x="414" y="135" />
+      <point name="hintSet0015" type="line" x="447" y="0" />
+    </contour>
+    <contour>
+      <point type="line" x="313" y="546" />
+      <point type="line" x="317" y="546" />
+      <point name="hintSet0018" type="line" x="387" y="249" />
+      <point type="line" x="203" y="249" />
+    </contour>
+  </outline>
+  <lib>
+  <dict>
+  <key>com.typemytype.robofont.mark</key>
+      <array>
+    <real>0.656</real>
+        <real>1</real>
+        <real>0.6</real>
+        <real>1</real>
+      </array>
+      <key>com.adobe.type.autohint</key>
+      <data>
+        <hintSetList id="eea28a1ca2e6a6ce9f2954471328c00709966cfca882aee1a27e7a3a3cda5c86143225d7c5c711538a3a22acb8eba927e7905520f037c8705e155b9cdd971115">
+          <hintset pointTag="hintSet0000">
+            <hstem pos="0" width="114" />
+            <hstem pos="294" width="114" />
+            <hstem pos="572" width="114" />
+            <vstem pos="-8" width="785" />
+          </hintset>
+          <hintset pointTag="hintSet0013">
+            <hstem pos="0" width="114" />
+            <hstem pos="135" width="114" />
+            <hstem pos="294" width="114" />
+            <hstem pos="572" width="114" />
+            <vstem pos="-8" width="785" />
+          </hintset>
+          <hintset pointTag="hintSet0015">
+            <hstem pos="0" width="114" />
+            <hstem pos="294" width="114" />
+            <hstem pos="572" width="114" />
+            <vstem pos="-8" width="785" />
+          </hintset>
+          <hintset pointTag="hintSet0018">
+            <hstem pos="0" width="114" />
+            <hstem pos="135" width="114" />
+            <hstem pos="294" width="114" />
+            <hstem pos="572" width="114" />
+            <vstem pos="-8" width="785" />
+          </hintset>
+        </hintSetList>
+      </data>
+    </dict>
+  </lib>
+</glyph>

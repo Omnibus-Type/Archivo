@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph format="1" name="dotlessi">
+  <advance width="228" />
+  <unicode hex="0131" />
+  <outline>
+    <contour>
+      <point name="hintSet0000" type="line" x="96" y="526" />
+      <point type="line" x="23" y="0" />
+      <point type="line" x="142" y="0" />
+      <point type="line" x="215" y="526" />
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.adobe.type.autohint</key>
+      <data>
+        <hintSetList id="22896526l230l1420l215526l">
+          <hintset pointTag="hintSet0000">
+            <hstem pos="21" width="-21" />
+            <hstem pos="526" width="-20" />
+            <vstem pos="23" width="192" />
+          </hintset>
+        </hintSetList>
+      </data>
+    </dict>
+  </lib>
+</glyph>

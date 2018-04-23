@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph format="1" name="Ygrave">
+  <advance width="547" />
+  <unicode hex="1EF2" />
+  <outline>
+    <contour>
+      <point name="hintSet0000" type="line" x="547" y="686" />
+      <point type="line" x="418" y="686" />
+      <point type="line" x="279" y="385" />
+      <point type="line" x="275" y="385" />
+      <point type="line" x="135" y="686" />
+      <point type="line" x="0" y="686" />
+      <point type="line" x="210" y="259" />
+      <point type="line" x="210" y="0" />
+      <point type="line" x="338" y="0" />
+      <point type="line" x="338" y="259" />
+    </contour>
+    <contour>
+      <point type="line" x="256" y="883" />
+      <point type="line" x="136" y="883" />
+      <point type="line" x="135" y="880" />
+      <point type="line" x="243" y="751" />
+      <point type="line" x="342" y="751" />
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.adobe.type.autohint</key>
+      <data>
+        <hintSetList id="547547686l418686l279385l275385l135686l0686l210259l2100l3380l338259l256883l136883l135880l243751l342751l">
+          <hintset pointTag="hintSet0000">
+            <hstem pos="21" width="-21" />
+            <hstem pos="686" width="-20" />
+            <hstem pos="751" width="132" />
+            <vstem pos="210" width="128" />
+          </hintset>
+        </hintSetList>
+      </data>
+    </dict>
+  </lib>
+</glyph>

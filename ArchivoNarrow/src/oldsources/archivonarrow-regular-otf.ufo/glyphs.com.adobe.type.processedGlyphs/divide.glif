@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph format="1" name="divide">
+  <advance width="549" />
+  <unicode hex="00F7" />
+  <outline>
+    <contour>
+      <point name="hintSet0000" type="line" x="505" y="297" />
+      <point type="line" x="43" y="297" />
+      <point type="line" x="43" y="213" />
+      <point type="line" x="505" y="213" />
+    </contour>
+    <contour>
+      <point type="line" x="316" y="141" />
+      <point type="line" x="232" y="141" />
+      <point type="line" x="232" y="51" />
+      <point type="line" x="316" y="51" />
+    </contour>
+    <contour>
+      <point type="line" x="316" y="460" />
+      <point type="line" x="232" y="460" />
+      <point type="line" x="232" y="369" />
+      <point type="line" x="316" y="369" />
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.adobe.type.autohint</key>
+      <data>
+        <hintSetList id="549505297l43297l43213l505213l316141l232141l23251l31651l316460l232460l232369l316369l">
+          <hintset pointTag="hintSet0000">
+            <hstem pos="51" width="90" />
+            <hstem pos="213" width="84" />
+            <hstem pos="369" width="91" />
+            <vstem pos="232" width="84" />
+          </hintset>
+        </hintSetList>
+      </data>
+    </dict>
+  </lib>
+</glyph>

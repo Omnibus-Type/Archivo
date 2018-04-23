@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="Ibreve" format="1">
+  <advance width="228"/>
+  <unicode hex="012C"/>
+  <outline>
+    <contour>
+      <point x="178" y="686" type="line"/>
+      <point x="50" y="686" type="line"/>
+      <point x="50" y="0" type="line"/>
+      <point x="178" y="0" type="line"/>
+    </contour>
+    <contour>
+      <point x="174" y="883" type="line"/>
+      <point x="172" y="869"/>
+      <point x="148" y="850"/>
+      <point x="114" y="850" type="curve" smooth="yes"/>
+      <point x="81" y="850"/>
+      <point x="58" y="869"/>
+      <point x="55" y="883" type="curve"/>
+      <point x="-20" y="883" type="line"/>
+      <point x="-20" y="833"/>
+      <point x="32" y="776"/>
+      <point x="114" y="776" type="curve" smooth="yes"/>
+      <point x="197" y="776"/>
+      <point x="248" y="833"/>
+      <point x="248" y="883" type="curve"/>
+    </contour>
+  </outline>
+</glyph>

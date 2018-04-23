@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph format="1" name="periodcentered">
+  <advance width="228" />
+  <unicode hex="00B7" />
+  <outline>
+    <contour>
+      <point name="hintSet0000" type="line" x="79" y="409" />
+      <point type="line" x="60" y="278" />
+      <point type="line" x="181" y="278" />
+      <point type="line" x="200" y="409" />
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.adobe.type.autohint</key>
+      <data>
+        <hintSetList id="22879409l60278l181278l200409l">
+          <hintset pointTag="hintSet0000">
+            <hstem pos="278" width="131" />
+            <vstem pos="60" width="140" />
+          </hintset>
+        </hintSetList>
+      </data>
+    </dict>
+  </lib>
+</glyph>

@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph format="1" name="quotedblright">
+  <advance width="410" />
+  <unicode hex="201D" />
+  <outline>
+    <contour>
+      <point name="hintSet0000" type="line" x="326" y="549" />
+      <point type="line" x="253" y="393" />
+      <point type="line" x="325" y="393" />
+      <point type="line" x="415" y="561" />
+      <point type="line" x="432" y="686" />
+      <point type="line" x="294" y="686" />
+      <point type="line" x="275" y="549" />
+    </contour>
+    <contour>
+      <point type="line" x="143" y="549" />
+      <point type="line" x="70" y="393" />
+      <point type="line" x="142" y="393" />
+      <point type="line" x="232" y="561" />
+      <point type="line" x="249" y="686" />
+      <point type="line" x="111" y="686" />
+      <point type="line" x="92" y="549" />
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.adobe.type.autohint</key>
+      <data>
+        <hintSetList id="410326549l253393l325393l415561l432686l294686l275549l143549l70393l142393l232561l249686l111686l92549l">
+          <hintset pointTag="hintSet0000">
+            <hstem pos="549" width="137" />
+            <vstem pos="70" width="362" />
+          </hintset>
+        </hintSetList>
+      </data>
+    </dict>
+  </lib>
+</glyph>

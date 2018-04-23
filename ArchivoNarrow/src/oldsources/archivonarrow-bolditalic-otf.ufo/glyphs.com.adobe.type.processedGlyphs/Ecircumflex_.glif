@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph format="1" name="Ecircumflex">
+  <advance width="547" />
+  <unicode hex="00CA" />
+  <outline>
+    <contour>
+      <point name="hintSet0000" type="line" x="323" y="883" />
+      <point type="line" x="219" y="748" />
+      <point type="line" x="312" y="748" />
+      <point type="line" x="363" y="817" />
+      <point type="line" x="397" y="748" />
+      <point type="line" x="487" y="748" />
+      <point type="line" x="421" y="883" />
+    </contour>
+    <contour>
+      <point type="line" x="466" y="0" />
+      <point type="line" x="482" y="114" />
+      <point type="line" x="170" y="114" />
+      <point type="line" x="196" y="294" />
+      <point type="line" x="458" y="294" />
+      <point type="line" x="474" y="408" />
+      <point type="line" x="212" y="408" />
+      <point type="line" x="235" y="572" />
+      <point type="line" x="540" y="572" />
+      <point type="line" x="556" y="686" />
+      <point type="line" x="124" y="686" />
+      <point type="line" x="28" y="0" />
+    </contour>
+  </outline>
+  <lib>
+  <dict>
+  <key>com.typemytype.robofont.mark</key>
+      <array>
+    <real>0.656</real>
+        <real>1</real>
+        <real>0.6</real>
+        <real>1</real>
+      </array>
+      <key>com.adobe.type.autohint</key>
+      <data>
+        <hintSetList id="65cd147c18fd50302893b8712276adabf21f01a0f802d86f58823ebf5b62d3d1e5a7bf5003cf3bcd8a789bde26ae111f2437861bfe89f3464189c5becbdea8d9">
+          <hintset pointTag="hintSet0000">
+            <hstem pos="0" width="114" />
+            <hstem pos="294" width="114" />
+            <hstem pos="572" width="114" />
+            <hstem pos="748" width="135" />
+            <vstem pos="28" width="528" />
+          </hintset>
+        </hintSetList>
+      </data>
+    </dict>
+  </lib>
+</glyph>

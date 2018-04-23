@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph format="1" name="ij">
+  <advance width="456" />
+  <unicode hex="0133" />
+  <outline>
+    <contour>
+      <point name="hintSet0000" type="line" x="402" y="526" />
+      <point type="line" x="282" y="526" />
+      <point type="line" x="282" y="-33" />
+      <point x="282" y="-64" />
+      <point x="266" y="-81" />
+      <point type="curve" x="235" y="-81" />
+      <point type="line" x="191" y="-81" />
+      <point type="line" x="191" y="-170" />
+      <point x="212" y="-176" />
+      <point x="250" y="-182" />
+      <point type="curve" x="280" y="-182" />
+      <point x="376" y="-182" />
+      <point x="402" y="-111" />
+      <point type="curve" x="402" y="-41" />
+    </contour>
+    <contour>
+      <point type="line" x="174" y="526" />
+      <point type="line" x="54" y="526" />
+      <point type="line" x="54" y="0" />
+      <point type="line" x="174" y="0" />
+    </contour>
+    <contour>
+      <point type="line" x="174" y="723" />
+      <point type="line" x="54" y="723" />
+      <point type="line" x="54" y="614" />
+      <point type="line" x="174" y="614" />
+    </contour>
+    <contour>
+      <point type="line" x="402" y="723" />
+      <point type="line" x="282" y="723" />
+      <point type="line" x="282" y="614" />
+      <point type="line" x="402" y="614" />
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.adobe.type.autohint</key>
+      <data>
+        <hintSetList id="602f46d55bca86846461176f7092a0a0b542a580302f3364a30f6119223785c7362dc605eb1782fb274882d5b63267cd6f0d4d636fc4bc91771c49a85db611b1">
+          <hintset pointTag="hintSet0000">
+            <hstem pos="-182" width="101" />
+            <hstem pos="21" width="-21" />
+            <hstem pos="526" width="-20" />
+            <hstem pos="614" width="109" />
+            <vstem pos="54" width="120" />
+            <vstem pos="282" width="120" />
+          </hintset>
+        </hintSetList>
+      </data>
+    </dict>
+  </lib>
+</glyph>

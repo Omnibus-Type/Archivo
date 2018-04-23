@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="Dcaron" format="1">
+  <advance width="592"/>
+  <unicode hex="010E"/>
+  <outline>
+    <contour>
+      <point x="421" y="883" type="line"/>
+      <point x="341" y="883" type="line"/>
+      <point x="296" y="804" type="line"/>
+      <point x="251" y="883" type="line"/>
+      <point x="171" y="883" type="line"/>
+      <point x="256" y="748" type="line"/>
+      <point x="334" y="748" type="line"/>
+    </contour>
+    <contour>
+      <point x="283" y="0" type="line" smooth="yes"/>
+      <point x="445" y="0"/>
+      <point x="543" y="118"/>
+      <point x="543" y="353" type="curve" smooth="yes"/>
+      <point x="543" y="574"/>
+      <point x="445" y="686"/>
+      <point x="283" y="686" type="curve" smooth="yes"/>
+      <point x="70" y="686" type="line"/>
+      <point x="70" y="0" type="line"/>
+    </contour>
+    <contour>
+      <point x="275" y="606" type="line" smooth="yes"/>
+      <point x="383" y="606"/>
+      <point x="451" y="531"/>
+      <point x="451" y="378" type="curve" smooth="yes"/>
+      <point x="451" y="328" type="line" smooth="yes"/>
+      <point x="451" y="161"/>
+      <point x="383" y="80"/>
+      <point x="275" y="80" type="curve" smooth="yes"/>
+      <point x="158" y="80" type="line"/>
+      <point x="158" y="606" type="line"/>
+    </contour>
+  </outline>
+  <lib>
+  <dict>
+  <key>com.typemytype.robofont.mark</key>
+  <array>
+    <real>0.656</real>
+    <real>1</real>
+    <real>0.6</real>
+    <real>1</real>
+  </array>
+  </dict>
+  </lib>
+</glyph>

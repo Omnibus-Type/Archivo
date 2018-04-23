@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="integralbt" format="1">
+  <advance width="604"/>
+  <unicode hex="2321"/>
+  <outline>
+    <contour>
+      <point x="257" y="859" type="line"/>
+      <point x="265" y="378"/>
+      <point x="274" y="-144"/>
+      <point x="274" y="-144" type="curve"/>
+      <point x="274" y="-187"/>
+      <point x="236" y="-201"/>
+      <point x="187" y="-201" type="curve"/>
+      <point x="187" y="-250" type="line"/>
+      <point x="273" y="-250"/>
+      <point x="345" y="-232"/>
+      <point x="345" y="-138" type="curve" smooth="yes"/>
+      <point x="345" y="-58"/>
+      <point x="338" y="419"/>
+      <point x="331" y="859" type="curve"/>
+    </contour>
+  </outline>
+</glyph>

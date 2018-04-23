@@ -1,0 +1,85 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph format="1" name="approxequal">
+  <advance width="549" />
+  <unicode hex="2248" />
+  <outline>
+    <contour>
+      <point name="hintSet0000" type="line" x="520" y="430" />
+      <point x="520" y="430" />
+      <point x="461" y="357" />
+      <point type="curve" x="377" y="357" />
+      <point name="hintSet0002" x="301" y="357" />
+      <point x="244" y="418" />
+      <point type="curve" x="170" y="418" />
+      <point x="75" y="418" />
+      <point x="27" y="345" />
+      <point type="curve" x="27" y="345" />
+      <point type="line" x="27" y="225" />
+      <point x="27" y="225" />
+      <point x="86" y="298" />
+      <point type="curve" x="170" y="298" />
+      <point name="hintSet0006" x="246" y="298" />
+      <point x="303" y="237" />
+      <point type="curve" x="377" y="237" />
+      <point x="472" y="237" />
+      <point x="520" y="310" />
+      <point type="curve" x="520" y="310" />
+    </contour>
+    <contour>
+      <point type="line" x="520" y="219" />
+      <point x="520" y="219" />
+      <point x="461" y="146" />
+      <point type="curve" x="377" y="146" />
+      <point name="hintSet0010" x="301" y="146" />
+      <point x="244" y="207" />
+      <point type="curve" x="170" y="207" />
+      <point x="75" y="207" />
+      <point x="27" y="134" />
+      <point type="curve" x="27" y="134" />
+      <point type="line" x="27" y="14" />
+      <point x="27" y="14" />
+      <point x="86" y="87" />
+      <point type="curve" x="170" y="87" />
+      <point name="hintSet0014" x="246" y="87" />
+      <point x="303" y="26" />
+      <point type="curve" x="377" y="26" />
+      <point x="472" y="26" />
+      <point x="520" y="99" />
+      <point type="curve" x="520" y="99" />
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.adobe.type.autohint</key>
+      <data>
+        <hintSetList id="aac5cd4fe73e2ccbc95ffe019c956f4ec5ad63ecd04d211f4dfac108bbd14c2978e5114666e31a9bf6572e073e75ad5b8fff7cb71cd99a68f1403650a43203de">
+          <hintset pointTag="hintSet0000">
+            <hstem pos="87" width="120" />
+            <hstem pos="237" width="120" />
+            <vstem pos="27" width="493" />
+          </hintset>
+          <hintset pointTag="hintSet0002">
+            <hstem pos="87" width="120" />
+            <hstem pos="298" width="120" />
+            <vstem pos="27" width="493" />
+          </hintset>
+          <hintset pointTag="hintSet0006">
+            <hstem pos="26" width="120" />
+            <hstem pos="237" width="120" />
+            <vstem pos="27" width="493" />
+          </hintset>
+          <hintset pointTag="hintSet0010">
+            <hstem pos="87" width="120" />
+            <hstem pos="298" width="120" />
+            <vstem pos="27" width="493" />
+          </hintset>
+          <hintset pointTag="hintSet0014">
+            <hstem pos="26" width="120" />
+            <hstem pos="298" width="120" />
+            <vstem pos="27" width="493" />
+          </hintset>
+        </hintSetList>
+      </data>
+    </dict>
+  </lib>
+</glyph>

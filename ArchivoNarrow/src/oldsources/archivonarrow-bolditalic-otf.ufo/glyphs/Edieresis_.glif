@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="Edieresis" format="1">
+  <advance width="547"/>
+  <unicode hex="00CB"/>
+  <outline>
+    <contour>
+      <point x="410" y="883" type="line"/>
+      <point x="395" y="774" type="line"/>
+      <point x="495" y="774" type="line"/>
+      <point x="510" y="883" type="line"/>
+    </contour>
+    <contour>
+      <point x="235" y="883" type="line"/>
+      <point x="221" y="774" type="line"/>
+      <point x="320" y="774" type="line"/>
+      <point x="335" y="883" type="line"/>
+    </contour>
+    <contour>
+      <point x="466" y="0" type="line"/>
+      <point x="482" y="114" type="line"/>
+      <point x="170" y="114" type="line"/>
+      <point x="196" y="294" type="line"/>
+      <point x="458" y="294" type="line"/>
+      <point x="474" y="408" type="line"/>
+      <point x="212" y="408" type="line"/>
+      <point x="235" y="572" type="line"/>
+      <point x="540" y="572" type="line"/>
+      <point x="556" y="686" type="line"/>
+      <point x="124" y="686" type="line"/>
+      <point x="28" y="0" type="line"/>
+    </contour>
+  </outline>
+  <lib>
+  <dict>
+  <key>com.typemytype.robofont.mark</key>
+  <array>
+    <real>0.656</real>
+    <real>1</real>
+    <real>0.6</real>
+    <real>1</real>
+  </array>
+  </dict>
+  </lib>
+</glyph>

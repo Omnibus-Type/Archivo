@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph format="1" name="Dcroat">
+  <advance width="592" />
+  <unicode hex="0110" />
+  <outline>
+    <contour>
+      <point name="hintSet0000" type="line" x="5" y="323" />
+      <point type="line" x="70" y="323" />
+      <point type="line" x="70" y="0" />
+      <point type="line" x="283" y="0" />
+      <point x="445" y="0" />
+      <point x="543" y="118" />
+      <point type="curve" x="543" y="353" />
+      <point x="543" y="574" />
+      <point x="445" y="686" />
+      <point type="curve" x="283" y="686" />
+      <point type="line" x="70" y="686" />
+      <point type="line" x="70" y="387" />
+      <point type="line" x="5" y="387" />
+    </contour>
+    <contour>
+      <point type="line" x="275" y="606" />
+      <point x="383" y="606" />
+      <point x="451" y="531" />
+      <point type="curve" x="451" y="378" />
+      <point type="line" x="451" y="328" />
+      <point x="451" y="161" />
+      <point x="383" y="80" />
+      <point type="curve" x="275" y="80" />
+      <point type="line" x="158" y="80" />
+      <point type="line" x="158" y="323" />
+      <point type="line" x="315" y="323" />
+      <point type="line" x="315" y="387" />
+      <point type="line" x="158" y="387" />
+      <point type="line" x="158" y="606" />
+    </contour>
+  </outline>
+  <lib>
+  <dict>
+  <key>com.typemytype.robofont.mark</key>
+      <array>
+    <real>0.656</real>
+        <real>1</real>
+        <real>0.6</real>
+        <real>1</real>
+      </array>
+      <key>com.adobe.type.autohint</key>
+      <data>
+        <hintSetList id="08effbdc4df0a471872ed95506147649cb38ca27216c1f9f8cc391fd788f97113510ba6ce25d54904f124fb26cc2e673654157deb9dba50fcf81233c4eab1901">
+          <hintset pointTag="hintSet0000">
+            <hstem pos="0" width="80" />
+            <hstem pos="323" width="64" />
+            <hstem pos="606" width="80" />
+            <vstem pos="70" width="88" />
+            <vstem pos="451" width="92" />
+          </hintset>
+        </hintSetList>
+      </data>
+    </dict>
+  </lib>
+</glyph>

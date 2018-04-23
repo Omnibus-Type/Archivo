@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph format="1" name="Iacute">
+  <advance width="228" />
+  <unicode hex="00CD" />
+  <outline>
+    <contour>
+      <point name="hintSet0000" type="line" x="114" y="686" />
+      <point type="line" x="18" y="0" />
+      <point type="line" x="145" y="0" />
+      <point type="line" x="241" y="686" />
+    </contour>
+    <contour>
+      <point type="line" x="210" y="883" />
+      <point type="line" x="124" y="751" />
+      <point type="line" x="223" y="751" />
+      <point type="line" x="331" y="880" />
+      <point type="line" x="330" y="883" />
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.adobe.type.autohint</key>
+      <data>
+        <hintSetList id="228114686l180l1450l241686l210883l124751l223751l331880l330883l">
+          <hintset pointTag="hintSet0000">
+            <hstem pos="21" width="-21" />
+            <hstem pos="686" width="-20" />
+            <hstem pos="751" width="132" />
+            <vstem pos="18" width="313" />
+          </hintset>
+        </hintSetList>
+      </data>
+    </dict>
+  </lib>
+</glyph>

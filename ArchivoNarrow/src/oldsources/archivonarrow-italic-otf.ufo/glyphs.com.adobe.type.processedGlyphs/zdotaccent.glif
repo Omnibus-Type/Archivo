@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph format="1" name="zdotaccent">
+  <advance width="410" />
+  <unicode hex="017C" />
+  <outline>
+    <contour>
+      <point name="hintSet0000" type="line" x="414" y="526" />
+      <point type="line" x="88" y="526" />
+      <point type="line" x="78" y="453" />
+      <point type="line" x="289" y="453" />
+      <point type="line" x="5" y="39" />
+      <point type="line" x="2" y="0" />
+      <point type="line" x="356" y="0" />
+      <point type="line" x="366" y="73" />
+      <point type="line" x="126" y="73" />
+      <point type="line" x="411" y="488" />
+    </contour>
+    <contour>
+      <point type="line" x="321" y="723" />
+      <point type="line" x="234" y="723" />
+      <point type="line" x="221" y="628" />
+      <point type="line" x="308" y="628" />
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.adobe.type.autohint</key>
+      <data>
+        <hintSetList id="410414526l88526l78453l289453l539l20l3560l36673l12673l411488l321723l234723l221628l308628l">
+          <hintset pointTag="hintSet0000">
+            <hstem pos="0" width="73" />
+            <hstem pos="453" width="73" />
+            <hstem pos="628" width="95" />
+            <vstem pos="2" width="412" />
+          </hintset>
+        </hintSetList>
+      </data>
+    </dict>
+  </lib>
+</glyph>

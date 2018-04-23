@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph format="1" name="Edotaccent">
+  <advance width="547" />
+  <unicode hex="0116" />
+  <outline>
+    <contour>
+      <point name="hintSet0000" type="line" x="317" y="883" />
+      <point type="line" x="230" y="883" />
+      <point type="line" x="230" y="788" />
+      <point type="line" x="317" y="788" />
+    </contour>
+    <contour>
+      <point type="line" x="499" y="0" />
+      <point type="line" x="499" y="80" />
+      <point type="line" x="158" y="80" />
+      <point type="line" x="158" y="311" />
+      <point type="line" x="449" y="311" />
+      <point type="line" x="449" y="391" />
+      <point type="line" x="158" y="391" />
+      <point type="line" x="158" y="606" />
+      <point type="line" x="493" y="606" />
+      <point type="line" x="493" y="686" />
+      <point type="line" x="70" y="686" />
+      <point type="line" x="70" y="0" />
+    </contour>
+  </outline>
+  <lib>
+  <dict>
+  <key>com.typemytype.robofont.mark</key>
+      <array>
+    <real>0.656</real>
+        <real>1</real>
+        <real>0.6</real>
+        <real>1</real>
+      </array>
+      <key>com.adobe.type.autohint</key>
+      <data>
+        <hintSetList id="547317883l230883l230788l317788l4990l49980l15880l158311l449311l449391l158391l158606l493606l493686l70686l700l">
+          <hintset pointTag="hintSet0000">
+            <hstem pos="0" width="80" />
+            <hstem pos="311" width="80" />
+            <hstem pos="606" width="80" />
+            <hstem pos="788" width="95" />
+            <vstem pos="70" width="88" />
+            <vstem pos="230" width="87" />
+          </hintset>
+        </hintSetList>
+      </data>
+    </dict>
+  </lib>
+</glyph>

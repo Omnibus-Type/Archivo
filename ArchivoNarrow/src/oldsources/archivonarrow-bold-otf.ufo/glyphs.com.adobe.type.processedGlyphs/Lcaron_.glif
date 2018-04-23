@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph format="1" name="Lcaron">
+  <advance width="501" />
+  <unicode hex="013D" />
+  <outline>
+    <contour>
+      <point name="hintSet0000" type="line" x="478" y="686" />
+      <point type="line" x="340" y="686" />
+      <point type="line" x="340" y="549" />
+      <point type="line" x="395" y="549" />
+      <point type="line" x="340" y="393" />
+      <point type="line" x="412" y="393" />
+      <point type="line" x="478" y="561" />
+    </contour>
+    <contour>
+      <point type="line" x="60" y="0" />
+      <point type="line" x="478" y="0" />
+      <point type="line" x="478" y="120" />
+      <point type="line" x="188" y="120" />
+      <point type="line" x="188" y="686" />
+      <point type="line" x="60" y="686" />
+    </contour>
+  </outline>
+  <lib>
+  <dict>
+  <key>com.typemytype.robofont.mark</key>
+      <array>
+    <real>0.656</real>
+        <real>1</real>
+        <real>0.6</real>
+        <real>1</real>
+      </array>
+      <key>com.adobe.type.autohint</key>
+      <data>
+        <hintSetList id="501478686l340686l340549l395549l340393l412393l478561l600l4780l478120l188120l188686l60686l">
+          <hintset pointTag="hintSet0000">
+            <hstem pos="0" width="120" />
+            <hstem pos="549" width="137" />
+            <vstem pos="60" width="128" />
+            <vstem pos="340" width="138" />
+          </hintset>
+        </hintSetList>
+      </data>
+    </dict>
+  </lib>
+</glyph>

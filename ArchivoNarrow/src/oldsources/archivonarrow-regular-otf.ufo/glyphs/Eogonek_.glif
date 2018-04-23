@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="Eogonek" format="1">
+  <advance width="547"/>
+  <unicode hex="0118"/>
+  <outline>
+    <contour>
+      <point x="493" y="686" type="line"/>
+      <point x="70" y="686" type="line"/>
+      <point x="70" y="0" type="line"/>
+      <point x="434" y="0" type="line"/>
+      <point x="413" y="-23"/>
+      <point x="397" y="-50"/>
+      <point x="397" y="-92" type="curve" smooth="yes"/>
+      <point x="397" y="-161"/>
+      <point x="448" y="-182"/>
+      <point x="491" y="-182" type="curve" smooth="yes"/>
+      <point x="511" y="-182"/>
+      <point x="531" y="-177"/>
+      <point x="552" y="-168" type="curve"/>
+      <point x="552" y="-117" type="line"/>
+      <point x="521" y="-117" type="line" smooth="yes"/>
+      <point x="487" y="-117"/>
+      <point x="475" y="-90"/>
+      <point x="475" y="-62" type="curve" smooth="yes"/>
+      <point x="475" y="-38"/>
+      <point x="488" y="-15"/>
+      <point x="499" y="0" type="curve"/>
+      <point x="499" y="80" type="line"/>
+      <point x="158" y="80" type="line"/>
+      <point x="158" y="311" type="line"/>
+      <point x="449" y="311" type="line"/>
+      <point x="449" y="391" type="line"/>
+      <point x="158" y="391" type="line"/>
+      <point x="158" y="606" type="line"/>
+      <point x="493" y="606" type="line"/>
+    </contour>
+  </outline>
+  <lib>
+  <dict>
+  <key>com.typemytype.robofont.mark</key>
+  <array>
+    <real>0.656</real>
+    <real>1</real>
+    <real>0.6</real>
+    <real>1</real>
+  </array>
+  </dict>
+  </lib>
+</glyph>

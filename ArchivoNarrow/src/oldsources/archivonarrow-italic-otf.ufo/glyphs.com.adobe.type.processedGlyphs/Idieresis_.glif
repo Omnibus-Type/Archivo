@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph format="1" name="Idieresis">
+  <advance width="228" />
+  <unicode hex="00CF" />
+  <outline>
+    <contour>
+      <point name="hintSet0000" type="line" x="219" y="686" />
+      <point type="line" x="131" y="686" />
+      <point type="line" x="34" y="0" />
+      <point type="line" x="122" y="0" />
+    </contour>
+    <contour>
+      <point type="line" x="323" y="883" />
+      <point type="line" x="236" y="883" />
+      <point type="line" x="223" y="788" />
+      <point type="line" x="310" y="788" />
+    </contour>
+    <contour>
+      <point type="line" x="173" y="883" />
+      <point type="line" x="86" y="883" />
+      <point type="line" x="73" y="788" />
+      <point type="line" x="160" y="788" />
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.adobe.type.autohint</key>
+      <data>
+        <hintSetList id="228219686l131686l340l1220l323883l236883l223788l310788l173883l86883l73788l160788l">
+          <hintset pointTag="hintSet0000">
+            <hstem pos="21" width="-21" />
+            <hstem pos="686" width="-20" />
+            <hstem pos="788" width="95" />
+            <vstem pos="34" width="289" />
+          </hintset>
+        </hintSetList>
+      </data>
+    </dict>
+  </lib>
+</glyph>

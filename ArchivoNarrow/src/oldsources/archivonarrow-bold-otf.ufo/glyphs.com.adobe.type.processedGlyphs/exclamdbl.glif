@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph format="1" name="exclamdbl">
+  <advance width="546" />
+  <unicode hex="203C" />
+  <outline>
+    <contour>
+      <point name="hintSet0000" type="line" x="486" y="686" />
+      <point type="line" x="333" y="686" />
+      <point type="line" x="368" y="197" />
+      <point type="line" x="450" y="197" />
+    </contour>
+    <contour>
+      <point type="line" x="206" y="137" />
+      <point type="line" x="68" y="137" />
+      <point type="line" x="68" y="0" />
+      <point type="line" x="206" y="0" />
+    </contour>
+    <contour>
+      <point type="line" x="479" y="137" />
+      <point type="line" x="341" y="137" />
+      <point type="line" x="341" y="0" />
+      <point type="line" x="479" y="0" />
+    </contour>
+    <contour>
+      <point type="line" x="213" y="686" />
+      <point type="line" x="60" y="686" />
+      <point type="line" x="95" y="197" />
+      <point type="line" x="177" y="197" />
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.adobe.type.autohint</key>
+      <data>
+        <hintSetList id="546486686l333686l368197l450197l206137l68137l680l2060l479137l341137l3410l4790l213686l60686l95197l177197l">
+          <hintset pointTag="hintSet0000">
+            <hstem pos="0" width="137" />
+            <hstem pos="686" width="-20" />
+            <vstem pos="68" width="138" />
+            <vstem pos="341" width="138" />
+          </hintset>
+        </hintSetList>
+      </data>
+    </dict>
+  </lib>
+</glyph>

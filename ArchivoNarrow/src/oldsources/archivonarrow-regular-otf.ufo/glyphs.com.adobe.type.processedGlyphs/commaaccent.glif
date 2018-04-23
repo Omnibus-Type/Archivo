@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph format="1" name="commaaccent">
+  <advance width="273" />
+  <unicode hex="F6C3" />
+  <outline>
+    <contour>
+      <point name="hintSet0000" type="line" x="181" y="-60" />
+      <point type="line" x="96" y="-60" />
+      <point type="line" x="96" y="-151" />
+      <point type="line" x="130" y="-151" />
+      <point type="line" x="107" y="-222" />
+      <point type="line" x="152" y="-222" />
+      <point type="line" x="181" y="-144" />
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.adobe.type.autohint</key>
+      <data>
+        <hintSetList id="273181-60l96-60l96-151l130-151l107-222l152-222l181-144l">
+          <hintset pointTag="hintSet0000">
+            <hstem pos="-151" width="91" />
+            <vstem pos="96" width="85" />
+          </hintset>
+        </hintSetList>
+      </data>
+    </dict>
+  </lib>
+</glyph>

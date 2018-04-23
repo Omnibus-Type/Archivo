@@ -1,0 +1,56 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph format="1" name="florin">
+  <advance width="456" />
+  <unicode hex="0192" />
+  <outline>
+    <contour>
+      <point name="hintSet0000" type="curve" x="384" y="731" />
+      <point x="304" y="731" />
+      <point x="270" y="681" />
+      <point type="curve" x="254" y="610" />
+      <point type="line" x="224" y="475" />
+      <point type="line" x="153" y="475" />
+      <point type="line" x="136" y="402" />
+      <point type="line" x="207" y="402" />
+      <point type="line" x="107" y="-65" />
+      <point x="103" y="-96" />
+      <point x="81" y="-113" />
+      <point type="curve" x="50" y="-113" />
+      <point type="line" x="6" y="-113" />
+      <point type="line" x="-4" y="-170" />
+      <point x="10" y="-176" />
+      <point x="36" y="-182" />
+      <point type="curve" x="60" y="-182" />
+      <point x="140" y="-182" />
+      <point x="175" y="-132" />
+      <point type="curve" x="190" y="-61" />
+      <point type="line" x="289" y="402" />
+      <point type="line" x="380" y="402" />
+      <point type="line" x="397" y="475" />
+      <point type="line" x="306" y="475" />
+      <point type="line" x="337" y="614" />
+      <point x="341" y="645" />
+      <point x="363" y="662" />
+      <point type="curve" x="394" y="662" />
+      <point type="line" x="438" y="662" />
+      <point type="line" x="450" y="719" />
+      <point x="434" y="725" />
+      <point x="408" y="731" />
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.adobe.type.autohint</key>
+      <data>
+        <hintSetList id="b5682fc68eb0efa52691af0543b46ab8433b866ba8d88ee0f9a41986342ffb86d58248c9970a8d5d996a1a2feee1e1f0f84bfd2446fa6b2db057359f1358b464">
+          <hintset pointTag="hintSet0000">
+            <hstem pos="-182" width="69" />
+            <hstem pos="402" width="73" />
+            <hstem pos="662" width="69" />
+            <vstem pos="-4" width="454" />
+          </hintset>
+        </hintSetList>
+      </data>
+    </dict>
+  </lib>
+</glyph>

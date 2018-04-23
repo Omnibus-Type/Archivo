@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph format="1" name="grave">
+  <advance width="273" />
+  <unicode hex="0060" />
+  <outline>
+    <contour>
+      <point name="hintSet0000" type="line" x="142" y="723" />
+      <point type="line" x="22" y="723" />
+      <point type="line" x="21" y="720" />
+      <point type="line" x="129" y="591" />
+      <point type="line" x="228" y="591" />
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.adobe.type.autohint</key>
+      <data>
+        <hintSetList id="273142723l22723l21720l129591l228591l">
+          <hintset pointTag="hintSet0000">
+            <hstem pos="591" width="132" />
+            <vstem pos="21" width="207" />
+          </hintset>
+        </hintSetList>
+      </data>
+    </dict>
+  </lib>
+</glyph>

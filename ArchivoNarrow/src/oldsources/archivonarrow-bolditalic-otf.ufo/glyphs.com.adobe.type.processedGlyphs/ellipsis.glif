@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph format="1" name="ellipsis">
+  <advance width="820" />
+  <unicode hex="2026" />
+  <outline>
+    <contour>
+      <point name="hintSet0000" type="line" x="601" y="137" />
+      <point type="line" x="582" y="0" />
+      <point type="line" x="720" y="0" />
+      <point type="line" x="739" y="137" />
+    </contour>
+    <contour>
+      <point type="line" x="328" y="137" />
+      <point type="line" x="309" y="0" />
+      <point type="line" x="447" y="0" />
+      <point type="line" x="466" y="137" />
+    </contour>
+    <contour>
+      <point type="line" x="55" y="137" />
+      <point type="line" x="36" y="0" />
+      <point type="line" x="174" y="0" />
+      <point type="line" x="193" y="137" />
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.adobe.type.autohint</key>
+      <data>
+        <hintSetList id="820601137l5820l7200l739137l328137l3090l4470l466137l55137l360l1740l193137l">
+          <hintset pointTag="hintSet0000">
+            <hstem pos="0" width="137" />
+            <vstem3 stem3List="36,157,309,157,582,157" />
+          </hintset>
+        </hintSetList>
+      </data>
+    </dict>
+  </lib>
+</glyph>

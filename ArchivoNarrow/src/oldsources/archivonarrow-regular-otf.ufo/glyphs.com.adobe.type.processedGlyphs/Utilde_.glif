@@ -1,0 +1,107 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph format="1" name="Utilde">
+  <advance width="592" />
+  <unicode hex="0168" />
+  <outline>
+    <contour>
+      <point name="hintSet0000" type="line" x="522" y="686" />
+      <point type="line" x="434" y="686" />
+      <point type="line" x="434" y="218" />
+      <point x="434" y="121" />
+      <point x="382" y="69" />
+      <point type="curve" x="296" y="69" />
+      <point x="210" y="69" />
+      <point x="158" y="121" />
+      <point type="curve" x="158" y="218" />
+      <point type="line" x="158" y="686" />
+      <point type="line" x="70" y="686" />
+      <point type="line" x="70" y="223" />
+      <point x="70" y="69" />
+      <point x="155" y="-12" />
+      <point type="curve" x="296" y="-12" />
+      <point x="437" y="-12" />
+      <point x="522" y="69" />
+      <point type="curve" x="522" y="223" />
+    </contour>
+    <contour>
+      <point type="line" x="384" y="883" />
+      <point name="hintSet0011" x="381" y="860" />
+      <point x="368" y="853" />
+      <point type="curve" x="350" y="853" />
+      <point name="hintSet0012" x="311" y="853" />
+      <point x="278" y="883" />
+      <point type="curve" x="235" y="883" />
+      <point name="hintSet0013" x="175" y="883" />
+      <point x="150" y="825" />
+      <point type="curve" x="150" y="779" />
+      <point type="line" x="208" y="779" />
+      <point name="hintSet0015" x="211" y="802" />
+      <point x="224" y="810" />
+      <point type="curve" x="242" y="810" />
+      <point name="hintSet0016" x="281" y="810" />
+      <point x="313" y="779" />
+      <point type="curve" x="357" y="779" />
+      <point name="hintSet0017" x="417" y="779" />
+      <point x="442" y="837" />
+      <point type="curve" x="442" y="883" />
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.adobe.type.autohint</key>
+      <data>
+        <hintSetList id="ca3374c6b17f7248eeeb48802b058890a1dcd4c13708dcb8564f12a1091a1dc2ee00b9cb60032c5d8dcbbe0cc078e005db6a5dd6e658973b705a107e1bf6bc38">
+          <hintset pointTag="hintSet0000">
+            <hstem pos="-12" width="81" />
+            <hstem pos="686" width="-20" />
+            <hstem pos="810" width="73" />
+            <vstem pos="70" width="88" />
+            <vstem pos="434" width="88" />
+          </hintset>
+          <hintset pointTag="hintSet0011">
+            <hstem pos="-12" width="81" />
+            <hstem pos="686" width="-20" />
+            <hstem pos="779" width="74" />
+            <vstem pos="70" width="88" />
+            <vstem pos="434" width="88" />
+          </hintset>
+          <hintset pointTag="hintSet0012">
+            <hstem pos="-12" width="81" />
+            <hstem pos="686" width="-20" />
+            <hstem pos="810" width="73" />
+            <vstem pos="70" width="88" />
+            <vstem pos="434" width="88" />
+          </hintset>
+          <hintset pointTag="hintSet0013">
+            <hstem pos="-12" width="81" />
+            <hstem pos="686" width="-20" />
+            <hstem pos="779" width="74" />
+            <vstem pos="70" width="88" />
+            <vstem pos="434" width="88" />
+          </hintset>
+          <hintset pointTag="hintSet0015">
+            <hstem pos="-12" width="81" />
+            <hstem pos="686" width="-20" />
+            <hstem pos="810" width="73" />
+            <vstem pos="70" width="88" />
+            <vstem pos="434" width="88" />
+          </hintset>
+          <hintset pointTag="hintSet0016">
+            <hstem pos="-12" width="81" />
+            <hstem pos="686" width="-20" />
+            <hstem pos="779" width="74" />
+            <vstem pos="70" width="88" />
+            <vstem pos="434" width="88" />
+          </hintset>
+          <hintset pointTag="hintSet0017">
+            <hstem pos="-12" width="81" />
+            <hstem pos="686" width="-20" />
+            <hstem pos="810" width="73" />
+            <vstem pos="70" width="88" />
+            <vstem pos="434" width="88" />
+          </hintset>
+        </hintSetList>
+      </data>
+    </dict>
+  </lib>
+</glyph>

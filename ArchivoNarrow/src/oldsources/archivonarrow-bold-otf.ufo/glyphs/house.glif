@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="house" format="1">
+  <advance width="600"/>
+  <unicode hex="2302"/>
+  <outline>
+    <contour>
+      <point x="300" y="563" type="line"/>
+      <point x="75" y="310" type="line"/>
+      <point x="75" y="0" type="line"/>
+      <point x="525" y="0" type="line"/>
+      <point x="525" y="310" type="line"/>
+    </contour>
+    <contour>
+      <point x="300" y="428" type="line"/>
+      <point x="433" y="277" type="line"/>
+      <point x="433" y="89" type="line"/>
+      <point x="167" y="89" type="line"/>
+      <point x="167" y="277" type="line"/>
+    </contour>
+  </outline>
+</glyph>
