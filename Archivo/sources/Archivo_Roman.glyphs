@@ -1,5 +1,5 @@
 {
-.appVersion = "1029";
+.appVersion = "1147";
 classes = (
 {
 automatic = 1;
@@ -220,7 +220,7 @@ capHeight = 686;
 customParameters = (
 {
 name = typoAscender;
-value = 728;
+value = 878;
 },
 {
 name = typoDescender;
@@ -228,7 +228,7 @@ value = -210;
 },
 {
 name = typoLineGap;
-value = 150;
+value = 0;
 },
 {
 name = winAscent;
@@ -240,15 +240,15 @@ value = 312;
 },
 {
 name = hheaAscender;
-value = 905;
+value = 878;
 },
 {
 name = hheaDescender;
-value = -212;
+value = -210;
 },
 {
 name = hheaLineGap;
-value = 33;
+value = 0;
 }
 );
 descender = -186;
@@ -283,7 +283,7 @@ capHeight = 686;
 customParameters = (
 {
 name = typoAscender;
-value = 728;
+value = 878;
 },
 {
 name = typoDescender;
@@ -291,7 +291,7 @@ value = -210;
 },
 {
 name = typoLineGap;
-value = 150;
+value = 0;
 },
 {
 name = winAscent;
@@ -303,15 +303,15 @@ value = 312;
 },
 {
 name = hheaAscender;
-value = 905;
+value = 878;
 },
 {
 name = hheaDescender;
-value = -212;
+value = -210;
 },
 {
 name = hheaLineGap;
-value = 33;
+value = 0;
 }
 );
 descender = -186;
@@ -71987,7 +71987,7 @@ value = (
 },
 {
 name = "TTFAutohint options";
-value = "--default-script=latn --windows-compatibility --composites --no-info --strong-stem-width=gD";
+value = "--default-script=latn --windows-compatibility --composites --stem-width-mode=sss";
 },
 {
 name = "Remove post names for webfonts";
@@ -72005,21 +72005,21 @@ customParameters = (
 {
 name = panose;
 value = (
-"2",
-"11",
+2,
+11,
 6,
-"3",
-"2",
-"2",
-"2",
-"2",
-"11",
-"4"
+3,
+2,
+2,
+2,
+2,
+11,
+4
 );
 },
 {
 name = "TTFAutohint options";
-value = "--default-script=latn --windows-compatibility --composites --no-info --strong-stem-width=gD";
+value = "--default-script=latn --windows-compatibility --composites --stem-width-mode=sss";
 },
 {
 name = "Remove post names for webfonts";
@@ -72039,21 +72039,21 @@ customParameters = (
 {
 name = panose;
 value = (
-"2",
-"11",
-"6",
-"3",
-"2",
-"2",
-"2",
-"2",
-"11",
-"4"
+2,
+11,
+6,
+3,
+2,
+2,
+2,
+2,
+11,
+4
 );
 },
 {
 name = "TTFAutohint options";
-value = "--default-script=latn --windows-compatibility --composites --no-info --strong-stem-width=gD";
+value = "--default-script=latn --windows-compatibility --composites --stem-width-mode=sss";
 },
 {
 name = "Remove post names for webfonts";
@@ -72088,7 +72088,7 @@ value = (
 },
 {
 name = "TTFAutohint options";
-value = "--default-script=latn --windows-compatibility --composites --no-info --strong-stem-width=gD";
+value = "--default-script=latn --windows-compatibility --composites --stem-width-mode=sss";
 },
 {
 name = "Remove post names for webfonts";
@@ -72522,5 +72522,5 @@ tH = 73;
 };
 };
 versionMajor = 1;
-versionMinor = 2;
+versionMinor = 4;
 }
