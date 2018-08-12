@@ -49,6 +49,10 @@ This information should be distributed along with the Archivo fonts and any deri
 
 *To contribute to the project contact Omnibus-Type at omnibus.type@gmail.com*
 
+**2018 Aug 12 (v1.002) - Yorlmar Campos**
+
+- Support for GF Latin Plus
+
 **2017 May 21 (v1.002) Alternative ampersand - Nicolás Silva Schwarzenberg**
 
 - Added alternative ampersand
@@ -68,12 +72,17 @@ If you make modifications be sure to add your name (N), email (E), web-address
 (if you have one) (W) and description (D). This list is in alphabetical order.
 
 
+**N:** **Hector Gatti**  
+**E:** omnibus.type@gmail.com  
+**W:** http://www.omnibus-type.com  
+**D:** Designer
+
 **N:** **Nicolas Silva Schwarzenberg**  
 **E:** nsilva.design@gmail.com  
 **W:** http://www.omnibus-type.com  
 **D:** Typeface development  
 
-**N:** **Hector Gatti**  
-**E:** omnibus.type@gmail.com  
+**N:** **Yorlmar Campos**  
+**E:** omnibus.type@gmail.com 
 **W:** http://www.omnibus-type.com  
-**D:** Designer
+**D:** Typeface development 

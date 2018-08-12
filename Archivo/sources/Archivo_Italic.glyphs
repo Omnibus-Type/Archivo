@@ -68,9 +68,13 @@ Tag = wght;
 {
 name = "Variation Font Origin";
 value = "F2AF9F09-4B67-43C0-B796-5CA32800A179";
+},
+{
+name = "Use Typo Metrics";
+value = 1;
 }
 );
-date = "2018-08-11 18:01:15 +0000";
+date = "2018-08-12 19:39:46 +0000";
 designer = "Hector Gatti";
 designerURL = "http://www.omnibus-type.com";
 disablesNiceNames = 1;
@@ -86943,6 +86947,7 @@ interpolationWidth = 5;
 instanceInterpolations = {
 "F2AF9F09-4B67-43C0-B796-5CA32800A179" = 1;
 };
+isItalic = 1;
 name = Italic;
 },
 {
@@ -86972,6 +86977,8 @@ interpolationWidth = 5;
 instanceInterpolations = {
 "A5125C76-E837-47F7-9C8F-34BD6CC95EDD" = 1;
 };
+isItalic = 1;
+linkStyle = Medium;
 name = "Medium Italic";
 weightClass = Medium;
 },
@@ -87002,7 +87009,9 @@ interpolationWidth = 5;
 instanceInterpolations = {
 "9D48804D-E8D2-4297-83C4-532547FA9139" = 1;
 };
-name = "Semibold Italic";
+isItalic = 1;
+linkStyle = SemiBold;
+name = "SemiBold Italic";
 weightClass = SemiBold;
 },
 {
@@ -87032,6 +87041,8 @@ interpolationWidth = 5;
 instanceInterpolations = {
 "C3F11B4E-1713-4D30-9530-E487AEA06E69" = 1;
 };
+isBold = 1;
+isItalic = 1;
 name = "Bold Italic";
 weightClass = Bold;
 }
@@ -87629,5 +87640,5 @@ manufacturer = "Omnibus-Type";
 manufacturerURL = "http://omnibus-type.com";
 unitsPerEm = 1000;
 versionMajor = 1;
-versionMinor = 2;
+versionMinor = 3;
 }
