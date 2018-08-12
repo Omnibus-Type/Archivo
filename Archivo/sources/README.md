@@ -13,7 +13,7 @@ To contribute to the project contact [Omnibus Type](http://omnibus-type.com/).
 
 ### License
 
-Copyright (c) 2014-2016, Omnibus-Type (www.omnibus-type.com omnibus.type@gmail.com)
+Copyright (c) 2014-2018, Omnibus-Type (www.omnibus-type.com omnibus.type@gmail.com)
 
 Licensed under the [*SIL Open Font License, 1.1*](http://scripts.sil.org/OFL); you may not use this file except in compliance with the License.
 
@@ -45,7 +45,12 @@ If you make modifications be sure to add your name (N), email (E), web-address
 **W:** http://www.omnibus-type.com  
 **D:** Designer
 
-**N:** **Nicolas Silva Schwarzenberg**  
+**N:** **Nicolás Silva Schwarzenberg**  
 **E:** nsilva.design@gmail.com  
 **W:** http://www.omnibus-type.com  
-**D:** Typeface development  
+**D:** Typeface development
+
+**N:** **Yorlmar Campos**  
+**E:** omnibus.type@gmail.com 
+**W:** http://www.omnibus-type.com  
+**D:** Typeface development 
