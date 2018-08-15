@@ -57,19 +57,6 @@ value = (
 );
 },
 {
-name = Axes;
-value = (
-{
-Name = Weight;
-Tag = wght;
-}
-);
-},
-{
-name = "Variation Font Origin";
-value = "F2AF9F09-4B67-43C0-B796-5CA32800A179";
-},
-{
 name = "Use Typo Metrics";
 value = 1;
 }
@@ -215,54 +202,6 @@ capHeight = 686;
 custom = Italic;
 customParameters = (
 {
-name = typoAscender;
-value = 957;
-},
-{
-name = typoDescender;
-value = -303;
-},
-{
-name = typoLineGap;
-value = 0;
-},
-{
-name = winAscent;
-value = 957;
-},
-{
-name = winDescent;
-value = 303;
-},
-{
-name = hheaAscender;
-value = 957;
-},
-{
-name = hheaDescender;
-value = -303;
-},
-{
-name = hheaLineGap;
-value = 0;
-},
-{
-name = underlineThickness;
-value = 55;
-},
-{
-name = underlinePosition;
-value = -170;
-},
-{
-name = strikeoutPosition;
-value = "0";
-},
-{
-name = strikeoutSize;
-value = "55";
-},
-{
 name = TTFStems;
 value = (
 {
@@ -323,13 +262,36 @@ size = -13;
 );
 },
 {
-name = "Axis Location";
-value = (
+name = hheaAscender;
+value = 878;
+},
 {
-Axis = Weight;
-Location = "400";
-}
-);
+name = hheaDescender;
+value = -210;
+},
+{
+name = hheaLineGap;
+value = 0;
+},
+{
+name = typoAscender;
+value = 878;
+},
+{
+name = typoDescender;
+value = -210;
+},
+{
+name = typoLineGap;
+value = 0;
+},
+{
+name = winAscent;
+value = 1080;
+},
+{
+name = winDescent;
+value = 312;
 }
 );
 descender = -183;
@@ -408,54 +370,6 @@ capHeight = 686;
 custom = "Medium Italic";
 customParameters = (
 {
-name = typoAscender;
-value = 957;
-},
-{
-name = typoDescender;
-value = -303;
-},
-{
-name = typoLineGap;
-value = 0;
-},
-{
-name = winAscent;
-value = 957;
-},
-{
-name = winDescent;
-value = 303;
-},
-{
-name = hheaAscender;
-value = 957;
-},
-{
-name = hheaDescender;
-value = -303;
-},
-{
-name = hheaLineGap;
-value = 0;
-},
-{
-name = underlineThickness;
-value = 65;
-},
-{
-name = underlinePosition;
-value = -170;
-},
-{
-name = strikeoutPosition;
-value = "0";
-},
-{
-name = strikeoutSize;
-value = "65";
-},
-{
 name = TTFStems;
 value = (
 {
@@ -516,13 +430,36 @@ size = -13;
 );
 },
 {
-name = "Axis Location";
-value = (
+name = hheaAscender;
+value = 878;
+},
 {
-Axis = Weight;
-Location = 500;
-}
-);
+name = hheaDescender;
+value = -210;
+},
+{
+name = hheaLineGap;
+value = 0;
+},
+{
+name = typoAscender;
+value = 878;
+},
+{
+name = typoDescender;
+value = -210;
+},
+{
+name = typoLineGap;
+value = 0;
+},
+{
+name = winAscent;
+value = 1080;
+},
+{
+name = winDescent;
+value = 312;
 }
 );
 descender = -183;
@@ -576,54 +513,6 @@ ascender = 723;
 capHeight = 686;
 custom = "Semibold Italic";
 customParameters = (
-{
-name = typoAscender;
-value = 957;
-},
-{
-name = typoDescender;
-value = -303;
-},
-{
-name = typoLineGap;
-value = 0;
-},
-{
-name = winAscent;
-value = 957;
-},
-{
-name = winDescent;
-value = 303;
-},
-{
-name = hheaAscender;
-value = 957;
-},
-{
-name = hheaDescender;
-value = -303;
-},
-{
-name = hheaLineGap;
-value = 0;
-},
-{
-name = underlineThickness;
-value = 75;
-},
-{
-name = underlinePosition;
-value = -170;
-},
-{
-name = strikeoutPosition;
-value = "0";
-},
-{
-name = strikeoutSize;
-value = "75";
-},
 {
 name = TTFStems;
 value = (
@@ -685,13 +574,36 @@ size = -13;
 );
 },
 {
-name = "Axis Location";
-value = (
+name = hheaAscender;
+value = 878;
+},
 {
-Axis = Weight;
-Location = 600;
-}
-);
+name = hheaDescender;
+value = -210;
+},
+{
+name = hheaLineGap;
+value = 0;
+},
+{
+name = typoAscender;
+value = 878;
+},
+{
+name = typoDescender;
+value = -210;
+},
+{
+name = typoLineGap;
+value = 0;
+},
+{
+name = winAscent;
+value = 1080;
+},
+{
+name = winDescent;
+value = 312;
 }
 );
 descender = -183;
@@ -737,54 +649,6 @@ ascender = 723;
 capHeight = 686;
 custom = Italic;
 customParameters = (
-{
-name = typoAscender;
-value = 957;
-},
-{
-name = typoDescender;
-value = -303;
-},
-{
-name = typoLineGap;
-value = 0;
-},
-{
-name = winAscent;
-value = 957;
-},
-{
-name = winDescent;
-value = 303;
-},
-{
-name = hheaAscender;
-value = 957;
-},
-{
-name = hheaDescender;
-value = -303;
-},
-{
-name = hheaLineGap;
-value = 0;
-},
-{
-name = underlineThickness;
-value = 85;
-},
-{
-name = underlinePosition;
-value = -170;
-},
-{
-name = strikeoutPosition;
-value = "0";
-},
-{
-name = strikeoutSize;
-value = "85";
-},
 {
 name = TTFStems;
 value = (
@@ -846,13 +710,36 @@ size = -13;
 );
 },
 {
-name = "Axis Location";
-value = (
+name = hheaAscender;
+value = 878;
+},
 {
-Axis = Weight;
-Location = 700;
-}
-);
+name = hheaDescender;
+value = -210;
+},
+{
+name = hheaLineGap;
+value = 0;
+},
+{
+name = typoAscender;
+value = 878;
+},
+{
+name = typoDescender;
+value = -210;
+},
+{
+name = typoLineGap;
+value = 0;
+},
+{
+name = winAscent;
+value = 1080;
+},
+{
+name = winDescent;
+value = 312;
 }
 );
 descender = -183;
