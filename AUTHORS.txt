@@ -6,4 +6,4 @@
 # Name or Organization <email address> 
 
 Omnibus-Type
-Hector Gatti <omnibus.type@gmail.com>
+Héctor Gatti <omnibus.type@gmail.com>

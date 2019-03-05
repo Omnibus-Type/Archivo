@@ -9,7 +9,7 @@
 # Names should be added to this file as:
 # Name <email address>
 
-Hector Gatti <omnibus.type@gmail.com>
-Nicolas Silva <omnibus.type@gmail.com>  
+Héctor Gatti <omnibus.type@gmail.com>
+Nicolás Silva <omnibus.type@gmail.com>  
 Pablo Cosgaya <omnibus.type@gmail.com>
 Yorlmar Campos <omnibus.type@gmail.com>

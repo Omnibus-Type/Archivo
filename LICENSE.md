@@ -1,4 +1,4 @@
-Copyright (c) 2014-2018, Omnibus-Type (www.omnibus-type.com|omnibus.type@gmail.com).
+Copyright (c) 2019, Omnibus-Type (www.omnibus-type.com | omnibus.type@gmail.com).
 
 
 *This Font Software is licensed under the SIL Open Font License, Version 1.1.

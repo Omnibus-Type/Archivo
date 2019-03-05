@@ -18,11 +18,11 @@ To contribute to the project contact [Omnibus-Type](http://omnibus-type.com/).
 
 ### Designers
 
-* Hector Gatti
+* Héctor Gatti
 
 ### License
 
-Copyright (c) 2014-2016, Omnibus-Type (www.omnibus-type.com omnibus.type@gmail.com)
+Copyright (c) 2019, Omnibus-Type (www.omnibus-type.com | omnibus.type@gmail.com)
 
 Licensed under the [*SIL Open Font License, 1.1*](http://scripts.sil.org/OFL); you may not use this file except in compliance with the License.
 
@@ -49,20 +49,19 @@ This information should be distributed along with the Archivo fonts and any deri
 
 *To contribute to the project contact Omnibus-Type at omnibus.type@gmail.com*
 
-**2018 Aug 12 (v1.002) - Yorlmar Campos**
 
-- Support for GF Latin Plus
+**2018 Aug 12 (v1.003)**
+- Updated to GF Latin Plus set
+- Supports 219 Latin languages used in 212 countries
 
-**2017 May 21 (v1.002) Alternative ampersand - Nicolás Silva Schwarzenberg**
-
+**2017 May 21 (v1.002) Alternative ampersand**
 - Added alternative ampersand
 
-**2016 July 10 (v1.001) Medium and Semibold - Nicolás Silva Schwarzenberg**
-
+**2016 July 10 (v1.001) Medium and Semibold**
 - Made master compatibles
 - New weights by interpolation (Medium and Semibold)
 
-**2016 June 4 (v1.000) Initial Commit - Nicolás Silva Schwarzenberg**
+**2016 June 4 (v1.000) Initial Commit**
 
 - Initial Commit
 
@@ -72,12 +71,12 @@ If you make modifications be sure to add your name (N), email (E), web-address
 (if you have one) (W) and description (D). This list is in alphabetical order.
 
 
-**N:** **Hector Gatti**  
+**N:** **Héctor Gatti**  
 **E:** omnibus.type@gmail.com  
 **W:** http://www.omnibus-type.com  
 **D:** Designer
 
-**N:** **Nicolas Silva Schwarzenberg**  
+**N:** **Nicolás Silva Schwarzenberg**  
 **E:** nsilva.design@gmail.com  
 **W:** http://www.omnibus-type.com  
 **D:** Typeface development  

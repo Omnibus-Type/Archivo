@@ -1,5 +1,5 @@
 {
-.appVersion = "1216";
+.appVersion = "1165";
 classes = (
 {
 code = "zero\012one\012two\012three\012four\012five\012six\012seven\012eight\012nine";
@@ -19,7 +19,7 @@ code = "A Aacute Abreve Abreveacute Abrevedotbelow Abrevegrave Abrevehookabove A
 name = Uppercase;
 }
 );
-copyright = "Copyright (c) 2019, The Archivo Project Authors (https://github.com/Omnibus-Type/Archivo)";
+copyright = "Copyright 2018 The Archivo Project Authors (https://github.com/Omnibus-Type/Archivo) with Reserved Font Name \"Archivo\".";
 customParameters = (
 {
 name = trademark;
