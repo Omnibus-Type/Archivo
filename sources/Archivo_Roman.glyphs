@@ -1,5 +1,5 @@
 {
-.appVersion = "1216";
+.appVersion = "1246";
 classes = (
 {
 code = "zero
@@ -46,7 +46,7 @@ code = "A Aacute Abreve Abreveacute Abrevedotbelow Abrevegrave Abrevehookabove A
 name = Uppercase;
 }
 );
-copyright = "Copyright (c) 2019, The Archivo Project Authors (https://github.com/Omnibus-Type/Archivo)";
+copyright = "Copyright 2019 The Archivo Project Authors (https://github.com/Omnibus-Type/Archivo)";
 customParameters = (
 {
 name = trademark;
@@ -96,7 +96,7 @@ name = "Use Typo Metrics";
 value = 1;
 }
 );
-date = "2018-08-12 19:40:08 +0000";
+date = "2019-07-11 00:15:31 +0000";
 designer = "Hector Gatti";
 designerURL = "http://www.omnibus-type.com";
 disablesNiceNames = 1;
@@ -131,6 +131,7 @@ name = lookup_2;
 {
 automatic = 1;
 code = "languagesystem DFLT dflt;
+
 languagesystem latn dflt;
 languagesystem latn TRK;
 languagesystem latn AZE;
@@ -85197,9 +85198,7 @@ layerId = "16ED1D51-D51B-4BA0-89FC-970B5AF72829";
 width = 0;
 }
 );
-leftKerningGroup = NULL;
 note = NULL;
-rightKerningGroup = NULL;
 }
 );
 instances = (

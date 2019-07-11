@@ -1,5 +1,5 @@
 {
-.appVersion = "1216";
+.appVersion = "1246";
 classes = (
 {
 code = "zero\012one\012two\012three\012four\012five\012six\012seven\012eight\012nine";
@@ -19,7 +19,7 @@ code = "A Aacute Abreve Abreveacute Abrevedotbelow Abrevegrave Abrevehookabove A
 name = Uppercase;
 }
 );
-copyright = "Copyright (c) 2019, The Archivo Project Authors (https://github.com/Omnibus-Type/Archivo)";
+copyright = "Copyright 2019 The Archivo Project Authors (https://github.com/Omnibus-Type/Archivo)";
 customParameters = (
 {
 name = trademark;
@@ -61,7 +61,7 @@ name = "Use Typo Metrics";
 value = 1;
 }
 );
-date = "2018-08-12 19:39:46 +0000";
+date = "2019-07-11 02:53:46 +0000";
 designer = "Hector Gatti";
 designerURL = "http://www.omnibus-type.com";
 disablesNiceNames = 1;
@@ -81,14 +81,14 @@ name = lookup_2;
 },
 {
 automatic = 1;
-code = "languagesystem DFLT dflt;\012languagesystem latn dflt;\012languagesystem latn TRK;\012languagesystem latn AZE;\012languagesystem latn GUA;\012languagesystem latn CRT;\012languagesystem latn NLD;\012languagesystem latn TAT;\012languagesystem latn CAT;\012languagesystem latn KAZ;\012languagesystem latn MOL;\012languagesystem latn ROM;\012languagesystem latn PLK;\012";
+code = "languagesystem DFLT dflt;\012\012languagesystem latn dflt;\012languagesystem latn TRK;\012languagesystem latn AZE;\012languagesystem latn GUA;\012languagesystem latn CRT;\012languagesystem latn NLD;\012languagesystem latn TAT;\012languagesystem latn CAT;\012languagesystem latn KAZ;\012languagesystem latn MOL;\012languagesystem latn ROM;\012languagesystem latn PLK;\012";
 name = Languagesystems;
 }
 );
 features = (
 {
 automatic = 1;
-code = "feature frac;\012feature locl;\012feature mgrk;\012feature subs;\012feature sups;\012feature numr;\012feature dnom;\012feature ordn;\012feature lnum;\012feature pnum;\012feature tnum;\012feature onum;\012feature case;\012feature zero;\012feature salt;\012feature sinf;\012";
+code = "feature frac;\012feature locl;\012feature mgrk;\012feature subs;\012feature sinf;\012feature sups;\012feature numr;\012feature dnom;\012feature ordn;\012feature lnum;\012feature pnum;\012feature tnum;\012feature onum;\012feature case;\012feature zero;\012";
 name = aalt;
 },
 {
@@ -113,6 +113,11 @@ name = mgrk;
 automatic = 1;
 code = "sub n by ninferior;\012sub zero by zeroinferior;\012sub one by oneinferior;\012sub two by twoinferior;\012sub three by threeinferior;\012sub four by fourinferior;\012sub five by fiveinferior;\012sub six by sixinferior;\012sub seven by seveninferior;\012sub eight by eightinferior;\012sub nine by nineinferior;\012";
 name = subs;
+},
+{
+automatic = 1;
+code = "sub n by ninferior;\012sub zero by zeroinferior;\012sub one by oneinferior;\012sub two by twoinferior;\012sub three by threeinferior;\012sub four by fourinferior;\012sub five by fiveinferior;\012sub six by sixinferior;\012sub seven by seveninferior;\012sub eight by eightinferior;\012sub nine by nineinferior;\012";
+name = sinf;
 },
 {
 automatic = 1;
@@ -175,16 +180,8 @@ code = "pos @Uppercase <5 0 10 0>;\012";
 name = cpsp;
 },
 {
-code = "sub ampersand by ampersand.alt;\012";
-name = salt;
-},
-{
 automatic = 1;
-code = "sub n by ninferior;\012sub zero by zeroinferior;\012sub one by oneinferior;\012sub two by twoinferior;\012sub three by threeinferior;\012sub four by fourinferior;\012sub five by fiveinferior;\012sub six by sixinferior;\012sub seven by seveninferior;\012sub eight by eightinferior;\012sub nine by nineinferior;\012";
-name = sinf;
-},
-{
-code = "pos @Uppercase <5 0 10 0>;";
+code = "pos @Uppercase <5 0 10 0>;\012";
 name = cpsp;
 }
 );
@@ -88428,7 +88425,7 @@ unicode = F000;
 },
 {
 glyphname = NULL;
-lastChange = "2018-07-30 00:30:16 +0000";
+lastChange = "2019-07-11 02:55:46 +0000";
 layers = (
 {
 layerId = "F2AF9F09-4B67-43C0-B796-5CA32800A179";
@@ -88447,9 +88444,7 @@ layerId = "C3F11B4E-1713-4D30-9530-E487AEA06E69";
 width = 0;
 }
 );
-leftKerningGroup = NULL;
 note = NULL;
-rightKerningGroup = NULL;
 }
 );
 instances = (
