@@ -1,5 +1,5 @@
 {
-.appVersion = "1246";
+.appVersion = "1230";
 classes = (
 {
 code = "zero
@@ -61488,6 +61488,7 @@ width = 278;
 leftKerningGroup = CR;
 note = CR;
 rightKerningGroup = CR;
+unicode = 000D;
 },
 {
 glyphname = .notdef;
@@ -85107,6 +85108,28 @@ leftKerningGroup = circumflexcomb;
 rightKerningGroup = circumflexcomb;
 },
 {
+glyphname = uni0000;
+layers = (
+{
+layerId = "54B1AC83-0CA1-46BD-96DF-6FABA525BA97";
+width = 600;
+},
+{
+layerId = "6BFFA46E-AB79-4C09-B73D-70680E42F436";
+width = 600;
+},
+{
+layerId = "E736C715-D109-4716-A17A-2CB5528FE3B0";
+width = 600;
+},
+{
+layerId = "16ED1D51-D51B-4BA0-89FC-970B5AF72829";
+width = 600;
+}
+);
+unicode = 0000;
+},
+{
 glyphname = uniE0FF;
 layers = (
 {
@@ -85954,5 +85977,5 @@ manufacturer = "Omnibus-Type";
 manufacturerURL = "http://omnibus-type.com";
 unitsPerEm = 1000;
 versionMajor = 1;
-versionMinor = 3;
+versionMinor = 4;
 }
