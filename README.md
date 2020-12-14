@@ -9,10 +9,68 @@ Archivo is a grotesque font reminiscent of late nineteenth century. It was desig
 
 
 ####Archivo family contains:
+
+
+* Extracondensed Thin/Extracondensed Thin Italic
+* Extracondensed ExtraLight/Extracondensed Extralight Italic
+* Extracondensed Light/Extracondensed Light Italic
+* Extracondensed Regular/Extracondensed Italic
+* Extracondensed Medium/Extracondensed Medium Italic
+* Extracondensed SemiBold/Extracondensed SemiBold Italic
+* Extracondensed Bold/Extracondensed Bold Italic
+* Extracondensed ExtraBold/Extracondensed ExtraBold Italic
+* Extracondensed Black/Extracondensed Black Italic
+
+* Condensed Thin/Condensed Thin Italic
+* Condensed ExtraLight/Condensed Extralight Italic
+* Condensed Light/Condensed Light Italic
+* Condensed Regular/Condensed Italic
+* Condensed Medium/Condensed Medium Italic
+* Condensed SemiBold/Condensed SemiBold Italic
+* Condensed Bold/Condensed Bold Italic
+* Condensed ExtraBold/Condensed ExtraBold Italic
+* Condensed Black/Condensed Black Italic
+
+* SemiCondensed Thin/SemiCondensed Thin Italic
+* SemiCondensed ExtraLight/SemiCondensed Extralight Italic
+* SemiCondensed Light/SemiCondensed Light Italic
+* SemiCondensed Regular/SemiCondensed Italic
+* SemiCondensed Medium/SemiCondensed Medium Italic
+* SemiCondensed SemiBold/SemiCondensed SemiBold Italic
+* SemiCondensed Bold/SemiCondensed Bold Italic
+* SemiCondensed ExtraBold/SemiCondensed ExtraBold Italic
+* SemiCondensed Black/SemiCondensed Black Italic
+
+* Thin/Thin Italic
+* ExtraLight/Extralight Italic
+* Light/Light Italic
 * Regular/Italic
 * Medium/Medium Italic
 * SemiBold/SemiBold Italic
 * Bold/Bold Italic
+* ExtraBold/ExtraBold Italic
+* Black/Black Italic
+
+* SemiExpanded Thin/SemiExpanded Thin Italic
+* SemiExpanded ExtraLight/SemiExpanded Extralight Italic
+* SemiExpanded Light/SemiExpanded Light Italic
+* SemiExpanded Regular/SemiExpanded Italic
+* SemiExpanded Medium/SemiExpanded Medium Italic
+* SemiExpanded SemiBold/SemiExpanded SemiBold Italic
+* SemiExpanded Bold/SemiExpanded Bold Italic
+* SemiExpanded ExtraBold/SemiExpanded ExtraBold Italic
+* SemiExpanded Black/SemiExpanded Black Italic
+
+* Expanded Thin/Expanded Thin Italic
+* Expanded ExtraLight/Expanded Extralight Italic
+* Expanded Light/Expanded Light Italic
+* Expanded Regular/Expanded Italic
+* Expanded Medium/Expanded Medium Italic
+* Expanded SemiBold/Expanded SemiBold Italic
+* Expanded Bold/Expanded Bold Italic
+* Expanded ExtraBold/Expanded ExtraBold Italic
+* Expanded Black/Expanded Black Italic
+
 
 To contribute to the project contact [Omnibus-Type](http://omnibus-type.com/).
 
@@ -49,6 +107,10 @@ This information should be distributed along with the Archivo fonts and any deri
 
 *To contribute to the project contact Omnibus-Type at omnibus.type@gmail.com*
 
+**2020 Dec 14 (v2.000)
+- Added new weights
+- Added ExtraCondensed and Expanded widths
+- Mastering for Variable fonts
 
 **2018 Aug 12 (v1.003)**
 - Updated to GF Latin Plus set
