@@ -10,6 +10,5 @@
 # Name <email address>
 
 Héctor Gatti <omnibus.type@gmail.com>
-Nicolás Silva <omnibus.type@gmail.com>  
 Pablo Cosgaya <omnibus.type@gmail.com>
 Yorlmar Campos <omnibus.type@gmail.com>

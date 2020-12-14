@@ -5,7 +5,9 @@
 
 Archivo is a grotesque font reminiscent of late nineteenth century. It was designed to be used simultaneously in print and online platforms and supports over 200 world languages.
 
-![Sample of Archivo Family.](./documentation/Archivo.png "Archivo")
+![Sample of Archivo Family.](./Archivo-1.png "Archivo")
+![Sample of Archivo Family.](./Archivo-2.png "Archivo")
+![Sample of Archivo Family.](./Archivo-3.png "Archivo")
 
 
 ####Archivo family contains:
@@ -137,11 +139,6 @@ If you make modifications be sure to add your name (N), email (E), web-address
 **E:** omnibus.type@gmail.com  
 **W:** http://www.omnibus-type.com  
 **D:** Designer
-
-**N:** **Nicolás Silva Schwarzenberg**  
-**E:** nsilva.design@gmail.com  
-**W:** http://www.omnibus-type.com  
-**D:** Typeface development  
 
 **N:** **Yorlmar Campos**  
 **E:** omnibus.type@gmail.com 

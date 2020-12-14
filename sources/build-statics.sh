@@ -61,31 +61,31 @@ echo ".
 MOVING TTF
 ."
 
-rm -rf ../fonts/Archivo/ttf ../fonts/ArchivoCondensed/ttf ../fonts/ArchivoExpanded/ttf ../fonts/ArchivoExtraCondensed/ttf ../fonts/ArchivoSemiCondensed/ttf ../fonts/ArchivoSemiExpanded/ttf
+rm -rf ../fonts/Archivo/Archivo/ttf ../fonts/Archivo/ArchivoCondensed/ttf ../fonts/Archivo/ArchivoExpanded/ttf ../fonts/Archivo/ArchivoExtraCondensed/ttf ../fonts/Archivo/ArchivoSemiCondensed/ttf ../fonts/Archivo/ArchivoSemiExpanded/ttf
 
-mkdir ../fonts/Archivo/ttf ../fonts/ArchivoCondensed/ttf ../fonts/ArchivoExpanded/ttf ../fonts/ArchivoExtraCondensed/ttf ../fonts/ArchivoSemiCondensed/ttf ../fonts/ArchivoSemiExpanded/ttf
+mkdir ../fonts/Archivo/Archivo/ttf ../fonts/Archivo/ArchivoCondensed/ttf ../fonts/Archivo/ArchivoExpanded/ttf ../fonts/Archivo/ArchivoExtraCondensed/ttf ../fonts/Archivo/ArchivoSemiCondensed/ttf ../fonts/Archivo/ArchivoSemiExpanded/ttf
 
-mv $TT_DIR/Archivo*.ttf ../fonts/Archivo/ttf
-mv $TT_DIR/ArchivoCondensed*.ttf ../fonts/ArchivoCondensed/ttf
-mv $TT_DIR/ArchivoExpanded*.ttf ../fonts/ArchivoExpanded/ttf
-mv $TT_DIR/ArchivoExtraCondensed*.ttf ../fonts/ArchivoExtraCondensed/ttf
-mv $TT_DIR/ArchivoSemiCondensed*.ttf ../fonts/ArchivoSemiCondensed/ttf
-mv $TT_DIR/ArchivoSemiExpanded*.ttf ../fonts/ArchivoSemiExpanded/ttf
+mv $TT_DIR/Archivo*.ttf ../fonts/Archivo/Archivo/ttf
+mv $TT_DIR/ArchivoCondensed*.ttf ../fonts/Archivo/ArchivoCondensed/ttf
+mv $TT_DIR/ArchivoExpanded*.ttf ../fonts/Archivo/ArchivoExpanded/ttf
+mv $TT_DIR/ArchivoExtraCondensed*.ttf ../fonts/Archivo/ArchivoExtraCondensed/ttf
+mv $TT_DIR/ArchivoSemiCondensed*.ttf ../fonts/Archivo/ArchivoSemiCondensed/ttf
+mv $TT_DIR/ArchivoSemiExpanded*.ttf ../fonts/Archivo/ArchivoSemiExpanded/ttf
 
 echo ".
 MOVING OTF
 ."
 
-rm -rf ../fonts/Archivo/otf ../fonts/ArchivoCondensed/otf ../fonts/ArchivoExpanded/otf ../fonts/ArchivoExtraCondensed/otf ../fonts/ArchivoSemiCondensed/otf ../fonts/ArchivoSemiExpanded/otf
+rm -rf ../fonts/Archivo/Archivo/otf ../fonts/Archivo/ArchivoCondensed/otf ../fonts/Archivo/ArchivoExpanded/otf ../fonts/Archivo/ArchivoExtraCondensed/otf ../fonts/Archivo/ArchivoSemiCondensed/otf ../fonts/Archivo/ArchivoSemiExpanded/otf
 
-mkdir ../fonts/Archivo/otf ../fonts/ArchivoCondensed/otf ../fonts/ArchivoExpanded/otf ../fonts/ArchivoExtraCondensed/otf ../fonts/ArchivoSemiCondensed/otf ../fonts/ArchivoSemiExpanded/otf
+mkdir ../fonts/Archivo/Archivo/otf ../fonts/Archivo/ArchivoCondensed/otf ../fonts/Archivo/ArchivoExpanded/otf ../fonts/Archivo/ArchivoExtraCondensed/otf ../fonts/Archivo/ArchivoSemiCondensed/otf ../fonts/Archivo/ArchivoSemiExpanded/otf
 
-mv $TT_DIR/Archivo*.otf ../fonts/Archivo/otf
-mv $TT_DIR/ArchivoCondensed*.otf ../fonts/ArchivoCondensed/otf
-mv $TT_DIR/ArchivoExpanded*.otf ../fonts/ArchivoExpanded/otf
-mv $TT_DIR/ArchivoExtraCondensed*.otf ../fonts/ArchivoExtraCondensed/otf
-mv $TT_DIR/ArchivoSemiCondensed*.otf ../fonts/ArchivoSemiCondensed/otf
-mv $TT_DIR/ArchivoSemiExpanded*.otf ../fonts/ArchivoSemiExpanded/otf
+mv $TT_DIR/Archivo*.otf ../fonts/Archivo/Archivo/otf
+mv $TT_DIR/ArchivoCondensed*.otf ../fonts/Archivo/ArchivoCondensed/otf
+mv $TT_DIR/ArchivoExpanded*.otf ../fonts/Archivo/ArchivoExpanded/otf
+mv $TT_DIR/ArchivoExtraCondensed*.otf ../fonts/Archivo/ArchivoExtraCondensed/otf
+mv $TT_DIR/ArchivoSemiCondensed*.otf ../fonts/Archivo/ArchivoSemiCondensed/otf
+mv $TT_DIR/ArchivoSemiExpanded*.otf ../fonts/Archivo/ArchivoSemiExpanded/otf
 
 ##########################################
 
