@@ -1,5 +1,5 @@
 {
-.appVersion = "1246";
+.appVersion = "1230";
 classes = (
 {
 code = "zero\012one\012two\012three\012four\012five\012six\012seven\012eight\012nine";
@@ -62266,7 +62266,7 @@ unicode = 2004;
 },
 {
 glyphname = CR;
-lastChange = "2018-07-30 00:30:16 +0000";
+lastChange = "2019-07-11 07:37:52 +0000";
 layers = (
 {
 layerId = "F2AF9F09-4B67-43C0-B796-5CA32800A179";
@@ -62288,6 +62288,7 @@ width = 278;
 leftKerningGroup = CR;
 note = CR;
 rightKerningGroup = CR;
+unicode = 000D;
 },
 {
 glyphname = .notdef;
@@ -88349,6 +88350,28 @@ leftKerningGroup = circumflexcomb;
 rightKerningGroup = circumflexcomb;
 },
 {
+glyphname = uni0000;
+layers = (
+{
+layerId = "F2AF9F09-4B67-43C0-B796-5CA32800A179";
+width = 600;
+},
+{
+layerId = "A5125C76-E837-47F7-9C8F-34BD6CC95EDD";
+width = 600;
+},
+{
+layerId = "9D48804D-E8D2-4297-83C4-532547FA9139";
+width = 600;
+},
+{
+layerId = "C3F11B4E-1713-4D30-9530-E487AEA06E69";
+width = 600;
+}
+);
+unicode = 0000;
+},
+{
 glyphname = uniE0FF;
 lastChange = "2018-07-30 00:30:16 +0000";
 layers = (
@@ -89168,5 +89191,5 @@ manufacturer = "Omnibus-Type";
 manufacturerURL = "http://omnibus-type.com";
 unitsPerEm = 1000;
 versionMajor = 1;
-versionMinor = 3;
+versionMinor = 4;
 }
