@@ -1,0 +1,9 @@
+    sources:
+      - Archivo.glyphs
+      - Archivo-Italic.glyphs
+    axisOrder:
+      - wdth
+      - wght
+    outputDir: "../fonts"
+    familyName: Archivo
+    
