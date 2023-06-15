@@ -10,7 +10,7 @@ Archivo is a grotesque font reminiscent of late nineteenth century. It was desig
 ![Sample of Archivo Family.](./Archivo-3.png "Archivo")
 
 
-####Archivo family contains:
+#### Archivo family contains:
 
 
 * Extracondensed Thin/Extracondensed Thin Italic
@@ -109,7 +109,7 @@ This information should be distributed along with the Archivo fonts and any deri
 
 *To contribute to the project contact Omnibus-Type at omnibus.type@gmail.com*
 
-**2020 Dec 14 (v2.000)
+**2020 Dec 14 (v2.000)**
 - Added new weights
 - Added ExtraCondensed and Expanded widths
 - Mastering for Variable fonts
