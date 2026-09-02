@@ -1,4 +1,4 @@
-# AAA Archivo Family (Accessiway Accessible Archivo)
+# AAA Family (Accessiway Accessible Archivo)
 
 **Omnibus-Type** | **SIL Open Font License 1.1**
 
