@@ -1,8 +1,8 @@
-# AAA Family (Accessiway Accessible Archivo)
+# AAA (Accessiway Accessible Archivo) Family
 
 **Omnibus-Type** | **SIL Open Font License 1.1**
 
-AAA Archivo (Accessiway Accessible Archivo) is a typeface derivation developed in strategic collaboration with Accessiway, designed to mitigate reading barriers and optimize the digital experience for users with cognitive disabilities and dyslexia.
+AAA (Accessiway Accessible Archivo) family is a typeface derivation developed in strategic collaboration with Accessiway, designed to mitigate reading barriers and optimize the digital experience for users with cognitive disabilities and dyslexia.
 
 We surgically modified the skeletons of critical glyphs (such as I/l/1, b/d/p/q, O/0, 6/8/9, E/F) to ensure clear differentiation and reduce visual ambiguity. Furthermore, we optimized spacing and screen rendering to improve reading rhythm and prevent visual crowding of characters.
 
